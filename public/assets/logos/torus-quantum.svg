@@ -1,0 +1,41 @@
+<svg width="40" height="40" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="torusGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#0369a1;stop-opacity:0.8" />
+            <stop offset="50%" style="stop-color:#4ade80;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#a855f7;stop-opacity:0.8" />
+        </linearGradient>
+        <radialGradient id="torusRadial">
+            <stop offset="0%" style="stop-color:#a855f7;stop-opacity:1" />
+            <stop offset="70%" style="stop-color:#4ade80;stop-opacity:0.8" />
+            <stop offset="100%" style="stop-color:#0369a1;stop-opacity:0.6" />
+        </radialGradient>
+    </defs>
+
+    <!-- Torus exterior horizontal -->
+    <ellipse cx="50" cy="50" rx="35" ry="15" stroke="url(#torusGradient)" stroke-width="2" fill="none" opacity="0.8"/>
+    <ellipse cx="50" cy="50" rx="25" ry="10" stroke="url(#torusGradient)" stroke-width="1.5" fill="none" opacity="0.6"/>
+
+    <!-- Torus interior vertical -->
+    <ellipse cx="50" cy="50" rx="15" ry="35" stroke="url(#torusGradient)" stroke-width="2" fill="none" opacity="0.8"/>
+    <ellipse cx="50" cy="50" rx="10" ry="25" stroke="url(#torusGradient)" stroke-width="1.5" fill="none" opacity="0.6"/>
+
+    <!-- Campo de energia central -->
+    <circle cx="50" cy="50" r="8" fill="url(#torusRadial)" opacity="0.6"/>
+    <circle cx="50" cy="50" r="4" fill="url(#torusGradient)" opacity="0.9"/>
+    <circle cx="50" cy="50" r="2" fill="#ffffff"/>
+
+    <!-- Pontos de fluxo energético -->
+    <circle cx="50" cy="35" r="1.5" fill="#4ade80"/>
+    <circle cx="50" cy="65" r="1.5" fill="#4ade80"/>
+    <circle cx="35" cy="50" r="1.5" fill="#a855f7"/>
+    <circle cx="65" cy="50" r="1.5" fill="#a855f7"/>
+
+    <!-- Linhas de campo -->
+    <g opacity="0.5">
+        <path d="M 35 50 Q 50 40 65 50" stroke="#4ade80" stroke-width="1" fill="none"/>
+        <path d="M 35 50 Q 50 60 65 50" stroke="#a855f7" stroke-width="1" fill="none"/>
+        <path d="M 50 35 Q 40 50 50 65" stroke="#0369a1" stroke-width="1" fill="none"/>
+        <path d="M 50 35 Q 60 50 50 65" stroke="#4ade80" stroke-width="1" fill="none"/>
+    </g>
+</svg>

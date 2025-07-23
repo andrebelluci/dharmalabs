@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dharma Labs - Desenvolvimento Inteligente</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            // Nova paleta Dharma Labs
+            primary: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              200: '#bae6fd',
+              300: '#7dd3fc',
+              400: '#38bdf8',
+              500: '#0ea5e9', // Azul principal
+              600: '#0284c7',
+              700: '#0369a1', // Azul escuro base
+              800: '#075985',
+              900: '#0c4a6e',
+            },
+            accent: {
+              50: '#f0fdf4',
+              100: '#dcfce7',
+              200: '#bbf7d0',
+              300: '#86efac',
+              400: '#4ade80', // Verde suave detalhes
+              500: '#22c55e',
+              600: '#16a34a',
+              700: '#15803d',
+              800: '#166534',
+              900: '#14532d',
+            },
+            highlight: {
+              50: '#faf5ff',
+              100: '#f3e8ff',
+              200: '#e9d5ff',
+              300: '#d8b4fe',
+              400: '#c084fc',
+              500: '#a855f7', // Roxo destaque
+              600: '#9333ea',
+              700: '#7c3aed',
+              800: '#6b21a8',
+              900: '#581c87',
+            }
+          },
+          fontFamily: {
+            'inter': ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+          },
+          animation: {
+            'fade-in-up': 'fadeInUp 1s ease-out',
+            'pulse-soft': 'pulseSoft 2s infinite',
+            'code-scroll': 'codeScroll 15s linear infinite',
+            'shimmer': 'shimmer 0.5s ease-in-out',
+            'float': 'float 3s ease-in-out infinite',
+          },
+          keyframes: {
+            fadeInUp: {
+              'from': {
+                opacity: '0',
+                transform: 'translateY(50px)'
+              },
+              'to': {
+                opacity: '1',
+                transform: 'translateY(0)'
+              }
+            },
+            pulseSoft: {
+              '0%, 100%': { transform: 'scale(1)' },
+              '50%': { transform: 'scale(1.05)' }
+            },
+            codeScroll: {
+              '0%': { transform: 'translateX(-100px)', opacity: '0' },
+              '10%': { opacity: '1' },
+              '90%': { opacity: '1' },
+              '100%': { transform: 'translateX(100vw)', opacity: '0' }
+            },
+            shimmer: {
+              '0%': { transform: 'translateX(-100%)' },
+              '100%': { transform: 'translateX(100%)' }
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-10px)' }
+            }
+          }
+        }
+      }
+    }
+  </script>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+    .gradient-text {
+      background: linear-gradient(45deg, #0369a1, #4ade80, #a855f7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-bg {
+      background: linear-gradient(135deg, #0c4a6e 0%, #0369a1 50%, #075985 100%);
+    }
+
+    .hero-overlay {
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="g1"><stop offset="0%" stop-color="%234ade80" stop-opacity="0.15"/><stop offset="100%" stop-color="%234ade80" stop-opacity="0"/></radialGradient><radialGradient id="g2"><stop offset="0%" stop-color="%23a855f7" stop-opacity="0.1"/><stop offset="100%" stop-color="%23a855f7" stop-opacity="0"/></radialGradient></defs><circle cx="200" cy="200" r="100" fill="url(%23g1)"/><circle cx="800" cy="300" r="150" fill="url(%23g2)"/><circle cx="400" cy="700" r="120" fill="url(%23g1)"/></svg>') no-repeat center center;
+      background-size: cover;
+    }
+
+    .button-shimmer {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .button-shimmer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.5s;
+    }
+
+    .button-shimmer:hover::before {
+      animation: shimmer 0.5s ease-in-out;
+    }
+
+    .card-glow {
+      box-shadow: 0 4px 20px rgba(74, 222, 128, 0.1);
+    }
+
+    .card-glow:hover {
+      box-shadow: 0 8px 30px rgba(74, 222, 128, 0.2);
+    }
+  </style>
+  </head>
+
+  <body class="font-inter text-gray-900 overflow-x-hidden">
+    <!-- Hero Section -->
+    <section
+      class="hero-bg min-h-screen flex items-center relative overflow-hidden">
+      <!-- Animated Code Background -->
+      <div
+        class="absolute inset-0 opacity-10 overflow-hidden pointer-events-none">
+        <div id="codeLines" class="absolute inset-0"></div>
+      </div>
+
+      <!-- Hero Overlay -->
+      <div class="hero-overlay absolute inset-0 opacity-40"></div>
+
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div
+          class="text-center text-white animate-fade-in-up max-w-4xl mx-auto">
+          <!-- Logo -->
+          <div class="flex items-center justify-center mb-4 animate-float">
+            <img src="./assets/logos/dharma-labs-main.svg" alt="Dharma Labs"
+              class="w-30 h-30 lg:w-40 lg:h-40 mr-2" />
+            <div class="flex flex-col items-start gap-1 left">
+              <span class="gradient-text drop-shadow-2xl text-3xl sm:text-4xl lg:text-6xl font-extrabold">DHARMA</span>
+              <span class="text-white text-xl sm:text-2xl lg:text-4xl font-bold">Labs</span>
+            </div>
+          </div>
+
+          <!-- Tagline -->
+          <div
+            class="text-accent-400 text-sm sm:text-base lg:text-lg uppercase tracking-widest font-medium mb-6">
+            Tecnologia com Propósito
+          </div>
+
+          <!-- Main Headline -->
+          <h1
+            class="text-3xl sm:text-4xl lg:text-6xl font-bold mb-6 leading-tight">
+            Transformamos Ideias<br class="hidden sm:block">
+            <span class="text-accent-400">em Soluções Digitais</span>
+          </h1>
+
+          <!-- Description -->
+          <p
+            class="text-lg sm:text-xl lg:text-2xl mb-10 opacity-90 leading-relaxed max-w-3xl mx-auto">
+            Desenvolvemos sites, sistemas, dashboards e apps,
+            unindo visão de negócio com execução técnica de excelência
+          </p>
+
+          <!-- CTA Buttons -->
+          <div
+            class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a href="#contato"
+              class="button-shimmer bg-gradient-to-r from-accent-500 to-primary-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:-translate-y-1 hover:shadow-2xl hover:shadow-accent-400/30 w-full sm:w-auto text-center">
+              Solicitar Orçamento
+            </a>
+            <a href="#" onclick="alert('Em breve!')"
+              class="button-shimmer border-2 border-accent-400 text-accent-400 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 hover:bg-accent-400 hover:text-primary-900 w-full sm:w-auto text-center">
+              💰 Ver Preços
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicos" class="py-16 sm:py-20 lg:py-24 bg-gray-50">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Section Header -->
+        <div class="text-center mb-16">
+          <h2
+            class="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-900 mb-4">
+            Nossos Serviços
+          </h2>
+          <p class="text-lg sm:text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+            Soluções completas de desenvolvimento com foco em resultados e
+            experiência do usuário
+          </p>
+
+          <!-- Toggle Button -->
+          <button id="toggleExplanations"
+            class="bg-primary-600 hover:bg-primary-700 text-white px-6 py-3 rounded-full text-sm font-medium transition-colors duration-200">
+            👁️ Mostrar/Ocultar Explicações Técnicas
+          </button>
+        </div>
+
+        <!-- Services Grid -->
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
+          <!-- Site & Landing Pages -->
+          <div
+            class="service-card bg-white rounded-2xl p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-t-4 border-accent-500 card-glow">
+            <div class="flex items-center mb-6">
+              <img src="./assets/logos/flower-of-life.svg" alt="Flor da Vida"
+                class="w-10 h-10 mr-4" />
+              <h3 class="text-xl font-semibold text-primary-900">Sites & Landing
+                Pages</h3>
+            </div>
+
+            <p class="text-gray-600 mb-6 leading-relaxed">
+              Sites modernos, responsivos e otimizados para conversão,
+              desenvolvidos com as melhores práticas de UX/UI.
+            </p>
+
+            <ul class="space-y-3 mb-6">
+              <li class="flex items-start">
+                <span class="text-accent-500 font-bold mr-3 mt-0.5">✓</span>
+                <span class="text-gray-700">Design responsivo e moderno</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-accent-500 font-bold mr-3 mt-0.5">✓</span>
+                <span class="text-gray-700">Otimização para SEO</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-accent-500 font-bold mr-3 mt-0.5">✓</span>
+                <span class="text-gray-700">Integração com analytics</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-accent-500 font-bold mr-3 mt-0.5">✓</span>
+                <span class="text-gray-700">Performance otimizada</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-accent-500 font-bold mr-3 mt-0.5">✓</span>
+                <span class="text-gray-700">Hospedagem incluída</span>
+              </li>
+            </ul>
+
+            <div
+              class="explanation hidden bg-primary-50 p-4 rounded-lg text-sm text-primary-900 border-l-4 border-primary-500">
+              <strong>📝 O que você faria na prática:</strong><br><br>
+              • <strong>Design responsivo:</strong> HTML/CSS que funciona em
+              celular, tablet e desktop (Claude te ajuda
+              com o código)<br><br>
+              • <strong>SEO básico:</strong> Títulos corretos, meta
+              descriptions, estrutura HTML semântica (Claude explica
+              cada tag)<br><br>
+              • <strong>Analytics:</strong> Inserir código do Google Analytics
+              no HTML (Cole um snippet de código)<br><br>
+              • <strong>Performance:</strong> Imagens otimizadas, CSS minificado
+              (Ferramentas online fazem isso)<br><br>
+              • <strong>Hospedagem:</strong> Upload para Netlify/Vercel
+              (arrastar pasta e publicar)
+            </div>
+          </div>
+
+          <!-- Sistemas Web -->
+          <div
+            class="service-card bg-white rounded-2xl p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-t-4 border-highlight-500 card-glow">
+            <div class="flex items-center mb-6">
+              <img src="./assets/logos/metatron-cube.svg" alt="Cubo de Metatron"
+                class="w-10 h-10 mr-4" />
+              <h3 class="text-xl font-semibold text-primary-900">Sistemas
+                Web</h3>
+            </div>
+
+            <p class="text-gray-600 mb-6 leading-relaxed">
+              Sistemas personalizados para automatizar processos e otimizar a
+              gestão do seu negócio.
+            </p>
+
+            <ul class="space-y-3 mb-6">
+              <li class="flex items-start">
+                <span class="text-highlight-500 font-bold mr-3 mt-0.5">✓</span>
+                <span class="text-gray-700">CRM personalizado</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-highlight-500 font-bold mr-3 mt-0.5">✓</span>
+                <span class="text-gray-700">Sistema de gestão</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-highlight-500 font-bold mr-3 mt-0.5">✓</span>
+                <span class="text-gray-700">Automação de processos</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-highlight-500 font-bold mr-3 mt-0.5">✓</span>
+                <span class="text-gray-700">Integração com APIs</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-highlight-500 font-bold mr-3 mt-0.5">✓</span>
+                <span class="text-gray-700">Banco de dados robusto</span>
+              </li>
+            </ul>
+
+            <div
+              class="explanation hidden bg-highlight-50 p-4 rounded-lg text-sm text-highlight-900 border-l-4 border-highlight-500">
+              <strong>📝 O que você faria na prática:</strong><br><br>
+              • <strong>CRM:</strong> Sistema para gerenciar clientes
+              (formulários HTML + PHP + MySQL para salvar
+              dados)<br><br>
+              • <strong>Sistema de gestão:</strong> Lista de produtos, estoque,
+              vendas (tabelas com botões para
+              adicionar/editar)<br><br>
+              • <strong>Automação:</strong> Scripts que enviam email automático
+              quando algo acontece (PHP mail())<br><br>
+              • <strong>APIs:</strong> Conectar com WhatsApp, email, pagamentos
+              (copiar código de documentação + Claude
+              ajusta)<br><br>
+              • <strong>Banco robusto:</strong> MySQL bem estruturado com
+              relacionamentos (Claude cria as tabelas)
+            </div>
+          </div>
+
+          <!-- Dashboards & Analytics -->
+          <div
+            class="service-card bg-white rounded-2xl p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-t-4 border-accent-500 card-glow">
+            <div class="flex items-center mb-6">
+              <img src="./assets/logos/mandala-digital.svg"
+                alt="Mandala Digital" class="w-10 h-10 mr-4" />
+              <h3 class="text-xl font-semibold text-primary-900">Dashboards &
+                Analytics</h3>
+            </div>
+
+            <p class="text-gray-600 mb-6 leading-relaxed">
+              Painéis interativos para visualização de dados e métricas em tempo
+              real do seu negócio.
+            </p>
+
+            <ul class="space-y-3 mb-6">
+              <li class="flex items-start">
+                <span class="text-accent-500 font-bold mr-3 mt-0.5">✓</span>
+                <span class="text-gray-700">Visualização de dados</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-accent-500 font-bold mr-3 mt-0.5">✓</span>
+                <span class="text-gray-700">Relatórios automáticos</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-accent-500 font-bold mr-3 mt-0.5">✓</span>
+                <span class="text-gray-700">Métricas em tempo real</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-accent-500 font-bold mr-3 mt-0.5">✓</span>
+                <span class="text-gray-700">Integração com planilhas</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-accent-500 font-bold mr-3 mt-0.5">✓</span>
+                <span class="text-gray-700">Alertas inteligentes</span>
+              </li>
+            </ul>
+
+            <div
+              class="explanation hidden bg-accent-50 p-4 rounded-lg text-sm text-accent-900 border-l-4 border-accent-500">
+              <strong>📝 O que você faria na prática:</strong><br><br>
+              • <strong>Visualização:</strong> Gráficos com Chart.js (biblioteca
+              JavaScript) alimentados por dados do
+              banco<br><br>
+              • <strong>Relatórios:</strong> Scripts PHP que geram relatórios
+              PDF automaticamente todo mês<br><br>
+              • <strong>Tempo real:</strong> Página que atualiza sozinha a cada
+              30 segundos (JavaScript refresh)<br><br>
+              • <strong>Planilhas:</strong> Importar dados do Google Sheets via
+              API (código pronto na
+              documentação)<br><br>
+              • <strong>Alertas:</strong> "Se vendas < 100, enviar email" -
+              script PHP com condições simples </div>
+          </div>
+
+          <!-- Apps Mobile -->
+          <div
+            class="service-card bg-white rounded-2xl p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-t-4 border-highlight-500 card-glow">
+            <div class="flex items-center mb-6">
+              <img src="./assets/logos/sri-yantra.svg" alt="Sri Yantra"
+                class="w-10 h-10 mr-4" />
+              <h3 class="text-xl font-semibold text-primary-900">Apps
+                Mobile</h3>
+            </div>
+
+            <p class="text-gray-600 mb-6 leading-relaxed">
+              Aplicativos nativos para Android e iOS com design intuitivo e
+              performance excepcional.
+            </p>
+
+            <ul class="space-y-3 mb-6">
+              <li class="flex items-start">
+                <span class="text-highlight-500 font-bold mr-3 mt-0.5">✓</span>
+                <span class="text-gray-700">Flutter (Android/iOS)</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-highlight-500 font-bold mr-3 mt-0.5">✓</span>
+                <span class="text-gray-700">Design nativo</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-highlight-500 font-bold mr-3 mt-0.5">✓</span>
+                <span class="text-gray-700">Sincronização offline</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-highlight-500 font-bold mr-3 mt-0.5">✓</span>
+                <span class="text-gray-700">Push notifications</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-highlight-500 font-bold mr-3 mt-0.5">✓</span>
+                <span class="text-gray-700">Publicação nas stores</span>
+              </li>
+            </ul>
+
+            <div
+              class="explanation hidden bg-highlight-50 p-4 rounded-lg text-sm text-highlight-900 border-l-4 border-highlight-500">
+              <strong>📝 O que você faria na prática:</strong><br><br>
+              • <strong>Flutter:</strong> Linguagem Dart (similar a JavaScript)
+              - Claude te ensina passo a passo<br><br>
+              • <strong>Design nativo:</strong> Widgets prontos do Flutter que
+              já parecem nativos<br><br>
+              • <strong>Offline:</strong> Salvar dados localmente no SQLite
+              (banco do celular)<br><br>
+              • <strong>Notificações:</strong> Firebase Cloud Messaging
+              (configurar em 30 min seguindo tutorial)<br><br>
+              • <strong>Publicação:</strong> Gerar APK, criar conta
+              desenvolvedor, fazer upload (processo guiado)
+            </div>
+          </div>
+
+          <!-- Automação & Integração -->
+          <div
+            class="service-card bg-white rounded-2xl p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-t-4 border-accent-500 card-glow">
+            <div class="flex items-center mb-6">
+              <img src="./assets/logos/fibonacci-spiral.svg"
+                alt="Espiral Fibonacci" class="w-10 h-10 mr-4" />
+              <h3 class="text-xl font-semibold text-primary-900">Automação &
+                Integração</h3>
+            </div>
+
+            <p class="text-gray-600 mb-6 leading-relaxed">
+              Conectamos seus sistemas e automatizamos tarefas repetitivas para
+              economizar tempo e recursos.
+            </p>
+
+            <ul class="space-y-3 mb-6">
+              <li class="flex items-start">
+                <span class="text-accent-500 font-bold mr-3 mt-0.5">✓</span>
+                <span class="text-gray-700">Integração entre sistemas</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-accent-500 font-bold mr-3 mt-0.5">✓</span>
+                <span class="text-gray-700">Automação de tarefas</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-accent-500 font-bold mr-3 mt-0.5">✓</span>
+                <span class="text-gray-700">APIs personalizadas</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-accent-500 font-bold mr-3 mt-0.5">✓</span>
+                <span class="text-gray-700">Webhooks e triggers</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-accent-500 font-bold mr-3 mt-0.5">✓</span>
+                <span class="text-gray-700">Testes automatizados</span>
+              </li>
+            </ul>
+
+            <div
+              class="explanation hidden bg-accent-50 p-4 rounded-lg text-sm text-accent-900 border-l-4 border-accent-500">
+              <strong>📝 O que você faria na prática:</strong><br><br>
+              • <strong>Integração:</strong> Sistema A fala com Sistema B via
+              API (ex: site manda dados pro
+              WhatsApp)<br><br>
+              • <strong>Automação:</strong>
+              "Quando cliente preenche formulário, enviar email + criar contato no Google"
+              - script Python<br><br>
+              • <strong>API personalizada:</strong> Criar endpoints PHP
+              (/api/clientes) que outros sistemas podem
+              usar<br><br>
+              • <strong>Webhooks:</strong> "Quando pagamento for aprovado,
+              website recebe notificação
+              automaticamente"<br><br>
+              • <strong>Testes:</strong> Scripts que verificam se tudo funciona
+              (Selenium - Claude te ajuda a
+              configurar)
+            </div>
+          </div>
+
+          <!-- Manutenção & Suporte -->
+          <div
+            class="service-card bg-white rounded-2xl p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-t-4 border-highlight-500 card-glow">
+            <div class="flex items-center mb-6">
+              <img src="./assets/logos/torus-quantum.svg" alt="Torus Quântico"
+                class="w-10 h-10 mr-4" />
+              <h3 class="text-xl font-semibold text-primary-900">Manutenção &
+                Suporte</h3>
+            </div>
+
+            <p class="text-gray-600 mb-6 leading-relaxed">
+              Mantemos seus sistemas sempre atualizados, seguros e funcionando
+              perfeitamente.
+            </p>
+
+            <ul class="space-y-3 mb-6">
+              <li class="flex items-start">
+                <span class="text-highlight-500 font-bold mr-3 mt-0.5">✓</span>
+                <span class="text-gray-700">Monitoramento 24/7</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-highlight-500 font-bold mr-3 mt-0.5">✓</span>
+                <span class="text-gray-700">Backup automático</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-highlight-500 font-bold mr-3 mt-0.5">✓</span>
+                <span class="text-gray-700">Atualizações de segurança</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-highlight-500 font-bold mr-3 mt-0.5">✓</span>
+                <span class="text-gray-700">Suporte técnico</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-highlight-500 font-bold mr-3 mt-0.5">✓</span>
+                <span class="text-gray-700">Otimização contínua</span>
+              </li>
+            </ul>
+
+            <div
+              class="explanation hidden bg-highlight-50 p-4 rounded-lg text-sm text-highlight-900 border-l-4 border-highlight-500">
+              <strong>📝 O que você faria na prática:</strong><br><br>
+              • <strong>Monitoramento:</strong> UptimeRobot (grátis) te avisa
+              por email se site sair do ar<br><br>
+              • <strong>Backup:</strong> Script que copia banco de dados todo
+              dia para Google Drive
+              automaticamente<br><br>
+              • <strong>Segurança:</strong> Manter PHP/WordPress atualizados,
+              trocar senhas, SSL ativo<br><br>
+              • <strong>Suporte:</strong> WhatsApp dedicado, resolver problemas
+              em 24h<br><br>
+              • <strong>Otimização:</strong> Ver Google Analytics, acelerar
+              partes lentas, melhorar conversão
+            </div>
+          </div>
+
+          <!-- E-mail Profissional -->
+          <div
+            class="service-card bg-white rounded-2xl p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-t-4 border-accent-500 card-glow md:col-span-2 xl:col-span-1">
+            <div class="flex items-center mb-6">
+              <img src="./assets/logos/flower-of-life.svg" alt="Flor da Vida"
+                class="w-10 h-10 mr-4" />
+              <h3 class="text-xl font-semibold text-primary-900">E-mail
+                Profissional</h3>
+            </div>
+
+            <p class="text-gray-600 mb-6 leading-relaxed">
+              Contas de e-mail personalizadas com seu domínio para
+              profissionalizar sua comunicação empresarial.
+            </p>
+
+            <ul class="space-y-3 mb-6">
+              <li class="flex items-start">
+                <span class="text-accent-500 font-bold mr-3 mt-0.5">✓</span>
+                <span class="text-gray-700">E-mail com seu domínio</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-accent-500 font-bold mr-3 mt-0.5">✓</span>
+                <span class="text-gray-700">Google Workspace</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-accent-500 font-bold mr-3 mt-0.5">✓</span>
+                <span class="text-gray-700">Configuração completa</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-accent-500 font-bold mr-3 mt-0.5">✓</span>
+                <span class="text-gray-700">Treinamento da equipe</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-accent-500 font-bold mr-3 mt-0.5">✓</span>
+                <span class="text-gray-700">Suporte técnico</span>
+              </li>
+            </ul>
+
+            <div
+              class="explanation hidden bg-accent-50 p-4 rounded-lg text-sm text-accent-900 border-l-4 border-accent-500">
+              <strong>📝 O que você faria na prática:</strong><br><br>
+              • <strong>Configuração:</strong> Criar joao@empresacliente.com no
+              Google Workspace<br><br>
+              • <strong>Setup completo:</strong> Gmail, Google Drive, Meet -
+              tudo integrado<br><br>
+              • <strong>Treinamento:</strong> Ensinar cliente a usar, migrar
+              e-mails antigos<br><br>
+              • <strong>Manutenção:</strong> Adicionar novos usuários, resolver
+              problemas<br><br>
+              • <strong>Lucro:</strong> Revender Google (R$31) por R$80/mês =
+              R$49 lucro por conta
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section
+      class="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-primary-900 via-primary-800 to-primary-900 text-white relative overflow-hidden">
+      <!-- Background Pattern -->
+      <div class="absolute inset-0 opacity-10">
+        <svg class="w-full h-full" viewBox="0 0 100 20"
+          xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="grid" width="10" height="10"
+              patternUnits="userSpaceOnUse">
+              <path d="M 10 0 L 0 0 0 10" fill="none" stroke="currentColor"
+                stroke-width="0.5" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#grid)" />
+        </svg>
+      </div>
+
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+            Stack Tecnológica
+          </h2>
+          <p class="text-lg sm:text-xl text-primary-200 max-w-3xl mx-auto">
+            Utilizamos as melhores tecnologias do mercado, potencializadas por
+            IA
+          </p>
+        </div>
+
+        <div
+          class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 lg:gap-6">
+          <div
+            class="tech-item bg-white/5 backdrop-blur-sm p-6 rounded-xl text-center hover:bg-accent-500/20 hover:-translate-y-2 transition-all duration-300 border border-white/10 hover:border-accent-400/50">
+            <div class="text-3xl lg:text-4xl mb-3">🌐</div>
+            <div class="text-sm font-medium text-primary-100">HTML5/CSS3</div>
+          </div>
+
+          <div
+            class="tech-item bg-white/5 backdrop-blur-sm p-6 rounded-xl text-center hover:bg-highlight-500/20 hover:-translate-y-2 transition-all duration-300 border border-white/10 hover:border-highlight-400/50">
+            <div class="text-3xl lg:text-4xl mb-3">🐘</div>
+            <div class="text-sm font-medium text-primary-100">PHP</div>
+          </div>
+
+          <div
+            class="tech-item bg-white/5 backdrop-blur-sm p-6 rounded-xl text-center hover:bg-accent-500/20 hover:-translate-y-2 transition-all duration-300 border border-white/10 hover:border-accent-400/50">
+            <div class="text-3xl lg:text-4xl mb-3">🐍</div>
+            <div class="text-sm font-medium text-primary-100">Python</div>
+          </div>
+
+          <div
+            class="tech-item bg-white/5 backdrop-blur-sm p-6 rounded-xl text-center hover:bg-highlight-500/20 hover:-translate-y-2 transition-all duration-300 border border-white/10 hover:border-highlight-400/50">
+            <div class="text-3xl lg:text-4xl mb-3">🗄️</div>
+            <div class="text-sm font-medium text-primary-100">MySQL</div>
+          </div>
+
+          <div
+            class="tech-item bg-white/5 backdrop-blur-sm p-6 rounded-xl text-center hover:bg-accent-500/20 hover:-translate-y-2 transition-all duration-300 border border-white/10 hover:border-accent-400/50">
+            <div class="text-3xl lg:text-4xl mb-3">📱</div>
+            <div class="text-sm font-medium text-primary-100">Flutter</div>
+          </div>
+
+          <div
+            class="tech-item bg-white/5 backdrop-blur-sm p-6 rounded-xl text-center hover:bg-highlight-500/20 hover:-translate-y-2 transition-all duration-300 border border-white/10 hover:border-highlight-400/50">
+            <div class="text-3xl lg:text-4xl mb-3">🔥</div>
+            <div class="text-sm font-medium text-primary-100">Firebase</div>
+          </div>
+
+          <div
+            class="tech-item bg-white/5 backdrop-blur-sm p-6 rounded-xl text-center hover:bg-highlight-500/20 hover:-translate-y-2 transition-all duration-300 border border-white/10 hover:border-highlight-400/50">
+            <div class="text-3xl lg:text-4xl mb-3">🤖</div>
+            <div class="text-sm font-medium text-primary-100">OpenAI</div>
+          </div>
+
+          <div
+            class="tech-item bg-white/5 backdrop-blur-sm p-6 rounded-xl text-center hover:bg-accent-500/20 hover:-translate-y-2 transition-all duration-300 border border-white/10 hover:border-accent-400/50">
+            <div class="text-3xl lg:text-4xl mb-3">📧</div>
+            <div class="text-sm font-medium text-primary-100">Google
+              Workspace</div>
+          </div>
+
+          <div
+            class="tech-item bg-white/5 backdrop-blur-sm p-6 rounded-xl text-center hover:bg-accent-500/20 hover:-translate-y-2 transition-all duration-300 border border-white/10 hover:border-accent-400/50 sm:col-span-3 lg:col-span-1">
+            <div class="text-3xl lg:text-4xl mb-3">☁️</div>
+            <div class="text-sm font-medium text-primary-100">Cloud
+              Hosting</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contato"
+      class="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-primary-800 via-primary-700 to-primary-800 text-white relative overflow-hidden">
+      <!-- Floating Elements -->
+      <div
+        class="absolute top-20 left-20 w-20 h-20 bg-accent-400/10 rounded-full blur-xl animate-float"></div>
+      <div
+        class="absolute top-40 right-32 w-32 h-32 bg-highlight-500/10 rounded-full blur-xl animate-float"
+        style="animation-delay: -1s;"></div>
+      <div
+        class="absolute bottom-20 left-1/4 w-16 h-16 bg-accent-400/10 rounded-full blur-xl animate-float"
+        style="animation-delay: -2s;"></div>
+
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center max-w-4xl mx-auto">
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
+            Pronto para <span class="gradient-text">Digitalizar</span> seu
+            Negócio?
+          </h2>
+          <p class="text-lg sm:text-xl text-primary-200 mb-10 leading-relaxed">
+            Vamos conversar sobre seu projeto e criar a solução ideal para suas
+            necessidades
+          </p>
+
+          <a href="mailto:contato@dharmalabs.com.br"
+            class="button-shimmer inline-block bg-gradient-to-r from-accent-500 to-highlight-600 text-white px-10 py-4 rounded-full text-xl font-semibold transition-all duration-300 transform hover:-translate-y-1 hover:shadow-2xl hover:shadow-accent-400/30 mb-12">
+            Falar Conosco
+          </a>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 lg:gap-8">
+            <div
+              class="flex flex-col sm:flex-row items-center justify-center gap-3 p-6 bg-white/5 backdrop-blur-sm rounded-xl hover:bg-accent-500/10 transition-colors duration-300 border border-white/10 hover:border-accent-400/50">
+              <span class="text-2xl">📧</span>
+              <span
+                class="text-lg font-medium text-center sm:text-left">contato@dharmalabs.com.br</span>
+            </div>
+
+            <div
+              class="flex flex-col sm:flex-row items-center justify-center gap-3 p-6 bg-white/5 backdrop-blur-sm rounded-xl hover:bg-highlight-500/10 transition-colors duration-300 border border-white/10 hover:border-highlight-400/50">
+              <span class="text-2xl">📱</span>
+              <span class="text-lg font-medium">(11) 99999-9999</span>
+            </div>
+
+            <div
+              class="flex flex-col sm:flex-row items-center justify-center gap-3 p-6 bg-white/5 backdrop-blur-sm rounded-xl hover:bg-accent-500/10 transition-colors duration-300 border border-white/10 hover:border-accent-400/50">
+              <span class="text-2xl">📍</span>
+              <span class="text-lg font-medium">São Paulo, SP</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- JavaScript -->
+    <script>
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Intersection Observer for scroll animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    // Apply animation to service cards and tech items
+    document.querySelectorAll('.service-card, .tech-item').forEach((item, index) => {
+      item.style.opacity = '0';
+      item.style.transform = 'translateY(30px)';
+      item.style.transition = `all 0.6s ease ${index * 0.1}s`;
+      observer.observe(item);
+    });
+
+    // Animated code lines background
+    function createCodeLine() {
+      const lines = [
+        "function createAwesome() { return magic; }",
+        "const result = AI.enhance(userExperience);",
+        "database.optimize() && performance.boost();",
+        "if (client.happy) { success.achieved(); }",
+        "system.deploy() && monitoring.start();",
+        "const solution = await AI.solve(businessProblem);",
+        "function buildApp() { return innovative.design(); }",
+        "dashboard.render(realTimeData);",
+        "system.optimize() && performance.increase();",
+        "const dharma = new TechSolution(purpose);",
+        "ai.collaborate(developer) === innovation;",
+        "client.satisfaction.level = 'maximum';",
+        "project.status = 'delivered_with_love';"
+      ];
+
+      const codeContainer = document.getElementById('codeLines');
+      if (!codeContainer) return;
+
+      const line = document.createElement('div');
+
+      line.className = 'absolute text-accent-400 font-mono text-xs opacity-10 pointer-events-none whitespace-nowrap';
+      line.style.top = Math.random() * 80 + 10 + '%';
+      line.style.left = '-200px';
+      line.style.animation = 'codeScroll 15s linear infinite';
+      line.textContent = lines[Math.floor(Math.random() * lines.length)];
+
+      codeContainer.appendChild(line);
+
+      // Remove line after animation
+      setTimeout(() => {
+        if (line.parentNode) {
+          line.parentNode.removeChild(line);
+        }
+      }, 15000);
+    }
+
+    // Create new code lines periodically
+    setInterval(createCodeLine, 3000);
+
+    // Initialize with some code lines
+    for (let i = 0; i < 3; i++) {
+      setTimeout(createCodeLine, i * 1000);
+    }
+
+    // Toggle technical explanations
+    document.getElementById('toggleExplanations').addEventListener('click', function () {
+      const explanations = document.querySelectorAll('.explanation');
+      const isHidden = explanations[0].classList.contains('hidden');
+
+      explanations.forEach(explanation => {
+        if (isHidden) {
+          explanation.classList.remove('hidden');
+        } else {
+          explanation.classList.add('hidden');
+        }
+      });
+
+      this.textContent = isHidden ?
+        '🙈 Ocultar Explicações Técnicas' :
+        '👁️ Mostrar Explicações Técnicas';
+    });
+
+    // Enhanced scroll effects
+    let lastScrollY = window.scrollY;
+    let ticking = false;
+
+    function updateScrollEffects() {
+      const currentScrollY = window.scrollY;
+      const scrollProgress = Math.min(currentScrollY / (document.documentElement.scrollHeight - window.innerHeight), 1);
+
+      // Add subtle parallax to floating elements
+      const floatingElements = document.querySelectorAll('.animate-float');
+      floatingElements.forEach((element, index) => {
+        const offset = scrollProgress * (50 + index * 20);
+        element.style.transform = `translateY(${offset}px)`;
+      });
+
+      lastScrollY = currentScrollY;
+      ticking = false;
+    }
+
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(updateScrollEffects);
+        ticking = true;
+      }
+    });
+
+    // Preload optimization and performance
+    document.addEventListener('DOMContentLoaded', function () {
+      // Add loaded class for any additional styling
+      setTimeout(() => {
+        document.body.classList.add('loaded');
+      }, 100);
+
+      // Preload critical resources
+      const criticalImages = [
+        // Add any critical images here
+      ];
+
+      criticalImages.forEach(src => {
+        const link = document.createElement('link');
+        link.rel = 'preload';
+        link.as = 'image';
+        link.href = src;
+        document.head.appendChild(link);
+      });
+    });
+
+    // Add keyboard navigation support
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Tab') {
+        // Enhance focus visibility for accessibility
+        document.body.classList.add('keyboard-navigation');
+      }
+    });
+
+    document.addEventListener('mousedown', function () {
+      document.body.classList.remove('keyboard-navigation');
+    });
+
+    // Color theme detection (for future dark mode support)
+    const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (prefersDarkMode) {
+      // Future: Apply dark mode adaptations
+      console.log('User prefers dark mode');
+    }
+  </script>
+  </body>
+
+</html>
