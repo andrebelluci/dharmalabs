@@ -1,0 +1,523 @@
+/*
+ * DHARMA LABS - CUSTOM STYLES
+ * Estilos específicos que complementam o TailwindCSS
+ * Focado em performance, acessibilidade e experiência premium
+ */
+
+/* ===== IMPORTAÇÕES ===== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* ===== VARIÁVEIS CSS PERSONALIZADAS ===== */
+:root {
+  /* Cores Dharma Labs */
+  --color-primary-50: #f0f9ff;
+  --color-primary-100: #e0f2fe;
+  --color-primary-700: #0369a1;
+  --color-primary-800: #075985;
+  --color-primary-900: #0c4a6e;
+
+  --color-accent-50: #f0fdf4;
+  --color-accent-400: #4ade80;
+  --color-accent-500: #22c55e;
+
+  --color-highlight-50: #faf5ff;
+  --color-highlight-500: #a855f7;
+  --color-highlight-600: #9333ea;
+
+  /* Gradientes */
+  --gradient-main: linear-gradient(45deg, #0369a1, #4ade80, #a855f7);
+  --gradient-hero: linear-gradient(135deg, #0c4a6e 0%, #0369a1 50%, #075985 100%);
+  --gradient-accent: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
+  --gradient-highlight: linear-gradient(135deg, #a855f7 0%, #9333ea 100%);
+
+  /* Sombras */
+  --shadow-soft: 0 4px 20px rgba(74, 222, 128, 0.1);
+  --shadow-medium: 0 8px 30px rgba(74, 222, 128, 0.2);
+  --shadow-large: 0 20px 60px rgba(74, 222, 128, 0.3);
+  --shadow-glow: 0 0 40px rgba(168, 85, 247, 0.3);
+
+  /* Transições */
+  --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Bordas */
+  --border-radius-sm: 0.5rem;
+  --border-radius-md: 1rem;
+  --border-radius-lg: 1.5rem;
+  --border-radius-xl: 2rem;
+
+  /* Espaçamentos */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  --spacing-2xl: 4rem;
+
+  /* Z-index */
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal-backdrop: 1040;
+  --z-modal: 1050;
+  --z-tooltip: 1070;
+}
+
+/* ===== TIPOGRAFIA AVANÇADA ===== */
+.font-inter {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  font-optical-sizing: auto;
+}
+
+/* Melhor renderização de fontes */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Tipografia responsiva otimizada */
+.text-hero {
+  font-size: clamp(2.5rem, 8vw, 7rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.text-section-title {
+  font-size: clamp(2rem, 6vw, 4rem);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.text-card-title {
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
+  line-height: 1.3;
+}
+
+/* ===== COMPONENTES AVANÇADOS ===== */
+
+/* Header/Navbar com transições suaves */
+.navbar {
+  transition: all var(--transition-normal);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.navbar.scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Cards com interações avançadas */
+.service-card {
+  position: relative;
+  overflow: hidden;
+  transition: all var(--transition-slow);
+  transform-origin: center center;
+  will-change: transform;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--gradient-main);
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+  z-index: 1;
+}
+
+.service-card:hover::before {
+  opacity: 0.05;
+}
+
+.service-card:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: var(--shadow-large);
+}
+
+.service-card>* {
+  position: relative;
+  z-index: 2;
+}
+
+/* Botões premium com efeitos avançados */
+.btn-primary {
+  position: relative;
+  background: var(--gradient-main);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius-xl);
+  padding: 1rem 2.5rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all var(--transition-normal);
+  transform-origin: center;
+  will-change: transform;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left var(--transition-slow);
+}
+
+.btn-primary:hover::before {
+  left: 100%;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: var(--shadow-glow);
+}
+
+.btn-primary:active {
+  transform: translateY(-1px) scale(1.02);
+}
+
+/* Tech items com animações fluidas */
+.tech-item {
+  position: relative;
+  cursor: pointer;
+  transition: all var(--transition-slow);
+  transform-origin: center;
+  will-change: transform;
+}
+
+.tech-item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--gradient-main);
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+  z-index: -1;
+}
+
+.tech-item:hover::after {
+  opacity: 0.1;
+}
+
+.tech-item:hover {
+  transform: translateY(-8px) scale(1.1) rotate(5deg);
+}
+
+/* ===== ANIMAÇÕES CUSTOMIZADAS ===== */
+
+/* Animação de loading */
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+.loading-pulse {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Animação de reveal para seções */
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-reveal {
+  animation: reveal-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Animação de código no background */
+@keyframes code-float {
+  0% {
+    transform: translateX(-100px) translateY(0px);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 0.6;
+  }
+
+  90% {
+    opacity: 0.6;
+  }
+
+  100% {
+    transform: translateX(calc(100vw + 100px)) translateY(-50px);
+    opacity: 0;
+  }
+}
+
+.code-line {
+  position: absolute;
+  color: var(--color-accent-400);
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 0.75rem;
+  opacity: 0.4;
+  white-space: nowrap;
+  pointer-events: none;
+  animation: code-float 12s linear infinite;
+  will-change: transform, opacity;
+}
+
+/* Partículas flutuantes */
+@keyframes float-particle {
+
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  33% {
+    transform: translateY(-20px) rotate(120deg);
+  }
+
+  66% {
+    transform: translateY(-10px) rotate(240deg);
+  }
+}
+
+.floating-particle {
+  animation: float-particle 6s ease-in-out infinite;
+}
+
+/* ===== EFEITOS VISUAIS AVANÇADOS ===== */
+
+/* Gradiente de texto animado */
+.gradient-text-animated {
+  background: var(--gradient-main);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-animation 3s ease infinite;
+}
+
+@keyframes gradient-animation {
+
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Efeito de glassmorphism avançado */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+}
+
+/* Efeito de morphismo */
+.morphism {
+  background: linear-gradient(145deg, #ffffff, #e6e6e6);
+  box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
+}
+
+/* Efeito de hover para links */
+.link-hover {
+  position: relative;
+  text-decoration: none;
+  transition: color var(--transition-normal);
+}
+
+.link-hover::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--gradient-main);
+  transition: width var(--transition-normal);
+}
+
+.link-hover:hover::after {
+  width: 100%;
+}
+
+/* ===== RESPONSIVIDADE AVANÇADA ===== */
+
+/* Container responsivo personalizado */
+.container-custom {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 640px) {
+  .container-custom {
+    max-width: 640px;
+    padding: 0 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .container-custom {
+    max-width: 768px;
+    padding: 0 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-custom {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container-custom {
+    max-width: 1200px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .container-custom {
+    max-width: 1400px;
+  }
+}
+
+/* ===== ACESSIBILIDADE ===== */
+
+/* Focus states aprimorados */
+.focus-enhanced:focus {
+  outline: 3px solid var(--color-accent-400);
+  outline-offset: 2px;
+  border-radius: var(--border-radius-sm);
+}
+
+/* Modo de alto contraste */
+@media (prefers-contrast: high) {
+  .service-card {
+    border: 2px solid #000;
+  }
+
+  .gradient-text-animated {
+    -webkit-text-fill-color: #000;
+    background: none;
+  }
+}
+
+/* Redução de movimento */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .code-line {
+    animation: none;
+  }
+
+  .floating-particle {
+    animation: none;
+  }
+}
+
+/* ===== PERFORMANCE OTIMIZATIONS ===== */
+
+/* Will-change para elementos animados */
+.service-card,
+.tech-item,
+.btn-primary,
+.gradient-text-animated {
+  will-change: transform;
+}
+
+/* Contain para otimização de layout */
+.service-card {
+  contain: layout style paint;
+}
+
+/* Transform 3D para aceleração de hardware */
+.hardware-accelerated {
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* ===== PRINT STYLES ===== */
+@media print {
+
+  .hero-bg,
+  .floating-particle,
+  .code-line,
+  .glass-effect {
+    display: none !important;
+  }
+
+  .service-card {
+    box-shadow: none !important;
+    border: 1px solid #ccc !important;
+  }
+
+  .gradient-text-animated {
+    -webkit-text-fill-color: #000 !important;
+    color: #000 !important;
+  }
+}
+
+/* ===== SCROLLBAR CUSTOMIZADA ===== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-primary-50);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gradient-main);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-700);
+}
+
+/* ===== DARK MODE (Preparado para implementação futura) ===== */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #0f172a;
+    --color-text: #f1f5f9;
+  }
+
+  .dark-mode-ready {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+  }
+}

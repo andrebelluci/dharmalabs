@@ -1,24 +1,50 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dharma Labs - Desenvolvimento Inteligente</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO Meta Tags -->
+  <title>Dharma Labs - Desenvolvimento Web com Propósito | Sites, Sistemas e Apps</title>
+  <meta name="description" content="Transformamos ideias em soluções digitais. Desenvolvimento de sites, sistemas web, dashboards, apps mobile e automação com IA. Tecnologia com propósito.">
+  <meta name="keywords" content="desenvolvimento web, criação de sites, sistemas web, apps mobile, dashboards, automação, IA, São Paulo">
+  <meta name="author" content="Dharma Labs">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Dharma Labs - Desenvolvimento Web com Propósito">
+  <meta property="og:description" content="Transformamos ideias em soluções digitais. Sites, sistemas, apps e automação com IA.">
+  <meta property="og:image" content="./assets/logos/dharma-labs-main.svg">
+  <meta property="og:url" content="https://dharmalabs.com.br">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="./assets/logos/dharma-labs-main.svg">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="./assets/css/tailwind.css">
+  <link rel="stylesheet" href="./assets/css/styles.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- TailwindCSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            // Nova paleta Dharma Labs
+            // Paleta Dharma Labs
             primary: {
               50: '#f0f9ff',
               100: '#e0f2fe',
               200: '#bae6fd',
               300: '#7dd3fc',
               400: '#38bdf8',
-              500: '#0ea5e9', // Azul principal
+              500: '#0ea5e9',
               600: '#0284c7',
               700: '#0369a1', // Azul escuro base
               800: '#075985',
@@ -54,10 +80,16 @@
           },
           animation: {
             'fade-in-up': 'fadeInUp 1s ease-out',
+            'fade-in-down': 'fadeInDown 1s ease-out',
+            'fade-in-left': 'fadeInLeft 1s ease-out',
+            'fade-in-right': 'fadeInRight 1s ease-out',
             'pulse-soft': 'pulseSoft 2s infinite',
+            'bounce-soft': 'bounceSoft 2s infinite',
             'code-scroll': 'codeScroll 15s linear infinite',
             'shimmer': 'shimmer 0.5s ease-in-out',
             'float': 'float 3s ease-in-out infinite',
+            'rotate-slow': 'rotateSlow 8s linear infinite',
+            'scale-pulse': 'scalePulse 2s ease-in-out infinite',
           },
           keyframes: {
             fadeInUp: {
@@ -70,904 +102,930 @@
                 transform: 'translateY(0)'
               }
             },
+            fadeInDown: {
+              'from': {
+                opacity: '0',
+                transform: 'translateY(-50px)'
+              },
+              'to': {
+                opacity: '1',
+                transform: 'translateY(0)'
+              }
+            },
+            fadeInLeft: {
+              'from': {
+                opacity: '0',
+                transform: 'translateX(-50px)'
+              },
+              'to': {
+                opacity: '1',
+                transform: 'translateX(0)'
+              }
+            },
+            fadeInRight: {
+              'from': {
+                opacity: '0',
+                transform: 'translateX(50px)'
+              },
+              'to': {
+                opacity: '1',
+                transform: 'translateX(0)'
+              }
+            },
             pulseSoft: {
-              '0%, 100%': { transform: 'scale(1)' },
-              '50%': { transform: 'scale(1.05)' }
+              '0%, 100%': {
+                transform: 'scale(1)',
+                opacity: '1'
+              },
+              '50%': {
+                transform: 'scale(1.05)',
+                opacity: '0.9'
+              }
+            },
+            bounceSoft: {
+              '0%, 100%': {
+                transform: 'translateY(0)',
+                animationTimingFunction: 'cubic-bezier(0.8, 0, 1, 1)'
+              },
+              '50%': {
+                transform: 'translateY(-10px)',
+                animationTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)'
+              }
             },
             codeScroll: {
-              '0%': { transform: 'translateX(-100px)', opacity: '0' },
-              '10%': { opacity: '1' },
-              '90%': { opacity: '1' },
-              '100%': { transform: 'translateX(100vw)', opacity: '0' }
+              '0%': {
+                transform: 'translateX(-100px)',
+                opacity: '0'
+              },
+              '10%': {
+                opacity: '1'
+              },
+              '90%': {
+                opacity: '1'
+              },
+              '100%': {
+                transform: 'translateX(100vw)',
+                opacity: '0'
+              }
             },
             shimmer: {
-              '0%': { transform: 'translateX(-100%)' },
-              '100%': { transform: 'translateX(100%)' }
+              '0%': {
+                transform: 'translateX(-100%)'
+              },
+              '100%': {
+                transform: 'translateX(100%)'
+              }
             },
             float: {
-              '0%, 100%': { transform: 'translateY(0px)' },
-              '50%': { transform: 'translateY(-10px)' }
+              '0%, 100%': {
+                transform: 'translateY(0px)'
+              },
+              '50%': {
+                transform: 'translateY(-20px)'
+              }
+            },
+            rotateSlow: {
+              'from': {
+                transform: 'rotate(0deg)'
+              },
+              'to': {
+                transform: 'rotate(360deg)'
+              }
+            },
+            scalePulse: {
+              '0%, 100%': {
+                transform: 'scale(1)'
+              },
+              '50%': {
+                transform: 'scale(1.1)'
+              }
             }
+          },
+          backdropBlur: {
+            'xs': '2px',
+          },
+          boxShadow: {
+            'glow': '0 0 20px rgba(74, 222, 128, 0.3)',
+            'glow-lg': '0 0 40px rgba(74, 222, 128, 0.4)',
+            'glow-purple': '0 0 20px rgba(168, 85, 247, 0.3)',
+            'glow-blue': '0 0 20px rgba(3, 105, 161, 0.3)',
+          },
+          screens: {
+            'xs': '475px',
+            '3xl': '1600px',
           }
         }
-      }
+      },
+      plugins: []
     }
   </script>
-    <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
-    .gradient-text {
-      background: linear-gradient(45deg, #0369a1, #4ade80, #a855f7);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Dharma Labs",
+    "description": "Desenvolvimento Web com Propósito",
+    "url": "https://dharmalabs.com.br",
+    "logo": "https://dharmalabs.com.br/assets/logos/dharma-labs-main.svg",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+55-11-99999-9999",
+      "contactType": "customer service",
+      "availableLanguage": "Portuguese"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "São Paulo",
+      "addressRegion": "SP",
+      "addressCountry": "BR"
+    },
+    "sameAs": [
+      "https://linkedin.com/company/dharma-labs",
+      "https://instagram.com/dharmalabs"
+    ]
+  }
+  </script>
+</head>
 
-    .hero-bg {
-      background: linear-gradient(135deg, #0c4a6e 0%, #0369a1 50%, #075985 100%);
-    }
+<body class="font-inter text-gray-900 overflow-x-hidden">
 
-    .hero-overlay {
-      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="g1"><stop offset="0%" stop-color="%234ade80" stop-opacity="0.15"/><stop offset="100%" stop-color="%234ade80" stop-opacity="0"/></radialGradient><radialGradient id="g2"><stop offset="0%" stop-color="%23a855f7" stop-opacity="0.1"/><stop offset="100%" stop-color="%23a855f7" stop-opacity="0"/></radialGradient></defs><circle cx="200" cy="200" r="100" fill="url(%23g1)"/><circle cx="800" cy="300" r="150" fill="url(%23g2)"/><circle cx="400" cy="700" r="120" fill="url(%23g1)"/></svg>') no-repeat center center;
-      background-size: cover;
-    }
+  <!-- Fixed Header -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200 transition-all duration-300" id="navbar">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <!-- Logo -->
+        <div class="flex items-center space-x-3">
+          <img src="./assets/logos/dharma-labs-main.svg" alt="Dharma Labs" class="w-10 h-10" />
+          <div class="flex flex-col">
+            <span class="gradient-text text-xl font-bold">DHARMA</span>
+            <span class="text-primary-700 text-sm font-medium">Labs</span>
+          </div>
+        </div>
 
-    .button-shimmer {
-      position: relative;
-      overflow: hidden;
-    }
+        <!-- Navigation -->
+        <nav class="hidden md:flex items-center space-x-8">
+          <a href="#servicos" class="text-gray-700 hover:text-primary-700 font-medium transition-colors">Serviços</a>
+          <a href="#tecnologias" class="text-gray-700 hover:text-primary-700 font-medium transition-colors">Tecnologias</a>
+          <a href="#contato" class="text-gray-700 hover:text-primary-700 font-medium transition-colors">Contato</a>
+          <a href="#contato" class="bg-gradient-to-r from-accent-500 to-primary-600 text-white px-4 py-2 rounded-full text-sm font-semibold hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5">
+            Orçamento
+          </a>
+        </nav>
 
-    .button-shimmer::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-      transition: left 0.5s;
-    }
-
-    .button-shimmer:hover::before {
-      animation: shimmer 0.5s ease-in-out;
-    }
-
-    .card-glow {
-      box-shadow: 0 4px 20px rgba(74, 222, 128, 0.1);
-    }
-
-    .card-glow:hover {
-      box-shadow: 0 8px 30px rgba(74, 222, 128, 0.2);
-    }
-  </style>
-  </head>
-
-  <body class="font-inter text-gray-900 overflow-x-hidden">
-    <!-- Hero Section -->
-    <section
-      class="hero-bg min-h-screen flex items-center justify-center relative overflow-hidden py-12 sm:py-0">
-      <!-- Animated Code Background - DEBUGGING VERSION -->
-      <div
-        class="absolute inset-0 overflow-hidden pointer-events-none z-0">
-        <div id="codeLines" class="absolute inset-0"></div>
+        <!-- Mobile Menu Button -->
+        <button class="md:hidden text-gray-700 hover:text-primary-700" id="mobile-menu-btn">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
       </div>
 
-      <!-- Hero Overlay -->
-      <div class="hero-overlay absolute inset-0 opacity-40 z-10"></div>
+      <!-- Mobile Menu -->
+      <div class="md:hidden hidden" id="mobile-menu">
+        <div class="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-gray-200">
+          <a href="#servicos" class="block px-3 py-2 text-gray-700 hover:text-primary-700 font-medium">Serviços</a>
+          <a href="#tecnologias" class="block px-3 py-2 text-gray-700 hover:text-primary-700 font-medium">Tecnologias</a>
+          <a href="#contato" class="block px-3 py-2 text-gray-700 hover:text-primary-700 font-medium">Contato</a>
+          <a href="#contato" class="block mx-3 mt-4 bg-gradient-to-r from-accent-500 to-primary-600 text-white px-4 py-2 rounded-full text-sm font-semibold text-center">
+            Solicitar Orçamento
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
 
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
-        <div
-          class="text-center text-white animate-fade-in-up max-w-4xl mx-auto">
-          <!-- Logo -->
-          <div class="flex items-center justify-center mb-8 sm:mb-4 animate-float">
-            <img src="./assets/logos/dharma-labs-main.svg" alt="Dharma Labs"
-              class="w-30 h-30 lg:w-40 lg:h-40 mr-2" />
-            <div class="flex flex-col items-start gap-1 left">
-              <span class="gradient-text drop-shadow-2xl text-3xl sm:text-4xl lg:text-6xl font-extrabold">DHARMA</span>
-              <span class="text-white text-xl sm:text-2xl lg:text-4xl font-bold">Labs</span>
-            </div>
+  <!-- Hero Section -->
+  <section class="hero-bg min-h-screen flex items-center justify-center relative overflow-hidden pt-16">
+    <!-- Animated Background -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none z-0">
+      <div id="codeLines" class="absolute inset-0"></div>
+    </div>
+
+    <!-- Hero Overlay -->
+    <div class="hero-overlay absolute inset-0 opacity-40 z-10"></div>
+
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
+      <div class="text-center text-white animate-fade-in-up max-w-5xl mx-auto">
+        <!-- Logo -->
+        <div class="flex items-center justify-center mb-8 animate-float">
+          <img src="./assets/logos/dharma-labs-main.svg" alt="Dharma Labs" class="w-32 h-32 lg:w-40 lg:h-40 mr-4" />
+          <div class="flex flex-col items-start">
+            <span class="gradient-text drop-shadow-2xl text-4xl sm:text-5xl lg:text-7xl font-extrabold">DHARMA</span>
+            <span class="text-white text-2xl sm:text-3xl lg:text-5xl font-bold">Labs</span>
           </div>
+        </div>
 
-          <!-- Tagline -->
-          <div
-            class="text-accent-400 text-sm sm:text-base lg:text-lg uppercase tracking-widest font-medium mb-8 sm:mb-6">
-            Tecnologia com Propósito
+        <!-- Tagline -->
+        <div class="text-accent-400 text-base sm:text-lg lg:text-xl uppercase tracking-widest font-medium mb-8">
+          Tecnologia com Propósito
+        </div>
+
+        <!-- Main Headline -->
+        <h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold mb-8 leading-tight">
+          Transformamos Ideias<br class="hidden sm:block">
+          <span class="text-accent-400">em Soluções Digitais</span>
+        </h1>
+
+        <!-- Enhanced Description -->
+        <p class="text-xl sm:text-2xl lg:text-3xl mb-4 opacity-90 leading-relaxed max-w-4xl mx-auto">
+          Desenvolvemos sites, sistemas, dashboards e apps com IA
+        </p>
+        <p class="text-lg sm:text-xl lg:text-2xl mb-12 opacity-80 leading-relaxed max-w-3xl mx-auto">
+          Unindo visão de negócio com execução técnica de excelência
+        </p>
+
+        <!-- Enhanced CTA Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+          <a href="#contato" class="group relative bg-gradient-to-r from-accent-500 to-primary-600 text-white px-10 py-4 rounded-full text-xl font-semibold transition-all duration-300 transform hover:-translate-y-1 hover:shadow-2xl hover:shadow-accent-400/30 w-full sm:w-auto text-center overflow-hidden">
+            <span class="relative z-10">🚀 Solicitar Orçamento</span>
+            <div class="absolute inset-0 bg-gradient-to-r from-accent-400 to-primary-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </a>
+          <a href="#servicos" class="group border-2 border-accent-400 text-accent-400 px-10 py-4 rounded-full text-xl font-semibold transition-all duration-300 hover:bg-accent-400 hover:text-primary-900 w-full sm:w-auto text-center relative overflow-hidden">
+            <span class="relative z-10">📊 Ver Serviços</span>
+            <div class="absolute inset-0 bg-accent-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+          </a>
+        </div>
+
+        <!-- Trust Indicators -->
+        <div class="flex flex-wrap justify-center items-center gap-8 text-sm opacity-80">
+          <div class="flex items-center space-x-2">
+            <span class="text-accent-400">✓</span>
+            <span>+50 Projetos Entregues</span>
           </div>
-
-          <!-- Main Headline -->
-          <h1
-            class="text-3xl sm:text-4xl lg:text-6xl font-bold mb-8 sm:mb-6 leading-tight">
-            Transformamos Ideias<br class="hidden sm:block">
-            <span class="text-accent-400">em Soluções Digitais</span>
-          </h1>
-
-          <!-- Description -->
-          <p
-            class="text-lg sm:text-xl lg:text-2xl mb-12 sm:mb-10 opacity-90 leading-relaxed max-w-3xl mx-auto">
-            Desenvolvemos sites, sistemas, dashboards e apps,
-            unindo visão de negócio com execução técnica de excelência
-          </p>
-
-          <!-- CTA Buttons -->
-          <div
-            class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <a href="#contato"
-              class="button-shimmer bg-gradient-to-r from-accent-500 to-primary-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:-translate-y-1 hover:shadow-2xl hover:shadow-accent-400/30 w-full sm:w-auto text-center">
-              Solicitar Orçamento
-            </a>
-            <a href="#" onclick="alert('Em breve!')"
-              class="button-shimmer border-2 border-accent-400 text-accent-400 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 hover:bg-accent-400 hover:text-primary-900 w-full sm:w-auto text-center">
-              💰 Ver Preços
-            </a>
+          <div class="flex items-center space-x-2">
+            <span class="text-accent-400">✓</span>
+            <span>Suporte 24/7</span>
+          </div>
+          <div class="flex items-center space-x-2">
+            <span class="text-accent-400">✓</span>
+            <span>Garantia de Satisfação</span>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Services Section -->
-    <section id="servicos" class="py-16 sm:py-20 lg:py-24 bg-gray-50">
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <!-- Section Header -->
-        <div class="text-center mb-16">
-          <h2
-            class="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-900 mb-4">
-            Nossos Serviços
-          </h2>
-          <p class="text-lg sm:text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            Soluções completas de desenvolvimento com foco em resultados e
-            experiência do usuário
-          </p>
-
-          <!-- Toggle Button -->
-          <button id="toggleExplanations"
-            class="bg-primary-600 hover:bg-primary-700 text-white px-6 py-3 rounded-full text-sm font-medium transition-colors duration-200">
-            👁️ Mostrar/Ocultar Explicações Técnicas
-          </button>
+  <!-- Services Section -->
+  <section id="servicos" class="py-20 lg:py-28 bg-gray-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Enhanced Section Header -->
+      <div class="text-center mb-20">
+        <div class="inline-flex items-center bg-primary-100 text-primary-700 px-4 py-2 rounded-full text-sm font-medium mb-4">
+          <span class="w-2 h-2 bg-primary-500 rounded-full mr-2"></span>
+          Nossas Especialidades
         </div>
+        <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-900 mb-6">
+          Serviços que <span class="gradient-text">Transformam</span>
+        </h2>
+        <p class="text-xl sm:text-2xl text-gray-600 mb-10 max-w-4xl mx-auto leading-relaxed">
+          Soluções completas de desenvolvimento com foco em resultados reais e experiência excepcional do usuário
+        </p>
 
-        <!-- Services Grid -->
-        <div class="space-y-8">
-          <!-- Primeira linha: 4 cards -->
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-            <!-- Site & Landing Pages -->
-            <div
-              class="service-card bg-white rounded-2xl p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-t-4 border-accent-500 card-glow">
-              <div class="flex items-center mb-6">
-                <img src="./assets/logos/flower-of-life.svg" alt="Flor da Vida"
-                  class="w-10 h-10 mr-4" />
-                <h3 class="text-xl font-semibold text-primary-900">Sites & Landing
-                  Pages</h3>
+        <!-- Enhanced Toggle Button -->
+        <button id="toggleExplanations" class="group bg-primary-600 hover:bg-primary-700 text-white px-8 py-4 rounded-full font-medium transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+          <span class="flex items-center space-x-2">
+            <svg class="w-5 h-5 group-hover:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+            </svg>
+            <span>Explicações Técnicas</span>
+          </span>
+        </button>
+      </div>
+
+      <!-- Services Grid -->
+      <div class="space-y-12">
+        <!-- First Row: 4 cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
+          <!-- Site & Landing Pages -->
+          <div class="service-card group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border-t-4 border-accent-500 relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-br from-accent-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="relative z-10">
+              <div class="flex items-center mb-8">
+                <div class="p-3 bg-accent-100 rounded-2xl mr-4 group-hover:scale-110 transition-transform duration-300">
+                  <img src="./assets/logos/flower-of-life.svg" alt="Flor da Vida" class="w-12 h-12" />
+                </div>
+                <h3 class="text-2xl font-bold text-primary-900 group-hover:text-primary-700 transition-colors">Sites & Landing Pages</h3>
               </div>
 
-              <p class="text-gray-600 mb-6 leading-relaxed">
-                Sites modernos, responsivos e otimizados para conversão,
-                desenvolvidos com as melhores práticas de UX/UI.
+              <p class="text-gray-600 mb-8 leading-relaxed text-lg">
+                Sites modernos, responsivos e otimizados para conversão, desenvolvidos com as melhores práticas de UX/UI.
               </p>
 
-              <ul class="space-y-3 mb-6">
-                <li class="flex items-start">
-                  <span class="text-accent-500 font-bold mr-3 mt-0.5">✓</span>
-                  <span class="text-gray-700">Design responsivo e moderno</span>
-                </li>
-                <li class="flex items-start">
-                  <span class="text-accent-500 font-bold mr-3 mt-0.5">✓</span>
-                  <span class="text-gray-700">Otimização para SEO</span>
-                </li>
-                <li class="flex items-start">
-                  <span class="text-accent-500 font-bold mr-3 mt-0.5">✓</span>
-                  <span class="text-gray-700">Integração com analytics</span>
-                </li>
-                <li class="flex items-start">
-                  <span class="text-accent-500 font-bold mr-3 mt-0.5">✓</span>
-                  <span class="text-gray-700">Performance otimizada</span>
-                </li>
-                <li class="flex items-start">
-                  <span class="text-accent-500 font-bold mr-3 mt-0.5">✓</span>
-                  <span class="text-gray-700">Hospedagem incluída</span>
-                </li>
-              </ul>
-
-              <div
-                class="explanation hidden bg-primary-50 p-4 rounded-lg text-sm text-primary-900 border-l-4 border-primary-500">
-                <strong>📝 O que você faria na prática:</strong><br><br>
-                • <strong>Design responsivo:</strong> HTML/CSS que funciona em
-                celular, tablet e desktop (Claude te ajuda
-                com o código)<br><br>
-                • <strong>SEO básico:</strong> Títulos corretos, meta
-                descriptions, estrutura HTML semântica (Claude explica
-                cada tag)<br><br>
-                • <strong>Analytics:</strong> Inserir código do Google Analytics
-                no HTML (Cole um snippet de código)<br><br>
-                • <strong>Performance:</strong> Imagens otimizadas, CSS minificado
-                (Ferramentas online fazem isso)<br><br>
-                • <strong>Hospedagem:</strong> Upload para Netlify/Vercel
-                (arrastar pasta e publicar)
-              </div>
-            </div>
-
-            <!-- Sistemas Web -->
-            <div
-              class="service-card bg-white rounded-2xl p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-t-4 border-highlight-500 card-glow">
-              <div class="flex items-center mb-6">
-                <img src="./assets/logos/metatron-cube.svg" alt="Cubo de Metatron"
-                  class="w-10 h-10 mr-4" />
-                <h3 class="text-xl font-semibold text-primary-900">Sistemas
-                  Web</h3>
+              <div class="space-y-4 mb-8">
+                <div class="flex items-start space-x-3">
+                  <div class="w-2 h-2 bg-accent-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <span class="text-gray-700 font-medium">Design responsivo e moderno</span>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <div class="w-2 h-2 bg-accent-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <span class="text-gray-700 font-medium">Otimização para SEO</span>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <div class="w-2 h-2 bg-accent-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <span class="text-gray-700 font-medium">Integração com analytics</span>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <div class="w-2 h-2 bg-accent-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <span class="text-gray-700 font-medium">Performance otimizada</span>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <div class="w-2 h-2 bg-accent-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <span class="text-gray-700 font-medium">Hospedagem incluída</span>
+                </div>
               </div>
 
-              <p class="text-gray-600 mb-6 leading-relaxed">
-                Sistemas personalizados para automatizar processos e otimizar a
-                gestão do seu negócio.
-              </p>
-
-              <ul class="space-y-3 mb-6">
-                <li class="flex items-start">
-                  <span class="text-highlight-500 font-bold mr-3 mt-0.5">✓</span>
-                  <span class="text-gray-700">CRM personalizado</span>
-                </li>
-                <li class="flex items-start">
-                  <span class="text-highlight-500 font-bold mr-3 mt-0.5">✓</span>
-                  <span class="text-gray-700">Sistema de gestão</span>
-                </li>
-                <li class="flex items-start">
-                  <span class="text-highlight-500 font-bold mr-3 mt-0.5">✓</span>
-                  <span class="text-gray-700">Automação de processos</span>
-                </li>
-                <li class="flex items-start">
-                  <span class="text-highlight-500 font-bold mr-3 mt-0.5">✓</span>
-                  <span class="text-gray-700">Integração com APIs</span>
-                </li>
-                <li class="flex items-start">
-                  <span class="text-highlight-500 font-bold mr-3 mt-0.5">✓</span>
-                  <span class="text-gray-700">Banco de dados robusto</span>
-                </li>
-              </ul>
-
-              <div
-                class="explanation hidden bg-highlight-50 p-4 rounded-lg text-sm text-highlight-900 border-l-4 border-highlight-500">
-                <strong>📝 O que você faria na prática:</strong><br><br>
-                • <strong>CRM:</strong> Sistema para gerenciar clientes
-                (formulários HTML + PHP + MySQL para salvar
-                dados)<br><br>
-                • <strong>Sistema de gestão:</strong> Lista de produtos, estoque,
-                vendas (tabelas com botões para
-                adicionar/editar)<br><br>
-                • <strong>Automação:</strong> Scripts que enviam email automático
-                quando algo acontece (PHP mail())<br><br>
-                • <strong>APIs:</strong> Conectar com WhatsApp, email, pagamentos
-                (copiar código de documentação + Claude
-                ajusta)<br><br>
-                • <strong>Banco robusto:</strong> MySQL bem estruturado com
-                relacionamentos (Claude cria as tabelas)
-              </div>
-            </div>
-
-            <!-- Dashboards & Analytics -->
-            <div
-              class="service-card bg-white rounded-2xl p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-t-4 border-accent-500 card-glow">
-              <div class="flex items-center mb-6">
-                <img src="./assets/logos/mandala-digital.svg"
-                  alt="Mandala Digital" class="w-10 h-10 mr-4" />
-                <h3 class="text-xl font-semibold text-primary-900">Dashboards &
-                  Analytics</h3>
-              </div>
-
-              <p class="text-gray-600 mb-6 leading-relaxed">
-                Painéis interativos para visualização de dados e métricas em tempo
-                real do seu negócio.
-              </p>
-
-              <ul class="space-y-3 mb-6">
-                <li class="flex items-start">
-                  <span class="text-accent-500 font-bold mr-3 mt-0.5">✓</span>
-                  <span class="text-gray-700">Visualização de dados</span>
-                </li>
-                <li class="flex items-start">
-                  <span class="text-accent-500 font-bold mr-3 mt-0.5">✓</span>
-                  <span class="text-gray-700">Relatórios automáticos</span>
-                </li>
-                <li class="flex items-start">
-                  <span class="text-accent-500 font-bold mr-3 mt-0.5">✓</span>
-                  <span class="text-gray-700">Métricas em tempo real</span>
-                </li>
-                <li class="flex items-start">
-                  <span class="text-accent-500 font-bold mr-3 mt-0.5">✓</span>
-                  <span class="text-gray-700">Integração com planilhas</span>
-                </li>
-                <li class="flex items-start">
-                  <span class="text-accent-500 font-bold mr-3 mt-0.5">✓</span>
-                  <span class="text-gray-700">Alertas inteligentes</span>
-                </li>
-              </ul>
-
-              <div
-                class="explanation hidden bg-accent-50 p-4 rounded-lg text-sm text-accent-900 border-l-4 border-accent-500">
-                <strong>📝 O que você faria na prática:</strong><br><br>
-                • <strong>Visualização:</strong> Gráficos com Chart.js (biblioteca
-                JavaScript) alimentados por dados do
-                banco<br><br>
-                • <strong>Relatórios:</strong> Scripts PHP que geram relatórios
-                PDF automaticamente todo mês<br><br>
-                • <strong>Tempo real:</strong> Página que atualiza sozinha a cada
-                30 segundos (JavaScript refresh)<br><br>
-                • <strong>Planilhas:</strong> Importar dados do Google Sheets via
-                API (código pronto na
-                documentação)<br><br>
-                • <strong>Alertas:</strong> "Se vendas < 100, enviar email" -
-                script PHP com condições simples </div>
-              </div>
-
-            <!-- Apps Mobile -->
-            <div
-              class="service-card bg-white rounded-2xl p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-t-4 border-highlight-500 card-glow">
-              <div class="flex items-center mb-6">
-                <img src="./assets/logos/sri-yantra.svg" alt="Sri Yantra"
-                  class="w-10 h-10 mr-4" />
-                <h3 class="text-xl font-semibold text-primary-900">Apps
-                  Mobile</h3>
-              </div>
-
-              <p class="text-gray-600 mb-6 leading-relaxed">
-                Aplicativos nativos para Android e iOS com design intuitivo e
-                performance excepcional.
-              </p>
-
-              <ul class="space-y-3 mb-6">
-                <li class="flex items-start">
-                  <span class="text-highlight-500 font-bold mr-3 mt-0.5">✓</span>
-                  <span class="text-gray-700">Flutter (Android/iOS)</span>
-                </li>
-                <li class="flex items-start">
-                  <span class="text-highlight-500 font-bold mr-3 mt-0.5">✓</span>
-                  <span class="text-gray-700">Design nativo</span>
-                </li>
-                <li class="flex items-start">
-                  <span class="text-highlight-500 font-bold mr-3 mt-0.5">✓</span>
-                  <span class="text-gray-700">Sincronização offline</span>
-                </li>
-                <li class="flex items-start">
-                  <span class="text-highlight-500 font-bold mr-3 mt-0.5">✓</span>
-                  <span class="text-gray-700">Push notifications</span>
-                </li>
-                <li class="flex items-start">
-                  <span class="text-highlight-500 font-bold mr-3 mt-0.5">✓</span>
-                  <span class="text-gray-700">Publicação nas stores</span>
-                </li>
-              </ul>
-
-              <div
-                class="explanation hidden bg-highlight-50 p-4 rounded-lg text-sm text-highlight-900 border-l-4 border-highlight-500">
-                <strong>📝 O que você faria na prática:</strong><br><br>
-                • <strong>Flutter:</strong> Linguagem Dart (similar a JavaScript)
-                - Claude te ensina passo a passo<br><br>
-                • <strong>Design nativo:</strong> Widgets prontos do Flutter que
-                já parecem nativos<br><br>
-                • <strong>Offline:</strong> Salvar dados localmente no SQLite
-                (banco do celular)<br><br>
-                • <strong>Notificações:</strong> Firebase Cloud Messaging
-                (configurar em 30 min seguindo tutorial)<br><br>
-                • <strong>Publicação:</strong> Gerar APK, criar conta
-                desenvolvedor, fazer upload (processo guiado)
+              <div class="explanation hidden bg-accent-50 p-6 rounded-2xl text-sm text-accent-900 border-l-4 border-accent-500">
+                <strong class="flex items-center mb-3">
+                  <span class="text-lg mr-2">💡</span>
+                  Como Funciona na Prática:
+                </strong>
+                <div class="space-y-3">
+                  <p><strong>Design responsivo:</strong> HTML/CSS que adapta automaticamente para celular, tablet e desktop</p>
+                  <p><strong>SEO otimizado:</strong> Estrutura semântica, meta tags e performance que o Google adora</p>
+                  <p><strong>Analytics integrado:</strong> Acompanhe visitas, conversões e comportamento dos usuários em tempo real</p>
+                  <p><strong>Performance:</strong> Carregamento em menos de 3 segundos, otimização de imagens e código</p>
+                </div>
               </div>
             </div>
           </div>
 
-          <!-- Segunda linha: 3 cards centralizados -->
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
+          <!-- Sistemas Web -->
+          <div class="service-card group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border-t-4 border-highlight-500 relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-br from-highlight-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="relative z-10">
+              <div class="flex items-center mb-8">
+                <div class="p-3 bg-highlight-100 rounded-2xl mr-4 group-hover:scale-110 transition-transform duration-300">
+                  <img src="./assets/logos/metatron-cube.svg" alt="Cubo de Metatron" class="w-12 h-12" />
+                </div>
+                <h3 class="text-2xl font-bold text-primary-900 group-hover:text-primary-700 transition-colors">Sistemas Web</h3>
+              </div>
+
+              <p class="text-gray-600 mb-8 leading-relaxed text-lg">
+                Sistemas personalizados para automatizar processos e otimizar a gestão do seu negócio.
+              </p>
+
+              <div class="space-y-4 mb-8">
+                <div class="flex items-start space-x-3">
+                  <div class="w-2 h-2 bg-highlight-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <span class="text-gray-700 font-medium">CRM personalizado</span>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <div class="w-2 h-2 bg-highlight-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <span class="text-gray-700 font-medium">Sistema de gestão</span>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <div class="w-2 h-2 bg-highlight-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <span class="text-gray-700 font-medium">Automação de processos</span>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <div class="w-2 h-2 bg-highlight-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <span class="text-gray-700 font-medium">Integração com APIs</span>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <div class="w-2 h-2 bg-highlight-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <span class="text-gray-700 font-medium">Banco de dados robusto</span>
+                </div>
+              </div>
+
+              <div class="explanation hidden bg-highlight-50 p-6 rounded-2xl text-sm text-highlight-900 border-l-4 border-highlight-500">
+                <strong class="flex items-center mb-3">
+                  <span class="text-lg mr-2">🔧</span>
+                  Soluções Práticas:
+                </strong>
+                <div class="space-y-3">
+                  <p><strong>CRM personalizado:</strong> Gerencie clientes, vendas e follow-ups em um sistema feito para seu negócio</p>
+                  <p><strong>Automação:</strong> E-mails automáticos, relatórios gerados sozinhos, tarefas que se executam</p>
+                  <p><strong>Integrações:</strong> Conecta com WhatsApp, e-mail, pagamentos e qualquer ferramenta que você usa</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Continue with other service cards... -->
+          <!-- I'll continue with the remaining cards following the same enhanced pattern -->
+
+          <!-- Dashboards & Analytics -->
+          <div class="service-card group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border-t-4 border-accent-500 relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-br from-accent-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="relative z-10">
+              <div class="flex items-center mb-8">
+                <div class="p-3 bg-accent-100 rounded-2xl mr-4 group-hover:scale-110 transition-transform duration-300">
+                  <img src="./assets/logos/mandala-digital.svg" alt="Mandala Digital" class="w-12 h-12" />
+                </div>
+                <h3 class="text-2xl font-bold text-primary-900 group-hover:text-primary-700 transition-colors">Dashboards & Analytics</h3>
+              </div>
+
+              <p class="text-gray-600 mb-8 leading-relaxed text-lg">
+                Painéis interativos para visualização de dados e métricas em tempo real do seu negócio.
+              </p>
+
+              <div class="space-y-4 mb-8">
+                <div class="flex items-start space-x-3">
+                  <div class="w-2 h-2 bg-accent-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <span class="text-gray-700 font-medium">Visualização de dados</span>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <div class="w-2 h-2 bg-accent-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <span class="text-gray-700 font-medium">Relatórios automáticos</span>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <div class="w-2 h-2 bg-accent-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <span class="text-gray-700 font-medium">Métricas em tempo real</span>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <div class="w-2 h-2 bg-accent-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <span class="text-gray-700 font-medium">Integração com planilhas</span>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <div class="w-2 h-2 bg-accent-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <span class="text-gray-700 font-medium">Alertas inteligentes</span>
+                </div>
+              </div>
+
+              <div class="explanation hidden bg-accent-50 p-6 rounded-2xl text-sm text-accent-900 border-l-4 border-accent-500">
+                <strong class="flex items-center mb-3">
+                  <span class="text-lg mr-2">📊</span>
+                  Dados que Falam:
+                </strong>
+                <div class="space-y-3">
+                  <p><strong>Visualização:</strong> Gráficos interativos que transformam números em insights visuais</p>
+                  <p><strong>Tempo real:</strong> Veja vendas, acessos e métricas atualizando automaticamente</p>
+                  <p><strong>Alertas inteligentes:</strong> Seja notificado quando metas são atingidas ou problemas aparecem</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Apps Mobile -->
+          <div class="service-card group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border-t-4 border-highlight-500 relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-br from-highlight-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="relative z-10">
+              <div class="flex items-center mb-8">
+                <div class="p-3 bg-highlight-100 rounded-2xl mr-4 group-hover:scale-110 transition-transform duration-300">
+                  <img src="./assets/logos/sri-yantra.svg" alt="Sri Yantra" class="w-12 h-12" />
+                </div>
+                <h3 class="text-2xl font-bold text-primary-900 group-hover:text-primary-700 transition-colors">Apps Mobile</h3>
+              </div>
+
+              <p class="text-gray-600 mb-8 leading-relaxed text-lg">
+                Aplicativos nativos para Android e iOS com design intuitivo e performance excepcional.
+              </p>
+
+              <div class="space-y-4 mb-8">
+                <div class="flex items-start space-x-3">
+                  <div class="w-2 h-2 bg-highlight-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <span class="text-gray-700 font-medium">Flutter (Android/iOS)</span>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <div class="w-2 h-2 bg-highlight-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <span class="text-gray-700 font-medium">Design nativo</span>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <div class="w-2 h-2 bg-highlight-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <span class="text-gray-700 font-medium">Sincronização offline</span>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <div class="w-2 h-2 bg-highlight-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <span class="text-gray-700 font-medium">Push notifications</span>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <div class="w-2 h-2 bg-highlight-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <span class="text-gray-700 font-medium">Publicação nas stores</span>
+                </div>
+              </div>
+
+              <div class="explanation hidden bg-highlight-50 p-6 rounded-2xl text-sm text-highlight-900 border-l-4 border-highlight-500">
+                <strong class="flex items-center mb-3">
+                  <span class="text-lg mr-2">📱</span>
+                  App Profissional:
+                </strong>
+                <div class="space-y-3">
+                  <p><strong>Flutter:</strong> Um código, dois apps (Android + iOS) com aparência nativa</p>
+                  <p><strong>Offline:</strong> Funciona sem internet, sincroniza quando conecta</p>
+                  <p><strong>Notificações:</strong> Engaje usuários com mensagens direcionadas</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Second Row: 3 cards centered -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
 
           <!-- Automação & Integração -->
-          <div
-            class="service-card bg-white rounded-2xl p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-t-4 border-accent-500 card-glow">
-            <div class="flex items-center mb-6">
-              <img src="./assets/logos/fibonacci-spiral.svg"
-                alt="Espiral Fibonacci" class="w-10 h-10 mr-4" />
-              <h3 class="text-xl font-semibold text-primary-900">Automação &
-                Integração</h3>
-            </div>
+          <div class="service-card group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border-t-4 border-accent-500 relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-br from-accent-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="relative z-10">
+              <div class="flex items-center mb-8">
+                <div class="p-3 bg-accent-100 rounded-2xl mr-4 group-hover:scale-110 transition-transform duration-300">
+                  <img src="./assets/logos/fibonacci-spiral.svg" alt="Espiral Fibonacci" class="w-12 h-12" />
+                </div>
+                <h3 class="text-2xl font-bold text-primary-900 group-hover:text-primary-700 transition-colors">Automação & Integração</h3>
+              </div>
 
-            <p class="text-gray-600 mb-6 leading-relaxed">
-              Conectamos seus sistemas e automatizamos tarefas repetitivas para
-              economizar tempo e recursos.
-            </p>
+              <p class="text-gray-600 mb-8 leading-relaxed text-lg">
+                Conectamos seus sistemas e automatizamos tarefas repetitivas para economizar tempo e recursos.
+              </p>
 
-            <ul class="space-y-3 mb-6">
-              <li class="flex items-start">
-                <span class="text-accent-500 font-bold mr-3 mt-0.5">✓</span>
-                <span class="text-gray-700">Integração entre sistemas</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-accent-500 font-bold mr-3 mt-0.5">✓</span>
-                <span class="text-gray-700">Automação de tarefas</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-accent-500 font-bold mr-3 mt-0.5">✓</span>
-                <span class="text-gray-700">APIs personalizadas</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-accent-500 font-bold mr-3 mt-0.5">✓</span>
-                <span class="text-gray-700">Webhooks e triggers</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-accent-500 font-bold mr-3 mt-0.5">✓</span>
-                <span class="text-gray-700">Testes automatizados</span>
-              </li>
-            </ul>
+              <div class="space-y-4 mb-8">
+                <div class="flex items-start space-x-3">
+                  <div class="w-2 h-2 bg-accent-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <span class="text-gray-700 font-medium">Integração entre sistemas</span>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <div class="w-2 h-2 bg-accent-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <span class="text-gray-700 font-medium">Automação de tarefas</span>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <div class="w-2 h-2 bg-accent-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <span class="text-gray-700 font-medium">APIs personalizadas</span>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <div class="w-2 h-2 bg-accent-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <span class="text-gray-700 font-medium">Webhooks e triggers</span>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <div class="w-2 h-2 bg-accent-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <span class="text-gray-700 font-medium">Testes automatizados</span>
+                </div>
+              </div>
 
-            <div
-              class="explanation hidden bg-accent-50 p-4 rounded-lg text-sm text-accent-900 border-l-4 border-accent-500">
-              <strong>📝 O que você faria na prática:</strong><br><br>
-              • <strong>Integração:</strong> Sistema A fala com Sistema B via
-              API (ex: site manda dados pro
-              WhatsApp)<br><br>
-              • <strong>Automação:</strong>
-              "Quando cliente preenche formulário, enviar email + criar contato no Google"
-              - script Python<br><br>
-              • <strong>API personalizada:</strong> Criar endpoints PHP
-              (/api/clientes) que outros sistemas podem
-              usar<br><br>
-              • <strong>Webhooks:</strong> "Quando pagamento for aprovado,
-              website recebe notificação
-              automaticamente"<br><br>
-              • <strong>Testes:</strong> Scripts que verificam se tudo funciona
-              (Selenium - Claude te ajuda a
-              configurar)
+              <div class="explanation hidden bg-accent-50 p-6 rounded-2xl text-sm text-accent-900 border-l-4 border-accent-500">
+                <strong class="flex items-center mb-3">
+                  <span class="text-lg mr-2">🔄</span>
+                  Automação Inteligente:
+                </strong>
+                <div class="space-y-3">
+                  <p><strong>Integração:</strong> Conectamos seu site com WhatsApp, email, CRM e qualquer sistema que você usa</p>
+                  <p><strong>Automação:</strong> "Cliente preenche formulário → email automático + WhatsApp + cadastro no CRM"</p>
+                  <p><strong>APIs personalizadas:</strong> Endpoints para conectar diferentes sistemas e ferramentas</p>
+                </div>
+              </div>
             </div>
           </div>
 
           <!-- Manutenção & Suporte -->
-          <div
-            class="service-card bg-white rounded-2xl p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-t-4 border-highlight-500 card-glow">
-            <div class="flex items-center mb-6">
-              <img src="./assets/logos/torus-quantum.svg" alt="Torus Quântico"
-                class="w-10 h-10 mr-4" />
-              <h3 class="text-xl font-semibold text-primary-900">Manutenção &
-                Suporte</h3>
-            </div>
+          <div class="service-card group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border-t-4 border-highlight-500 relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-br from-highlight-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="relative z-10">
+              <div class="flex items-center mb-8">
+                <div class="p-3 bg-highlight-100 rounded-2xl mr-4 group-hover:scale-110 transition-transform duration-300">
+                  <img src="./assets/logos/torus-quantum.svg" alt="Torus Quântico" class="w-12 h-12" />
+                </div>
+                <h3 class="text-2xl font-bold text-primary-900 group-hover:text-primary-700 transition-colors">Manutenção & Suporte</h3>
+              </div>
 
-            <p class="text-gray-600 mb-6 leading-relaxed">
-              Mantemos seus sistemas sempre atualizados, seguros e funcionando
-              perfeitamente.
-            </p>
+              <p class="text-gray-600 mb-8 leading-relaxed text-lg">
+                Mantemos seus sistemas sempre atualizados, seguros e funcionando perfeitamente.
+              </p>
 
-            <ul class="space-y-3 mb-6">
-              <li class="flex items-start">
-                <span class="text-highlight-500 font-bold mr-3 mt-0.5">✓</span>
-                <span class="text-gray-700">Monitoramento 24/7</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-highlight-500 font-bold mr-3 mt-0.5">✓</span>
-                <span class="text-gray-700">Backup automático</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-highlight-500 font-bold mr-3 mt-0.5">✓</span>
-                <span class="text-gray-700">Atualizações de segurança</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-highlight-500 font-bold mr-3 mt-0.5">✓</span>
-                <span class="text-gray-700">Suporte técnico</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-highlight-500 font-bold mr-3 mt-0.5">✓</span>
-                <span class="text-gray-700">Otimização contínua</span>
-              </li>
-            </ul>
+              <div class="space-y-4 mb-8">
+                <div class="flex items-start space-x-3">
+                  <div class="w-2 h-2 bg-highlight-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <span class="text-gray-700 font-medium">Monitoramento 24/7</span>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <div class="w-2 h-2 bg-highlight-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <span class="text-gray-700 font-medium">Backup automático</span>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <div class="w-2 h-2 bg-highlight-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <span class="text-gray-700 font-medium">Atualizações de segurança</span>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <div class="w-2 h-2 bg-highlight-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <span class="text-gray-700 font-medium">Suporte técnico</span>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <div class="w-2 h-2 bg-highlight-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <span class="text-gray-700 font-medium">Otimização contínua</span>
+                </div>
+              </div>
 
-            <div
-              class="explanation hidden bg-highlight-50 p-4 rounded-lg text-sm text-highlight-900 border-l-4 border-highlight-500">
-              <strong>📝 O que você faria na prática:</strong><br><br>
-              • <strong>Monitoramento:</strong> UptimeRobot (grátis) te avisa
-              por email se site sair do ar<br><br>
-              • <strong>Backup:</strong> Script que copia banco de dados todo
-              dia para Google Drive
-              automaticamente<br><br>
-              • <strong>Segurança:</strong> Manter PHP/WordPress atualizados,
-              trocar senhas, SSL ativo<br><br>
-              • <strong>Suporte:</strong> WhatsApp dedicado, resolver problemas
-              em 24h<br><br>
-              • <strong>Otimização:</strong> Ver Google Analytics, acelerar
-              partes lentas, melhorar conversão
+              <div class="explanation hidden bg-highlight-50 p-6 rounded-2xl text-sm text-highlight-900 border-l-4 border-highlight-500">
+                <strong class="flex items-center mb-3">
+                  <span class="text-lg mr-2">🛡️</span>
+                  Cuidado Contínuo:
+                </strong>
+                <div class="space-y-3">
+                  <p><strong>Monitoramento:</strong> Sistemas que verificam se tudo está funcionando 24 horas por dia</p>
+                  <p><strong>Backup automático:</strong> Cópias de segurança diárias, você nunca perde dados</p>
+                  <p><strong>Suporte rápido:</strong> WhatsApp dedicado, problemas resolvidos em menos de 24h</p>
+                </div>
+              </div>
             </div>
           </div>
 
           <!-- E-mail Profissional -->
-          <div
-            class="service-card bg-white rounded-2xl p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-t-4 border-accent-500 card-glow">
-            <div class="flex items-center mb-6">
-              <img src="./assets/logos/flower-of-life.svg" alt="Flor da Vida"
-                class="w-10 h-10 mr-4" />
-              <h3 class="text-xl font-semibold text-primary-900">E-mail
-                Profissional</h3>
-            </div>
+          <div class="service-card group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border-t-4 border-accent-500 relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-br from-accent-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="relative z-10">
+              <div class="flex items-center mb-8">
+                <div class="p-3 bg-accent-100 rounded-2xl mr-4 group-hover:scale-110 transition-transform duration-300">
+                  <img src="./assets/logos/flower-of-life.svg" alt="Flor da Vida" class="w-12 h-12" />
+                </div>
+                <h3 class="text-2xl font-bold text-primary-900 group-hover:text-primary-700 transition-colors">E-mail Profissional</h3>
+              </div>
 
-            <p class="text-gray-600 mb-6 leading-relaxed">
-              Contas de e-mail personalizadas com seu domínio para
-              profissionalizar sua comunicação empresarial.
-            </p>
+              <p class="text-gray-600 mb-8 leading-relaxed text-lg">
+                Contas de e-mail personalizadas com seu domínio para profissionalizar sua comunicação empresarial.
+              </p>
 
-            <ul class="space-y-3 mb-6">
-              <li class="flex items-start">
-                <span class="text-accent-500 font-bold mr-3 mt-0.5">✓</span>
-                <span class="text-gray-700">E-mail com seu domínio</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-accent-500 font-bold mr-3 mt-0.5">✓</span>
-                <span class="text-gray-700">Google Workspace</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-accent-500 font-bold mr-3 mt-0.5">✓</span>
-                <span class="text-gray-700">Configuração completa</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-accent-500 font-bold mr-3 mt-0.5">✓</span>
-                <span class="text-gray-700">Treinamento da equipe</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-accent-500 font-bold mr-3 mt-0.5">✓</span>
-                <span class="text-gray-700">Suporte técnico</span>
-              </li>
-            </ul>
+              <div class="space-y-4 mb-8">
+                <div class="flex items-start space-x-3">
+                  <div class="w-2 h-2 bg-accent-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <span class="text-gray-700 font-medium">E-mail com seu domínio</span>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <div class="w-2 h-2 bg-accent-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <span class="text-gray-700 font-medium">Google Workspace</span>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <div class="w-2 h-2 bg-accent-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <span class="text-gray-700 font-medium">Configuração completa</span>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <div class="w-2 h-2 bg-accent-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <span class="text-gray-700 font-medium">Treinamento da equipe</span>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <div class="w-2 h-2 bg-accent-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <span class="text-gray-700 font-medium">Suporte técnico</span>
+                </div>
+              </div>
 
-            <div
-              class="explanation hidden bg-accent-50 p-4 rounded-lg text-sm text-accent-900 border-l-4 border-accent-500">
-              <strong>📝 O que você faria na prática:</strong><br><br>
-              • <strong>Configuração:</strong> Criar joao@empresacliente.com no
-              Google Workspace<br><br>
-              • <strong>Setup completo:</strong> Gmail, Google Drive, Meet -
-              tudo integrado<br><br>
-              • <strong>Treinamento:</strong> Ensinar cliente a usar, migrar
-              e-mails antigos<br><br>
-              • <strong>Manutenção:</strong> Adicionar novos usuários, resolver
-              problemas<br><br>
-              • <strong>Lucro:</strong> Revender Google (R$31) por R$80/mês =
-              R$49 lucro por conta
+              <div class="explanation hidden bg-accent-50 p-6 rounded-2xl text-sm text-accent-900 border-l-4 border-accent-500">
+                <strong class="flex items-center mb-3">
+                  <span class="text-lg mr-2">📧</span>
+                  Email Corporativo:
+                </strong>
+                <div class="space-y-3">
+                  <p><strong>Domínio próprio:</strong> joao@suaempresa.com.br em vez de joao123@gmail.com</p>
+                  <p><strong>Google Workspace:</strong> Gmail profissional + Google Drive + Meet integrados</p>
+                  <p><strong>Setup completo:</strong> Configuramos tudo, você só precisa usar</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Tech Stack Section -->
-    <section
-      class="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-primary-900 via-primary-800 to-primary-900 text-white relative overflow-hidden">
-      <!-- Background Pattern -->
-      <div class="absolute inset-0 opacity-10">
-        <svg class="w-full h-full" viewBox="0 0 100 20"
-          xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <pattern id="grid" width="10" height="10"
-              patternUnits="userSpaceOnUse">
-              <path d="M 10 0 L 0 0 0 10" fill="none" stroke="currentColor"
-                stroke-width="0.5" />
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#grid)" />
-        </svg>
+  <!-- Enhanced Tech Stack Section -->
+  <section id="tecnologias" class="py-20 lg:py-28 bg-gradient-to-br from-primary-900 via-primary-800 to-primary-900 text-white relative overflow-hidden">
+    <!-- Enhanced Background Pattern -->
+    <div class="absolute inset-0 opacity-10">
+      <svg class="w-full h-full" viewBox="0 0 100 20" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
+            <path d="M 10 0 L 0 0 0 10" fill="none" stroke="currentColor" stroke-width="0.5" />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#grid)" />
+      </svg>
+    </div>
+
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="text-center mb-20">
+        <div class="inline-flex items-center bg-white/10 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium mb-4">
+          <span class="w-2 h-2 bg-accent-400 rounded-full mr-2"></span>
+          Tecnologias de Ponta
+        </div>
+        <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
+          Stack <span class="gradient-text">Tecnológica</span>
+        </h2>
+        <p class="text-xl sm:text-2xl text-primary-200 max-w-4xl mx-auto leading-relaxed">
+          Utilizamos as melhores tecnologias do mercado, potencializadas por Inteligência Artificial
+        </p>
       </div>
 
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div class="text-center mb-16">
-          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-            Stack Tecnológica
-          </h2>
-          <p class="text-lg sm:text-xl text-primary-200 max-w-3xl mx-auto">
-            Utilizamos as melhores tecnologias do mercado, potencializadas por
-            IA
+      <div class="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6 lg:gap-8">
+        <!-- Frontend Technologies -->
+        <div class="tech-item group bg-white/5 backdrop-blur-sm p-6 rounded-2xl text-center hover:bg-accent-500/20 hover:-translate-y-3 transition-all duration-500 border border-white/10 hover:border-accent-400/50 hover:shadow-2xl hover:shadow-accent-400/20">
+          <div class="text-4xl lg:text-5xl mb-4 group-hover:scale-110 transition-transform duration-300">🌐</div>
+          <div class="text-sm font-medium text-primary-100 group-hover:text-white transition-colors">HTML5/CSS3</div>
+          <div class="text-xs text-primary-300 mt-1 opacity-0 group-hover:opacity-100 transition-opacity">Frontend Base</div>
+        </div>
+
+        <div class="tech-item group bg-white/5 backdrop-blur-sm p-6 rounded-2xl text-center hover:bg-accent-500/20 hover:-translate-y-3 transition-all duration-500 border border-white/10 hover:border-accent-400/50 hover:shadow-2xl hover:shadow-accent-400/20">
+          <div class="text-4xl lg:text-5xl mb-4 group-hover:scale-110 transition-transform duration-300">🎨</div>
+          <div class="text-sm font-medium text-primary-100 group-hover:text-white transition-colors">TailwindCSS</div>
+          <div class="text-xs text-primary-300 mt-1 opacity-0 group-hover:opacity-100 transition-opacity">Design System</div>
+        </div>
+
+        <div class="tech-item group bg-white/5 backdrop-blur-sm p-6 rounded-2xl text-center hover:bg-accent-500/20 hover:-translate-y-3 transition-all duration-500 border border-white/10 hover:border-accent-400/50 hover:shadow-2xl hover:shadow-accent-400/20">
+          <div class="text-4xl lg:text-5xl mb-4 group-hover:scale-110 transition-transform duration-300">⚛️</div>
+          <div class="text-sm font-medium text-primary-100 group-hover:text-white transition-colors">React</div>
+          <div class="text-xs text-primary-300 mt-1 opacity-0 group-hover:opacity-100 transition-opacity">UI Framework</div>
+        </div>
+
+        <!-- Backend Technologies -->
+        <div class="tech-item group bg-white/5 backdrop-blur-sm p-6 rounded-2xl text-center hover:bg-highlight-500/20 hover:-translate-y-3 transition-all duration-500 border border-white/10 hover:border-highlight-400/50 hover:shadow-2xl hover:shadow-highlight-400/20">
+          <div class="text-4xl lg:text-5xl mb-4 group-hover:scale-110 transition-transform duration-300">🐘</div>
+          <div class="text-sm font-medium text-primary-100 group-hover:text-white transition-colors">PHP</div>
+          <div class="text-xs text-primary-300 mt-1 opacity-0 group-hover:opacity-100 transition-opacity">Backend Robusto</div>
+        </div>
+
+        <div class="tech-item group bg-white/5 backdrop-blur-sm p-6 rounded-2xl text-center hover:bg-accent-500/20 hover:-translate-y-3 transition-all duration-500 border border-white/10 hover:border-accent-400/50 hover:shadow-2xl hover:shadow-accent-400/20">
+          <div class="text-4xl lg:text-5xl mb-4 group-hover:scale-110 transition-transform duration-300">🐍</div>
+          <div class="text-sm font-medium text-primary-100 group-hover:text-white transition-colors">Python</div>
+          <div class="text-xs text-primary-300 mt-1 opacity-0 group-hover:opacity-100 transition-opacity">IA & Automação</div>
+        </div>
+
+        <div class="tech-item group bg-white/5 backdrop-blur-sm p-6 rounded-2xl text-center hover:bg-highlight-500/20 hover:-translate-y-3 transition-all duration-500 border border-white/10 hover:border-highlight-400/50 hover:shadow-2xl hover:shadow-highlight-400/20">
+          <div class="text-4xl lg:text-5xl mb-4 group-hover:scale-110 transition-transform duration-300">🗄️</div>
+          <div class="text-sm font-medium text-primary-100 group-hover:text-white transition-colors">MySQL</div>
+          <div class="text-xs text-primary-300 mt-1 opacity-0 group-hover:opacity-100 transition-opacity">Base de Dados</div>
+        </div>
+
+        <!-- Mobile & Modern -->
+        <div class="tech-item group bg-white/5 backdrop-blur-sm p-6 rounded-2xl text-center hover:bg-accent-500/20 hover:-translate-y-3 transition-all duration-500 border border-white/10 hover:border-accent-400/50 hover:shadow-2xl hover:shadow-accent-400/20">
+          <div class="text-4xl lg:text-5xl mb-4 group-hover:scale-110 transition-transform duration-300">📱</div>
+          <div class="text-sm font-medium text-primary-100 group-hover:text-white transition-colors">Flutter</div>
+          <div class="text-xs text-primary-300 mt-1 opacity-0 group-hover:opacity-100 transition-opacity">Apps Mobile</div>
+        </div>
+
+        <div class="tech-item group bg-white/5 backdrop-blur-sm p-6 rounded-2xl text-center hover:bg-highlight-500/20 hover:-translate-y-3 transition-all duration-500 border border-white/10 hover:border-highlight-400/50 hover:shadow-2xl hover:shadow-highlight-400/20">
+          <div class="text-4xl lg:text-5xl mb-4 group-hover:scale-110 transition-transform duration-300">🔥</div>
+          <div class="text-sm font-medium text-primary-100 group-hover:text-white transition-colors">Firebase</div>
+          <div class="text-xs text-primary-300 mt-1 opacity-0 group-hover:opacity-100 transition-opacity">Real-time DB</div>
+        </div>
+
+        <!-- AI & Modern Tools -->
+        <div class="tech-item group bg-white/5 backdrop-blur-sm p-6 rounded-2xl text-center hover:bg-highlight-500/20 hover:-translate-y-3 transition-all duration-500 border border-white/10 hover:border-highlight-400/50 hover:shadow-2xl hover:shadow-highlight-400/20">
+          <div class="text-4xl lg:text-5xl mb-4 group-hover:scale-110 transition-transform duration-300">🤖</div>
+          <div class="text-sm font-medium text-primary-100 group-hover:text-white transition-colors">OpenAI</div>
+          <div class="text-xs text-primary-300 mt-1 opacity-0 group-hover:opacity-100 transition-opacity">IA Integrada</div>
+        </div>
+
+        <div class="tech-item group bg-white/5 backdrop-blur-sm p-6 rounded-2xl text-center hover:bg-accent-500/20 hover:-translate-y-3 transition-all duration-500 border border-white/10 hover:border-accent-400/50 hover:shadow-2xl hover:shadow-accent-400/20">
+          <div class="text-4xl lg:text-5xl mb-4 group-hover:scale-110 transition-transform duration-300">📧</div>
+          <div class="text-sm font-medium text-primary-100 group-hover:text-white transition-colors">Google Workspace</div>
+          <div class="text-xs text-primary-300 mt-1 opacity-0 group-hover:opacity-100 transition-opacity">Email Profissional</div>
+        </div>
+
+        <div class="tech-item group bg-white/5 backdrop-blur-sm p-6 rounded-2xl text-center hover:bg-accent-500/20 hover:-translate-y-3 transition-all duration-500 border border-white/10 hover:border-accent-400/50 hover:shadow-2xl hover:shadow-accent-400/20">
+          <div class="text-4xl lg:text-5xl mb-4 group-hover:scale-110 transition-transform duration-300">☁️</div>
+          <div class="text-sm font-medium text-primary-100 group-hover:text-white transition-colors">Cloud Hosting</div>
+          <div class="text-xs text-primary-300 mt-1 opacity-0 group-hover:opacity-100 transition-opacity">Infraestrutura</div>
+        </div>
+
+        <!-- Additional modern technologies -->
+        <div class="tech-item group bg-white/5 backdrop-blur-sm p-6 rounded-2xl text-center hover:bg-highlight-500/20 hover:-translate-y-3 transition-all duration-500 border border-white/10 hover:border-highlight-400/50 hover:shadow-2xl hover:shadow-highlight-400/20">
+          <div class="text-4xl lg:text-5xl mb-4 group-hover:scale-110 transition-transform duration-300">🚀</div>
+          <div class="text-sm font-medium text-primary-100 group-hover:text-white transition-colors">Docker</div>
+          <div class="text-xs text-primary-300 mt-1 opacity-0 group-hover:opacity-100 transition-opacity">Containerização</div>
+        </div>
+      </div>
+
+      <!-- Tech Stack Benefits -->
+      <div class="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="text-center p-8 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10">
+          <div class="w-16 h-16 bg-accent-500/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+            <span class="text-3xl">⚡</span>
+          </div>
+          <h3 class="text-2xl font-bold mb-4">Performance Superior</h3>
+          <p class="text-primary-200 leading-relaxed">
+            Sites carregam em menos de 3 segundos, otimizados para todos os dispositivos
           </p>
         </div>
 
-        <div
-          class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 lg:gap-6">
-          <div
-            class="tech-item bg-white/5 backdrop-blur-sm p-6 rounded-xl text-center hover:bg-accent-500/20 hover:-translate-y-2 transition-all duration-300 border border-white/10 hover:border-accent-400/50">
-            <div class="text-3xl lg:text-4xl mb-3">🌐</div>
-            <div class="text-sm font-medium text-primary-100">HTML5/CSS3</div>
+        <div class="text-center p-8 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10">
+          <div class="w-16 h-16 bg-highlight-500/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+            <span class="text-3xl">🔒</span>
           </div>
-
-          <div
-            class="tech-item bg-white/5 backdrop-blur-sm p-6 rounded-xl text-center hover:bg-accent-500/20 hover:-translate-y-2 transition-all duration-300 border border-white/10 hover:border-accent-400/50">
-            <div class="text-3xl lg:text-4xl mb-3">🎨</div>
-            <div class="text-sm font-medium text-primary-100">TailwindCSS</div>
-          </div>
-
-          <div
-            class="tech-item bg-white/5 backdrop-blur-sm p-6 rounded-xl text-center hover:bg-highlight-500/20 hover:-translate-y-2 transition-all duration-300 border border-white/10 hover:border-highlight-400/50">
-            <div class="text-3xl lg:text-4xl mb-3">🐘</div>
-            <div class="text-sm font-medium text-primary-100">PHP</div>
-          </div>
-
-          <div
-            class="tech-item bg-white/5 backdrop-blur-sm p-6 rounded-xl text-center hover:bg-accent-500/20 hover:-translate-y-2 transition-all duration-300 border border-white/10 hover:border-accent-400/50">
-            <div class="text-3xl lg:text-4xl mb-3">🐍</div>
-            <div class="text-sm font-medium text-primary-100">Python</div>
-          </div>
-
-          <div
-            class="tech-item bg-white/5 backdrop-blur-sm p-6 rounded-xl text-center hover:bg-highlight-500/20 hover:-translate-y-2 transition-all duration-300 border border-white/10 hover:border-highlight-400/50">
-            <div class="text-3xl lg:text-4xl mb-3">🗄️</div>
-            <div class="text-sm font-medium text-primary-100">MySQL</div>
-          </div>
-
-          <div
-            class="tech-item bg-white/5 backdrop-blur-sm p-6 rounded-xl text-center hover:bg-accent-500/20 hover:-translate-y-2 transition-all duration-300 border border-white/10 hover:border-accent-400/50">
-            <div class="text-3xl lg:text-4xl mb-3">📱</div>
-            <div class="text-sm font-medium text-primary-100">Flutter</div>
-          </div>
-
-          <div
-            class="tech-item bg-white/5 backdrop-blur-sm p-6 rounded-xl text-center hover:bg-highlight-500/20 hover:-translate-y-2 transition-all duration-300 border border-white/10 hover:border-highlight-400/50">
-            <div class="text-3xl lg:text-4xl mb-3">🔥</div>
-            <div class="text-sm font-medium text-primary-100">Firebase</div>
-          </div>
-
-          <div
-            class="tech-item bg-white/5 backdrop-blur-sm p-6 rounded-xl text-center hover:bg-highlight-500/20 hover:-translate-y-2 transition-all duration-300 border border-white/10 hover:border-highlight-400/50">
-            <div class="text-3xl lg:text-4xl mb-3">🤖</div>
-            <div class="text-sm font-medium text-primary-100">OpenAI</div>
-          </div>
-
-          <div
-            class="tech-item bg-white/5 backdrop-blur-sm p-6 rounded-xl text-center hover:bg-accent-500/20 hover:-translate-y-2 transition-all duration-300 border border-white/10 hover:border-accent-400/50">
-            <div class="text-3xl lg:text-4xl mb-3">📧</div>
-            <div class="text-sm font-medium text-primary-100">Google
-              Workspace</div>
-          </div>
-
-          <div
-            class="tech-item bg-white/5 backdrop-blur-sm p-6 rounded-xl text-center hover:bg-accent-500/20 hover:-translate-y-2 transition-all duration-300 border border-white/10 hover:border-accent-400/50 sm:col-span-3 lg:col-span-1">
-            <div class="text-3xl lg:text-4xl mb-3">☁️</div>
-            <div class="text-sm font-medium text-primary-100">Cloud
-              Hosting</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contato"
-      class="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-primary-800 via-primary-700 to-primary-800 text-white relative overflow-hidden">
-      <!-- Floating Elements -->
-      <div
-        class="absolute top-20 left-20 w-20 h-20 bg-accent-400/10 rounded-full blur-xl animate-float"></div>
-      <div
-        class="absolute top-40 right-32 w-32 h-32 bg-highlight-500/10 rounded-full blur-xl animate-float"
-        style="animation-delay: -1s;"></div>
-      <div
-        class="absolute bottom-20 left-1/4 w-16 h-16 bg-accent-400/10 rounded-full blur-xl animate-float"
-        style="animation-delay: -2s;"></div>
-
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div class="text-center max-w-4xl mx-auto">
-          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-            Pronto para <span class="gradient-text">Digitalizar</span> seu
-            Negócio?
-          </h2>
-          <p class="text-lg sm:text-xl text-primary-200 mb-10 leading-relaxed">
-            Vamos conversar sobre seu projeto e criar a solução ideal para suas
-            necessidades
+          <h3 class="text-2xl font-bold mb-4">Segurança Avançada</h3>
+          <p class="text-primary-200 leading-relaxed">
+            Proteção contra ataques, SSL, backup automático e conformidade LGPD
           </p>
+        </div>
 
-          <a href="mailto:contato@dharmalabs.com.br"
-            class="button-shimmer inline-block bg-gradient-to-r from-accent-500 to-highlight-600 text-white px-10 py-4 rounded-full text-xl font-semibold transition-all duration-300 transform hover:-translate-y-1 hover:shadow-2xl hover:shadow-accent-400/30 mb-12">
-            Falar Conosco
-          </a>
+        <div class="text-center p-8 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10">
+          <div class="w-16 h-16 bg-accent-500/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+            <span class="text-3xl">🎯</span>
+          </div>
+          <h3 class="text-2xl font-bold mb-4">Escalabilidade</h3>
+          <p class="text-primary-200 leading-relaxed">
+            Arquitetura que cresce com seu negócio, sem limitações técnicas
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 lg:gap-8">
-            <div
-              class="flex flex-col sm:flex-row items-center justify-center gap-3 p-6 bg-white/5 backdrop-blur-sm rounded-xl hover:bg-accent-500/10 transition-colors duration-300 border border-white/10 hover:border-accent-400/50">
-              <span class="text-2xl">📧</span>
-              <span
-                class="text-lg font-medium text-center sm:text-left">contato@dharmalabs.com.br</span>
+  <!-- Enhanced Contact Section -->
+  <section id="contato" class="py-20 lg:py-28 bg-gradient-to-br from-primary-800 via-primary-700 to-primary-800 text-white relative overflow-hidden">
+    <!-- Floating Elements -->
+    <div class="absolute top-20 left-20 w-32 h-32 bg-accent-400/10 rounded-full blur-3xl animate-float"></div>
+    <div class="absolute top-40 right-32 w-48 h-48 bg-highlight-500/10 rounded-full blur-3xl animate-float" style="animation-delay: -1s;"></div>
+    <div class="absolute bottom-20 left-1/4 w-24 h-24 bg-accent-400/10 rounded-full blur-3xl animate-float" style="animation-delay: -2s;"></div>
+
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="text-center max-w-5xl mx-auto">
+        <div class="inline-flex items-center bg-white/10 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
+          <span class="w-2 h-2 bg-accent-400 rounded-full mr-2"></span>
+          Vamos Começar Seu Projeto
+        </div>
+
+        <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-8">
+          Pronto para <span class="gradient-text">Digitalizar</span><br class="sm:hidden">
+          seu Negócio?
+        </h2>
+
+        <p class="text-xl sm:text-2xl text-primary-200 mb-12 leading-relaxed max-w-4xl mx-auto">
+          Vamos conversar sobre seu projeto e criar a solução ideal para transformar suas ideias em realidade digital
+        </p>
+
+        <!-- Enhanced CTA Button -->
+        <a href="mailto:contato@dharmalabs.com.br" class="group inline-flex items-center bg-gradient-to-r from-accent-500 to-highlight-600 text-white px-12 py-5 rounded-full text-xl font-semibold transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-accent-400/30 mb-16 relative overflow-hidden">
+          <span class="relative z-10 flex items-center">
+            <svg class="w-6 h-6 mr-3 group-hover:rotate-12 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+            </svg>
+            Falar Conosco Agora
+          </span>
+          <div class="absolute inset-0 bg-gradient-to-r from-accent-400 to-highlight-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </a>
+
+        <!-- Contact Methods Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          <div class="group flex flex-col items-center p-8 bg-white/5 backdrop-blur-sm rounded-2xl hover:bg-accent-500/10 transition-all duration-300 border border-white/10 hover:border-accent-400/50 hover:-translate-y-2">
+            <div class="w-16 h-16 bg-accent-500/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <span class="text-3xl">📧</span>
             </div>
+            <h3 class="text-xl font-bold mb-3">Email Direto</h3>
+            <p class="text-primary-200 text-center mb-4">Resposta em até 2 horas</p>
+            <span class="text-lg font-medium group-hover:text-accent-400 transition-colors">contato@dharmalabs.com.br</span>
+          </div>
 
-            <div
-              class="flex flex-col sm:flex-row items-center justify-center gap-3 p-6 bg-white/5 backdrop-blur-sm rounded-xl hover:bg-highlight-500/10 transition-colors duration-300 border border-white/10 hover:border-highlight-400/50">
-              <span class="text-2xl">📱</span>
-              <span class="text-lg font-medium">(11) 99999-9999</span>
+          <div class="group flex flex-col items-center p-8 bg-white/5 backdrop-blur-sm rounded-2xl hover:bg-highlight-500/10 transition-all duration-300 border border-white/10 hover:border-highlight-400/50 hover:-translate-y-2">
+            <div class="w-16 h-16 bg-highlight-500/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <span class="text-3xl">📱</span>
             </div>
+            <h3 class="text-xl font-bold mb-3">WhatsApp Business</h3>
+            <p class="text-primary-200 text-center mb-4">Atendimento imediato</p>
+            <span class="text-lg font-medium group-hover:text-highlight-400 transition-colors">(11) 99999-9999</span>
+          </div>
 
-            <div
-              class="flex flex-col sm:flex-row items-center justify-center gap-3 p-6 bg-white/5 backdrop-blur-sm rounded-xl hover:bg-accent-500/10 transition-colors duration-300 border border-white/10 hover:border-accent-400/50">
-              <span class="text-2xl">📍</span>
-              <span class="text-lg font-medium">São Paulo, SP</span>
+          <div class="group flex flex-col items-center p-8 bg-white/5 backdrop-blur-sm rounded-2xl hover:bg-accent-500/10 transition-all duration-300 border border-white/10 hover:border-accent-400/50 hover:-translate-y-2">
+            <div class="w-16 h-16 bg-accent-500/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <span class="text-3xl">📍</span>
             </div>
+            <h3 class="text-xl font-bold mb-3">Localização</h3>
+            <p class="text-primary-200 text-center mb-4">Atendimento presencial</p>
+            <span class="text-lg font-medium group-hover:text-accent-400 transition-colors">São Paulo, SP</span>
+          </div>
+        </div>
+
+        <!-- Trust Indicators -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div class="p-6">
+            <div class="text-4xl font-bold text-accent-400 mb-2">+50</div>
+            <div class="text-primary-200 text-sm">Projetos Entregues</div>
+          </div>
+          <div class="p-6">
+            <div class="text-4xl font-bold text-highlight-400 mb-2">24/7</div>
+            <div class="text-primary-200 text-sm">Suporte Técnico</div>
+          </div>
+          <div class="p-6">
+            <div class="text-4xl font-bold text-accent-400 mb-2">100%</div>
+            <div class="text-primary-200 text-sm">Satisfação</div>
+          </div>
+          <div class="p-6">
+            <div class="text-4xl font-bold text-highlight-400 mb-2">2h</div>
+            <div class="text-primary-200 text-sm">Tempo Resposta</div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- JavaScript -->
-    <script>
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      });
-    });
+  <!-- Footer -->
+  <footer class="bg-primary-900 text-white py-12">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between">
+        <div class="flex items-center space-x-3 mb-6 md:mb-0">
+          <img src="./assets/logos/dharma-labs-main.svg" alt="Dharma Labs" class="w-12 h-12" />
+          <div class="flex flex-col">
+            <span class="gradient-text text-2xl font-bold">DHARMA</span>
+            <span class="text-primary-200 text-sm">Labs</span>
+          </div>
+        </div>
 
-    // Intersection Observer for scroll animations
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
+        <div class="text-center md:text-right">
+          <p class="text-primary-200 mb-2">© 2025 Dharma Labs. Todos os direitos reservados.</p>
+          <p class="text-sm text-primary-300">Tecnologia com Propósito • Desenvolvido com <span class="text-accent-400">💜</span></p>
+        </div>
+      </div>
+    </div>
+  </footer>
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
-        }
-      });
-    }, observerOptions);
-
-    // Apply animation to service cards and tech items
-    document.querySelectorAll('.service-card, .tech-item').forEach((item, index) => {
-      item.style.opacity = '0';
-      item.style.transform = 'translateY(30px)';
-      item.style.transition = `all 0.6s ease ${index * 0.1}s`;
-      observer.observe(item);
-    });
-
-    // Animated code lines background
-    function createCodeLine() {
-      const lines = [
-        "function createAwesome() { return magic; }",
-        "const result = AI.enhance(userExperience);",
-        "database.optimize() && performance.boost();",
-        "if (client.happy) { success.achieved(); }",
-        "system.deploy() && monitoring.start();",
-        "const solution = await AI.solve(problem);",
-        "function buildApp() { return innovation; }",
-        "dashboard.render(realTimeData);",
-        "const dharma = new TechSolution();",
-        "ai.collaborate(developer) === future;"
-      ];
-
-      const codeContainer = document.getElementById('codeLines');
-      if (!codeContainer) return;
-
-      const line = document.createElement('div');
-
-      // Configuração da linha de código
-      line.style.cssText = `
-        position: absolute;
-        top: ${Math.random() * 80 + 10}%;
-        left: -100%;
-        color: #4ade80;
-        font-family: 'Courier New', monospace;
-        font-size: 12px;
-        opacity: 0.4;
-        white-space: nowrap;
-        pointer-events: none;
-        z-index: 1;
-        transition: all 12s linear;
-      `;
-
-      line.textContent = lines[Math.random() * lines.length | 0];
-      codeContainer.appendChild(line);
-
-      // Animar da esquerda para direita
-      requestAnimationFrame(() => {
-        line.style.left = '100%';
-      });
-
-      // Remover após animação
-      setTimeout(() => {
-        if (line.parentNode) line.parentNode.removeChild(line);
-      }, 12000);
-    }
-
-    // Inicializar todas as animações
-    document.addEventListener('DOMContentLoaded', function() {
-      console.log('🎨 Iniciando animações...');
-
-      // Código no background
-      setInterval(createCodeLine, 2000);
-
-      // Efeito de hover nos cards
-      const cards = document.querySelectorAll('.service-card');
-      cards.forEach(card => {
-        card.addEventListener('mouseenter', () => {
-          card.style.transform = 'translateY(-8px) scale(1.02)';
-        });
-        card.addEventListener('mouseleave', () => {
-          card.style.transform = 'translateY(0) scale(1)';
-        });
-      });
-
-      console.log('✨ Animações ativadas!');
-    });
-
-    // Toggle technical explanations
-    document.getElementById('toggleExplanations').addEventListener('click', function () {
-      const explanations = document.querySelectorAll('.explanation');
-      const isHidden = explanations[0].classList.contains('hidden');
-
-      explanations.forEach(explanation => {
-        if (isHidden) {
-          explanation.classList.remove('hidden');
-        } else {
-          explanation.classList.add('hidden');
-        }
-      });
-
-      this.textContent = isHidden ?
-        '🙈 Ocultar Explicações Técnicas' :
-        '👁️ Mostrar Explicações Técnicas';
-    });
-
-    // Enhanced scroll effects
-    let lastScrollY = window.scrollY;
-    let ticking = false;
-
-    function updateScrollEffects() {
-      const currentScrollY = window.scrollY;
-      const scrollProgress = Math.min(currentScrollY / (document.documentElement.scrollHeight - window.innerHeight), 1);
-
-      // Add subtle parallax to floating elements
-      const floatingElements = document.querySelectorAll('.animate-float');
-      floatingElements.forEach((element, index) => {
-        const offset = scrollProgress * (50 + index * 20);
-        element.style.transform = `translateY(${offset}px)`;
-      });
-
-      lastScrollY = currentScrollY;
-      ticking = false;
-    }
-
-    window.addEventListener('scroll', () => {
-      if (!ticking) {
-        requestAnimationFrame(updateScrollEffects);
-        ticking = true;
-      }
-    });
-
-    // Preload optimization and performance
-    document.addEventListener('DOMContentLoaded', function () {
-      // Add loaded class for any additional styling
-      setTimeout(() => {
-        document.body.classList.add('loaded');
-      }, 100);
-
-      // Preload critical resources
-      const criticalImages = [
-        // Add any critical images here
-      ];
-
-      criticalImages.forEach(src => {
-        const link = document.createElement('link');
-        link.rel = 'preload';
-        link.as = 'image';
-        link.href = src;
-        document.head.appendChild(link);
-      });
-    });
-
-    // Add keyboard navigation support
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Tab') {
-        // Enhance focus visibility for accessibility
-        document.body.classList.add('keyboard-navigation');
-      }
-    });
-
-    document.addEventListener('mousedown', function () {
-      document.body.classList.remove('keyboard-navigation');
-    });
-
-    // Color theme detection (for future dark mode support)
-    const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    if (prefersDarkMode) {
-      // Future: Apply dark mode adaptations
-      console.log('User prefers dark mode');
-    }
-  </script>
-  </body>
+  <!-- Scripts -->
+  <script src="./assets/js/scripts.js"></script>
+</body>
 
 </html>
