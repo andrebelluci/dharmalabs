@@ -145,21 +145,21 @@
   <body class="font-inter text-gray-900 overflow-x-hidden">
     <!-- Hero Section -->
     <section
-      class="hero-bg min-h-screen flex items-center relative overflow-hidden">
-      <!-- Animated Code Background -->
+      class="hero-bg min-h-screen flex items-center justify-center relative overflow-hidden py-12 sm:py-0">
+      <!-- Animated Code Background - DEBUGGING VERSION -->
       <div
-        class="absolute inset-0 opacity-10 overflow-hidden pointer-events-none">
+        class="absolute inset-0 overflow-hidden pointer-events-none z-0">
         <div id="codeLines" class="absolute inset-0"></div>
       </div>
 
       <!-- Hero Overlay -->
-      <div class="hero-overlay absolute inset-0 opacity-40"></div>
+      <div class="hero-overlay absolute inset-0 opacity-40 z-10"></div>
 
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
         <div
           class="text-center text-white animate-fade-in-up max-w-4xl mx-auto">
           <!-- Logo -->
-          <div class="flex items-center justify-center mb-4 animate-float">
+          <div class="flex items-center justify-center mb-8 sm:mb-4 animate-float">
             <img src="./assets/logos/dharma-labs-main.svg" alt="Dharma Labs"
               class="w-30 h-30 lg:w-40 lg:h-40 mr-2" />
             <div class="flex flex-col items-start gap-1 left">
@@ -170,20 +170,20 @@
 
           <!-- Tagline -->
           <div
-            class="text-accent-400 text-sm sm:text-base lg:text-lg uppercase tracking-widest font-medium mb-6">
+            class="text-accent-400 text-sm sm:text-base lg:text-lg uppercase tracking-widest font-medium mb-8 sm:mb-6">
             Tecnologia com Propósito
           </div>
 
           <!-- Main Headline -->
           <h1
-            class="text-3xl sm:text-4xl lg:text-6xl font-bold mb-6 leading-tight">
+            class="text-3xl sm:text-4xl lg:text-6xl font-bold mb-8 sm:mb-6 leading-tight">
             Transformamos Ideias<br class="hidden sm:block">
             <span class="text-accent-400">em Soluções Digitais</span>
           </h1>
 
           <!-- Description -->
           <p
-            class="text-lg sm:text-xl lg:text-2xl mb-10 opacity-90 leading-relaxed max-w-3xl mx-auto">
+            class="text-lg sm:text-xl lg:text-2xl mb-12 sm:mb-10 opacity-90 leading-relaxed max-w-3xl mx-auto">
             Desenvolvemos sites, sistemas, dashboards e apps,
             unindo visão de negócio com execução técnica de excelência
           </p>
@@ -226,229 +226,234 @@
         </div>
 
         <!-- Services Grid -->
-        <div
-          class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
-          <!-- Site & Landing Pages -->
-          <div
-            class="service-card bg-white rounded-2xl p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-t-4 border-accent-500 card-glow">
-            <div class="flex items-center mb-6">
-              <img src="./assets/logos/flower-of-life.svg" alt="Flor da Vida"
-                class="w-10 h-10 mr-4" />
-              <h3 class="text-xl font-semibold text-primary-900">Sites & Landing
-                Pages</h3>
+        <div class="space-y-8">
+          <!-- Primeira linha: 4 cards -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+            <!-- Site & Landing Pages -->
+            <div
+              class="service-card bg-white rounded-2xl p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-t-4 border-accent-500 card-glow">
+              <div class="flex items-center mb-6">
+                <img src="./assets/logos/flower-of-life.svg" alt="Flor da Vida"
+                  class="w-10 h-10 mr-4" />
+                <h3 class="text-xl font-semibold text-primary-900">Sites & Landing
+                  Pages</h3>
+              </div>
+
+              <p class="text-gray-600 mb-6 leading-relaxed">
+                Sites modernos, responsivos e otimizados para conversão,
+                desenvolvidos com as melhores práticas de UX/UI.
+              </p>
+
+              <ul class="space-y-3 mb-6">
+                <li class="flex items-start">
+                  <span class="text-accent-500 font-bold mr-3 mt-0.5">✓</span>
+                  <span class="text-gray-700">Design responsivo e moderno</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-accent-500 font-bold mr-3 mt-0.5">✓</span>
+                  <span class="text-gray-700">Otimização para SEO</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-accent-500 font-bold mr-3 mt-0.5">✓</span>
+                  <span class="text-gray-700">Integração com analytics</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-accent-500 font-bold mr-3 mt-0.5">✓</span>
+                  <span class="text-gray-700">Performance otimizada</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-accent-500 font-bold mr-3 mt-0.5">✓</span>
+                  <span class="text-gray-700">Hospedagem incluída</span>
+                </li>
+              </ul>
+
+              <div
+                class="explanation hidden bg-primary-50 p-4 rounded-lg text-sm text-primary-900 border-l-4 border-primary-500">
+                <strong>📝 O que você faria na prática:</strong><br><br>
+                • <strong>Design responsivo:</strong> HTML/CSS que funciona em
+                celular, tablet e desktop (Claude te ajuda
+                com o código)<br><br>
+                • <strong>SEO básico:</strong> Títulos corretos, meta
+                descriptions, estrutura HTML semântica (Claude explica
+                cada tag)<br><br>
+                • <strong>Analytics:</strong> Inserir código do Google Analytics
+                no HTML (Cole um snippet de código)<br><br>
+                • <strong>Performance:</strong> Imagens otimizadas, CSS minificado
+                (Ferramentas online fazem isso)<br><br>
+                • <strong>Hospedagem:</strong> Upload para Netlify/Vercel
+                (arrastar pasta e publicar)
+              </div>
             </div>
 
-            <p class="text-gray-600 mb-6 leading-relaxed">
-              Sites modernos, responsivos e otimizados para conversão,
-              desenvolvidos com as melhores práticas de UX/UI.
-            </p>
-
-            <ul class="space-y-3 mb-6">
-              <li class="flex items-start">
-                <span class="text-accent-500 font-bold mr-3 mt-0.5">✓</span>
-                <span class="text-gray-700">Design responsivo e moderno</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-accent-500 font-bold mr-3 mt-0.5">✓</span>
-                <span class="text-gray-700">Otimização para SEO</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-accent-500 font-bold mr-3 mt-0.5">✓</span>
-                <span class="text-gray-700">Integração com analytics</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-accent-500 font-bold mr-3 mt-0.5">✓</span>
-                <span class="text-gray-700">Performance otimizada</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-accent-500 font-bold mr-3 mt-0.5">✓</span>
-                <span class="text-gray-700">Hospedagem incluída</span>
-              </li>
-            </ul>
-
+            <!-- Sistemas Web -->
             <div
-              class="explanation hidden bg-primary-50 p-4 rounded-lg text-sm text-primary-900 border-l-4 border-primary-500">
-              <strong>📝 O que você faria na prática:</strong><br><br>
-              • <strong>Design responsivo:</strong> HTML/CSS que funciona em
-              celular, tablet e desktop (Claude te ajuda
-              com o código)<br><br>
-              • <strong>SEO básico:</strong> Títulos corretos, meta
-              descriptions, estrutura HTML semântica (Claude explica
-              cada tag)<br><br>
-              • <strong>Analytics:</strong> Inserir código do Google Analytics
-              no HTML (Cole um snippet de código)<br><br>
-              • <strong>Performance:</strong> Imagens otimizadas, CSS minificado
-              (Ferramentas online fazem isso)<br><br>
-              • <strong>Hospedagem:</strong> Upload para Netlify/Vercel
-              (arrastar pasta e publicar)
+              class="service-card bg-white rounded-2xl p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-t-4 border-highlight-500 card-glow">
+              <div class="flex items-center mb-6">
+                <img src="./assets/logos/metatron-cube.svg" alt="Cubo de Metatron"
+                  class="w-10 h-10 mr-4" />
+                <h3 class="text-xl font-semibold text-primary-900">Sistemas
+                  Web</h3>
+              </div>
+
+              <p class="text-gray-600 mb-6 leading-relaxed">
+                Sistemas personalizados para automatizar processos e otimizar a
+                gestão do seu negócio.
+              </p>
+
+              <ul class="space-y-3 mb-6">
+                <li class="flex items-start">
+                  <span class="text-highlight-500 font-bold mr-3 mt-0.5">✓</span>
+                  <span class="text-gray-700">CRM personalizado</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-highlight-500 font-bold mr-3 mt-0.5">✓</span>
+                  <span class="text-gray-700">Sistema de gestão</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-highlight-500 font-bold mr-3 mt-0.5">✓</span>
+                  <span class="text-gray-700">Automação de processos</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-highlight-500 font-bold mr-3 mt-0.5">✓</span>
+                  <span class="text-gray-700">Integração com APIs</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-highlight-500 font-bold mr-3 mt-0.5">✓</span>
+                  <span class="text-gray-700">Banco de dados robusto</span>
+                </li>
+              </ul>
+
+              <div
+                class="explanation hidden bg-highlight-50 p-4 rounded-lg text-sm text-highlight-900 border-l-4 border-highlight-500">
+                <strong>📝 O que você faria na prática:</strong><br><br>
+                • <strong>CRM:</strong> Sistema para gerenciar clientes
+                (formulários HTML + PHP + MySQL para salvar
+                dados)<br><br>
+                • <strong>Sistema de gestão:</strong> Lista de produtos, estoque,
+                vendas (tabelas com botões para
+                adicionar/editar)<br><br>
+                • <strong>Automação:</strong> Scripts que enviam email automático
+                quando algo acontece (PHP mail())<br><br>
+                • <strong>APIs:</strong> Conectar com WhatsApp, email, pagamentos
+                (copiar código de documentação + Claude
+                ajusta)<br><br>
+                • <strong>Banco robusto:</strong> MySQL bem estruturado com
+                relacionamentos (Claude cria as tabelas)
+              </div>
+            </div>
+
+            <!-- Dashboards & Analytics -->
+            <div
+              class="service-card bg-white rounded-2xl p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-t-4 border-accent-500 card-glow">
+              <div class="flex items-center mb-6">
+                <img src="./assets/logos/mandala-digital.svg"
+                  alt="Mandala Digital" class="w-10 h-10 mr-4" />
+                <h3 class="text-xl font-semibold text-primary-900">Dashboards &
+                  Analytics</h3>
+              </div>
+
+              <p class="text-gray-600 mb-6 leading-relaxed">
+                Painéis interativos para visualização de dados e métricas em tempo
+                real do seu negócio.
+              </p>
+
+              <ul class="space-y-3 mb-6">
+                <li class="flex items-start">
+                  <span class="text-accent-500 font-bold mr-3 mt-0.5">✓</span>
+                  <span class="text-gray-700">Visualização de dados</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-accent-500 font-bold mr-3 mt-0.5">✓</span>
+                  <span class="text-gray-700">Relatórios automáticos</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-accent-500 font-bold mr-3 mt-0.5">✓</span>
+                  <span class="text-gray-700">Métricas em tempo real</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-accent-500 font-bold mr-3 mt-0.5">✓</span>
+                  <span class="text-gray-700">Integração com planilhas</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-accent-500 font-bold mr-3 mt-0.5">✓</span>
+                  <span class="text-gray-700">Alertas inteligentes</span>
+                </li>
+              </ul>
+
+              <div
+                class="explanation hidden bg-accent-50 p-4 rounded-lg text-sm text-accent-900 border-l-4 border-accent-500">
+                <strong>📝 O que você faria na prática:</strong><br><br>
+                • <strong>Visualização:</strong> Gráficos com Chart.js (biblioteca
+                JavaScript) alimentados por dados do
+                banco<br><br>
+                • <strong>Relatórios:</strong> Scripts PHP que geram relatórios
+                PDF automaticamente todo mês<br><br>
+                • <strong>Tempo real:</strong> Página que atualiza sozinha a cada
+                30 segundos (JavaScript refresh)<br><br>
+                • <strong>Planilhas:</strong> Importar dados do Google Sheets via
+                API (código pronto na
+                documentação)<br><br>
+                • <strong>Alertas:</strong> "Se vendas < 100, enviar email" -
+                script PHP com condições simples </div>
+              </div>
+
+            <!-- Apps Mobile -->
+            <div
+              class="service-card bg-white rounded-2xl p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-t-4 border-highlight-500 card-glow">
+              <div class="flex items-center mb-6">
+                <img src="./assets/logos/sri-yantra.svg" alt="Sri Yantra"
+                  class="w-10 h-10 mr-4" />
+                <h3 class="text-xl font-semibold text-primary-900">Apps
+                  Mobile</h3>
+              </div>
+
+              <p class="text-gray-600 mb-6 leading-relaxed">
+                Aplicativos nativos para Android e iOS com design intuitivo e
+                performance excepcional.
+              </p>
+
+              <ul class="space-y-3 mb-6">
+                <li class="flex items-start">
+                  <span class="text-highlight-500 font-bold mr-3 mt-0.5">✓</span>
+                  <span class="text-gray-700">Flutter (Android/iOS)</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-highlight-500 font-bold mr-3 mt-0.5">✓</span>
+                  <span class="text-gray-700">Design nativo</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-highlight-500 font-bold mr-3 mt-0.5">✓</span>
+                  <span class="text-gray-700">Sincronização offline</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-highlight-500 font-bold mr-3 mt-0.5">✓</span>
+                  <span class="text-gray-700">Push notifications</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-highlight-500 font-bold mr-3 mt-0.5">✓</span>
+                  <span class="text-gray-700">Publicação nas stores</span>
+                </li>
+              </ul>
+
+              <div
+                class="explanation hidden bg-highlight-50 p-4 rounded-lg text-sm text-highlight-900 border-l-4 border-highlight-500">
+                <strong>📝 O que você faria na prática:</strong><br><br>
+                • <strong>Flutter:</strong> Linguagem Dart (similar a JavaScript)
+                - Claude te ensina passo a passo<br><br>
+                • <strong>Design nativo:</strong> Widgets prontos do Flutter que
+                já parecem nativos<br><br>
+                • <strong>Offline:</strong> Salvar dados localmente no SQLite
+                (banco do celular)<br><br>
+                • <strong>Notificações:</strong> Firebase Cloud Messaging
+                (configurar em 30 min seguindo tutorial)<br><br>
+                • <strong>Publicação:</strong> Gerar APK, criar conta
+                desenvolvedor, fazer upload (processo guiado)
+              </div>
             </div>
           </div>
 
-          <!-- Sistemas Web -->
-          <div
-            class="service-card bg-white rounded-2xl p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-t-4 border-highlight-500 card-glow">
-            <div class="flex items-center mb-6">
-              <img src="./assets/logos/metatron-cube.svg" alt="Cubo de Metatron"
-                class="w-10 h-10 mr-4" />
-              <h3 class="text-xl font-semibold text-primary-900">Sistemas
-                Web</h3>
-            </div>
-
-            <p class="text-gray-600 mb-6 leading-relaxed">
-              Sistemas personalizados para automatizar processos e otimizar a
-              gestão do seu negócio.
-            </p>
-
-            <ul class="space-y-3 mb-6">
-              <li class="flex items-start">
-                <span class="text-highlight-500 font-bold mr-3 mt-0.5">✓</span>
-                <span class="text-gray-700">CRM personalizado</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-highlight-500 font-bold mr-3 mt-0.5">✓</span>
-                <span class="text-gray-700">Sistema de gestão</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-highlight-500 font-bold mr-3 mt-0.5">✓</span>
-                <span class="text-gray-700">Automação de processos</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-highlight-500 font-bold mr-3 mt-0.5">✓</span>
-                <span class="text-gray-700">Integração com APIs</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-highlight-500 font-bold mr-3 mt-0.5">✓</span>
-                <span class="text-gray-700">Banco de dados robusto</span>
-              </li>
-            </ul>
-
-            <div
-              class="explanation hidden bg-highlight-50 p-4 rounded-lg text-sm text-highlight-900 border-l-4 border-highlight-500">
-              <strong>📝 O que você faria na prática:</strong><br><br>
-              • <strong>CRM:</strong> Sistema para gerenciar clientes
-              (formulários HTML + PHP + MySQL para salvar
-              dados)<br><br>
-              • <strong>Sistema de gestão:</strong> Lista de produtos, estoque,
-              vendas (tabelas com botões para
-              adicionar/editar)<br><br>
-              • <strong>Automação:</strong> Scripts que enviam email automático
-              quando algo acontece (PHP mail())<br><br>
-              • <strong>APIs:</strong> Conectar com WhatsApp, email, pagamentos
-              (copiar código de documentação + Claude
-              ajusta)<br><br>
-              • <strong>Banco robusto:</strong> MySQL bem estruturado com
-              relacionamentos (Claude cria as tabelas)
-            </div>
-          </div>
-
-          <!-- Dashboards & Analytics -->
-          <div
-            class="service-card bg-white rounded-2xl p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-t-4 border-accent-500 card-glow">
-            <div class="flex items-center mb-6">
-              <img src="./assets/logos/mandala-digital.svg"
-                alt="Mandala Digital" class="w-10 h-10 mr-4" />
-              <h3 class="text-xl font-semibold text-primary-900">Dashboards &
-                Analytics</h3>
-            </div>
-
-            <p class="text-gray-600 mb-6 leading-relaxed">
-              Painéis interativos para visualização de dados e métricas em tempo
-              real do seu negócio.
-            </p>
-
-            <ul class="space-y-3 mb-6">
-              <li class="flex items-start">
-                <span class="text-accent-500 font-bold mr-3 mt-0.5">✓</span>
-                <span class="text-gray-700">Visualização de dados</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-accent-500 font-bold mr-3 mt-0.5">✓</span>
-                <span class="text-gray-700">Relatórios automáticos</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-accent-500 font-bold mr-3 mt-0.5">✓</span>
-                <span class="text-gray-700">Métricas em tempo real</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-accent-500 font-bold mr-3 mt-0.5">✓</span>
-                <span class="text-gray-700">Integração com planilhas</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-accent-500 font-bold mr-3 mt-0.5">✓</span>
-                <span class="text-gray-700">Alertas inteligentes</span>
-              </li>
-            </ul>
-
-            <div
-              class="explanation hidden bg-accent-50 p-4 rounded-lg text-sm text-accent-900 border-l-4 border-accent-500">
-              <strong>📝 O que você faria na prática:</strong><br><br>
-              • <strong>Visualização:</strong> Gráficos com Chart.js (biblioteca
-              JavaScript) alimentados por dados do
-              banco<br><br>
-              • <strong>Relatórios:</strong> Scripts PHP que geram relatórios
-              PDF automaticamente todo mês<br><br>
-              • <strong>Tempo real:</strong> Página que atualiza sozinha a cada
-              30 segundos (JavaScript refresh)<br><br>
-              • <strong>Planilhas:</strong> Importar dados do Google Sheets via
-              API (código pronto na
-              documentação)<br><br>
-              • <strong>Alertas:</strong> "Se vendas < 100, enviar email" -
-              script PHP com condições simples </div>
-          </div>
-
-          <!-- Apps Mobile -->
-          <div
-            class="service-card bg-white rounded-2xl p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-t-4 border-highlight-500 card-glow">
-            <div class="flex items-center mb-6">
-              <img src="./assets/logos/sri-yantra.svg" alt="Sri Yantra"
-                class="w-10 h-10 mr-4" />
-              <h3 class="text-xl font-semibold text-primary-900">Apps
-                Mobile</h3>
-            </div>
-
-            <p class="text-gray-600 mb-6 leading-relaxed">
-              Aplicativos nativos para Android e iOS com design intuitivo e
-              performance excepcional.
-            </p>
-
-            <ul class="space-y-3 mb-6">
-              <li class="flex items-start">
-                <span class="text-highlight-500 font-bold mr-3 mt-0.5">✓</span>
-                <span class="text-gray-700">Flutter (Android/iOS)</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-highlight-500 font-bold mr-3 mt-0.5">✓</span>
-                <span class="text-gray-700">Design nativo</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-highlight-500 font-bold mr-3 mt-0.5">✓</span>
-                <span class="text-gray-700">Sincronização offline</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-highlight-500 font-bold mr-3 mt-0.5">✓</span>
-                <span class="text-gray-700">Push notifications</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-highlight-500 font-bold mr-3 mt-0.5">✓</span>
-                <span class="text-gray-700">Publicação nas stores</span>
-              </li>
-            </ul>
-
-            <div
-              class="explanation hidden bg-highlight-50 p-4 rounded-lg text-sm text-highlight-900 border-l-4 border-highlight-500">
-              <strong>📝 O que você faria na prática:</strong><br><br>
-              • <strong>Flutter:</strong> Linguagem Dart (similar a JavaScript)
-              - Claude te ensina passo a passo<br><br>
-              • <strong>Design nativo:</strong> Widgets prontos do Flutter que
-              já parecem nativos<br><br>
-              • <strong>Offline:</strong> Salvar dados localmente no SQLite
-              (banco do celular)<br><br>
-              • <strong>Notificações:</strong> Firebase Cloud Messaging
-              (configurar em 30 min seguindo tutorial)<br><br>
-              • <strong>Publicação:</strong> Gerar APK, criar conta
-              desenvolvedor, fazer upload (processo guiado)
-            </div>
-          </div>
+          <!-- Segunda linha: 3 cards centralizados -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
 
           <!-- Automação & Integração -->
           <div
@@ -566,7 +571,7 @@
 
           <!-- E-mail Profissional -->
           <div
-            class="service-card bg-white rounded-2xl p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-t-4 border-accent-500 card-glow md:col-span-2 xl:col-span-1">
+            class="service-card bg-white rounded-2xl p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-t-4 border-accent-500 card-glow">
             <div class="flex items-center mb-6">
               <img src="./assets/logos/flower-of-life.svg" alt="Flor da Vida"
                 class="w-10 h-10 mr-4" />
@@ -656,6 +661,12 @@
             class="tech-item bg-white/5 backdrop-blur-sm p-6 rounded-xl text-center hover:bg-accent-500/20 hover:-translate-y-2 transition-all duration-300 border border-white/10 hover:border-accent-400/50">
             <div class="text-3xl lg:text-4xl mb-3">🌐</div>
             <div class="text-sm font-medium text-primary-100">HTML5/CSS3</div>
+          </div>
+
+          <div
+            class="tech-item bg-white/5 backdrop-blur-sm p-6 rounded-xl text-center hover:bg-accent-500/20 hover:-translate-y-2 transition-all duration-300 border border-white/10 hover:border-accent-400/50">
+            <div class="text-3xl lg:text-4xl mb-3">🎨</div>
+            <div class="text-sm font-medium text-primary-100">TailwindCSS</div>
           </div>
 
           <div
@@ -811,14 +822,11 @@
         "database.optimize() && performance.boost();",
         "if (client.happy) { success.achieved(); }",
         "system.deploy() && monitoring.start();",
-        "const solution = await AI.solve(businessProblem);",
-        "function buildApp() { return innovative.design(); }",
+        "const solution = await AI.solve(problem);",
+        "function buildApp() { return innovation; }",
         "dashboard.render(realTimeData);",
-        "system.optimize() && performance.increase();",
-        "const dharma = new TechSolution(purpose);",
-        "ai.collaborate(developer) === innovation;",
-        "client.satisfaction.level = 'maximum';",
-        "project.status = 'delivered_with_love';"
+        "const dharma = new TechSolution();",
+        "ai.collaborate(developer) === future;"
       ];
 
       const codeContainer = document.getElementById('codeLines');
@@ -826,29 +834,55 @@
 
       const line = document.createElement('div');
 
-      line.className = 'absolute text-accent-400 font-mono text-xs opacity-10 pointer-events-none whitespace-nowrap';
-      line.style.top = Math.random() * 80 + 10 + '%';
-      line.style.left = '-200px';
-      line.style.animation = 'codeScroll 15s linear infinite';
-      line.textContent = lines[Math.floor(Math.random() * lines.length)];
+      // Configuração da linha de código
+      line.style.cssText = `
+        position: absolute;
+        top: ${Math.random() * 80 + 10}%;
+        left: -100%;
+        color: #4ade80;
+        font-family: 'Courier New', monospace;
+        font-size: 12px;
+        opacity: 0.4;
+        white-space: nowrap;
+        pointer-events: none;
+        z-index: 1;
+        transition: all 12s linear;
+      `;
 
+      line.textContent = lines[Math.random() * lines.length | 0];
       codeContainer.appendChild(line);
 
-      // Remove line after animation
+      // Animar da esquerda para direita
+      requestAnimationFrame(() => {
+        line.style.left = '100%';
+      });
+
+      // Remover após animação
       setTimeout(() => {
-        if (line.parentNode) {
-          line.parentNode.removeChild(line);
-        }
-      }, 15000);
+        if (line.parentNode) line.parentNode.removeChild(line);
+      }, 12000);
     }
 
-    // Create new code lines periodically
-    setInterval(createCodeLine, 3000);
+    // Inicializar todas as animações
+    document.addEventListener('DOMContentLoaded', function() {
+      console.log('🎨 Iniciando animações...');
 
-    // Initialize with some code lines
-    for (let i = 0; i < 3; i++) {
-      setTimeout(createCodeLine, i * 1000);
-    }
+      // Código no background
+      setInterval(createCodeLine, 2000);
+
+      // Efeito de hover nos cards
+      const cards = document.querySelectorAll('.service-card');
+      cards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+          card.style.transform = 'translateY(-8px) scale(1.02)';
+        });
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = 'translateY(0) scale(1)';
+        });
+      });
+
+      console.log('✨ Animações ativadas!');
+    });
 
     // Toggle technical explanations
     document.getElementById('toggleExplanations').addEventListener('click', function () {
