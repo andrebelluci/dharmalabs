@@ -123,6 +123,9 @@ class DharmaApp {
     // Navbar no scroll
     this.setupNavbarScroll();
 
+    // Botão voltar ao topo
+    this.setupBackToTop();
+
     // Keyboard navigation
     this.setupKeyboardNavigation();
 
@@ -157,10 +160,13 @@ class DharmaApp {
         const targetElement = document.querySelector(targetId);
 
         if (targetElement) {
-          const offsetTop = targetElement.offsetTop - (this.elements.get('navbar')?.offsetHeight || 0);
+          // Calcular offset considerando altura do navbar fixo
+          const navbar = this.elements.get('navbar');
+          const navbarHeight = navbar ? navbar.offsetHeight : 80; // fallback 80px
+          const offsetTop = targetElement.offsetTop - navbarHeight + 80; // 20px extra de margem
 
           window.scrollTo({
-            top: offsetTop,
+            top: Math.max(0, offsetTop), // Não permitir scroll negativo
             behavior: 'smooth'
           });
 
@@ -269,6 +275,97 @@ class DharmaApp {
     }, { passive: true });
   }
 
+  // ===== BOTÃO VOLTAR AO TOPO =====
+  setupBackToTop() {
+    // Criar botão dinamicamente
+    const backToTopBtn = document.createElement('button');
+    backToTopBtn.id = 'backToTop';
+    backToTopBtn.innerHTML = `
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+      </svg>
+    `;
+
+    // Estilos do botão
+    backToTopBtn.className = `
+      fixed bottom-6 right-4 z-50
+      bg-gradient-to-r from-accent-500 to-primary-600
+      text-white p-4 rounded-full shadow-lg
+      transition-all duration-300 transform
+      hover:-translate-y-1 hover:shadow-xl hover:shadow-accent-400/30
+      opacity-0 pointer-events-none
+    `.replace(/\s+/g, ' ').trim();
+
+    // Adicionar ao DOM
+    document.body.appendChild(backToTopBtn);
+
+    // Função para mostrar/esconder o botão
+    let ticking = false;
+    const toggleBackToTop = () => {
+      const scrollY = window.scrollY;
+      const showThreshold = 300;
+
+      if (scrollY > showThreshold) {
+        backToTopBtn.style.opacity = '1';
+        backToTopBtn.style.pointerEvents = 'auto';
+        backToTopBtn.style.transform = 'translateY(0) scale(1)';
+      } else {
+        backToTopBtn.style.opacity = '0';
+        backToTopBtn.style.pointerEvents = 'none';
+        backToTopBtn.style.transform = 'translateY(10px) scale(0.8)';
+      }
+
+      ticking = false;
+    };
+
+    // Event listeners
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(toggleBackToTop);
+        ticking = true;
+      }
+    }, { passive: true });
+
+    // Click do botão
+    backToTopBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      // Scroll suave para o topo
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+
+      // Analytics
+      this.trackEvent('ui', 'back_to_top_click');
+
+      // Efeito visual no clique
+      backToTopBtn.style.transform = 'scale(0.95)';
+      setTimeout(() => {
+        backToTopBtn.style.transform = 'scale(1)';
+      }, 150);
+    });
+
+    // No seu scripts.js (já está implementado algo similar)
+    document.getElementById('logo-scroll-top')?.addEventListener('click', function () {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+
+      // Analytics (opcional)
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'logo_click_scroll_top', {
+          event_category: 'navigation'
+        });
+      }
+    });
+
+    // Salvar referência
+    this.elements.set('backToTop', backToTopBtn);
+  }
+
+
   // ===== EXPLICAÇÕES TÉCNICAS =====
   setupExplanationsToggle() {
     const toggleBtn = this.elements.get('toggleExplanations');
@@ -282,7 +379,7 @@ class DharmaApp {
       this.toggleExplanations(explanationsVisible);
 
       // Atualizar texto do botão
-      const icon = toggleBtn.querySelector('svg');
+      const icon = toggleBtn.querySelector('i');
       const text = toggleBtn.querySelector('span:last-child');
 
       if (explanationsVisible) {
