@@ -188,32 +188,76 @@ body {
   transform: translateY(-1px) scale(1.02);
 }
 
-/* Tech items com animações fluidas */
+/* ===== SEÇÃO DE TECNOLOGIAS ===== */
+
+/* Container padronizado para ícones de tecnologia */
+.tech-item .tech-icon-container {
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Padronizar tamanho das imagens */
+.tech-item img {
+  width: 5rem !important;
+  height: 5rem !important;
+  object-fit: contain;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: drop-shadow(0 4px 8px rgba(255, 255, 255, 0.2)) drop-shadow(0 2px 4px rgba(255, 255, 255, 10));
+}
+
+/* Hover effect nas imagens */
+.tech-item:hover .tech-icon-container {
+  transform: scale(1.1);
+}
+
+.tech-item:hover img {
+  transform: scale(1.05);
+}
+
+/* Garantir alinhamento dos textos */
+.tech-item .tech-title {
+  min-height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.tech-item .tech-subtitle {
+  min-height: 1rem;
+  /* Altura mínima para subtítulos */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Responsividade para mobile */
+@media (max-width: 768px) {
+  .tech-item .tech-icon-container {
+    height: 3rem;
+    /* Menor em mobile */
+  }
+
+  .tech-item img {
+    width: 2.5rem !important;
+    /* 40px em mobile */
+    height: 2.5rem !important;
+    /* 40px em mobile */
+  }
+}
+
+/* Melhorar layout dos cards de tecnologia */
 .tech-item {
-  position: relative;
-  cursor: pointer;
-  transition: all var(--transition-slow);
-  transform-origin: center;
-  will-change: transform;
-}
-
-.tech-item::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: var(--gradient-main);
-  opacity: 0;
-  transition: opacity var(--transition-normal);
-  z-index: -1;
-}
-
-.tech-item:hover::after {
-  opacity: 0.1;
-}
-
-.tech-item:hover {
-  transform: translateY(-8px) scale(1.1) rotate(5deg);
+  min-height: 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem;
 }
 
 /* ===== ANIMAÇÕES CUSTOMIZADAS ===== */
