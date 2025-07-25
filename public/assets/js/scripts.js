@@ -57,7 +57,6 @@ const DHARMA_CONFIG = {
     navbar: '#navbar',
     mobileMenuBtn: '#mobile-menu-btn',
     mobileMenu: '#mobile-menu',
-    toggleExplanations: '#toggleExplanations',
     codeLines: '#codeLines',
     serviceCards: '.service-card',
     techItems: '.tech-item',
@@ -117,9 +116,6 @@ class DharmaApp {
     // Menu mobile
     this.setupMobileMenu();
 
-    // Toggle explicações técnicas
-    this.setupExplanationsToggle();
-
     // Navbar no scroll
     this.setupNavbarScroll();
 
@@ -162,8 +158,8 @@ class DharmaApp {
         if (targetElement) {
           // Calcular offset considerando altura do navbar fixo
           const navbar = this.elements.get('navbar');
-          const navbarHeight = navbar ? navbar.offsetHeight : 80; // fallback 80px
-          const offsetTop = targetElement.offsetTop - navbarHeight + 80; // 20px extra de margem
+          const navbarHeight = navbar ? navbar.offsetHeight : 80;
+          const offsetTop = targetElement.offsetTop - navbarHeight + 150; // Ajuste adicional de 150px
 
           window.scrollTo({
             top: Math.max(0, offsetTop), // Não permitir scroll negativo
@@ -363,62 +359,6 @@ class DharmaApp {
 
     // Salvar referência
     this.elements.set('backToTop', backToTopBtn);
-  }
-
-
-  // ===== EXPLICAÇÕES TÉCNICAS =====
-  setupExplanationsToggle() {
-    const toggleBtn = this.elements.get('toggleExplanations');
-    if (!toggleBtn) return;
-
-    let explanationsVisible = false;
-
-    toggleBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      explanationsVisible = !explanationsVisible;
-      this.toggleExplanations(explanationsVisible);
-
-      // Atualizar texto do botão
-      const icon = toggleBtn.querySelector('i');
-      const text = toggleBtn.querySelector('span:last-child');
-
-      if (explanationsVisible) {
-        if (icon) icon.style.transform = 'rotate(180deg)';
-        if (text) text.textContent = 'Ocultar Explicações';
-        toggleBtn.classList.add('bg-primary-700');
-      } else {
-        if (icon) icon.style.transform = 'rotate(0deg)';
-        if (text) text.textContent = 'Explicações Técnicas';
-        toggleBtn.classList.remove('bg-primary-700');
-      }
-
-      this.trackEvent('ui', 'explanations_toggle', explanationsVisible ? 'show' : 'hide');
-    });
-  }
-
-  toggleExplanations(show) {
-    const explanations = document.querySelectorAll(DHARMA_CONFIG.selectors.explanations);
-
-    explanations.forEach((explanation, index) => {
-      if (show) {
-        explanation.classList.remove('hidden');
-        explanation.style.opacity = '0';
-        explanation.style.transform = 'translateY(10px)';
-
-        setTimeout(() => {
-          explanation.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
-          explanation.style.opacity = '1';
-          explanation.style.transform = 'translateY(0)';
-        }, index * 100);
-      } else {
-        explanation.style.opacity = '0';
-        explanation.style.transform = 'translateY(-10px)';
-
-        setTimeout(() => {
-          explanation.classList.add('hidden');
-        }, 300);
-      }
-    });
   }
 
   // ===== ANIMAÇÕES =====
