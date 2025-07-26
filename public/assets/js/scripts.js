@@ -159,7 +159,7 @@ class DharmaApp {
           // Calcular offset considerando altura do navbar fixo
           const navbar = this.elements.get('navbar');
           const navbarHeight = navbar ? navbar.offsetHeight : 80;
-          const offsetTop = targetElement.offsetTop - navbarHeight + 150; // Ajuste adicional de 150px
+          const offsetTop = targetElement.offsetTop - navbarHeight + 140; // Ajuste adicional de 140px
 
           window.scrollTo({
             top: Math.max(0, offsetTop), // Não permitir scroll negativo
@@ -522,13 +522,13 @@ class DharmaApp {
 
   preloadCriticalResources() {
     const criticalImages = [
-      './assets/logos/dharma-labs-main.svg',
-      './assets/logos/flower-of-life.svg',
-      './assets/logos/metatron-cube.svg',
-      './assets/logos/mandala-digital.svg',
-      './assets/logos/sri-yantra.svg',
-      './assets/logos/fibonacci-spiral.svg',
-      './assets/logos/torus-quantum.svg'
+      './assets/images/logos/dharma-labs-main.svg',
+      './assets/images/logos/flower-of-life.svg',
+      './assets/images/logos/metatron-cube.svg',
+      './assets/images/logos/mandala-digital.svg',
+      './assets/images/logos/sri-yantra.svg',
+      './assets/images/logos/fibonacci-spiral.svg',
+      './assets/images/logos/torus-quantum.svg'
     ];
 
     criticalImages.forEach(src => {

@@ -565,3 +565,38 @@ body {
     color: var(--color-text);
   }
 }
+
+/* ===== INTEGRAÇÃO MODO ESCURO ===== */
+.tech-icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  height: 3rem;
+}
+
+.tech-icon-container img {
+  width: 2.5rem;
+  height: 2.5rem;
+  object-fit: contain;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tech-title {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tech-subtitle {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Mouse tracking para cards */
+.service-card {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Otimizações de performance para modo escuro */
+.dark-mode-transition {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}

@@ -32,6 +32,9 @@
     <link rel="stylesheet" href="./assets/css/tailwind.css">
     <link rel="stylesheet" href="./assets/css/styles.css">
 
+    <!-- Dark Mode Styles -->
+<link rel="stylesheet" href="./assets/css/dark-mode-styles.css">
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -42,7 +45,8 @@
     <!-- Font Awesome -->
     <link rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
+  <!-- Three.js CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r144/three.min.js"></script>
     <!-- TailwindCSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -232,6 +236,8 @@
       plugins: []
     }
   </script>
+
+
 
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -442,7 +448,7 @@
           <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
             <!-- Site & Landing Pages -->
             <div
-              class="service-card group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border-t-4 border-accent-500 relative overflow-hidden">
+              class="service-card group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border-t-4 border-accent-900 relative overflow-hidden">
               <div
                 class="absolute inset-0 bg-gradient-to-br from-accent-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div class="relative z-10">
@@ -1276,6 +1282,9 @@
 
     <!-- Scripts -->
     <script src="./assets/js/scripts.js"></script>
+
+    <!-- Dark Mode Three.js -->
+<script src="./assets/js/dark-mode-three.js"></script>
   </body>
 
 </html>
