@@ -1,6 +1,6 @@
 /**
- * DHARMA LABS - DARK MODE THREE.JS (LOCAL TEXTURES)
- * Com texturas locais e lógica corrigida
+ * DHARMA LABS - DARK MODE THREE.JS (RESPONSIVE)
+ * Com texturas locais e tamanhos responsivos para mobile
  */
 
 class DarkModeThreeJS {
@@ -29,15 +29,52 @@ class DarkModeThreeJS {
       'https://cdn.skypack.dev/three@0.158.0'
     ];
 
-    this.config = {
-      container: null,
-      camera: { fov: 60, near: 0.1, far: 1000, position: { x: 0, y: 0, z: 2.5 } },
-      sun: { radius: 1.3, position: { x: 0, y: 0, z: 0 }, rotation: { x: 0, y: 0.002, z: 0 } },
-      moon: { radius: 1.0, position: { x: 0, y: 0, z: 0 }, rotation: { x: 0, y: 0.008, z: 0 } },
-      transition: { duration: 1800, easing: 'cubic-bezier(0.4, 0, 0.2, 1)' }
-    };
+    // *** CONFIGURAÇÕES RESPONSIVAS ***
+    this.config = this.getResponsiveConfig();
 
     this.loadThreeJS();
+  }
+
+  getResponsiveConfig() {
+    const isMobile = window.innerWidth <= 768;
+    const isTablet = window.innerWidth <= 1024 && window.innerWidth > 768;
+
+    console.log(`📱 Detectado: ${isMobile ? 'Mobile' : isTablet ? 'Tablet' : 'Desktop'} (${window.innerWidth}px)`);
+
+    if (isMobile) {
+      return {
+        container: null,
+        // Mobile: Container e objetos menores
+        containerSize: 70,
+        camera: { fov: 60, near: 0.1, far: 1000, position: { x: 0, y: 0, z: 2.8 } },
+        sun: { radius: 1.2, position: { x: 0, y: 0, z: 0 }, rotation: { x: 0, y: 0.002, z: 0 } },
+        moon: { radius: 1.0, position: { x: 0, y: 0, z: 0 }, rotation: { x: 0, y: 0.008, z: 0 } },
+        transition: { duration: 1500, easing: 'cubic-bezier(0.4, 0, 0.2, 1)' },
+        position: { top: 70, right: 15 }
+      };
+    } else if (isTablet) {
+      return {
+        container: null,
+        // Tablet: Tamanho médio
+        containerSize: 85,
+        camera: { fov: 60, near: 0.1, far: 1000, position: { x: 0, y: 0, z: 2.6 } },
+        sun: { radius: 1.15, position: { x: 0, y: 0, z: 0 }, rotation: { x: 0, y: 0.002, z: 0 } },
+        moon: { radius: 0.9, position: { x: 0, y: 0, z: 0 }, rotation: { x: 0, y: 0.008, z: 0 } },
+        transition: { duration: 1650, easing: 'cubic-bezier(0.4, 0, 0.2, 1)' },
+        position: { top: 70, right: 20 }
+      };
+    } else {
+      return {
+        container: null,
+        // Desktop: Tamanho original
+        containerSize: 100,
+        camera: { fov: 60, near: 0.1, far: 1000, position: { x: 0, y: 0, z: 2.5 } },
+        sun: { radius: 1.3, position: { x: 0, y: 0, z: 0 }, rotation: { x: 0, y: 0.002, z: 0 } },
+        moon: { radius: 1.0, position: { x: 0, y: 0, z: 0 }, rotation: { x: 0, y: 0.008, z: 0 } },
+        transition: { duration: 1800, easing: 'cubic-bezier(0.4, 0, 0.2, 1)' },
+        position: { top: 50, right: 20 }
+      };
+    }
   }
 
   async loadThreeJS() {
@@ -107,9 +144,9 @@ class DarkModeThreeJS {
       this.setupLighting();
       this.setupEventListeners();
       this.startAnimation();
-      this.loadUserPreference(); // Carregar preferência DEPOIS de criar os objetos
+      this.loadUserPreference();
       this.isInitialized = true;
-      console.log('✨ Sistema 3D com texturas locais ativo!');
+      console.log('✨ Sistema 3D responsivo ativo!');
     } catch (error) {
       console.error('❌ Erro no 3D:', error);
       this.initSimple();
@@ -134,12 +171,16 @@ class DarkModeThreeJS {
       </div>
     `;
 
+    const isMobile = window.innerWidth <= 768;
+    const size = isMobile ? 60 : 80;
+    const fontSize = isMobile ? 24 : 32;
+
     const styles = `
       position: fixed;
-      top: 50px;
-      right: 20px;
-      width: 80px;
-      height: 80px;
+      top: ${this.config.position.top}px;
+      right: ${this.config.position.right}px;
+      width: ${size}px;
+      height: ${size}px;
       background: linear-gradient(135deg, #4ade80 0%, #a855f7 50%, #38bdf8 100%);
       border-radius: 50%;
       cursor: pointer;
@@ -157,7 +198,7 @@ class DarkModeThreeJS {
     const content = toggle.querySelector('.toggle-content');
     content.style.cssText = `
       position: relative;
-      font-size: 32px;
+      font-size: ${fontSize}px;
       transition: transform 0.3s ease;
       z-index: 2;
     `;
@@ -175,8 +216,10 @@ class DarkModeThreeJS {
       pointer-events: none;
     `;
 
+    const hoverScale = isMobile ? 1.1 : 1.15;
+
     toggle.addEventListener('mouseenter', () => {
-      toggle.style.transform = 'scale(1.15) rotate(5deg)';
+      toggle.style.transform = `scale(${hoverScale}) rotate(5deg)`;
       toggle.style.boxShadow = this.isDarkMode
         ? '0 8px 30px rgba(168, 85, 247, 0.6)'
         : '0 8px 30px rgba(74, 222, 128, 0.6)';
@@ -218,12 +261,15 @@ class DarkModeThreeJS {
 
     this.config.container = document.createElement('div');
     this.config.container.id = 'darkmode-threejs-container';
+
+    const containerSize = this.config.containerSize;
+
     this.config.container.style.cssText = `
       position: fixed;
-      top: 50px;
-      right: 20px;
-      width: 100px;
-      height: 100px;
+      top: ${this.config.position.top}px;
+      right: ${this.config.position.right}px;
+      width: ${containerSize}px;
+      height: ${containerSize}px;
       z-index: 1000;
       border-radius: 50%;
       overflow: hidden;
@@ -252,13 +298,15 @@ class DarkModeThreeJS {
       alpha: true,
       powerPreference: "high-performance"
     });
-    this.renderer.setSize(100, 100);
+    this.renderer.setSize(containerSize, containerSize);
     this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     this.renderer.setClearColor(0x000000, 0);
     this.renderer.shadowMap.enabled = true;
     this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 
     this.config.container.appendChild(this.renderer.domElement);
+
+    console.log(`📐 Container: ${containerSize}x${containerSize}px, Sol: ${this.config.sun.radius}, Lua: ${this.config.moon.radius}`);
   }
 
   async loadTextures() {
@@ -388,9 +436,13 @@ class DarkModeThreeJS {
   }
 
   createCelestialBodies() {
-    const geometry = new THREE.SphereGeometry(this.config.sun.radius, 64, 64);
+    // Geometria responsiva baseada no dispositivo
+    const isMobile = window.innerWidth <= 768;
+    const segments = isMobile ? 32 : 64; // Menos geometria no mobile para performance
 
-    // *** MATERIAIS SEM EFEITOS DE MODO ESCURO ***
+    const sunGeometry = new THREE.SphereGeometry(this.config.sun.radius, segments, segments);
+    const moonGeometry = new THREE.SphereGeometry(this.config.moon.radius, segments, segments);
+
     // Material do Sol - sempre o mesmo
     const sunMaterial = new THREE.MeshBasicMaterial({
       map: this.sunTexture,
@@ -404,18 +456,17 @@ class DarkModeThreeJS {
     });
 
     // Criar Sol
-    this.sun = new THREE.Mesh(geometry, sunMaterial);
+    this.sun = new THREE.Mesh(sunGeometry, sunMaterial);
     this.sun.position.copy(this.config.sun.position);
     this.scene.add(this.sun);
 
-    // Criar Lua (fora de vista inicialmente)
-    const moonGeometry = new THREE.SphereGeometry(this.config.moon.radius, 64, 64);
+    // Criar Lua
     this.moon = new THREE.Mesh(moonGeometry, moonMaterial);
-    this.moon.position.set(0, 20, 0); // Lua inicia fora de vista
+    this.moon.position.set(0, 20, 0);
     this.scene.add(this.moon);
 
-    console.log('🌞 Sol criado na posição:', this.sun.position);
-    console.log('🌙 Lua criada na posição:', this.moon.position);
+    console.log(`🌞 Sol: raio ${this.config.sun.radius}, geometria ${segments}x${segments}`);
+    console.log(`🌙 Lua: raio ${this.config.moon.radius}, geometria ${segments}x${segments}`);
   }
 
   setupLighting() {
@@ -431,8 +482,11 @@ class DarkModeThreeJS {
       this.toggleDarkMode();
     });
 
+    const isMobile = window.innerWidth <= 768;
+    const hoverScale = isMobile ? 1.2 : 1.3;
+
     this.config.container.addEventListener('mouseenter', () => {
-      this.config.container.style.transform = 'scale(1.3) rotate(8deg)';
+      this.config.container.style.transform = `scale(${hoverScale}) rotate(8deg)`;
       this.config.container.style.boxShadow = this.isDarkMode
         ? '0 10px 50px rgba(168, 85, 247, 0.7)'
         : '0 10px 50px rgba(255, 165, 0, 0.7)';
@@ -443,12 +497,40 @@ class DarkModeThreeJS {
       this.config.container.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.3)';
     });
 
+    // Listener de redimensionamento responsivo
     window.addEventListener('resize', () => {
-      if (this.camera) {
-        this.camera.aspect = 1;
-        this.camera.updateProjectionMatrix();
-      }
+      this.handleResize();
     });
+  }
+
+  handleResize() {
+    if (this.camera) {
+      this.camera.aspect = 1;
+      this.camera.updateProjectionMatrix();
+    }
+
+    // Recriar configuração responsiva se necessário
+    const oldConfig = this.config;
+    const newConfig = this.getResponsiveConfig();
+
+    if (oldConfig.containerSize !== newConfig.containerSize) {
+      console.log('📱 Redimensionamento detectado, atualizando...');
+
+      // Atualizar tamanho do container se necessário
+      if (this.config.container && this.renderer) {
+        this.config = newConfig;
+
+        const containerSize = this.config.containerSize;
+        this.config.container.style.width = `${containerSize}px`;
+        this.config.container.style.height = `${containerSize}px`;
+        this.config.container.style.top = `${this.config.position.top}px`;
+        this.config.container.style.right = `${this.config.position.right}px`;
+
+        this.renderer.setSize(containerSize, containerSize);
+
+        console.log(`📐 Redimensionado para: ${containerSize}x${containerSize}px`);
+      }
+    }
   }
 
   toggleDarkMode() {
@@ -541,15 +623,12 @@ class DarkModeThreeJS {
 
     console.log(`🔍 Preferência detectada: ${shouldBeDark ? 'escuro' : 'claro'} (salvo: ${saved}, sistema: ${systemPrefers})`);
 
-    // *** CORREÇÃO: Posicionar objetos ANTES de aplicar modo ***
     if (shouldBeDark && this.sun && this.moon) {
       console.log('🌙 Configurando posições iniciais para modo escuro');
-      // MODO ESCURO: Sol fora de vista (cima), Lua visível (centro)
       this.sun.position.y = 20;
       this.moon.position.y = 0;
     } else if (this.sun && this.moon) {
       console.log('☀️ Configurando posições iniciais para modo claro');
-      // MODO CLARO: Sol visível (centro), Lua fora de vista (cima)
       this.sun.position.y = 0;
       this.moon.position.y = 20;
     }
@@ -609,7 +688,7 @@ class DarkModeThreeJS {
 }
 
 // Inicialização global
-console.log('🌙 Dharma Labs - Modo Escuro com Texturas Locais carregando...');
+console.log('🌙 Dharma Labs - Modo Escuro Responsivo carregando...');
 
 function initDarkMode() {
   try {
