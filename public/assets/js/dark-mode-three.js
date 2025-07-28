@@ -50,7 +50,7 @@ class DarkModeThreeJS {
         sun: { radius: 1.2, position: { x: 0, y: 0, z: 0 }, rotation: { x: 0, y: 0.002, z: 0 } },
         moon: { radius: 1.0, position: { x: 0, y: 0, z: 0 }, rotation: { x: 0, y: 0.008, z: 0 } },
         transition: { duration: 1500, easing: 'cubic-bezier(0.4, 0, 0.2, 1)' },
-        position: { top: 70, right: 15 }
+        position: { top: 70, right: 3 }
       };
     } else if (isTablet) {
       return {
