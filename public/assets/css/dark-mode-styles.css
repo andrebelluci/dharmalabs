@@ -451,6 +451,11 @@
   text-shadow: 0 0 15px rgba(74, 222, 128, 0.4);
 }
 
+.dark-mode .hero-bg .text-accent-400:hover {
+  color: rgba(0, 24, 56, 0.808) !important;
+  text-shadow: 0 0 15px rgba(74, 222, 128, 0.4);
+}
+
 .dark-mode .hero-bg .text-white {
   color: var(--dark-text-primary) !important;
 }
@@ -485,6 +490,11 @@
 }
 
 /* ===== CARDS DE SERVIÇO MODO ESCURO ===== */
+.dark-mode .bg-primary-100 {
+  background: rgba(74, 222, 128, 0.1) !important;
+  border: 1px solid rgba(74, 222, 128, 0.2);
+}
+
 .dark-mode .service-card {
   background: var(--dark-bg-card) !important;
   border: 1px solid var(--dark-border-primary);

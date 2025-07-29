@@ -33,7 +33,7 @@
     <link rel="stylesheet" href="./assets/css/styles.css">
 
     <!-- Dark Mode Styles -->
-<link rel="stylesheet" href="./assets/css/dark-mode-styles.css">
+    <link rel="stylesheet" href="./assets/css/dark-mode-styles.css">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -45,199 +45,12 @@
     <!-- Font Awesome -->
     <link rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <!-- Three.js CDN -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r144/three.min.js"></script>
+    <!-- Three.js CDN -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r144/three.min.js"></script>
     <!-- TailwindCSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            // Paleta Dharma Labs
-            primary: {
-              50: '#f0f9ff',
-              100: '#e0f2fe',
-              200: '#bae6fd',
-              300: '#7dd3fc',
-              400: '#38bdf8',
-              500: '#0ea5e9',
-              600: '#0284c7',
-              700: '#0369a1', // Azul escuro base
-              800: '#075985',
-              900: '#0c4a6e',
-            },
-            accent: {
-              50: '#f0fdf4',
-              100: '#dcfce7',
-              200: '#bbf7d0',
-              300: '#86efac',
-              400: '#4ade80', // Verde suave detalhes
-              500: '#22c55e',
-              600: '#16a34a',
-              700: '#15803d',
-              800: '#166534',
-              900: '#14532d',
-            },
-            highlight: {
-              50: '#faf5ff',
-              100: '#f3e8ff',
-              200: '#e9d5ff',
-              300: '#d8b4fe',
-              400: '#c084fc',
-              500: '#a855f7', // Roxo destaque
-              600: '#9333ea',
-              700: '#7c3aed',
-              800: '#6b21a8',
-              900: '#581c87',
-            }
-          },
-          fontFamily: {
-            'inter': ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
-          },
-          animation: {
-            'fade-in-up': 'fadeInUp 1s ease-out',
-            'fade-in-down': 'fadeInDown 1s ease-out',
-            'fade-in-left': 'fadeInLeft 1s ease-out',
-            'fade-in-right': 'fadeInRight 1s ease-out',
-            'pulse-soft': 'pulseSoft 2s infinite',
-            'bounce-soft': 'bounceSoft 2s infinite',
-            'code-scroll': 'codeScroll 15s linear infinite',
-            'shimmer': 'shimmer 0.5s ease-in-out',
-            'float': 'float 3s ease-in-out infinite',
-            'rotate-slow': 'rotateSlow 8s linear infinite',
-            'scale-pulse': 'scalePulse 2s ease-in-out infinite',
-          },
-          keyframes: {
-            fadeInUp: {
-              'from': {
-                opacity: '0',
-                transform: 'translateY(50px)'
-              },
-              'to': {
-                opacity: '1',
-                transform: 'translateY(0)'
-              }
-            },
-            fadeInDown: {
-              'from': {
-                opacity: '0',
-                transform: 'translateY(-50px)'
-              },
-              'to': {
-                opacity: '1',
-                transform: 'translateY(0)'
-              }
-            },
-            fadeInLeft: {
-              'from': {
-                opacity: '0',
-                transform: 'translateX(-50px)'
-              },
-              'to': {
-                opacity: '1',
-                transform: 'translateX(0)'
-              }
-            },
-            fadeInRight: {
-              'from': {
-                opacity: '0',
-                transform: 'translateX(50px)'
-              },
-              'to': {
-                opacity: '1',
-                transform: 'translateX(0)'
-              }
-            },
-            pulseSoft: {
-              '0%, 100%': {
-                transform: 'scale(1)',
-                opacity: '1'
-              },
-              '50%': {
-                transform: 'scale(1.05)',
-                opacity: '0.9'
-              }
-            },
-            bounceSoft: {
-              '0%, 100%': {
-                transform: 'translateY(0)',
-                animationTimingFunction: 'cubic-bezier(0.8, 0, 1, 1)'
-              },
-              '50%': {
-                transform: 'translateY(-10px)',
-                animationTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)'
-              }
-            },
-            codeScroll: {
-              '0%': {
-                transform: 'translateX(-100px)',
-                opacity: '0'
-              },
-              '10%': {
-                opacity: '1'
-              },
-              '90%': {
-                opacity: '1'
-              },
-              '100%': {
-                transform: 'translateX(100vw)',
-                opacity: '0'
-              }
-            },
-            shimmer: {
-              '0%': {
-                transform: 'translateX(-100%)'
-              },
-              '100%': {
-                transform: 'translateX(100%)'
-              }
-            },
-            float: {
-              '0%, 100%': {
-                transform: 'translateY(0px)'
-              },
-              '50%': {
-                transform: 'translateY(-20px)'
-              }
-            },
-            rotateSlow: {
-              'from': {
-                transform: 'rotate(0deg)'
-              },
-              'to': {
-                transform: 'rotate(360deg)'
-              }
-            },
-            scalePulse: {
-              '0%, 100%': {
-                transform: 'scale(1)'
-              },
-              '50%': {
-                transform: 'scale(1.1)'
-              }
-            }
-          },
-          backdropBlur: {
-            'xs': '2px',
-          },
-          boxShadow: {
-            'glow': '0 0 20px rgba(74, 222, 128, 0.3)',
-            'glow-lg': '0 0 40px rgba(74, 222, 128, 0.4)',
-            'glow-purple': '0 0 20px rgba(168, 85, 247, 0.3)',
-            'glow-blue': '0 0 20px rgba(3, 105, 161, 0.3)',
-          },
-          screens: {
-            'xs': '475px',
-            '3xl': '1600px',
-          }
-        }
-      },
-      plugins: []
-    }
-  </script>
-
-
+    <script src="./assets/js/tailwind.js"></script>
 
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -1154,7 +967,8 @@
           </p>
 
           <!-- Enhanced CTA Button -->
-          <a href="mailto:contato@dharmalabs.com.br"
+          <a href="mailto:contato@dharmalabs.com.br" target="_blank"
+              rel="noopener noreferrer"
             class="group inline-flex items-center bg-gradient-to-r from-accent-500 to-highlight-600 text-white px-12 py-5 rounded-full text-xl font-semibold transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-accent-400/30 mb-16 relative overflow-hidden">
             <span class="relative z-10 flex items-center">
               <i
@@ -1169,7 +983,8 @@
           <!-- Contact Methods Grid -->
           <div
             class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-            <a href="mailto:contato@dharmalabs.com.br"
+            <a href="mailto:contato@dharmalabs.com.br" target="_blank"
+              rel="noopener noreferrer"
               class="group flex flex-col items-center p-8 bg-white/5 backdrop-blur-sm rounded-2xl hover:bg-accent-500/10 transition-all duration-300 border border-white/10 hover:border-accent-400/50 hover:-translate-y-2">
               <div
                 class="w-16 h-16 bg-accent-500/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
@@ -1183,7 +998,8 @@
                 class="text-sm font-medium group-hover:text-accent-400 transition-colors">contato@dharmalabs.com.br</span>
             </a>
 
-            <a href="https://wa.link/suwtio"
+            <a href="https://wa.link/suwtio" target="_blank"
+              rel="noopener noreferrer"
               class="group flex flex-col items-center p-8 bg-white/5 backdrop-blur-sm rounded-2xl hover:bg-highlight-500/10 transition-all duration-300 border border-white/10 hover:border-highlight-400/50 hover:-translate-y-2 cursor-pointer">
 
               <div
@@ -1216,6 +1032,8 @@
 
             <a
               href="https://www.google.com/maps/place/S%C3%A3o+Jos%C3%A9+do+Rio+Preto,+SP/@-20.816511,-49.4650194,12z/data=!3m1!4b1!4m6!3m5!1s0x94bdad614c2df789:0x8f2fb0f070642c09!8m2!3d-20.8127115!4d-49.376521!16s%2Fg%2F1223kj90?entry=ttu&g_ep=EgoyMDI1MDcyMi4wIKXMDSoASAFQAw%3D%3D"
+              target="_blank"
+              rel="noopener noreferrer"
               class="group flex flex-col items-center p-8 bg-white/5 backdrop-blur-sm rounded-2xl hover:bg-highlight-500/10 transition-all duration-300 border border-white/10 hover:border-highlight-400/50 hover:-translate-y-2">
               <div
                 class="w-16 h-16 bg-highlight-500/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
@@ -1284,7 +1102,7 @@
     <script src="./assets/js/scripts.js"></script>
 
     <!-- Dark Mode Three.js -->
-<script src="./assets/js/dark-mode-three.js"></script>
+    <script src="./assets/js/dark-mode-three.js"></script>
   </body>
 
 </html>
