@@ -1,7 +1,7 @@
 /**
- * DHARMA LABS - MAIN JAVASCRIPT
- * Sistema completo de interações, animações e funcionalidades
- * Focado em performance, acessibilidade e experiência premium
+ * DHARMA LABS - MAIN JAVASCRIPT (REFATORADO)
+ * Sistema modular para todas as páginas
+ * Funcionalidades compartilhadas entre index.html e precos.html
  */
 
 // ===== CONFIGURAÇÕES GLOBAIS =====
@@ -17,7 +17,7 @@ const DHARMA_CONFIG = {
     easing: 'cubic-bezier(0.4, 0, 0.2, 1)'
   },
 
-  // Configurações do código animado
+  // Configurações do código animado (apenas para index)
   codeAnimation: {
     lines: [
       "function createAwesome() { return magic; }",
@@ -64,20 +64,29 @@ const DHARMA_CONFIG = {
   }
 };
 
-// ===== CLASSE PRINCIPAL =====
+// ===== CLASSE PRINCIPAL REFATORADA =====
 class DharmaApp {
   constructor() {
     this.isLoaded = false;
     this.observers = new Map();
     this.timers = new Map();
     this.elements = new Map();
+    this.currentPage = this.detectCurrentPage();
 
     this.init();
   }
 
+  detectCurrentPage() {
+    const path = window.location.pathname;
+    if (path.includes('precos.html') || path.includes('pricing')) {
+      return 'pricing';
+    }
+    return 'index';
+  }
+
   async init() {
     try {
-      console.log('🌸 Iniciando Dharma Labs...');
+      console.log(`🌸 Iniciando Dharma Labs (${this.currentPage})...`);
 
       // Aguardar DOM
       if (document.readyState === 'loading') {
@@ -86,11 +95,15 @@ class DharmaApp {
         });
       }
 
-      // Inicializar componentes
+      // Inicializar componentes base (todas as páginas)
       this.cacheElements();
       this.setupEventListeners();
-      this.initializeComponents();
-      this.startAnimations();
+      this.initializeSharedComponents();
+
+      // Inicializar componentes específicos da página
+      if (this.currentPage === 'index') {
+        this.initializeIndexComponents();
+      }
 
       this.isLoaded = true;
       console.log('✨ Dharma Labs carregado com sucesso!');
@@ -110,44 +123,35 @@ class DharmaApp {
   }
 
   setupEventListeners() {
-    // Scroll suave para links âncora
+    // Funcionalidades compartilhadas
     this.setupSmoothScroll();
-
-    // Menu mobile
     this.setupMobileMenu();
-
-    // Navbar no scroll
     this.setupNavbarScroll();
-
-    // Botão voltar ao topo
     this.setupBackToTop();
-
-    // Keyboard navigation
     this.setupKeyboardNavigation();
-
-    // Performance observers
     this.setupPerformanceObservers();
   }
 
-  initializeComponents() {
-    // Intersection Observer para animações
+  initializeSharedComponents() {
+    // Componentes que funcionam em todas as páginas
     this.setupScrollAnimations();
-
-    // Hover effects para cards
-    this.setupCardEffects();
-
-    // Preload de recursos críticos
     this.preloadCriticalResources();
   }
 
+  initializeIndexComponents() {
+    // Componentes específicos da index.html
+    this.setupCardEffects();
+    this.startAnimations();
+  }
+
   startAnimations() {
-    if (DHARMA_CONFIG.animations.enabled) {
+    if (DHARMA_CONFIG.animations.enabled && this.currentPage === 'index') {
       this.startCodeAnimation();
       this.startFloatingParticles();
     }
   }
 
-  // ===== NAVEGAÇÃO =====
+  // ===== NAVEGAÇÃO (COMPARTILHADA) =====
   setupSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', (e) => {
@@ -159,10 +163,10 @@ class DharmaApp {
           // Calcular offset considerando altura do navbar fixo
           const navbar = this.elements.get('navbar');
           const navbarHeight = navbar ? navbar.offsetHeight : 80;
-          const offsetTop = targetElement.offsetTop - navbarHeight + 140; // Ajuste adicional de 140px
+          const offsetTop = targetElement.offsetTop - navbarHeight + 140;
 
           window.scrollTo({
-            top: Math.max(0, offsetTop), // Não permitir scroll negativo
+            top: Math.max(0, offsetTop),
             behavior: 'smooth'
           });
 
@@ -232,10 +236,13 @@ class DharmaApp {
     }, 300);
   }
 
-  // ===== NAVBAR =====
+  // ===== NAVBAR (COMPARTILHADA) =====
   setupNavbarScroll() {
     const navbar = this.elements.get('navbar');
     if (!navbar) return;
+
+    // Configurar tabs de preços se existir
+    this.setupPricingTabs();
 
     let lastScrollY = window.scrollY;
     let ticking = false;
@@ -246,18 +253,22 @@ class DharmaApp {
 
       if (currentScrollY > scrollThreshold) {
         navbar.classList.add('bg-white/95', 'backdrop-blur-sm', 'border-b', 'border-gray-200');
-        navbar.classList.remove('bg-white/95');
       } else {
         navbar.classList.remove('bg-white/95', 'backdrop-blur-sm', 'border-b', 'border-gray-200');
         navbar.classList.add('bg-white/95');
       }
 
       // Hide/show navbar baseado na direção do scroll
-      if (currentScrollY > lastScrollY && currentScrollY > scrollThreshold * 2) {
+      const isNavbarHidden = currentScrollY > lastScrollY && currentScrollY > scrollThreshold * 2;
+
+      if (isNavbarHidden) {
         navbar.style.transform = 'translateY(-100%)';
       } else {
         navbar.style.transform = 'translateY(0)';
       }
+
+      // Atualizar tabs de preços
+      this.updatePricingTabs(currentScrollY, isNavbarHidden);
 
       lastScrollY = currentScrollY;
       ticking = false;
@@ -271,7 +282,64 @@ class DharmaApp {
     }, { passive: true });
   }
 
-  // ===== BOTÃO VOLTAR AO TOPO =====
+  // ===== SISTEMA DE TABS DE PREÇOS =====
+  setupPricingTabs() {
+    const pricingTabs = document.querySelector('.pricing-navigation-tabs');
+    if (!pricingTabs) return;
+
+    // Salvar referência
+    this.elements.set('pricingTabs', pricingTabs);
+
+    // Configurar estado inicial
+    pricingTabs.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+  }
+
+  updatePricingTabs(currentScrollY, isNavbarHidden) {
+    const pricingTabs = this.elements.get('pricingTabs');
+    if (!pricingTabs) return;
+
+    // Detectar seção de pricing content
+    const pricingSection = document.querySelector('#precos, .pricing-content-section');
+    const pricingContent = document.querySelector('.pricing-content, [class*="py-20"][class*="bg-gray-50"]');
+
+    if (!pricingSection && !pricingContent) return;
+
+    // Calcular posições
+    const targetSection = pricingContent || pricingSection;
+    const sectionTop = targetSection.offsetTop;
+    const sectionBottom = sectionTop + targetSection.offsetHeight;
+    const tabsHeight = pricingTabs.offsetHeight;
+    const navbarHeight = 64; // altura do navbar
+
+    // Determinar se está na seção de pricing
+    const isInPricingSection = currentScrollY >= (sectionTop - navbarHeight - tabsHeight) &&
+      currentScrollY <= (sectionBottom - window.innerHeight * 0.3);
+
+    if (isInPricingSection) {
+      // Mostrar tabs
+      pricingTabs.style.opacity = '1';
+      pricingTabs.style.pointerEvents = 'auto';
+      pricingTabs.style.visibility = 'visible';
+
+      // Posicionar baseado no estado do navbar
+      if (isNavbarHidden) {
+        // Navbar escondido: tabs sobem para o topo
+        pricingTabs.style.top = '0px';
+        pricingTabs.style.zIndex = '45'; // Abaixo do navbar mas acima do conteúdo
+      } else {
+        // Navbar visível: tabs ficam abaixo
+        pricingTabs.style.top = `${navbarHeight}px`;
+        pricingTabs.style.zIndex = '40';
+      }
+    } else {
+      // Fora da seção: esconder tabs
+      pricingTabs.style.opacity = '0';
+      pricingTabs.style.pointerEvents = 'none';
+      pricingTabs.style.visibility = 'hidden';
+    }
+  }
+
+  // ===== BOTÃO VOLTAR AO TOPO (COMPARTILHADO) =====
   setupBackToTop() {
     // Criar botão dinamicamente
     const backToTopBtn = document.createElement('button');
@@ -342,7 +410,7 @@ class DharmaApp {
       }, 150);
     });
 
-    // No seu scripts.js (já está implementado algo similar)
+    // Logo scroll top (se existir)
     document.getElementById('logo-scroll-top')?.addEventListener('click', function () {
       window.scrollTo({
         top: 0,
@@ -361,7 +429,7 @@ class DharmaApp {
     this.elements.set('backToTop', backToTopBtn);
   }
 
-  // ===== ANIMAÇÕES =====
+  // ===== ANIMAÇÕES COMPARTILHADAS =====
   setupScrollAnimations() {
     const observerOptions = {
       threshold: DHARMA_CONFIG.observer.threshold,
@@ -378,7 +446,7 @@ class DharmaApp {
 
     // Observar elementos animáveis
     const animatableElements = document.querySelectorAll(
-      '.service-card, .tech-item, .animate-reveal, [data-animate]'
+      '.service-card, .tech-item, .animate-reveal, [data-animate], .pricing-card'
     );
 
     animatableElements.forEach((element, index) => {
@@ -401,6 +469,7 @@ class DharmaApp {
     element.dataset.animated = 'true';
   }
 
+  // ===== COMPONENTES ESPECÍFICOS DA INDEX =====
   setupCardEffects() {
     const cards = document.querySelectorAll(DHARMA_CONFIG.selectors.serviceCards);
 
@@ -482,7 +551,7 @@ class DharmaApp {
     });
   }
 
-  // ===== ACESSIBILIDADE =====
+  // ===== ACESSIBILIDADE (COMPARTILHADA) =====
   setupKeyboardNavigation() {
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Tab') {
@@ -502,7 +571,7 @@ class DharmaApp {
     });
   }
 
-  // ===== PERFORMANCE =====
+  // ===== PERFORMANCE (COMPARTILHADA) =====
   setupPerformanceObservers() {
     if ('PerformanceObserver' in window) {
       try {
@@ -540,7 +609,7 @@ class DharmaApp {
     });
   }
 
-  // ===== ANALYTICS =====
+  // ===== ANALYTICS (COMPARTILHADA) =====
   trackEvent(category, action, label = '') {
     if (typeof gtag !== 'undefined') {
       gtag('event', action, {
@@ -563,7 +632,7 @@ class DharmaApp {
   }
 }
 
-// ===== INICIALIZAÇÃO =====
+// ===== INICIALIZAÇÃO GLOBAL =====
 let dharmaApp;
 
 // Inicializar quando DOM estiver pronto
@@ -580,7 +649,7 @@ window.DharmaApp = DharmaApp;
 
 // Logs de inicialização
 console.log('🌸 Dharma Labs - Tecnologia com Propósito');
-console.log('⚡ JavaScript carregado com sucesso!');
+console.log('⚡ JavaScript principal carregado com sucesso!');
 
 // Configurar TailwindCSS se disponível
 if (typeof tailwind !== 'undefined') {

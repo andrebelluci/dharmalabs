@@ -1,4 +1,10 @@
-// Dados de preços completos
+/**
+ * DHARMA LABS - PRICING CONFIG
+ * Apenas funcionalidades específicas da página de preços
+ * Funcionalidades compartilhadas foram movidas para scripts.js
+ */
+
+// ===== DADOS DE PREÇOS =====
 const PRICING_DATA = {
   sites: {
     landingPage: {
@@ -410,267 +416,266 @@ const PRICING_DATA = {
   }
 };
 
-// Função para criar cards de preços
-function createPricingCard(service, category) {
-  const borderColors = {
-    sites: service.popular ? 'border-accent-500' : 'border-primary-500',
-    sistemas: service.popular ? 'border-highlight-500' : 'border-primary-500',
-    dashboards: service.popular ? 'border-primary-500' : 'border-accent-500',
-    apps: service.popular ? 'border-accent-500' : 'border-highlight-500',
-    automacao: service.popular ? 'border-accent-500' : 'border-highlight-500',
-    email: service.popular ? 'border-primary-500' : 'border-accent-500',
-    consultoria: service.popular ? 'border-accent-500' : 'border-primary-500'
-  };
-
-  const ctaColors = {
-    sites: service.popular ? 'from-accent-500 to-primary-600' : 'from-primary-500 to-primary-600',
-    sistemas: service.popular ? 'from-highlight-500 to-highlight-600' : 'from-primary-500 to-primary-600',
-    dashboards: service.popular ? 'from-primary-500 to-primary-600' : 'from-accent-500 to-accent-600',
-    apps: service.popular ? 'from-accent-500 to-primary-600' : 'from-highlight-500 to-highlight-600',
-    automacao: service.popular ? 'from-accent-500 to-primary-600' : 'from-highlight-500 to-highlight-600',
-    email: service.popular ? 'from-primary-500 to-primary-600' : 'from-accent-500 to-accent-600',
-    consultoria: service.popular ? 'from-accent-500 to-primary-600' : 'from-primary-500 to-primary-600'
-  };
-
-  return `
-        <div class="pricing-card bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border-t-4 ${borderColors[category]} relative overflow-hidden group">
-          ${service.popular ? `
-            <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
-              <div class="bg-accent-500 text-white px-6 py-2 rounded-full text-sm font-bold">
-                🔥 MAIS POPULAR
-              </div>
-            </div>
-          ` : ''}
-
-          <div class="${service.popular ? 'pt-4' : ''}">
-            <div class="flex items-center mb-6">
-              <div class="p-3 bg-accent-100 rounded-2xl mr-4 group-hover:scale-110 transition-transform duration-300">
-                <img src="./assets/images/logos/${service.icon}" alt="${service.name}" class="w-12 h-12"/>
-              </div>
-              <div>
-                <h3 class="text-2xl font-bold text-primary-900">${service.name}</h3>
-                <p class="text-gray-600">${service.subtitle}</p>
-              </div>
-            </div>
-
-            <div class="mb-8">
-              ${service.development > 0 ? `
-                <div class="flex items-baseline mb-2">
-                  ${service.originalPrice > service.development ? `<span class="text-sm text-gray-500 line-through mr-2">R$ ${service.originalPrice.toLocaleString()}</span>` : ''}
-                  <span class="text-4xl font-bold text-primary-900">R$ ${service.development.toLocaleString()}</span>
-                  <span class="text-gray-600 ml-2">desenvolvimento</span>
-                </div>
-              ` : ''}
-
-              ${service.monthly > 0 ? `
-                <div class="flex items-center text-accent-600 font-semibold">
-                  <span class="text-lg">+ R$ ${service.monthly}/mês</span>
-                  <span class="text-sm ml-2 bg-accent-100 px-2 py-1 rounded">manutenção</span>
-                </div>
-              ` : ''}
-
-              ${service.hourly ? `
-                <div class="flex items-center text-primary-600 font-semibold">
-                  <span class="text-3xl font-bold">R$ ${service.hourly}</span>
-                  <span class="text-lg ml-2">por hora</span>
-                </div>
-              ` : ''}
-            </div>
-
-            <div class="space-y-4 mb-8">
-              ${service.features.map(feature => `
-                <div class="flex items-start space-x-3">
-                  <i class="fas fa-check text-accent-500 mt-1"></i>
-                  <span class="text-gray-700">${feature}</span>
-                </div>
-              `).join('')}
-            </div>
-
-            <a href="https://wa.link/suwtio" class="block w-full bg-gradient-to-r ${ctaColors[category]} text-white text-center py-4 rounded-2xl font-semibold hover:shadow-glow transition-all duration-300 transform hover:-translate-y-1">
-              ${service.development > 0 ? 'Solicitar Orçamento' : 'Contratar Serviço'}
-            </a>
-          </div>
-        </div>
-      `;
-}
-
-// Função para renderizar cards de uma categoria
-function renderCategoryCards(category) {
-  const container = document.getElementById(`${category}-cards`);
-  if (!container || !PRICING_DATA[category]) return;
-
-  const services = Object.values(PRICING_DATA[category]);
-  container.innerHTML = services.map(service => createPricingCard(service, category)).join('');
-}
-
-// Função para alternar tabs
-function setupTabs() {
-  const tabButtons = document.querySelectorAll('.tab-button');
-  const tabContents = document.querySelectorAll('.tab-content');
-
-  tabButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      const targetTab = button.getAttribute('data-tab');
-
-      // Remove active class from all buttons and contents
-      tabButtons.forEach(btn => {
-        btn.classList.remove('active', 'bg-primary-600', 'text-white');
-        btn.classList.add('text-gray-600', 'hover:text-primary-600');
-      });
-      tabContents.forEach(content => {
-        content.classList.remove('active');
-        content.classList.add('hidden');
-      });
-
-      // Add active class to clicked button and corresponding content
-      button.classList.add('active', 'bg-primary-600', 'text-white');
-      button.classList.remove('text-gray-600', 'hover:text-primary-600');
-
-      const targetContent = document.getElementById(`tab-${targetTab}`);
-      if (targetContent) {
-        targetContent.classList.add('active');
-        targetContent.classList.remove('hidden');
-      }
-
-      // Render cards for the active tab if not already rendered
-      renderCategoryCards(targetTab);
-    });
-  });
-
-  // Set initial active tab
-  const initialButton = document.querySelector('.tab-button[data-tab="sites"]');
-  if (initialButton) {
-    initialButton.classList.add('active', 'bg-primary-600', 'text-white');
-    initialButton.classList.remove('text-gray-600', 'hover:text-primary-600');
+// ===== CLASSE PARA GERENCIAR PREÇOS =====
+class PricingManager {
+  constructor() {
+    this.activeTab = 'sites';
+    this.init();
   }
-}
 
-// FAQ Functionality
-function setupFAQ() {
-  const faqButtons = document.querySelectorAll('.faq-button');
+  init() {
+    console.log('💰 Inicializando sistema de preços...');
 
-  faqButtons.forEach(button => {
-    button.addEventListener('click', function () {
-      const faqId = this.getAttribute('data-faq');
-      const content = document.getElementById(`faq-${faqId}`);
-      const icon = this.querySelector('i');
+    // Aguardar DOM se necessário
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', () => {
+        this.setupPricingComponents();
+      });
+    } else {
+      this.setupPricingComponents();
+    }
+  }
 
-      // Close all other FAQs
-      faqButtons.forEach(otherButton => {
-        if (otherButton !== this) {
-          const otherFaqId = otherButton.getAttribute('data-faq');
-          const otherContent = document.getElementById(`faq-${otherFaqId}`);
-          const otherIcon = otherButton.querySelector('i');
+  setupPricingComponents() {
+    this.setupTabs();
+    this.setupFAQ();
+    this.renderInitialCards();
+    this.setupCardAnimations();
 
-          if (otherContent) otherContent.classList.add('hidden');
-          if (otherIcon) otherIcon.style.transform = 'rotate(0deg)';
+    console.log('✨ Sistema de preços ativo!');
+  }
+
+  // ===== SISTEMA DE TABS =====
+  setupTabs() {
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const targetTab = button.getAttribute('data-tab');
+        this.switchTab(targetTab, tabButtons, tabContents);
+      });
+    });
+
+    // Set initial active tab
+    const initialButton = document.querySelector('.tab-button[data-tab="sites"]');
+    if (initialButton) {
+      this.setActiveTab(initialButton);
+    }
+  }
+
+  switchTab(targetTab, tabButtons, tabContents) {
+    // Remove active class from all buttons and contents
+    tabButtons.forEach(btn => {
+      btn.classList.remove('active', 'bg-primary-600', 'text-white');
+      btn.classList.add('text-gray-600', 'hover:text-primary-600');
+    });
+
+    tabContents.forEach(content => {
+      content.classList.remove('active');
+      content.classList.add('hidden');
+    });
+
+    // Add active class to clicked button and corresponding content
+    const activeButton = document.querySelector(`[data-tab="${targetTab}"]`);
+    if (activeButton) {
+      this.setActiveTab(activeButton);
+    }
+
+    const targetContent = document.getElementById(`tab-${targetTab}`);
+    if (targetContent) {
+      targetContent.classList.add('active');
+      targetContent.classList.remove('hidden');
+    }
+
+    // Render cards for the active tab
+    this.renderCategoryCards(targetTab);
+    this.activeTab = targetTab;
+
+    // Re-setup animations for new cards
+    setTimeout(() => {
+      this.setupCardAnimations();
+    }, 100);
+  }
+
+  setActiveTab(button) {
+    button.classList.add('active', 'bg-primary-600', 'text-white');
+    button.classList.remove('text-gray-600', 'hover:text-primary-600');
+  }
+
+  // ===== GERAÇÃO DE CARDS =====
+  createPricingCard(service, category) {
+    const borderColors = {
+      sites: service.popular ? 'border-accent-500' : 'border-primary-500',
+      sistemas: service.popular ? 'border-highlight-500' : 'border-primary-500',
+      dashboards: service.popular ? 'border-primary-500' : 'border-accent-500',
+      apps: service.popular ? 'border-accent-500' : 'border-highlight-500',
+      automacao: service.popular ? 'border-accent-500' : 'border-highlight-500',
+      email: service.popular ? 'border-primary-500' : 'border-accent-500',
+      consultoria: service.popular ? 'border-accent-500' : 'border-primary-500'
+    };
+
+    const ctaColors = {
+      sites: service.popular ? 'from-accent-500 to-primary-600' : 'from-primary-500 to-primary-600',
+      sistemas: service.popular ? 'from-highlight-500 to-highlight-600' : 'from-primary-500 to-primary-600',
+      dashboards: service.popular ? 'from-primary-500 to-primary-600' : 'from-accent-500 to-accent-600',
+      apps: service.popular ? 'from-accent-500 to-primary-600' : 'from-highlight-500 to-highlight-600',
+      automacao: service.popular ? 'from-accent-500 to-primary-600' : 'from-highlight-500 to-highlight-600',
+      email: service.popular ? 'from-primary-500 to-primary-600' : 'from-accent-500 to-accent-600',
+      consultoria: service.popular ? 'from-accent-500 to-primary-600' : 'from-primary-500 to-primary-600'
+    };
+
+    return `
+      <div class="pricing-card bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border-t-4 ${borderColors[category]} relative overflow-hidden group">
+        ${service.popular ? `
+          <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+            <div class="bg-accent-500 text-white px-6 py-2 rounded-full text-sm font-bold">
+              🔥 MAIS POPULAR
+            </div>
+          </div>
+        ` : ''}
+
+        <div class="${service.popular ? 'pt-4' : ''}">
+          <div class="flex items-center mb-6">
+            <div class="p-3 bg-accent-100 rounded-2xl mr-4 group-hover:scale-110 transition-transform duration-300">
+              <img src="./assets/images/logos/${service.icon}" alt="${service.name}" class="w-12 h-12"/>
+            </div>
+            <div>
+              <h3 class="text-2xl font-bold text-primary-900">${service.name}</h3>
+              <p class="text-gray-600">${service.subtitle}</p>
+            </div>
+          </div>
+
+          <div class="mb-8">
+            ${service.development > 0 ? `
+              <div class="flex items-baseline mb-2">
+                ${service.originalPrice > service.development ? `<span class="text-sm text-gray-500 line-through mr-2">R$ ${service.originalPrice.toLocaleString()}</span>` : ''}
+                <span class="text-4xl font-bold text-primary-900">R$ ${service.development.toLocaleString()}</span>
+                <span class="text-gray-600 ml-2">desenvolvimento</span>
+              </div>
+            ` : ''}
+
+            ${service.monthly > 0 ? `
+              <div class="flex items-center text-accent-600 font-semibold">
+                <span class="text-lg">+ R$ ${service.monthly}/mês</span>
+                <span class="text-sm ml-2 bg-accent-100 px-2 py-1 rounded">manutenção</span>
+              </div>
+            ` : ''}
+
+            ${service.hourly ? `
+              <div class="flex items-center text-primary-600 font-semibold">
+                <span class="text-3xl font-bold">R$ ${service.hourly}</span>
+                <span class="text-lg ml-2">por hora</span>
+              </div>
+            ` : ''}
+          </div>
+
+          <div class="space-y-4 mb-8">
+            ${service.features.map(feature => `
+              <div class="flex items-start space-x-3">
+                <i class="fas fa-check text-accent-500 mt-1"></i>
+                <span class="text-gray-700">${feature}</span>
+              </div>
+            `).join('')}
+          </div>
+
+          <a href="https://wa.link/suwtio" target="_blank" rel="noopener noreferrer" class="block w-full bg-gradient-to-r ${ctaColors[category]} text-white text-center py-4 rounded-2xl font-semibold hover:shadow-glow transition-all duration-300 transform hover:-translate-y-1">
+            ${service.development > 0 ? 'Solicitar Orçamento' : 'Contratar Serviço'}
+          </a>
+        </div>
+      </div>
+    `;
+  }
+
+  renderCategoryCards(category) {
+    const container = document.getElementById(`${category}-cards`);
+    if (!container || !PRICING_DATA[category]) return;
+
+    const services = Object.values(PRICING_DATA[category]);
+    container.innerHTML = services.map(service => this.createPricingCard(service, category)).join('');
+  }
+
+  renderInitialCards() {
+    // Render cards for the initial active tab
+    this.renderCategoryCards(this.activeTab);
+  }
+
+  // ===== FAQ FUNCTIONALITY =====
+  setupFAQ() {
+    const faqButtons = document.querySelectorAll('.faq-button');
+
+    faqButtons.forEach(button => {
+      button.addEventListener('click', function () {
+        const faqId = this.getAttribute('data-faq');
+        const content = document.getElementById(`faq-${faqId}`);
+        const icon = this.querySelector('i');
+
+        // Close all other FAQs
+        faqButtons.forEach(otherButton => {
+          if (otherButton !== this) {
+            const otherFaqId = otherButton.getAttribute('data-faq');
+            const otherContent = document.getElementById(`faq-${otherFaqId}`);
+            const otherIcon = otherButton.querySelector('i');
+
+            if (otherContent) otherContent.classList.add('hidden');
+            if (otherIcon) otherIcon.style.transform = 'rotate(0deg)';
+          }
+        });
+
+        // Toggle current FAQ
+        if (content && content.classList.contains('hidden')) {
+          content.classList.remove('hidden');
+          if (icon) icon.style.transform = 'rotate(180deg)';
+        } else if (content) {
+          content.classList.add('hidden');
+          if (icon) icon.style.transform = 'rotate(0deg)';
         }
       });
+    });
+  }
 
-      // Toggle current FAQ
-      if (content && content.classList.contains('hidden')) {
-        content.classList.remove('hidden');
-        if (icon) icon.style.transform = 'rotate(180deg)';
-      } else if (content) {
-        content.classList.add('hidden');
-        if (icon) icon.style.transform = 'rotate(0deg)';
+  // ===== ANIMAÇÕES DE CARDS =====
+  setupCardAnimations() {
+    // Esta função será chamada pelo observer do scripts.js
+    // Apenas garantimos que os cards novos sejam observados
+    if (window.dharmaApp && window.dharmaApp.observers) {
+      const scrollObserver = window.dharmaApp.observers.get('scroll');
+      if (scrollObserver) {
+        document.querySelectorAll('.pricing-card').forEach((card, index) => {
+          if (!card.hasAttribute('data-observed')) {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = `all 0.6s cubic-bezier(0.16, 1, 0.3, 1) ${index * 0.1}s`;
+            card.setAttribute('data-observed', 'true');
+            scrollObserver.observe(card);
+          }
+        });
       }
-    });
-  });
-}
+    }
+  }
 
-// Mobile menu functionality
-function setupMobileMenu() {
-  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
-
-  if (mobileMenuBtn && mobileMenu) {
-    mobileMenuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-
-    // Close menu when clicking on links
-    mobileMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
-      });
-    });
-
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
-      if (!mobileMenuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
-        mobileMenu.classList.add('hidden');
-      }
-    });
+  // ===== UTILITIES =====
+  trackEvent(category, action, label = '') {
+    if (window.dharmaApp && typeof window.dharmaApp.trackEvent === 'function') {
+      window.dharmaApp.trackEvent(category, action, label);
+    }
   }
 }
 
-// Initialize everything
-document.addEventListener('DOMContentLoaded', function () {
-  setupTabs();
-  setupFAQ();
-  setupMobileMenu();
+// ===== INICIALIZAÇÃO =====
+let pricingManager;
 
-  // Render initial cards for sites tab
-  renderCategoryCards('sites');
-
-  // Smooth scroll for anchor links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        const offsetTop = target.offsetTop - 80;
-        window.scrollTo({
-          top: Math.max(0, offsetTop),
-          behavior: 'smooth'
-        });
-      }
-    });
+// Inicializar o sistema de preços
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => {
+    pricingManager = new PricingManager();
   });
+} else {
+  pricingManager = new PricingManager();
+}
 
-  // Animate pricing cards on scroll
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-  };
+// Exportar para uso global
+window.PricingManager = PricingManager;
+window.PRICING_DATA = PRICING_DATA;
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
-      }
-    });
-  }, observerOptions);
-
-  // Function to observe cards
-  const observeCards = () => {
-    document.querySelectorAll('.pricing-card').forEach((card, index) => {
-      if (!card.hasAttribute('data-observed')) {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(30px)';
-        card.style.transition = `all 0.6s cubic-bezier(0.16, 1, 0.3, 1) ${index * 0.1}s`;
-        card.setAttribute('data-observed', 'true');
-        observer.observe(card);
-      }
-    });
-  };
-
-  // Observe initial cards and re-observe when tabs change
-  setTimeout(observeCards, 100);
-
-  document.querySelectorAll('.tab-button').forEach(button => {
-    button.addEventListener('click', () => {
-      setTimeout(observeCards, 200);
-    });
-  });
-
-  // Add some visual feedback for loading
-  console.log('🌸 Dharma Labs - Página de Preços carregada com sucesso!');
-});
-
-// Error handling
-window.addEventListener('error', function (e) {
-  console.error('Erro na página:', e.error);
-});
+console.log('💰 Pricing config carregado!');
