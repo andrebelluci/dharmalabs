@@ -1,681 +1,930 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- SEO Meta Tags -->
-  <title>Preços - Dharma Labs | Desenvolvimento Web com Planos Mensais</title>
-  <meta name="description" content="Conheça nossos preços de desenvolvimento web com modelo recorrente. Sites, sistemas, apps e manutenção com valores acessíveis e pagamento mensal.">
-  <meta name="keywords" content="preços desenvolvimento web, planos mensais, sites baratos, sistemas web, desenvolvimento recorrente, São Paulo">
+    <!-- SEO Meta Tags -->
+    <title>Preços - Dharma Labs | Desenvolvimento Web com Planos Mensais</title>
+    <meta name="description"
+      content="Conheça nossos preços de desenvolvimento web com modelo recorrente. Sites, sistemas, apps e manutenção com valores acessíveis e pagamento mensal.">
+    <meta name="keywords"
+      content="preços desenvolvimento web, planos mensais, sites baratos, sistemas web, desenvolvimento recorrente, São Paulo">
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="./assets/images/logos/dharma-labs-main.svg">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml"
+      href="./assets/images/logos/dharma-labs-main.svg">
 
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="./assets/css/tailwind.css">
-  <link rel="stylesheet" href="./assets/css/styles.css">
-  <link rel="stylesheet" href="./assets/css/dark-mode-styles.css">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="./assets/css/tailwind.css">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="stylesheet" href="./assets/css/dark-mode-styles.css">
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet">
 
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
-  <!-- TailwindCSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="./assets/js/tailwind.js"></script>
-</head>
+    <!-- TailwindCSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./assets/js/tailwind.js"></script>
+  </head>
 
-<body class="font-inter text-gray-900 overflow-x-hidden">
+  <body class="font-inter text-gray-900 overflow-x-hidden">
 
-  <!-- Fixed Header -->
-  <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200 transition-all duration-300 h-16" id="navbar">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-16">
-        <!-- Logo -->
-        <a href="index.html" class="flex items-center space-x-3 cursor-pointer">
-          <img src="./assets/images/logos/dharma-labs-main.svg" alt="Dharma Labs" class="w-20 h-20 -mr-4" />
-          <div class="flex flex-col">
-            <span class="gradient-text text-xl font-bold">DHARMA</span>
-            <span class="text-primary-700 text-sm font-medium">Labs</span>
-          </div>
-        </a>
-
-        <!-- Navigation -->
-        <nav class="hidden md:flex items-center space-x-8">
-          <a href="index.html" class="text-gray-700 hover:text-primary-700 font-medium transition-colors">Home</a>
-          <a href="#precos" class="text-gray-700 hover:text-primary-700 font-medium transition-colors">Preços</a>
-          <a href="index.html#contato" class="text-gray-700 hover:text-primary-700 font-medium transition-colors">Contato</a>
-          <a href="#contato" class="bg-gradient-to-r from-accent-500 to-primary-600 text-white px-4 py-2 rounded-full text-sm font-semibold hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5">
-            Orçamento
+    <!-- Fixed Header -->
+    <header
+      class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200 transition-all duration-300 h-16"
+      id="navbar">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <!-- Logo -->
+          <a href="index.html"
+            class="flex items-center space-x-3 cursor-pointer">
+            <img src="./assets/images/logos/dharma-labs-main.svg"
+              alt="Dharma Labs" class="w-20 h-20 -mr-4" />
+            <div class="flex flex-col">
+              <span class="gradient-text text-xl font-bold">DHARMA</span>
+              <span class="text-primary-700 text-sm font-medium">Labs</span>
+            </div>
           </a>
-        </nav>
 
-        <!-- Mobile Menu Button -->
-        <button class="md:hidden text-gray-700 hover:text-primary-700" id="mobile-menu-btn">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          <!-- Navigation -->
+          <nav class="hidden md:flex items-center space-x-8">
+            <a href="index.html"
+              class="text-gray-700 hover:text-primary-700 font-medium transition-colors">Home</a>
+            <a href="#precos"
+              class="text-gray-700 hover:text-primary-700 font-medium transition-colors">Preços</a>
+            <a href="index.html#contato"
+              class="text-gray-700 hover:text-primary-700 font-medium transition-colors">Contato</a>
+            <a href="#contato"
+              class="bg-gradient-to-r from-accent-500 to-primary-600 text-white px-4 py-2 rounded-full text-sm font-semibold hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5">
+              Orçamento
+            </a>
+          </nav>
+
+          <!-- Mobile Menu Button -->
+          <button class="md:hidden text-gray-700 hover:text-primary-700"
+            id="mobile-menu-btn">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor"
+              viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden" id="mobile-menu">
+          <div
+            class="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-gray-200">
+            <a href="index.html"
+              class="block px-3 py-2 text-gray-700 hover:text-primary-700 font-medium text-center">Home</a>
+            <a href="#precos"
+              class="block px-3 py-2 text-gray-700 hover:text-primary-700 font-medium text-center">Preços</a>
+            <a href="index.html#contato"
+              class="block px-3 py-2 text-gray-700 hover:text-primary-700 font-medium text-center">Contato</a>
+            <a href="#contato"
+              class="block mx-3 mt-4 bg-gradient-to-r from-accent-500 to-primary-600 text-white px-4 py-2 rounded-full text-sm font-semibold text-center">
+              Solicitar Orçamento
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="precos"
+      class="hero-bg min-h-screen flex items-center justify-center relative overflow-hidden pt-16">
+      <!-- Animated Background -->
+      <div class="absolute inset-0 overflow-hidden pointer-events-none z-0">
+        <div class="absolute inset-0 opacity-20">
+          <svg class="w-full h-full" viewBox="0 0 100 20"
+            xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="pricing-grid" width="10" height="10"
+                patternUnits="userSpaceOnUse">
+                <path d="M 10 0 L 0 0 0 10" fill="none" stroke="currentColor"
+                  stroke-width="0.5" />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#pricing-grid)" />
           </svg>
-        </button>
-      </div>
-
-      <!-- Mobile Menu -->
-      <div class="md:hidden hidden" id="mobile-menu">
-        <div class="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-gray-200">
-          <a href="index.html" class="block px-3 py-2 text-gray-700 hover:text-primary-700 font-medium text-center">Home</a>
-          <a href="#precos" class="block px-3 py-2 text-gray-700 hover:text-primary-700 font-medium text-center">Preços</a>
-          <a href="index.html#contato" class="block px-3 py-2 text-gray-700 hover:text-primary-700 font-medium text-center">Contato</a>
-          <a href="#contato" class="block mx-3 mt-4 bg-gradient-to-r from-accent-500 to-primary-600 text-white px-4 py-2 rounded-full text-sm font-semibold text-center">
-            Solicitar Orçamento
-          </a>
         </div>
       </div>
-    </div>
-  </header>
 
-  <!-- Hero Section -->
-  <section id="precos" class="hero-bg min-h-screen flex items-center justify-center relative overflow-hidden pt-16">
-    <!-- Animated Background -->
-    <div class="absolute inset-0 overflow-hidden pointer-events-none z-0">
-      <div class="absolute inset-0 opacity-20">
-        <svg class="w-full h-full" viewBox="0 0 100 20" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <pattern id="pricing-grid" width="10" height="10" patternUnits="userSpaceOnUse">
-              <path d="M 10 0 L 0 0 0 10" fill="none" stroke="currentColor" stroke-width="0.5"/>
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#pricing-grid)"/>
-        </svg>
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
+        <div
+          class="text-center text-white animate-fade-in-up max-w-5xl mx-auto mb-16">
+          <!-- Header -->
+          <div
+            class="inline-flex items-center bg-white/10 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
+            <span class="w-2 h-2 bg-accent-400 rounded-full mr-2"></span>
+            Modelo Revolucionário
+          </div>
+
+          <h1
+            class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-8 leading-tight">
+            Preços que <span class="text-accent-400">Cabem no seu Bolso</span>
+          </h1>
+
+          <p
+            class="text-xl sm:text-2xl lg:text-3xl mb-4 opacity-90 leading-relaxed max-w-4xl mx-auto">
+            🚀 Desenvolvimento + Mensalidade Ultra Baixa
+          </p>
+          <p
+            class="text-lg sm:text-xl lg:text-2xl mb-8 opacity-80 leading-relaxed max-w-3xl mx-auto">
+            Pague apenas para desenvolver, depois só R$ 19-249/mês para manter
+            tudo funcionando
+          </p>
+
+          <!-- Diferencial único -->
+          <div
+            class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mb-12 border border-white/20">
+            <h3 class="text-2xl font-bold text-accent-400 mb-4">🎯 EXCLUSIVO
+              DHARMA LABS</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+              <div class="flex items-start space-x-3">
+                <span class="text-accent-400 text-2xl">💰</span>
+                <div>
+                  <h4 class="font-semibold text-lg">Desenvolvimento
+                    Acessível</h4>
+                  <p class="text-sm opacity-80">Até 50% mais barato que
+                    concorrência</p>
+                </div>
+              </div>
+              <div class="flex items-start space-x-3">
+                <span class="text-accent-400 text-2xl">🔄</span>
+                <div>
+                  <h4 class="font-semibold text-lg">Mensalidade Baixíssima</h4>
+                  <p class="text-sm opacity-80">A partir de R$ 19/mês para
+                    manter</p>
+                </div>
+              </div>
+              <div class="flex items-start space-x-3">
+                <span class="text-accent-400 text-2xl">⚡</span>
+                <div>
+                  <h4 class="font-semibold text-lg">Suporte Vitalício</h4>
+                  <p class="text-sm opacity-80">Enquanto pagar, funcionará</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
-      <div class="text-center text-white animate-fade-in-up max-w-5xl mx-auto mb-16">
-        <!-- Header -->
-        <div class="inline-flex items-center bg-white/10 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
-          <span class="w-2 h-2 bg-accent-400 rounded-full mr-2"></span>
-          Modelo Revolucionário
+    <!-- Navigation Tabs -->
+    <section
+      class="pricing-navigation-tabs sticky top-0 z-40 bg-white/95 backdrop-blur-sm border-b border-gray-200 shadow-sm">
+      <div class="px-4 py-3">
+        <!-- Container com scroll horizontal -->
+        <div class="relative ">
+          <div
+            id="tabs-container"
+            class="tabs-scroll flex gap-2 md:justify-center overflow-x-auto scrollbar-thin smooth-scroll snap-x pb-2"
+            style="scrollbar-width: thin;">
+            <button class="tab-button active snap-start" data-tab="sites">
+              <i class="fas fa-globe mr-1 text-sm"></i>
+              <span class="whitespace-nowrap">Sites</span>
+            </button>
+            <button class="tab-button snap-start" data-tab="sistemas">
+              <i class="fas fa-cogs mr-1 text-sm"></i>
+              <span class="whitespace-nowrap">Sistemas</span>
+            </button>
+            <button class="tab-button snap-start" data-tab="dashboards">
+              <i class="fas fa-chart-bar mr-1 text-sm"></i>
+              <span class="whitespace-nowrap">Dashboards</span>
+            </button>
+            <button class="tab-button snap-start" data-tab="apps">
+              <i class="fas fa-mobile-alt mr-1 text-sm"></i>
+              <span class="whitespace-nowrap">Apps</span>
+            </button>
+            <button class="tab-button snap-start" data-tab="automacao">
+              <i class="fas fa-robot mr-1 text-sm"></i>
+              <span class="whitespace-nowrap">Automação</span>
+            </button>
+            <button class="tab-button snap-start" data-tab="email">
+              <i class="fas fa-envelope mr-1 text-sm"></i>
+              <span class="whitespace-nowrap">Email</span>
+            </button>
+            <button class="tab-button snap-start" data-tab="consultoria">
+              <i class="fas fa-handshake mr-1 text-sm"></i>
+              <span class="whitespace-nowrap">Consultoria</span>
+            </button>
+          </div>
+
+          <!-- Indicador da tab ativa -->
+          <div id="tab-indicator" class="tab-indicator"
+            style="width: 60px; left: 16px;"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Content -->
+    <section class="pricing-content-section py-20 lg:py-28 bg-gray-50">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Sites Tab -->
+        <div id="tab-sites" class="tab-content active">
+          <div class="text-center mb-8">
+            <div
+              class="inline-flex items-center bg-accent-100 text-accent-700 px-3 py-1 rounded-full text-sm font-medium mb-4">
+              <i class="fas fa-globe mr-2"></i>
+              Sites & Landing Pages
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-bold text-primary-900 mb-4">
+              Sites <span class="gradient-text">Profissionais</span>
+            </h2>
+            <p class="text-lg text-gray-600 leading-relaxed px-2">
+              Do básico ao completo, todos com design moderno e otimização SEO
+            </p>
+          </div>
+
+          <div class="relative">
+            <div
+              id="sites-cards"
+              class="cards-scroll flex gap-4 overflow-x-auto pb-4 snap-x smooth-scroll"
+              style="scrollbar-width: thin;">
+              <!-- Cards serão gerados dinamicamente aqui -->
+            </div>
+
+            <!-- Scroll Indicators (pontos) -->
+            <div id="sites-indicators"
+              class="flex justify-center mt-4 space-x-2">
+              <!-- Indicadores serão gerados dinamicamente -->
+            </div>
+          </div>
         </div>
 
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-8 leading-tight">
-          Preços que <span class="text-accent-400">Cabem no seu Bolso</span>
-        </h1>
+        <!-- Sistemas Tab -->
+        <div id="tab-sistemas" class="tab-content hidden">
+          <div class="text-center mb-8">
+            <div
+              class="inline-flex items-center bg-accent-100 text-accent-700 px-3 py-1 rounded-full text-sm font-medium mb-4">
+              <i class="fas fa-globe mr-2"></i>
+              Sistemas Web Personalizados
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-bold text-primary-900 mb-4">
+              Sistemas <span class="gradient-text">Sob Medida</span>
+            </h2>
+            <p class="text-lg text-gray-600 leading-relaxed px-2">
+              Do CRM simples à plataforma empresarial completa
+            </p>
+          </div>
 
-        <p class="text-xl sm:text-2xl lg:text-3xl mb-4 opacity-90 leading-relaxed max-w-4xl mx-auto">
-          🚀 Desenvolvimento + Mensalidade Ultra Baixa
-        </p>
-        <p class="text-lg sm:text-xl lg:text-2xl mb-8 opacity-80 leading-relaxed max-w-3xl mx-auto">
-          Pague apenas para desenvolver, depois só R$ 19-249/mês para manter tudo funcionando
-        </p>
+          <div class="relative">
+            <div
+              id="sistemas-cards"
+              class="sistemas-scroll flex gap-4 overflow-x-auto pb-4 snap-x smooth-scroll"
+              style="scrollbar-width: thin;">
+              <!-- Cards serão gerados dinamicamente aqui -->
+            </div>
 
-        <!-- Diferencial único -->
-        <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mb-12 border border-white/20">
-          <h3 class="text-2xl font-bold text-accent-400 mb-4">🎯 EXCLUSIVO DHARMA LABS</h3>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
-            <div class="flex items-start space-x-3">
-              <span class="text-accent-400 text-2xl">💰</span>
+            <!-- Scroll Indicators (pontos) -->
+            <div id="sistemas-indicators"
+              class="flex justify-center mt-4 space-x-2">
+              <!-- Indicadores serão gerados dinamicamente -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Dashboards Tab -->
+        <div id="tab-dashboards" class="tab-content hidden">
+          <div class="text-center mb-8">
+            <div
+              class="inline-flex items-center bg-accent-100 text-accent-700 px-3 py-1 rounded-full text-sm font-medium mb-4">
+              <i class="fas fa-globe mr-2"></i>
+              Dashboards & Business Intelligence
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-bold text-primary-900 mb-4">
+              Visualização de <span class="gradient-text">Dados</span>
+            </h2>
+            <p class="text-lg text-gray-600 leading-relaxed px-2">
+              Transforme dados em insights visuais com Python e IA
+            </p>
+          </div>
+
+          <div class="relative">
+            <div
+              id="dashboards-cards"
+              class="sistemas-scroll flex gap-4 overflow-x-auto pb-4 snap-x smooth-scroll"
+              style="scrollbar-width: thin;">
+              <!-- Cards serão gerados dinamicamente aqui -->
+            </div>
+
+            <!-- Scroll Indicators (pontos) -->
+            <div id="dashboards-indicators"
+              class="flex justify-center mt-4 space-x-2">
+              <!-- Indicadores serão gerados dinamicamente -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Apps Tab -->
+        <div id="tab-apps" class="tab-content hidden">
+          <div class="text-center mb-8">
+            <div
+              class="inline-flex items-center bg-accent-100 text-accent-700 px-3 py-1 rounded-full text-sm font-medium mb-4">
+              <i class="fas fa-globe mr-2"></i>
+              Aplicativos Mobile
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-bold text-primary-900 mb-4">
+              Apps <span class="gradient-text">Multiplataforma</span>
+            </h2>
+            <p class="text-lg text-gray-600 leading-relaxed px-2">
+              Android + iOS com Flutter, do básico ao avançado
+            </p>
+          </div>
+
+          <div class="relative">
+            <div
+              id="apps-cards"
+              class="sistemas-scroll flex gap-4 overflow-x-auto pb-4 snap-x smooth-scroll"
+              style="scrollbar-width: thin;">
+              <!-- Cards serão gerados dinamicamente aqui -->
+            </div>
+
+            <!-- Scroll Indicators (pontos) -->
+            <div id="apps-indicators"
+              class="flex justify-center mt-4 space-x-2">
+              <!-- Indicadores serão gerados dinamicamente -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Automação Tab -->
+        <div id="tab-automacao" class="tab-content hidden">
+          <div class="text-center mb-8">
+            <div
+              class="inline-flex items-center bg-accent-100 text-accent-700 px-3 py-1 rounded-full text-sm font-medium mb-4">
+              <i class="fas fa-globe mr-2"></i>
+              Automação & Integração
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-bold text-primary-900 mb-4">
+              Automatize <span class="gradient-text">Processos</span>
+            </h2>
+            <p class="text-lg text-gray-600 leading-relaxed px-2">
+              Conecte sistemas, automatize tarefas e otimize workflows
+            </p>
+          </div>
+
+          <div class="relative">
+            <div
+              id="automacao-cards"
+              class="sistemas-scroll flex gap-4 overflow-x-auto pb-4 snap-x smooth-scroll"
+              style="scrollbar-width: thin;">
+              <!-- Cards serão gerados dinamicamente aqui -->
+            </div>
+
+            <!-- Scroll Indicators (pontos) -->
+            <div id="automacao-indicators"
+              class="flex justify-center mt-4 space-x-2">
+              <!-- Indicadores serão gerados dinamicamente -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Email Tab -->
+        <div id="tab-email" class="tab-content hidden">
+          <div class="text-center mb-8">
+            <div
+              class="inline-flex items-center bg-accent-100 text-accent-700 px-3 py-1 rounded-full text-sm font-medium mb-4">
+              <i class="fas fa-globe mr-2"></i>
+              Email Profissional
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-bold text-primary-900 mb-4">
+              Email <span class="gradient-text">Corporativo</span>
+            </h2>
+            <p class="text-lg text-gray-600 leading-relaxed px-2">
+              Do básico ao Google Workspace completo
+            </p>
+          </div>
+
+          <div class="relative">
+            <div
+              id="email-cards"
+              class="sistemas-scroll flex gap-4 overflow-x-auto pb-4 snap-x smooth-scroll"
+              style="scrollbar-width: thin;">
+              <!-- Cards serão gerados dinamicamente aqui -->
+            </div>
+
+            <!-- Scroll Indicators (pontos) -->
+            <div id="email-indicators"
+              class="flex justify-center mt-4 space-x-2">
+              <!-- Indicadores serão gerados dinamicamente -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Consultoria Tab -->
+        <div id="tab-consultoria" class="tab-content hidden">
+          <div class="text-center mb-8">
+            <div
+              class="inline-flex items-center bg-accent-100 text-accent-700 px-3 py-1 rounded-full text-sm font-medium mb-4">
+              <i class="fas fa-globe mr-2"></i>
+              Consultoria Especializada
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-bold text-primary-900 mb-4">
+              Expertise <span class="gradient-text">Técnica</span>
+            </h2>
+            <p class="text-lg text-gray-600 leading-relaxed px-2">
+              Consultoria em QA, automação de testes e arquitetura de sistemas
+            </p>
+          </div>
+
+          <div class="relative">
+            <div
+              id="consultoria-cards"
+              class="sistemas-scroll flex gap-4 overflow-x-auto pb-4 snap-x smooth-scroll"
+              style="scrollbar-width: thin;">
+              <!-- Cards serão gerados dinamicamente aqui -->
+            </div>
+
+            <!-- Scroll Indicators (pontos) -->
+            <div id="consultoria-indicators"
+              class="flex justify-center mt-4 space-x-2">
+              <!-- Indicadores serão gerados dinamicamente -->
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- What's Included Section -->
+    <section class="py-20 lg:py-28 bg-white">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl sm:text-5xl font-bold text-primary-900 mb-6">
+            O que está <span class="gradient-text">Incluído</span> na
+            Mensalidade?
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Sua mensalidade não é só "hospedagem". É um pacote completo para seu
+            negócio digital funcionar 24/7
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Hospedagem Premium -->
+          <div
+            class="text-center p-8 bg-gray-50 rounded-2xl hover:bg-accent-50 transition-all duration-300 group">
+            <div
+              class="w-16 h-16 bg-accent-500 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+              <i class="fas fa-server text-white text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-primary-900 mb-4">Hospedagem
+              Premium</h3>
+            <p class="text-gray-600 leading-relaxed">
+              Servidores otimizados, SSL, CDN, backups automáticos e 99.9% de
+              uptime garantido
+            </p>
+          </div>
+
+          <!-- Suporte Técnico -->
+          <div
+            class="text-center p-8 bg-gray-50 rounded-2xl hover:bg-highlight-50 transition-all duration-300 group">
+            <div
+              class="w-16 h-16 bg-highlight-500 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+              <i class="fas fa-headset text-white text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-primary-900 mb-4">Suporte
+              Técnico</h3>
+            <p class="text-gray-600 leading-relaxed">
+              Correções, pequenos ajustes e suporte via sistema de tickets. Seu
+              site sempre funcionando
+            </p>
+          </div>
+
+          <!-- Atualizações -->
+          <div
+            class="text-center p-8 bg-gray-50 rounded-2xl hover:bg-primary-50 transition-all duration-300 group">
+            <div
+              class="w-16 h-16 bg-primary-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+              <i class="fas fa-sync-alt text-white text-2xl"></i>
+            </div>
+            <h3
+              class="text-xl font-bold text-primary-900 mb-4">Atualizações</h3>
+            <p class="text-gray-600 leading-relaxed">
+              Atualizações de segurança, otimizações de performance e correções
+              automáticas
+            </p>
+          </div>
+
+          <!-- Monitoramento -->
+          <div
+            class="text-center p-8 bg-gray-50 rounded-2xl hover:bg-accent-50 transition-all duration-300 group">
+            <div
+              class="w-16 h-16 bg-accent-500 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+              <i class="fas fa-chart-line text-white text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-primary-900 mb-4">Monitoramento
+              24/7</h3>
+            <p class="text-gray-600 leading-relaxed">
+              Monitoramos seu site constantemente e resolvemos problemas antes
+              que você perceba
+            </p>
+          </div>
+
+          <!-- Analytics -->
+          <div
+            class="text-center p-8 bg-gray-50 rounded-2xl hover:bg-highlight-50 transition-all duration-300 group">
+            <div
+              class="w-16 h-16 bg-highlight-500 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+              <i class="fas fa-analytics text-white text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-primary-900 mb-4">Relatórios
+              Mensais</h3>
+            <p class="text-gray-600 leading-relaxed">
+              Receba relatórios mensais de performance, visitas e métricas
+              importantes do seu negócio
+            </p>
+          </div>
+
+          <!-- Melhorias Contínuas -->
+          <div
+            class="text-center p-8 bg-gray-50 rounded-2xl hover:bg-primary-50 transition-all duration-300 group">
+            <div
+              class="w-16 h-16 bg-primary-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+              <i class="fas fa-rocket text-white text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-primary-900 mb-4">Melhorias
+              Contínuas</h3>
+            <p class="text-gray-600 leading-relaxed">
+              Sempre implementamos melhorias e novas funcionalidades sem custo
+              adicional
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Different Section -->
+    <section
+      class="py-20 lg:py-28 bg-gradient-to-br from-primary-900 via-primary-800 to-primary-900 text-white">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl sm:text-5xl font-bold mb-6">
+            Por que Somos <span class="gradient-text">Diferentes?</span>
+          </h2>
+          <p class="text-xl text-primary-200 max-w-4xl mx-auto">
+            Enquanto outros cobram alto na criação E alta mensalidade, nós
+            invertemos a lógica
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <!-- Left side - Comparison -->
+          <div class="space-y-8">
+            <div
+              class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+              <h3 class="text-2xl font-bold text-red-400 mb-4">❌ Outros Fazem
+                Assim</h3>
+              <div class="space-y-3">
+                <div class="flex justify-between items-center">
+                  <span>Site básico:</span>
+                  <span class="font-bold text-red-400">R$ 3.500 - R$
+                    8.000</span>
+                </div>
+                <div class="flex justify-between items-center">
+                  <span>Mensalidade:</span>
+                  <span class="font-bold text-red-400">R$ 200 - R$
+                    500/mês</span>
+                </div>
+                <div
+                  class="flex justify-between items-center border-t border-white/20 pt-3">
+                  <span class="font-bold">Total 1º ano:</span>
+                  <span class="font-bold text-red-400 text-xl">R$ 8.000 - R$
+                    14.000</span>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="bg-gradient-to-r from-accent-500/20 to-primary-600/20 backdrop-blur-sm rounded-2xl p-6 border border-accent-400/30">
+              <h3 class="text-2xl font-bold text-accent-400 mb-4">✅ Dharma Labs
+                Faz</h3>
+              <div class="space-y-3">
+                <div class="flex justify-between items-center">
+                  <span>Site profissional:</span>
+                  <span class="font-bold text-accent-400">R$ 1.890</span>
+                </div>
+                <div class="flex justify-between items-center">
+                  <span>Mensalidade:</span>
+                  <span class="font-bold text-accent-400">R$ 39/mês</span>
+                </div>
+                <div
+                  class="flex justify-between items-center border-t border-white/20 pt-3">
+                  <span class="font-bold">Total 1º ano:</span>
+                  <span class="font-bold text-accent-400 text-xl">R$
+                    2.358</span>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="text-center p-6 bg-accent-500/20 rounded-2xl border border-accent-400/30">
+              <h4 class="text-2xl font-bold text-accent-400 mb-2">💰 Economia de
+                até 83%</h4>
+              <p class="text-lg">No primeiro ano você economiza até R$
+                11.642!</p>
+            </div>
+          </div>
+
+          <!-- Right side - Benefits -->
+          <div class="space-y-6">
+            <h3 class="text-3xl font-bold mb-8">🎯 Vantagens Exclusivas</h3>
+
+            <div class="flex items-start space-x-4">
+              <div
+                class="w-12 h-12 bg-accent-500 rounded-full flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-piggy-bank text-white"></i>
+              </div>
               <div>
-                <h4 class="font-semibold text-lg">Desenvolvimento Acessível</h4>
-                <p class="text-sm opacity-80">Até 50% mais barato que concorrência</p>
+                <h4 class="text-xl font-bold mb-2">Investimento Inicial
+                  Baixo</h4>
+                <p class="text-primary-200">Você não precisa desembolsar uma
+                  fortuna para ter um site profissional</p>
               </div>
             </div>
-            <div class="flex items-start space-x-3">
-              <span class="text-accent-400 text-2xl">🔄</span>
+
+            <div class="flex items-start space-x-4">
+              <div
+                class="w-12 h-12 bg-highlight-500 rounded-full flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-heart text-white"></i>
+              </div>
               <div>
-                <h4 class="font-semibold text-lg">Mensalidade Baixíssima</h4>
-                <p class="text-sm opacity-80">A partir de R$ 19/mês para manter</p>
+                <h4 class="text-xl font-bold mb-2">Relacionamento Duradouro</h4>
+                <p class="text-primary-200">Queremos crescer junto com seu
+                  negócio, não apenas entregar e sumir</p>
               </div>
             </div>
-            <div class="flex items-start space-x-3">
-              <span class="text-accent-400 text-2xl">⚡</span>
+
+            <div class="flex items-start space-x-4">
+              <div
+                class="w-12 h-12 bg-primary-500 rounded-full flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-shield-alt text-white"></i>
+              </div>
               <div>
-                <h4 class="font-semibold text-lg">Suporte Vitalício</h4>
-                <p class="text-sm opacity-80">Enquanto pagar, funcionará</p>
+                <h4 class="text-xl font-bold mb-2">Tranquilidade Total</h4>
+                <p class="text-primary-200">Você nunca mais precisa se preocupar
+                  com aspectos técnicos do seu site</p>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-4">
+              <div
+                class="w-12 h-12 bg-accent-500 rounded-full flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-rocket text-white"></i>
+              </div>
+              <div>
+                <h4 class="text-xl font-bold mb-2">Sempre Atualizado</h4>
+                <p class="text-primary-200">Seu site sempre com as últimas
+                  tecnologias e tendências do mercado</p>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Navigation Tabs -->
-  <section class="pricing-navigation-tabs">
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex flex-wrap justify-center gap-2 md:gap-4">
-      <button class="tab-button active" data-tab="sites">
-        <i class="fas fa-globe mr-2"></i>Sites
-      </button>
-      <button class="tab-button" data-tab="sistemas">
-        <i class="fas fa-cogs mr-2"></i>Sistemas
-      </button>
-      <button class="tab-button" data-tab="dashboards">
-        <i class="fas fa-chart-bar mr-2"></i>Dashboards
-      </button>
-      <button class="tab-button" data-tab="apps">
-        <i class="fas fa-mobile-alt mr-2"></i>Apps
-      </button>
-      <button class="tab-button" data-tab="automacao">
-        <i class="fas fa-robot mr-2"></i>Automação
-      </button>
-      <button class="tab-button" data-tab="email">
-        <i class="fas fa-envelope mr-2"></i>Email
-      </button>
-      <button class="tab-button" data-tab="consultoria">
-        <i class="fas fa-handshake mr-2"></i>Consultoria
-      </button>
-    </div>
-  </div>
-</section>
-
-  <!-- Pricing Content -->
-  <section class="pricing-content-section py-20 lg:py-28 bg-gray-50">
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-
-      <!-- Sites Tab -->
-      <div id="tab-sites" class="tab-content active">
+    <!-- FAQ Section -->
+    <section class="py-20 lg:py-28 bg-gray-50">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
-          <div class="inline-flex items-center bg-accent-100 text-accent-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
-            <i class="fas fa-globe mr-2"></i>
-            Sites & Landing Pages
-          </div>
           <h2 class="text-4xl sm:text-5xl font-bold text-primary-900 mb-6">
-            Sites <span class="gradient-text">Profissionais</span>
+            Perguntas <span class="gradient-text">Frequentes</span>
           </h2>
-          <p class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Do básico ao completo, todos com design moderno e otimização SEO
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Esclarecemos as dúvidas mais comuns sobre nosso modelo inovador
           </p>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto" id="sites-cards">
-          <!-- Cards serão gerados dinamicamente -->
+        <div class="max-w-4xl mx-auto space-y-6">
+          <!-- FAQ 1 -->
+          <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+            <button
+              class="w-full px-8 py-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors faq-button"
+              data-faq="1">
+              <h3 class="text-xl font-bold text-primary-900">Por que o modelo de
+                mensalidade é melhor?</h3>
+              <i
+                class="fas fa-chevron-down text-primary-600 transition-transform duration-300"></i>
+            </button>
+            <div class="px-8 pb-6 hidden faq-content" id="faq-1">
+              <p class="text-gray-600 leading-relaxed">
+                Nosso modelo permite que você tenha um site profissional sem um
+                grande investimento inicial. Além disso, garantimos que seu site
+                sempre funcione perfeitamente, com suporte contínuo,
+                atualizações e melhorias. É como ter uma equipe técnica dedicada
+                por uma fração do custo.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+            <button
+              class="w-full px-8 py-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors faq-button"
+              data-faq="2">
+              <h3 class="text-xl font-bold text-primary-900">O que acontece se
+                eu parar de pagar a mensalidade?</h3>
+              <i
+                class="fas fa-chevron-down text-primary-600 transition-transform duration-300"></i>
+            </button>
+            <div class="px-8 pb-6 hidden faq-content" id="faq-2">
+              <p class="text-gray-600 leading-relaxed">
+                O site sairá do ar após 30 dias de atraso. Mas não se preocupe:
+                seus dados ficam seguros conosco por 90 dias. Se decidir voltar,
+                reativamos tudo rapidamente. É como uma assinatura Netflix -
+                paga enquanto usa, para quando não precisa.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+            <button
+              class="w-full px-8 py-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors faq-button"
+              data-faq="3">
+              <h3 class="text-xl font-bold text-primary-900">Posso fazer
+                alterações no site depois de pronto?</h3>
+              <i
+                class="fas fa-chevron-down text-primary-600 transition-transform duration-300"></i>
+            </button>
+            <div class="px-8 pb-6 hidden faq-content" id="faq-3">
+              <p class="text-gray-600 leading-relaxed">
+                Sim! Pequenas alterações (textos, imagens, informações) estão
+                incluídas na mensalidade via sistema de tickets. Para mudanças
+                maiores (nova página, funcionalidade), fazemos um orçamento
+                separado com preços justos.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+            <button
+              class="w-full px-8 py-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors faq-button"
+              data-faq="4">
+              <h3 class="text-xl font-bold text-primary-900">O site é realmente
+                meu ou fica com vocês?</h3>
+              <i
+                class="fas fa-chevron-down text-primary-600 transition-transform duration-300"></i>
+            </button>
+            <div class="px-8 pb-6 hidden faq-content" id="faq-4">
+              <p class="text-gray-600 leading-relaxed">
+                O site é 100% seu! Todo o conteúdo, design e funcionalidades
+                pertencem a você. Nossa mensalidade é apenas para manter tudo
+                funcionando perfeitamente. Se um dia quiser migrar, entregamos
+                todos os arquivos.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 5 -->
+          <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+            <button
+              class="w-full px-8 py-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors faq-button"
+              data-faq="5">
+              <h3 class="text-xl font-bold text-primary-900">Quanto tempo leva
+                para ficar pronto?</h3>
+              <i
+                class="fas fa-chevron-down text-primary-600 transition-transform duration-300"></i>
+            </button>
+            <div class="px-8 pb-6 hidden faq-content" id="faq-5">
+              <p class="text-gray-600 leading-relaxed">
+                Landing pages: 3-7 dias. Sites vitrine: 7-15 dias. Sistemas web:
+                15-45 dias. Apps mobile: 30-60 dias. Tudo depende da
+                complexidade e da velocidade de retorno do cliente com materiais
+                e aprovações.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 6 -->
+          <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+            <button
+              class="w-full px-8 py-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors faq-button"
+              data-faq="6">
+              <h3 class="text-xl font-bold text-primary-900">Existe contrato de
+                fidelidade?</h3>
+              <i
+                class="fas fa-chevron-down text-primary-600 transition-transform duration-300"></i>
+            </button>
+            <div class="px-8 pb-6 hidden faq-content" id="faq-6">
+              <p class="text-gray-600 leading-relaxed">
+                Não! Você pode cancelar quando quiser. Acreditamos na qualidade
+                do nosso serviço para mantê-lo como cliente, não em contratos
+                que prendem. Nossa meta é que você fique satisfeito e veja valor
+                no que oferecemos.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
+    </section>
 
-      <!-- Sistemas Tab -->
-      <div id="tab-sistemas" class="tab-content hidden">
-        <div class="text-center mb-16">
-          <div class="inline-flex items-center bg-highlight-100 text-highlight-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
-            <i class="fas fa-cogs mr-2"></i>
-            Sistemas Web Personalizados
-          </div>
-          <h2 class="text-4xl sm:text-5xl font-bold text-primary-900 mb-6">
-            Sistemas <span class="gradient-text">Sob Medida</span>
+    <!-- CTA Final -->
+    <section id="contato"
+      class="py-20 lg:py-28 bg-gradient-to-br from-primary-800 via-primary-700 to-primary-800 text-white">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-5xl mx-auto">
+          <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-8">
+            Pronto para <span class="gradient-text">Começar?</span>
           </h2>
-          <p class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Do CRM simples à plataforma empresarial completa
+
+          <p
+            class="text-xl sm:text-2xl text-primary-200 mb-12 leading-relaxed max-w-4xl mx-auto">
+            Não perca mais tempo nem dinheiro. Tenha seu projeto digital
+            funcionando em poucos dias com a melhor custo-benefício do mercado
           </p>
-        </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto" id="sistemas-cards">
-          <!-- Cards serão gerados dinamicamente -->
-        </div>
-      </div>
-
-      <!-- Dashboards Tab -->
-      <div id="tab-dashboards" class="tab-content hidden">
-        <div class="text-center mb-16">
-          <div class="inline-flex items-center bg-primary-100 text-primary-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
-            <i class="fas fa-chart-bar mr-2"></i>
-            Dashboards & Business Intelligence
-          </div>
-          <h2 class="text-4xl sm:text-5xl font-bold text-primary-900 mb-6">
-            Visualização de <span class="gradient-text">Dados</span>
-          </h2>
-          <p class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Transforme dados em insights visuais com Python e IA
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto" id="dashboards-cards">
-          <!-- Cards serão gerados dinamicamente -->
-        </div>
-      </div>
-
-      <!-- Apps Tab -->
-      <div id="tab-apps" class="tab-content hidden">
-        <div class="text-center mb-16">
-          <div class="inline-flex items-center bg-accent-100 text-accent-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
-            <i class="fas fa-mobile-alt mr-2"></i>
-            Aplicativos Mobile
-          </div>
-          <h2 class="text-4xl sm:text-5xl font-bold text-primary-900 mb-6">
-            Apps <span class="gradient-text">Multiplataforma</span>
-          </h2>
-          <p class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Android + iOS com Flutter, do básico ao avançado
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto" id="apps-cards">
-          <!-- Cards serão gerados dinamicamente -->
-        </div>
-      </div>
-
-      <!-- Automação Tab -->
-      <div id="tab-automacao" class="tab-content hidden">
-        <div class="text-center mb-16">
-          <div class="inline-flex items-center bg-highlight-100 text-highlight-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
-            <i class="fas fa-robot mr-2"></i>
-            Automação & Integração
-          </div>
-          <h2 class="text-4xl sm:text-5xl font-bold text-primary-900 mb-6">
-            Automatize <span class="gradient-text">Processos</span>
-          </h2>
-          <p class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Conecte sistemas, automatize tarefas e otimize workflows
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto" id="automacao-cards">
-          <!-- Cards serão gerados dinamicamente -->
-        </div>
-      </div>
-
-      <!-- Email Tab -->
-      <div id="tab-email" class="tab-content hidden">
-        <div class="text-center mb-16">
-          <div class="inline-flex items-center bg-primary-100 text-primary-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
-            <i class="fas fa-envelope mr-2"></i>
-            Email Profissional
-          </div>
-          <h2 class="text-4xl sm:text-5xl font-bold text-primary-900 mb-6">
-            Email <span class="gradient-text">Corporativo</span>
-          </h2>
-          <p class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Do básico ao Google Workspace completo
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto" id="email-cards">
-          <!-- Cards serão gerados dinamicamente -->
-        </div>
-      </div>
-
-      <!-- Consultoria Tab -->
-      <div id="tab-consultoria" class="tab-content hidden">
-        <div class="text-center mb-16">
-          <div class="inline-flex items-center bg-accent-100 text-accent-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
-            <i class="fas fa-handshake mr-2"></i>
-            Consultoria Especializada
-          </div>
-          <h2 class="text-4xl sm:text-5xl font-bold text-primary-900 mb-6">
-            Expertise <span class="gradient-text">Técnica</span>
-          </h2>
-          <p class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Consultoria em QA, automação de testes e arquitetura de sistemas
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto" id="consultoria-cards">
-          <!-- Cards serão gerados dinamicamente -->
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- What's Included Section -->
-  <section class="py-20 lg:py-28 bg-white">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl sm:text-5xl font-bold text-primary-900 mb-6">
-          O que está <span class="gradient-text">Incluído</span> na Mensalidade?
-        </h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-          Sua mensalidade não é só "hospedagem". É um pacote completo para seu negócio digital funcionar 24/7
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Hospedagem Premium -->
-        <div class="text-center p-8 bg-gray-50 rounded-2xl hover:bg-accent-50 transition-all duration-300 group">
-          <div class="w-16 h-16 bg-accent-500 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-            <i class="fas fa-server text-white text-2xl"></i>
-          </div>
-          <h3 class="text-xl font-bold text-primary-900 mb-4">Hospedagem Premium</h3>
-          <p class="text-gray-600 leading-relaxed">
-            Servidores otimizados, SSL, CDN, backups automáticos e 99.9% de uptime garantido
-          </p>
-        </div>
-
-        <!-- Suporte Técnico -->
-        <div class="text-center p-8 bg-gray-50 rounded-2xl hover:bg-highlight-50 transition-all duration-300 group">
-          <div class="w-16 h-16 bg-highlight-500 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-            <i class="fas fa-headset text-white text-2xl"></i>
-          </div>
-          <h3 class="text-xl font-bold text-primary-900 mb-4">Suporte Técnico</h3>
-          <p class="text-gray-600 leading-relaxed">
-            Correções, pequenos ajustes e suporte via sistema de tickets. Seu site sempre funcionando
-          </p>
-        </div>
-
-        <!-- Atualizações -->
-        <div class="text-center p-8 bg-gray-50 rounded-2xl hover:bg-primary-50 transition-all duration-300 group">
-          <div class="w-16 h-16 bg-primary-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-            <i class="fas fa-sync-alt text-white text-2xl"></i>
-          </div>
-          <h3 class="text-xl font-bold text-primary-900 mb-4">Atualizações</h3>
-          <p class="text-gray-600 leading-relaxed">
-            Atualizações de segurança, otimizações de performance e correções automáticas
-          </p>
-        </div>
-
-        <!-- Monitoramento -->
-        <div class="text-center p-8 bg-gray-50 rounded-2xl hover:bg-accent-50 transition-all duration-300 group">
-          <div class="w-16 h-16 bg-accent-500 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-            <i class="fas fa-chart-line text-white text-2xl"></i>
-          </div>
-          <h3 class="text-xl font-bold text-primary-900 mb-4">Monitoramento 24/7</h3>
-          <p class="text-gray-600 leading-relaxed">
-            Monitoramos seu site constantemente e resolvemos problemas antes que você perceba
-          </p>
-        </div>
-
-        <!-- Analytics -->
-        <div class="text-center p-8 bg-gray-50 rounded-2xl hover:bg-highlight-50 transition-all duration-300 group">
-          <div class="w-16 h-16 bg-highlight-500 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-            <i class="fas fa-analytics text-white text-2xl"></i>
-          </div>
-          <h3 class="text-xl font-bold text-primary-900 mb-4">Relatórios Mensais</h3>
-          <p class="text-gray-600 leading-relaxed">
-            Receba relatórios mensais de performance, visitas e métricas importantes do seu negócio
-          </p>
-        </div>
-
-        <!-- Melhorias Contínuas -->
-        <div class="text-center p-8 bg-gray-50 rounded-2xl hover:bg-primary-50 transition-all duration-300 group">
-          <div class="w-16 h-16 bg-primary-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-            <i class="fas fa-rocket text-white text-2xl"></i>
-          </div>
-          <h3 class="text-xl font-bold text-primary-900 mb-4">Melhorias Contínuas</h3>
-          <p class="text-gray-600 leading-relaxed">
-            Sempre implementamos melhorias e novas funcionalidades sem custo adicional
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Why Different Section -->
-  <section class="py-20 lg:py-28 bg-gradient-to-br from-primary-900 via-primary-800 to-primary-900 text-white">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl sm:text-5xl font-bold mb-6">
-          Por que Somos <span class="gradient-text">Diferentes?</span>
-        </h2>
-        <p class="text-xl text-primary-200 max-w-4xl mx-auto">
-          Enquanto outros cobram alto na criação E alta mensalidade, nós invertemos a lógica
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        <!-- Left side - Comparison -->
-        <div class="space-y-8">
-          <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
-            <h3 class="text-2xl font-bold text-red-400 mb-4">❌ Outros Fazem Assim</h3>
-            <div class="space-y-3">
-              <div class="flex justify-between items-center">
-                <span>Site básico:</span>
-                <span class="font-bold text-red-400">R$ 3.500 - R$ 8.000</span>
+          <!-- Contact Options -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            <!-- WhatsApp -->
+            <a href="https://wa.link/suwtio"
+              class="group bg-gradient-to-r from-green-500 to-green-600 p-8 rounded-3xl hover:from-green-400 hover:to-green-500 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl">
+              <div class="flex items-center justify-center mb-4">
+                <i
+                  class="fab fa-whatsapp text-5xl text-white group-hover:scale-110 transition-transform duration-300"></i>
               </div>
-              <div class="flex justify-between items-center">
-                <span>Mensalidade:</span>
-                <span class="font-bold text-red-400">R$ 200 - R$ 500/mês</span>
+              <h3 class="text-2xl font-bold mb-2">WhatsApp</h3>
+              <p class="text-lg opacity-90 mb-4">Resposta em minutos</p>
+              <div
+                class="bg-white/20 backdrop-blur-sm rounded-2xl px-6 py-3 inline-block">
+                <span class="font-bold text-lg">(17) 99144-6829</span>
               </div>
-              <div class="flex justify-between items-center border-t border-white/20 pt-3">
-                <span class="font-bold">Total 1º ano:</span>
-                <span class="font-bold text-red-400 text-xl">R$ 8.000 - R$ 14.000</span>
+            </a>
+
+            <!-- Email -->
+            <a href="mailto:contato@dharmalabs.com.br"
+              class="group bg-gradient-to-r from-accent-500 to-highlight-600 p-8 rounded-3xl hover:from-accent-400 hover:to-highlight-500 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl">
+              <div class="flex items-center justify-center mb-4">
+                <i
+                  class="fas fa-envelope text-5xl text-white group-hover:scale-110 transition-transform duration-300"></i>
               </div>
-            </div>
-          </div>
-
-          <div class="bg-gradient-to-r from-accent-500/20 to-primary-600/20 backdrop-blur-sm rounded-2xl p-6 border border-accent-400/30">
-            <h3 class="text-2xl font-bold text-accent-400 mb-4">✅ Dharma Labs Faz</h3>
-            <div class="space-y-3">
-              <div class="flex justify-between items-center">
-                <span>Site profissional:</span>
-                <span class="font-bold text-accent-400">R$ 1.890</span>
+              <h3 class="text-2xl font-bold mb-2">Email</h3>
+              <p class="text-lg opacity-90 mb-4">Resposta em até 2h</p>
+              <div
+                class="bg-white/20 backdrop-blur-sm rounded-2xl px-6 py-3 inline-block">
+                <span class="font-bold text-lg">contato@dharmalabs.com.br</span>
               </div>
-              <div class="flex justify-between items-center">
-                <span>Mensalidade:</span>
-                <span class="font-bold text-accent-400">R$ 39/mês</span>
-              </div>
-              <div class="flex justify-between items-center border-t border-white/20 pt-3">
-                <span class="font-bold">Total 1º ano:</span>
-                <span class="font-bold text-accent-400 text-xl">R$ 2.358</span>
-              </div>
-            </div>
+            </a>
           </div>
 
-          <div class="text-center p-6 bg-accent-500/20 rounded-2xl border border-accent-400/30">
-            <h4 class="text-2xl font-bold text-accent-400 mb-2">💰 Economia de até 83%</h4>
-            <p class="text-lg">No primeiro ano você economiza até R$ 11.642!</p>
-          </div>
-        </div>
-
-        <!-- Right side - Benefits -->
-        <div class="space-y-6">
-          <h3 class="text-3xl font-bold mb-8">🎯 Vantagens Exclusivas</h3>
-
-          <div class="flex items-start space-x-4">
-            <div class="w-12 h-12 bg-accent-500 rounded-full flex items-center justify-center flex-shrink-0">
-              <i class="fas fa-piggy-bank text-white"></i>
-            </div>
-            <div>
-              <h4 class="text-xl font-bold mb-2">Investimento Inicial Baixo</h4>
-              <p class="text-primary-200">Você não precisa desembolsar uma fortuna para ter um site profissional</p>
-            </div>
-          </div>
-
-          <div class="flex items-start space-x-4">
-            <div class="w-12 h-12 bg-highlight-500 rounded-full flex items-center justify-center flex-shrink-0">
-              <i class="fas fa-heart text-white"></i>
-            </div>
-            <div>
-              <h4 class="text-xl font-bold mb-2">Relacionamento Duradouro</h4>
-              <p class="text-primary-200">Queremos crescer junto com seu negócio, não apenas entregar e sumir</p>
-            </div>
-          </div>
-
-          <div class="flex items-start space-x-4">
-            <div class="w-12 h-12 bg-primary-500 rounded-full flex items-center justify-center flex-shrink-0">
-              <i class="fas fa-shield-alt text-white"></i>
-            </div>
-            <div>
-              <h4 class="text-xl font-bold mb-2">Tranquilidade Total</h4>
-              <p class="text-primary-200">Você nunca mais precisa se preocupar com aspectos técnicos do seu site</p>
-            </div>
-          </div>
-
-          <div class="flex items-start space-x-4">
-            <div class="w-12 h-12 bg-accent-500 rounded-full flex items-center justify-center flex-shrink-0">
-              <i class="fas fa-rocket text-white"></i>
-            </div>
-            <div>
-              <h4 class="text-xl font-bold mb-2">Sempre Atualizado</h4>
-              <p class="text-primary-200">Seu site sempre com as últimas tecnologias e tendências do mercado</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ Section -->
-  <section class="py-20 lg:py-28 bg-gray-50">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl sm:text-5xl font-bold text-primary-900 mb-6">
-          Perguntas <span class="gradient-text">Frequentes</span>
-        </h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-          Esclarecemos as dúvidas mais comuns sobre nosso modelo inovador
-        </p>
-      </div>
-
-      <div class="max-w-4xl mx-auto space-y-6">
-        <!-- FAQ 1 -->
-        <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
-          <button class="w-full px-8 py-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors faq-button" data-faq="1">
-            <h3 class="text-xl font-bold text-primary-900">Por que o modelo de mensalidade é melhor?</h3>
-            <i class="fas fa-chevron-down text-primary-600 transition-transform duration-300"></i>
-          </button>
-          <div class="px-8 pb-6 hidden faq-content" id="faq-1">
-            <p class="text-gray-600 leading-relaxed">
-              Nosso modelo permite que você tenha um site profissional sem um grande investimento inicial. Além disso, garantimos que seu site sempre funcione perfeitamente, com suporte contínuo, atualizações e melhorias. É como ter uma equipe técnica dedicada por uma fração do custo.
-            </p>
-          </div>
-        </div>
-
-        <!-- FAQ 2 -->
-        <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
-          <button class="w-full px-8 py-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors faq-button" data-faq="2">
-            <h3 class="text-xl font-bold text-primary-900">O que acontece se eu parar de pagar a mensalidade?</h3>
-            <i class="fas fa-chevron-down text-primary-600 transition-transform duration-300"></i>
-          </button>
-          <div class="px-8 pb-6 hidden faq-content" id="faq-2">
-            <p class="text-gray-600 leading-relaxed">
-              O site sairá do ar após 30 dias de atraso. Mas não se preocupe: seus dados ficam seguros conosco por 90 dias. Se decidir voltar, reativamos tudo rapidamente. É como uma assinatura Netflix - paga enquanto usa, para quando não precisa.
-            </p>
-          </div>
-        </div>
-
-        <!-- FAQ 3 -->
-        <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
-          <button class="w-full px-8 py-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors faq-button" data-faq="3">
-            <h3 class="text-xl font-bold text-primary-900">Posso fazer alterações no site depois de pronto?</h3>
-            <i class="fas fa-chevron-down text-primary-600 transition-transform duration-300"></i>
-          </button>
-          <div class="px-8 pb-6 hidden faq-content" id="faq-3">
-            <p class="text-gray-600 leading-relaxed">
-              Sim! Pequenas alterações (textos, imagens, informações) estão incluídas na mensalidade via sistema de tickets. Para mudanças maiores (nova página, funcionalidade), fazemos um orçamento separado com preços justos.
-            </p>
-          </div>
-        </div>
-
-        <!-- FAQ 4 -->
-        <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
-          <button class="w-full px-8 py-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors faq-button" data-faq="4">
-            <h3 class="text-xl font-bold text-primary-900">O site é realmente meu ou fica com vocês?</h3>
-            <i class="fas fa-chevron-down text-primary-600 transition-transform duration-300"></i>
-          </button>
-          <div class="px-8 pb-6 hidden faq-content" id="faq-4">
-            <p class="text-gray-600 leading-relaxed">
-              O site é 100% seu! Todo o conteúdo, design e funcionalidades pertencem a você. Nossa mensalidade é apenas para manter tudo funcionando perfeitamente. Se um dia quiser migrar, entregamos todos os arquivos.
-            </p>
-          </div>
-        </div>
-
-        <!-- FAQ 5 -->
-        <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
-          <button class="w-full px-8 py-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors faq-button" data-faq="5">
-            <h3 class="text-xl font-bold text-primary-900">Quanto tempo leva para ficar pronto?</h3>
-            <i class="fas fa-chevron-down text-primary-600 transition-transform duration-300"></i>
-          </button>
-          <div class="px-8 pb-6 hidden faq-content" id="faq-5">
-            <p class="text-gray-600 leading-relaxed">
-              Landing pages: 3-7 dias. Sites vitrine: 7-15 dias. Sistemas web: 15-45 dias. Apps mobile: 30-60 dias. Tudo depende da complexidade e da velocidade de retorno do cliente com materiais e aprovações.
-            </p>
-          </div>
-        </div>
-
-        <!-- FAQ 6 -->
-        <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
-          <button class="w-full px-8 py-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors faq-button" data-faq="6">
-            <h3 class="text-xl font-bold text-primary-900">Existe contrato de fidelidade?</h3>
-            <i class="fas fa-chevron-down text-primary-600 transition-transform duration-300"></i>
-          </button>
-          <div class="px-8 pb-6 hidden faq-content" id="faq-6">
-            <p class="text-gray-600 leading-relaxed">
-              Não! Você pode cancelar quando quiser. Acreditamos na qualidade do nosso serviço para mantê-lo como cliente, não em contratos que prendem. Nossa meta é que você fique satisfeito e veja valor no que oferecemos.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA Final -->
-  <section id="contato" class="py-20 lg:py-28 bg-gradient-to-br from-primary-800 via-primary-700 to-primary-800 text-white">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-5xl mx-auto">
-        <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-8">
-          Pronto para <span class="gradient-text">Começar?</span>
-        </h2>
-
-        <p class="text-xl sm:text-2xl text-primary-200 mb-12 leading-relaxed max-w-4xl mx-auto">
-          Não perca mais tempo nem dinheiro. Tenha seu projeto digital funcionando em poucos dias com a melhor custo-benefício do mercado
-        </p>
-
-        <!-- Contact Options -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-          <!-- WhatsApp -->
-          <a href="https://wa.link/suwtio" class="group bg-gradient-to-r from-green-500 to-green-600 p-8 rounded-3xl hover:from-green-400 hover:to-green-500 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl">
+          <!-- Guarantee -->
+          <div
+            class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
             <div class="flex items-center justify-center mb-4">
-              <i class="fab fa-whatsapp text-5xl text-white group-hover:scale-110 transition-transform duration-300"></i>
+              <i class="fas fa-shield-alt text-accent-400 text-4xl mr-4"></i>
+              <h3 class="text-2xl font-bold">Garantia de Satisfação</h3>
             </div>
-            <h3 class="text-2xl font-bold mb-2">WhatsApp</h3>
-            <p class="text-lg opacity-90 mb-4">Resposta em minutos</p>
-            <div class="bg-white/20 backdrop-blur-sm rounded-2xl px-6 py-3 inline-block">
-              <span class="font-bold text-lg">(17) 99144-6829</span>
-            </div>
-          </a>
-
-          <!-- Email -->
-          <a href="mailto:contato@dharmalabs.com.br" class="group bg-gradient-to-r from-accent-500 to-highlight-600 p-8 rounded-3xl hover:from-accent-400 hover:to-highlight-500 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl">
-            <div class="flex items-center justify-center mb-4">
-              <i class="fas fa-envelope text-5xl text-white group-hover:scale-110 transition-transform duration-300"></i>
-            </div>
-            <h3 class="text-2xl font-bold mb-2">Email</h3>
-            <p class="text-lg opacity-90 mb-4">Resposta em até 2h</p>
-            <div class="bg-white/20 backdrop-blur-sm rounded-2xl px-6 py-3 inline-block">
-              <span class="font-bold text-lg">contato@dharmalabs.com.br</span>
-            </div>
-          </a>
-        </div>
-
-        <!-- Guarantee -->
-        <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
-          <div class="flex items-center justify-center mb-4">
-            <i class="fas fa-shield-alt text-accent-400 text-4xl mr-4"></i>
-            <h3 class="text-2xl font-bold">Garantia de Satisfação</h3>
-          </div>
-          <p class="text-lg text-primary-200">
-            Se não ficar satisfeito com o resultado, devolvemos 100% do investimento nos primeiros 15 dias. Sem perguntas, sem complicação.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-primary-900 text-white py-12">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col md:flex-row items-center justify-between">
-        <div class="flex items-center space-x-3 mb-6 md:mb-0">
-          <img src="./assets/images/logos/dharma-labs-main.svg" alt="Dharma Labs" class="w-20 h-20 -mr-4"/>
-          <div class="flex flex-col">
-            <span class="gradient-text text-2xl font-bold">DHARMA</span>
-            <span class="text-primary-200 text-sm">Labs</span>
+            <p class="text-lg text-primary-200">
+              Se não ficar satisfeito com o resultado, devolvemos 100% do
+              investimento nos primeiros 15 dias. Sem perguntas, sem
+              complicação.
+            </p>
           </div>
         </div>
+      </div>
+    </section>
 
-        <div class="text-center md:text-right">
-          <p class="text-primary-200 mb-2">© 2025 Dharma Labs. Todos os direitos reservados.</p>
-          <p class="text-sm text-primary-300">Tecnologia com Propósito • Desenvolvido com <i class="text-purple-500 fa-solid fa-heart fa-beat" style="--fa-animation-duration: 2s;"></i></p>
+    <!-- Footer -->
+    <footer class="bg-primary-900 text-white py-12">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row items-center justify-between">
+          <div class="flex items-center space-x-3 mb-6 md:mb-0">
+            <img src="./assets/images/logos/dharma-labs-main.svg"
+              alt="Dharma Labs" class="w-20 h-20 -mr-4" />
+            <div class="flex flex-col">
+              <span class="gradient-text text-2xl font-bold">DHARMA</span>
+              <span class="text-primary-200 text-sm">Labs</span>
+            </div>
+          </div>
+
+          <div class="text-center md:text-right">
+            <p class="text-primary-200 mb-2">© 2025 Dharma Labs. Todos os
+              direitos reservados.</p>
+            <p class="text-sm text-primary-300">Tecnologia com Propósito •
+              Desenvolvido com <i
+                class="text-purple-500 fa-solid fa-heart fa-beat"
+                style="--fa-animation-duration: 2s;"></i></p>
+          </div>
         </div>
       </div>
-    </div>
-  </footer>
+    </footer>
 
-  <script src="./assets/js/scripts.js"></script>
-  <script src="./assets/js/pricing-config.js"></script>
-  <script src="./assets/js/dark-mode-three.js"></script>
-</body>
+    <script src="./assets/js/scripts.js"></script>
+    <script src="./assets/js/pricing-config.js"></script>
+    <script src="./assets/js/dark-mode-three.js"></script>
+  </body>
 </html>

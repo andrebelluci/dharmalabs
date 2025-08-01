@@ -438,11 +438,14 @@ class PricingManager {
 
   setupPricingComponents() {
     this.setupTabs();
+    this.setupTabIndicator();
     this.setupFAQ();
     this.renderInitialCards();
     this.setupCardAnimations();
+    this.setupScrollIndicators();
 
     console.log('✨ Sistema de preços ativo!');
+
   }
 
   // ===== SISTEMA DE TABS =====
@@ -463,6 +466,42 @@ class PricingManager {
       this.setActiveTab(initialButton);
     }
   }
+
+  setupTabIndicator() {
+    const tabsContainer = document.getElementById('tabs-container');
+    const indicator = document.getElementById('tab-indicator');
+
+    if (!tabsContainer || !indicator) return;
+
+    const getActiveButton = () => document.querySelector('.tab-button.active');
+
+    const updateIndicator = () => {
+      const activeButton = getActiveButton();
+      if (!activeButton) return;
+
+      // Usa posição absoluta do botão dentro do container
+      const buttonOffsetLeft = activeButton.offsetLeft;
+      const buttonWidth = activeButton.offsetWidth;
+
+      indicator.style.width = `${buttonWidth}px`;
+      indicator.style.left = `${buttonOffsetLeft - tabsContainer.scrollLeft}px`;
+    };
+
+    // Atualiza posição inicial
+    setTimeout(updateIndicator, 100);
+
+    // Atualiza ao trocar de aba
+    document.addEventListener('tabChanged', () => {
+      updateIndicator();
+    });
+
+    // Atualiza ao rolar o container
+    tabsContainer.addEventListener('scroll', () => {
+      requestAnimationFrame(updateIndicator);
+    });
+  }
+
+
 
   switchTab(targetTab, tabButtons, tabContents) {
     // Remove active class from all buttons and contents
@@ -488,6 +527,10 @@ class PricingManager {
       targetContent.classList.remove('hidden');
     }
 
+    document.dispatchEvent(new CustomEvent('tabChanged', {
+      detail: { activeTab: targetTab }
+    }));
+
     // Render cards for the active tab
     this.renderCategoryCards(targetTab);
     this.activeTab = targetTab;
@@ -496,6 +539,62 @@ class PricingManager {
     setTimeout(() => {
       this.setupCardAnimations();
     }, 100);
+  }
+
+  setupScrollIndicators() {
+    Object.keys(PRICING_DATA).forEach(category => {
+      this.createScrollIndicators(category);
+    });
+  }
+
+  createScrollIndicators(category) {
+    const cardsContainer = document.getElementById(`${category}-cards`);
+    const indicatorsContainer = document.getElementById(`${category}-indicators`);
+
+    if (!cardsContainer || !indicatorsContainer) return;
+
+    const services = Object.values(PRICING_DATA[category]);
+
+    // Criar indicadores
+    indicatorsContainer.innerHTML = services.map((_, index) =>
+      `<div class="scroll-indicator ${index === 0 ? 'active' : ''}" data-index="${index}"></div>`
+    ).join('');
+
+    // Configurar scroll listeners
+    cardsContainer.addEventListener('scroll', () => {
+      this.updateScrollIndicators(category);
+    });
+
+    // Configurar click nos indicadores
+    indicatorsContainer.addEventListener('click', (e) => {
+      if (e.target.classList.contains('scroll-indicator')) {
+        const index = parseInt(e.target.dataset.index);
+        const cardWidth = 320; // Largura do card + gap
+        cardsContainer.scrollTo({
+          left: index * (cardWidth + 16),
+          behavior: 'smooth'
+        });
+      }
+    });
+  }
+
+  updateScrollIndicators(category) {
+    const cardsContainer = document.getElementById(`${category}-cards`);
+    const indicators = document.querySelectorAll(`#${category}-indicators .scroll-indicator`);
+
+    if (!cardsContainer || !indicators.length) return;
+
+    const cardWidth = 336; // 320px + 16px gap
+    const scrollLeft = cardsContainer.scrollLeft;
+    const activeIndex = Math.round(scrollLeft / cardWidth);
+
+    indicators.forEach((indicator, index) => {
+      if (index === activeIndex) {
+        indicator.classList.add('active');
+      } else {
+        indicator.classList.remove('active');
+      }
+    });
   }
 
   setActiveTab(button) {
@@ -526,65 +625,65 @@ class PricingManager {
     };
 
     return `
-      <div class="pricing-card bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border-t-4 ${borderColors[category]} relative overflow-hidden group">
-        ${service.popular ? `
-          <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
-            <div class="bg-accent-500 text-white px-6 py-2 rounded-full text-sm font-bold">
-              🔥 MAIS POPULAR
-            </div>
+    <div class="pricing-card pricing-card-horizontal bg-white rounded-3xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 border-t-4 ${borderColors[category]} relative overflow-hidden group snap-start">
+      ${service.popular ? `
+        <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
+          <div class="bg-accent-500 text-white px-4 py-1 rounded-full text-xs font-bold">
+            🔥 MAIS POPULAR
           </div>
-        ` : ''}
-
-        <div class="${service.popular ? 'pt-4' : ''}">
-          <div class="flex items-center mb-6">
-            <div class="p-3 bg-accent-100 rounded-2xl mr-4 group-hover:scale-110 transition-transform duration-300">
-              <img src="./assets/images/logos/${service.icon}" alt="${service.name}" class="w-12 h-12"/>
-            </div>
-            <div>
-              <h3 class="text-2xl font-bold text-primary-900">${service.name}</h3>
-              <p class="text-gray-600">${service.subtitle}</p>
-            </div>
-          </div>
-
-          <div class="mb-8">
-            ${service.development > 0 ? `
-              <div class="flex items-baseline mb-2">
-                ${service.originalPrice > service.development ? `<span class="text-sm text-gray-500 line-through mr-2">R$ ${service.originalPrice.toLocaleString()}</span>` : ''}
-                <span class="text-4xl font-bold text-primary-900">R$ ${service.development.toLocaleString()}</span>
-                <span class="text-gray-600 ml-2">desenvolvimento</span>
-              </div>
-            ` : ''}
-
-            ${service.monthly > 0 ? `
-              <div class="flex items-center text-accent-600 font-semibold">
-                <span class="text-lg">+ R$ ${service.monthly}/mês</span>
-                <span class="text-sm ml-2 bg-accent-100 px-2 py-1 rounded">manutenção</span>
-              </div>
-            ` : ''}
-
-            ${service.hourly ? `
-              <div class="flex items-center text-primary-600 font-semibold">
-                <span class="text-3xl font-bold">R$ ${service.hourly}</span>
-                <span class="text-lg ml-2">por hora</span>
-              </div>
-            ` : ''}
-          </div>
-
-          <div class="space-y-4 mb-8">
-            ${service.features.map(feature => `
-              <div class="flex items-start space-x-3">
-                <i class="fas fa-check text-accent-500 mt-1"></i>
-                <span class="text-gray-700">${feature}</span>
-              </div>
-            `).join('')}
-          </div>
-
-          <a href="https://wa.link/suwtio" target="_blank" rel="noopener noreferrer" class="block w-full bg-gradient-to-r ${ctaColors[category]} text-white text-center py-4 rounded-2xl font-semibold hover:shadow-glow transition-all duration-300 transform hover:-translate-y-1">
-            ${service.development > 0 ? 'Solicitar Orçamento' : 'Contratar Serviço'}
-          </a>
         </div>
+      ` : ''}
+
+      <div class="${service.popular ? 'pt-2' : ''}">
+        <div class="flex items-center mb-6">
+          <div class="p-2 bg-accent-100 rounded-xl mr-3 group-hover:scale-110 transition-transform duration-300">
+            <img src="./assets/images/logos/${service.icon}" alt="${service.name}" class="w-8 h-8"/>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-primary-900">${service.name}</h3>
+            <p class="text-gray-600 text-sm">${service.subtitle}</p>
+          </div>
+        </div>
+
+        <div class="mb-6">
+          ${service.development > 0 ? `
+            <div class="flex items-baseline mb-2">
+              ${service.originalPrice > service.development ? `<span class="text-sm text-gray-500 line-through mr-2">R$ ${service.originalPrice.toLocaleString()}</span>` : ''}
+              <span class="text-2xl font-bold text-primary-900">R$ ${service.development.toLocaleString()}</span>
+              <span class="text-gray-600 ml-2 text-sm">desenvolvimento</span>
+            </div>
+          ` : ''}
+
+          ${service.monthly > 0 ? `
+            <div class="flex items-center text-accent-600 font-semibold">
+              <span class="text-base">+ R$ ${service.monthly}/mês</span>
+              <span class="text-xs ml-2 bg-accent-100 px-2 py-1 rounded">manutenção</span>
+            </div>
+          ` : ''}
+
+          ${service.hourly ? `
+            <div class="flex items-center text-primary-600 font-semibold">
+              <span class="text-2xl font-bold">R$ ${service.hourly}</span>
+              <span class="text-sm ml-2">por hora</span>
+            </div>
+          ` : ''}
+        </div>
+
+        <div class="space-y-3 mb-6">
+          ${service.features.map(feature => `
+            <div class="flex items-start space-x-2">
+              <i class="fas fa-check text-accent-500 mt-1 text-sm"></i>
+              <span class="text-gray-700 text-sm">${feature}</span>
+            </div>
+          `).join('')}
+        </div>
+
+        <button class="w-full bg-gradient-to-r ${ctaColors[category]} text-white py-3 rounded-2xl font-semibold hover:shadow-lg transition-all duration-300" onclick="window.open('https://wa.link/suwtio', '_blank')">
+          ${service.development > 0 ? 'Solicitar Orçamento' : 'Contratar Serviço'}
+        </button>
       </div>
-    `;
+    </div>
+  `;
   }
 
   renderCategoryCards(category) {

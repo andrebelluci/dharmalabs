@@ -734,3 +734,123 @@ body {
 .pricing-navigation-tabs.animate-out {
   animation: tabsSlideOut 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
+
+/* Custom Scrollbar para tabs horizontais */
+.tabs-scroll::-webkit-scrollbar {
+  height: 4px;
+}
+
+.tabs-scroll::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+}
+
+.tabs-scroll::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, #4ade80, #a855f7);
+  border-radius: 2px;
+}
+
+/* Custom Scrollbar para cards horizontais */
+.cards-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+
+.cards-scroll::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 3px;
+}
+
+.cards-scroll::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, #0369a1, #4ade80);
+  border-radius: 3px;
+}
+
+/* Smooth scroll behavior */
+.smooth-scroll {
+  scroll-behavior: smooth;
+}
+
+/* Tab indicator */
+.tab-indicator {
+  position: absolute;
+  bottom: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #4ade80, #a855f7);
+  border-radius: 2px 2px 0 0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Scroll snap for smooth navigation */
+.snap-x {
+  scroll-snap-type: x mandatory;
+}
+
+.snap-start {
+  scroll-snap-align: start;
+}
+
+/* Estilos para os botões das tabs */
+.tab-button {
+  flex-shrink: 0;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid transparent;
+  display: flex;
+  align-items: center;
+  color: #6b7280;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
+}
+
+.tab-button:hover {
+  color: #0369a1;
+  background-color: rgba(3, 105, 161, 0.05);
+  border-color: rgba(3, 105, 161, 0.2);
+  transform: translateY(-1px);
+}
+
+.tab-button.active {
+  color: #0369a1 !important;
+  background-color: #f0f9ff !important;
+  border-color: #0369a1;
+  box-shadow: 0 4px 12px rgba(3, 105, 161, 0.15);
+}
+
+/* Cards horizontais - largura fixa */
+.pricing-card-horizontal {
+  flex-shrink: 0;
+  width: 320px;
+  /* Largura fixa para mobile-first */
+  min-height: 600px;
+}
+
+/* Responsividade */
+@media (min-width: 768px) {
+  .pricing-card-horizontal {
+    width: 350px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .pricing-card-horizontal {
+    width: 380px;
+  }
+}
+
+/* Indicadores de scroll */
+.scroll-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #d1d5db;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.scroll-indicator.active {
+  background-color: #4ade80;
+  transform: scale(1.2);
+}
