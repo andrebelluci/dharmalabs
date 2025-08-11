@@ -823,7 +823,6 @@ body {
 .pricing-card-horizontal {
   flex-shrink: 0;
   width: 320px;
-  /* Largura fixa para mobile-first */
   min-height: 600px;
 }
 

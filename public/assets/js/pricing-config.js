@@ -1,420 +1,594 @@
 /**
  * DHARMA LABS - PRICING CONFIG
  * Apenas funcionalidades específicas da página de preços
- * Funcionalidades compartilhadas foram movidas para scripts.js
  */
 
 // ===== DADOS DE PREÇOS =====
+// const PRICING_DATA = {
+//   sites: {
+//     landingPage: {
+//       name: "Landing Page",
+//       subtitle: "Página única de conversão",
+//       development: 950,
+//       originalPrice: 1950,
+//       monthly: 45.50,
+//       popular: true,
+//       icon: "flower-of-life.svg",
+//       features: [
+//         "1 página otimizada",
+//         "Design responsivo moderno",
+//         "Formulário de contato/leads",
+//         "Integração Google Analytics",
+//         "Otimização SEO básica",
+//         "Hospedagem + SSL inclusos",
+//         "Suporte via ticket"
+//       ]
+//     },
+//     siteVitrine: {
+//       name: "Site Vitrine",
+//       subtitle: "Perfeito para negócios locais",
+//       development: 1890,
+//       originalPrice: 3500,
+//       monthly: 39,
+//       popular: false,
+//       icon: "mandala-digital.svg",
+//       features: [
+//         "Até 5 páginas responsivas",
+//         "Design moderno e profissional",
+//         "Otimização SEO completa",
+//         "Formulário de contato avançado",
+//         "Blog integrado (opcional)",
+//         "Hospedagem + SSL inclusos",
+//         "Analytics e monitoramento",
+//         "Suporte via ticket"
+//       ]
+//     },
+//     siteCompleto: {
+//       name: "Site Completo",
+//       subtitle: "Solução empresarial robusta",
+//       development: 3490,
+//       originalPrice: 6000,
+//       monthly: 59,
+//       popular: false,
+//       icon: "sri-yantra.svg",
+//       features: [
+//         "Até 15 páginas + blog",
+//         "Design exclusivo premium",
+//         "SEO avançado + sitemap",
+//         "Múltiplos formulários",
+//         "Área de downloads/recursos",
+//         "Integração redes sociais",
+//         "Newsletter automatizada",
+//         "Suporte prioritário"
+//       ]
+//     }
+//   },
+//   sistemas: {
+//     crmSimples: {
+//       name: "CRM Simples",
+//       subtitle: "Gestão básica de clientes",
+//       development: 4890,
+//       originalPrice: 8500,
+//       monthly: 89,
+//       popular: true,
+//       icon: "metatron-cube.svg",
+//       features: [
+//         "Cadastro de clientes/leads",
+//         "Histórico de interações",
+//         "Controle de vendas básico",
+//         "Relatórios simples",
+//         "Usuários limitados (até 3)",
+//         "Backup automático",
+//         "Suporte via ticket"
+//       ]
+//     },
+//     sistemaGestao: {
+//       name: "Sistema de Gestão",
+//       subtitle: "ERP simplificado completo",
+//       development: 7890,
+//       originalPrice: 15000,
+//       monthly: 149,
+//       popular: false,
+//       icon: "torus-quantum.svg",
+//       features: [
+//         "Gestão completa de clientes",
+//         "Controle de estoque/produtos",
+//         "Financeiro (contas a pagar/receber)",
+//         "Relatórios avançados",
+//         "Múltiplos usuários (até 10)",
+//         "API para integrações",
+//         "Dashboard executivo",
+//         "Suporte prioritário"
+//       ]
+//     },
+//     plataformaPersonalizada: {
+//       name: "Plataforma Personalizada",
+//       subtitle: "Desenvolvimento sob medida",
+//       development: 12890,
+//       originalPrice: 25000,
+//       monthly: 249,
+//       popular: false,
+//       icon: "fibonacci-spiral.svg",
+//       features: [
+//         "Desenvolvimento 100% personalizado",
+//         "Integração com sistemas externos",
+//         "Workflow automatizado",
+//         "Relatórios customizados",
+//         "Usuários ilimitados",
+//         "API completa + documentação",
+//         "Mobile app integrado",
+//         "Suporte dedicado 24/7"
+//       ]
+//     }
+//   },
+//   dashboards: {
+//     dashboardBasico: {
+//       name: "Dashboard Básico",
+//       subtitle: "Visualização de dados simples",
+//       development: 2490,
+//       originalPrice: 4500,
+//       monthly: 49,
+//       popular: true,
+//       icon: "mandala-digital.svg",
+//       features: [
+//         "Até 5 fontes de dados",
+//         "Gráficos básicos (pizza, barra, linha)",
+//         "Filtros simples por período",
+//         "Exportação PDF/Excel",
+//         "Atualização manual de dados",
+//         "1 usuário de acesso",
+//         "Suporte via ticket"
+//       ]
+//     },
+//     biAvancado: {
+//       name: "BI Avançado",
+//       subtitle: "Business Intelligence completo",
+//       development: 4890,
+//       originalPrice: 9000,
+//       monthly: 99,
+//       popular: false,
+//       icon: "metatron-cube.svg",
+//       features: [
+//         "Fontes de dados ilimitadas",
+//         "Gráficos avançados e interativos",
+//         "Filtros dinâmicos complexos",
+//         "Alertas automáticos",
+//         "Agendamento de relatórios",
+//         "Até 5 usuários",
+//         "API para integração",
+//         "Suporte prioritário"
+//       ]
+//     },
+//     analisePreditiva: {
+//       name: "Análise Preditiva",
+//       subtitle: "IA e Machine Learning",
+//       development: 8890,
+//       originalPrice: 16000,
+//       monthly: 189,
+//       popular: false,
+//       icon: "torus-quantum.svg",
+//       features: [
+//         "Algoritmos de ML integrados",
+//         "Previsões e tendências",
+//         "Análise de padrões avançada",
+//         "Dashboards em tempo real",
+//         "Integração com big data",
+//         "Usuários ilimitados",
+//         "Consultoria estratégica inclusa",
+//         "Suporte dedicado"
+//       ]
+//     }
+//   },
+//   apps: {
+//     appBasico: {
+//       name: "App Básico",
+//       subtitle: "Aplicativo simples multiplataforma",
+//       development: 5890,
+//       originalPrice: 12000,
+//       monthly: 99,
+//       popular: true,
+//       icon: "sri-yantra.svg",
+//       features: [
+//         "Android + iOS (Flutter)",
+//         "Até 5 telas/funcionalidades",
+//         "Design responsivo nativo",
+//         "Integração com backend simples",
+//         "Push notifications básicas",
+//         "Publicação nas stores",
+//         "Suporte via ticket"
+//       ]
+//     },
+//     appComercial: {
+//       name: "App Comercial",
+//       subtitle: "Solução robusta para negócios",
+//       development: 9890,
+//       originalPrice: 18000,
+//       monthly: 159,
+//       popular: false,
+//       icon: "metatron-cube.svg",
+//       features: [
+//         "Funcionalidades avançadas",
+//         "Integração com sistemas web",
+//         "Login/cadastro de usuários",
+//         "Pagamentos integrados",
+//         "Analytics detalhado",
+//         "Notificações personalizadas",
+//         "Versionamento automático",
+//         "Suporte prioritário"
+//       ]
+//     },
+//     appPersonalizado: {
+//       name: "App Personalizado",
+//       subtitle: "Desenvolvimento sob medida",
+//       development: 15890,
+//       originalPrice: 30000,
+//       monthly: 249,
+//       popular: false,
+//       icon: "fibonacci-spiral.svg",
+//       features: [
+//         "Desenvolvimento 100% customizado",
+//         "Integração complexa com APIs",
+//         "Funcionalidades offline",
+//         "Geolocalização avançada",
+//         "Machine Learning integrado",
+//         "Múltiplas integrações",
+//         "Consultoria de UX/UI",
+//         "Suporte dedicado 24/7"
+//       ]
+//     }
+//   },
+//   automacao: {
+//     integracaoBasica: {
+//       name: "Integração Básica",
+//       subtitle: "Conecte seus sistemas",
+//       development: 1890,
+//       originalPrice: 3500,
+//       monthly: 39,
+//       popular: true,
+//       icon: "fibonacci-spiral.svg",
+//       features: [
+//         "Integração entre 2 sistemas",
+//         "Sincronização de dados básica",
+//         "Webhooks simples",
+//         "Logs de execução",
+//         "Execução agendada",
+//         "Tratamento de erros básico",
+//         "Suporte via ticket"
+//       ]
+//     },
+//     automacaoProcessos: {
+//       name: "Automação de Processos",
+//       subtitle: "Workflows inteligentes",
+//       development: 3490,
+//       originalPrice: 6500,
+//       monthly: 69,
+//       popular: false,
+//       icon: "torus-quantum.svg",
+//       features: [
+//         "Múltiplas integrações",
+//         "Workflows complexos",
+//         "Triggers automáticos",
+//         "Processamento de arquivos",
+//         "Notificações automáticas",
+//         "Dashboard de monitoramento",
+//         "API personalizada",
+//         "Suporte prioritário"
+//       ]
+//     },
+//     rpaAvancado: {
+//       name: "RPA Avançado",
+//       subtitle: "Robotic Process Automation",
+//       development: 6890,
+//       originalPrice: 12000,
+//       monthly: 129,
+//       popular: false,
+//       icon: "metatron-cube.svg",
+//       features: [
+//         "Automação de tarefas complexas",
+//         "Integração com sistemas legados",
+//         "IA para tomada de decisões",
+//         "Processamento de documentos",
+//         "Bots inteligentes",
+//         "Métricas de performance",
+//         "Escalabilidade automática",
+//         "Consultoria especializada"
+//       ]
+//     }
+//   },
+//   email: {
+//     emailSimples: {
+//       name: "Email Simples",
+//       subtitle: "Solução básica do provedor",
+//       development: 290,
+//       originalPrice: 500,
+//       monthly: 19,
+//       popular: true,
+//       icon: "flower-of-life.svg",
+//       features: [
+//         "Até 5 contas de email",
+//         "Domínio personalizado",
+//         "Webmail básico",
+//         "Configuração IMAP/POP3",
+//         "Antispam básico",
+//         "Suporte via ticket"
+//       ]
+//     },
+//     googleWorkspace: {
+//       name: "Google Workspace",
+//       subtitle: "Solução profissional completa",
+//       development: 490,
+//       originalPrice: 800,
+//       monthly: 35,
+//       popular: false,
+//       icon: "mandala-digital.svg",
+//       features: [
+//         "Gmail profissional",
+//         "Google Drive (30GB/usuário)",
+//         "Google Meet integrado",
+//         "Calendário compartilhado",
+//         "Docs, Planilhas, Apresentações",
+//         "Configuração completa",
+//         "Treinamento da equipe",
+//         "Suporte Google + nosso"
+//       ]
+//     },
+//     suitePremium: {
+//       name: "Suíte Premium",
+//       subtitle: "Microsoft 365 + extras",
+//       development: 690,
+//       originalPrice: 1200,
+//       monthly: 49,
+//       popular: false,
+//       icon: "sri-yantra.svg",
+//       features: [
+//         "Microsoft 365 completo",
+//         "Outlook + OneDrive",
+//         "Teams + SharePoint",
+//         "Office completo online",
+//         "Segurança avançada",
+//         "Backup automático",
+//         "Migração de dados",
+//         "Suporte especializado"
+//       ]
+//     }
+//   },
+//   consultoria: {
+//     consultoriaGeral: {
+//       name: "Consultoria Geral",
+//       subtitle: "Orientação tecnológica",
+//       development: 0,
+//       originalPrice: 0,
+//       monthly: 0,
+//       hourly: 120,
+//       popular: true,
+//       icon: "torus-quantum.svg",
+//       features: [
+//         "Análise de requisitos",
+//         "Arquitetura de sistemas",
+//         "Escolha de tecnologias",
+//         "Planejamento de projetos",
+//         "Code review e otimização",
+//         "Documentação técnica",
+//         "Suporte a decisões estratégicas"
+//       ]
+//     },
+//     testesAutomatizados: {
+//       name: "Testes Automatizados",
+//       subtitle: "QA e automação de testes",
+//       development: 2490,
+//       originalPrice: 4500,
+//       monthly: 79,
+//       hourly: 140,
+//       popular: false,
+//       icon: "metatron-cube.svg",
+//       features: [
+//         "Implementação de testes unitários",
+//         "Testes de integração",
+//         "Testes end-to-end (E2E)",
+//         "Automação com Selenium/Cypress",
+//         "CI/CD pipeline completo",
+//         "Relatórios de cobertura",
+//         "Treinamento da equipe QA",
+//         "Consultoria em QA"
+//       ]
+//     },
+//     auditoriaTecnica: {
+//       name: "Auditoria Técnica",
+//       subtitle: "Análise completa de sistemas",
+//       development: 1890,
+//       originalPrice: 3500,
+//       monthly: 0,
+//       hourly: 160,
+//       popular: false,
+//       icon: "fibonacci-spiral.svg",
+//       features: [
+//         "Auditoria de código fonte",
+//         "Análise de segurança",
+//         "Performance e otimização",
+//         "Conformidade com padrões",
+//         "Relatório detalhado",
+//         "Plano de melhorias",
+//         "Estimativas de correção",
+//         "Acompanhamento pós-auditoria"
+//       ]
+//     }
+//   }
+// };
 const PRICING_DATA = {
   sites: {
     landingPage: {
       name: "Landing Page",
       subtitle: "Página única de conversão",
-      development: 890,
-      originalPrice: 1500,
-      monthly: 29,
-      popular: false,
-      icon: "flower-of-life.svg",
-      features: [
-        "1 página otimizada",
-        "Design responsivo moderno",
-        "Formulário de contato/leads",
-        "Integração Google Analytics",
-        "Otimização SEO básica",
-        "Hospedagem + SSL inclusos",
-        "Suporte via ticket"
-      ]
-    },
-    siteVitrine: {
-      name: "Site Vitrine",
-      subtitle: "Perfeito para negócios locais",
-      development: 1890,
-      originalPrice: 3500,
-      monthly: 39,
+      development: 750,
+      monthly: 35,
       popular: true,
       icon: "mandala-digital.svg",
       features: [
-        "Até 5 páginas responsivas",
-        "Design moderno e profissional",
-        "Otimização SEO completa",
-        "Formulário de contato avançado",
-        "Blog integrado (opcional)",
-        "Hospedagem + SSL inclusos",
-        "Analytics e monitoramento",
-        "Suporte via ticket"
+        "Design moderno e responsivo",
+        "Formulário de contato/leads",
+        "Otimização SEO básica",
+        "Integração Google Analytics",
+        "Hospedagem inclusa",
+        "Suporte incluído"
       ]
     },
-    siteCompleto: {
-      name: "Site Completo",
-      subtitle: "Solução empresarial robusta",
-      development: 3490,
-      originalPrice: 6000,
+    siteBasico: {
+      name: "Site Basico",
+      subtitle: "Solução profissional para empresas",
+      development: 1890,
       monthly: 59,
       popular: false,
       icon: "sri-yantra.svg",
       features: [
-        "Até 15 páginas + blog",
-        "Design exclusivo premium",
-        "SEO avançado + sitemap",
-        "Múltiplos formulários",
-        "Área de downloads/recursos",
+        "Até 10 páginas + blog",
+        "Design exclusivo",
+        "SEO otimizado",
         "Integração redes sociais",
-        "Newsletter automatizada",
-        "Suporte prioritário"
+        "Hospedagem inclusa",
+        "Suporte incluído"
+      ]
+    },
+    siteCompleto: {
+      name: "Site Completo",
+      subtitle: "Solução profissional para empresas",
+      development: 1890,
+      monthly: 59,
+      popular: false,
+      icon: "sri-yantra.svg",
+      features: [
+        "Até 10 páginas + blog",
+        "Design exclusivo",
+        "SEO otimizado",
+        "Integração redes sociais",
+        "Hospedagem inclusa",
+        "Suporte incluído"
       ]
     }
   },
-  sistemas: {
-    crmSimples: {
-      name: "CRM Simples",
-      subtitle: "Gestão básica de clientes",
-      development: 4890,
-      originalPrice: 8500,
-      monthly: 89,
+  biopages: {
+    bioPageSimples: {
+      name: "Bio Page",
+      subtitle: "Links e contatos em um só lugar",
+      development: 290,
+      monthly: 19,
       popular: true,
-      icon: "metatron-cube.svg",
+      icon: "flower-of-life.svg",
       features: [
-        "Cadastro de clientes/leads",
-        "Histórico de interações",
-        "Controle de vendas básico",
-        "Relatórios simples",
-        "Usuários limitados (até 3)",
-        "Backup automático",
-        "Suporte via ticket"
+        "Página única com links personalizáveis",
+        "Design responsivo",
+        "Links para redes sociais",
+        "QR Code para divulgação",
+        "Estatísticas básicas de acesso",
+        "Hospedagem inclusa",
+        "Suporte incluído",
       ]
     },
-    sistemaGestao: {
-      name: "Sistema de Gestão",
-      subtitle: "ERP simplificado completo",
-      development: 7890,
-      originalPrice: 15000,
-      monthly: 149,
-      popular: false,
+  },
+  sistemas: {
+    sistemaSimples: {
+      name: "Sistema Sob Medida",
+      subtitle: "Web app simples e responsivo",
+      development: 2490,
+      monthly: 79,
+      popular: true,
       icon: "torus-quantum.svg",
       features: [
-        "Gestão completa de clientes",
-        "Controle de estoque/produtos",
-        "Financeiro (contas a pagar/receber)",
-        "Relatórios avançados",
-        "Múltiplos usuários (até 10)",
-        "API para integrações",
-        "Dashboard executivo",
-        "Suporte prioritário"
-      ]
-    },
-    plataformaPersonalizada: {
-      name: "Plataforma Personalizada",
-      subtitle: "Desenvolvimento sob medida",
-      development: 12890,
-      originalPrice: 25000,
-      monthly: 249,
-      popular: false,
-      icon: "fibonacci-spiral.svg",
-      features: [
-        "Desenvolvimento 100% personalizado",
-        "Integração com sistemas externos",
-        "Workflow automatizado",
-        "Relatórios customizados",
-        "Usuários ilimitados",
-        "API completa + documentação",
-        "Mobile app integrado",
-        "Suporte dedicado 24/7"
+        "Até 3 funcionalidades principais",
+        "Até 5 usuários",
+        "Área administrativa",
+        "Relatórios básicos",
+        "Integração simples (1 API ou planilha)",
+        "PWA (Progressive Web App)",
+        "Hospedagem inclusa",
+        "Suporte incluído"
       ]
     }
   },
   dashboards: {
     dashboardBasico: {
       name: "Dashboard Básico",
-      subtitle: "Visualização de dados simples",
-      development: 2490,
-      originalPrice: 4500,
-      monthly: 49,
+      subtitle: "Visualização simples de dados",
+      development: 890,
+      monthly: 35,
       popular: true,
       icon: "mandala-digital.svg",
       features: [
-        "Até 5 fontes de dados",
-        "Gráficos básicos (pizza, barra, linha)",
-        "Filtros simples por período",
+        "1 fonte de dados (Excel ou CSV)",
+        "Gráficos básicos",
+        "Filtros simples",
         "Exportação PDF/Excel",
-        "Atualização manual de dados",
-        "1 usuário de acesso",
-        "Suporte via ticket"
+        "Hospedagem inclusa",
+        "Suporte incluído"
       ]
     },
-    biAvancado: {
-      name: "BI Avançado",
-      subtitle: "Business Intelligence completo",
-      development: 4890,
-      originalPrice: 9000,
-      monthly: 99,
+    dashboardAvancado: {
+      name: "Dashboard Avançado",
+      subtitle: "Visualização interativa e integrada",
+      development: 2490,
+      monthly: 79,
       popular: false,
       icon: "metatron-cube.svg",
       features: [
-        "Fontes de dados ilimitadas",
-        "Gráficos avançados e interativos",
-        "Filtros dinâmicos complexos",
-        "Alertas automáticos",
-        "Agendamento de relatórios",
-        "Até 5 usuários",
-        "API para integração",
-        "Suporte prioritário"
-      ]
-    },
-    analisePreditiva: {
-      name: "Análise Preditiva",
-      subtitle: "IA e Machine Learning",
-      development: 8890,
-      originalPrice: 16000,
-      monthly: 189,
-      popular: false,
-      icon: "torus-quantum.svg",
-      features: [
-        "Algoritmos de ML integrados",
-        "Previsões e tendências",
-        "Análise de padrões avançada",
-        "Dashboards em tempo real",
-        "Integração com big data",
-        "Usuários ilimitados",
-        "Consultoria estratégica inclusa",
-        "Suporte dedicado"
-      ]
-    }
-  },
-  apps: {
-    appBasico: {
-      name: "App Básico",
-      subtitle: "Aplicativo simples multiplataforma",
-      development: 5890,
-      originalPrice: 12000,
-      monthly: 99,
-      popular: true,
-      icon: "sri-yantra.svg",
-      features: [
-        "Android + iOS (Flutter)",
-        "Até 5 telas/funcionalidades",
-        "Design responsivo nativo",
-        "Integração com backend simples",
-        "Push notifications básicas",
-        "Publicação nas stores",
-        "Suporte via ticket"
-      ]
-    },
-    appComercial: {
-      name: "App Comercial",
-      subtitle: "Solução robusta para negócios",
-      development: 9890,
-      originalPrice: 18000,
-      monthly: 159,
-      popular: false,
-      icon: "metatron-cube.svg",
-      features: [
-        "Funcionalidades avançadas",
-        "Integração com sistemas web",
-        "Login/cadastro de usuários",
-        "Pagamentos integrados",
-        "Analytics detalhado",
-        "Notificações personalizadas",
-        "Versionamento automático",
-        "Suporte prioritário"
-      ]
-    },
-    appPersonalizado: {
-      name: "App Personalizado",
-      subtitle: "Desenvolvimento sob medida",
-      development: 15890,
-      originalPrice: 30000,
-      monthly: 249,
-      popular: false,
-      icon: "fibonacci-spiral.svg",
-      features: [
-        "Desenvolvimento 100% customizado",
-        "Integração complexa com APIs",
-        "Funcionalidades offline",
-        "Geolocalização avançada",
-        "Machine Learning integrado",
-        "Múltiplas integrações",
-        "Consultoria de UX/UI",
-        "Suporte dedicado 24/7"
-      ]
-    }
-  },
-  automacao: {
-    integracaoBasica: {
-      name: "Integração Básica",
-      subtitle: "Conecte seus sistemas",
-      development: 1890,
-      originalPrice: 3500,
-      monthly: 39,
-      popular: true,
-      icon: "fibonacci-spiral.svg",
-      features: [
-        "Integração entre 2 sistemas",
-        "Sincronização de dados básica",
-        "Webhooks simples",
-        "Logs de execução",
-        "Execução agendada",
-        "Tratamento de erros básico",
-        "Suporte via ticket"
-      ]
-    },
-    automacaoProcessos: {
-      name: "Automação de Processos",
-      subtitle: "Workflows inteligentes",
-      development: 3490,
-      originalPrice: 6500,
-      monthly: 69,
-      popular: false,
-      icon: "torus-quantum.svg",
-      features: [
-        "Múltiplas integrações",
-        "Workflows complexos",
-        "Triggers automáticos",
-        "Processamento de arquivos",
-        "Notificações automáticas",
-        "Dashboard de monitoramento",
-        "API personalizada",
-        "Suporte prioritário"
-      ]
-    },
-    rpaAvancado: {
-      name: "RPA Avançado",
-      subtitle: "Robotic Process Automation",
-      development: 6890,
-      originalPrice: 12000,
-      monthly: 129,
-      popular: false,
-      icon: "metatron-cube.svg",
-      features: [
-        "Automação de tarefas complexas",
-        "Integração com sistemas legados",
-        "IA para tomada de decisões",
-        "Processamento de documentos",
-        "Bots inteligentes",
-        "Métricas de performance",
-        "Escalabilidade automática",
-        "Consultoria especializada"
+        "Múltiplas fontes de dados",
+        "Gráficos interativos",
+        "Filtros dinâmicos",
+        "Atualização automática",
+        "Hospedagem inclusa",
+        "Suporte incluído"
       ]
     }
   },
   email: {
-    emailSimples: {
-      name: "Email Simples",
-      subtitle: "Solução básica do provedor",
-      development: 290,
-      originalPrice: 500,
-      monthly: 19,
+    configuracaoEmail: {
+      name: "Configuração de Email",
+      subtitle: "Email profissional com seu domínio",
+      development: 190,
+      monthly: 0,
       popular: true,
       icon: "flower-of-life.svg",
       features: [
-        "Até 5 contas de email",
-        "Domínio personalizado",
-        "Webmail básico",
-        "Configuração IMAP/POP3",
+        "Configuração de até 5 contas",
+        "Integração em dispositivos",
         "Antispam básico",
-        "Suporte via ticket"
+        "Suporte incluído"
       ]
     },
     googleWorkspace: {
       name: "Google Workspace",
-      subtitle: "Solução profissional completa",
-      development: 490,
-      originalPrice: 800,
+      subtitle: "Configuração profissional do Google",
+      development: 290,
       monthly: 35,
       popular: false,
       icon: "mandala-digital.svg",
       features: [
-        "Gmail profissional",
-        "Google Drive (30GB/usuário)",
-        "Google Meet integrado",
-        "Calendário compartilhado",
-        "Docs, Planilhas, Apresentações",
         "Configuração completa",
-        "Treinamento da equipe",
-        "Suporte Google + nosso"
-      ]
-    },
-    suitePremium: {
-      name: "Suíte Premium",
-      subtitle: "Microsoft 365 + extras",
-      development: 690,
-      originalPrice: 1200,
-      monthly: 49,
-      popular: false,
-      icon: "sri-yantra.svg",
-      features: [
-        "Microsoft 365 completo",
-        "Outlook + OneDrive",
-        "Teams + SharePoint",
-        "Office completo online",
-        "Segurança avançada",
-        "Backup automático",
-        "Migração de dados",
-        "Suporte especializado"
+        "Gmail corporativo",
+        "Google Drive",
+        "Google Meet",
+        "Suporte incluído"
       ]
     }
   },
   consultoria: {
-    consultoriaGeral: {
-      name: "Consultoria Geral",
-      subtitle: "Orientação tecnológica",
-      development: 0,
-      originalPrice: 0,
+    testesAutomatizados: {
+      name: "Testes Automatizados",
+      subtitle: "Qualidade de software e automação de testes",
+      development: 490,
       monthly: 0,
       hourly: 120,
       popular: true,
-      icon: "torus-quantum.svg",
-      features: [
-        "Análise de requisitos",
-        "Arquitetura de sistemas",
-        "Escolha de tecnologias",
-        "Planejamento de projetos",
-        "Code review e otimização",
-        "Documentação técnica",
-        "Suporte a decisões estratégicas"
-      ]
-    },
-    testesAutomatizados: {
-      name: "Testes Automatizados",
-      subtitle: "QA e automação de testes",
-      development: 2490,
-      originalPrice: 4500,
-      monthly: 79,
-      hourly: 140,
-      popular: false,
       icon: "metatron-cube.svg",
       features: [
-        "Implementação de testes unitários",
+        "Testes unitários",
         "Testes de integração",
-        "Testes end-to-end (E2E)",
-        "Automação com Selenium/Cypress",
-        "CI/CD pipeline completo",
+        "Testes end-to-end",
         "Relatórios de cobertura",
-        "Treinamento da equipe QA",
-        "Consultoria em QA"
-      ]
-    },
-    auditoriaTecnica: {
-      name: "Auditoria Técnica",
-      subtitle: "Análise completa de sistemas",
-      development: 1890,
-      originalPrice: 3500,
-      monthly: 0,
-      hourly: 160,
-      popular: false,
-      icon: "fibonacci-spiral.svg",
-      features: [
-        "Auditoria de código fonte",
-        "Análise de segurança",
-        "Performance e otimização",
-        "Conformidade com padrões",
-        "Relatório detalhado",
-        "Plano de melhorias",
-        "Estimativas de correção",
-        "Acompanhamento pós-auditoria"
+        "Suporte incluído"
       ]
     }
   }
 };
+
 
 // ===== CLASSE PARA GERENCIAR PREÇOS =====
 class PricingManager {
@@ -500,8 +674,6 @@ class PricingManager {
       requestAnimationFrame(updateIndicator);
     });
   }
-
-
 
   switchTab(targetTab, tabButtons, tabContents) {
     // Remove active class from all buttons and contents
@@ -602,10 +774,34 @@ class PricingManager {
     button.classList.remove('text-gray-600', 'hover:text-primary-600');
   }
 
+  scrollTabsToActive() {
+    const tabsContainer = document.getElementById('tabs-container');
+    const activeTab = document.querySelector('.tab-button.active');
+    if (!tabsContainer || !activeTab) return;
+
+    const containerRect = tabsContainer.getBoundingClientRect();
+    const activeRect = activeTab.getBoundingClientRect();
+
+    if (activeRect.left < containerRect.left) {
+      // Tab está à esquerda do container visível — rolar para esquerda
+      tabsContainer.scrollBy({
+        left: activeRect.left - containerRect.left - 16, // margem extra
+        behavior: 'smooth'
+      });
+    } else if (activeRect.right > containerRect.right) {
+      // Tab está à direita do container visível — rolar para direita
+      tabsContainer.scrollBy({
+        left: activeRect.right - containerRect.right + 16, // margem extra
+        behavior: 'smooth'
+      });
+    }
+  }
+
   // ===== GERAÇÃO DE CARDS =====
   createPricingCard(service, category) {
     const borderColors = {
       sites: service.popular ? 'border-accent-500' : 'border-primary-500',
+      biopages: service.popular ? 'border-primary-500' : 'border-highlight-500',
       sistemas: service.popular ? 'border-highlight-500' : 'border-primary-500',
       dashboards: service.popular ? 'border-primary-500' : 'border-accent-500',
       apps: service.popular ? 'border-accent-500' : 'border-highlight-500',
@@ -616,6 +812,7 @@ class PricingManager {
 
     const ctaColors = {
       sites: service.popular ? 'from-accent-500 to-primary-600' : 'from-primary-500 to-primary-600',
+      biopages: service.popular ? 'from-primary-500 to-highlight-600' : 'from-highlight-500 to-primary-600',
       sistemas: service.popular ? 'from-highlight-500 to-highlight-600' : 'from-primary-500 to-primary-600',
       dashboards: service.popular ? 'from-primary-500 to-primary-600' : 'from-accent-500 to-accent-600',
       apps: service.popular ? 'from-accent-500 to-primary-600' : 'from-highlight-500 to-highlight-600',
@@ -627,7 +824,7 @@ class PricingManager {
     return `
     <div class="pricing-card pricing-card-horizontal bg-white rounded-3xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 border-t-4 ${borderColors[category]} relative overflow-hidden group snap-start">
       ${service.popular ? `
-        <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
+        <div class="absolute -top-1 left-1/2 transform -translate-x-1/2">
           <div class="bg-accent-500 text-white px-4 py-1 rounded-full text-xs font-bold">
             🔥 MAIS POPULAR
           </div>
@@ -692,12 +889,27 @@ class PricingManager {
 
     const services = Object.values(PRICING_DATA[category]);
     container.innerHTML = services.map(service => this.createPricingCard(service, category)).join('');
+
+    container.classList.remove('justify-center', 'flex-wrap', 'overflow-x-auto', 'md:justify-center', 'md:flex-wrap');
+
+    // Ajusta layout no desktop se poucos cards
+    if (services.length === 1) {
+      // 1 card: centraliza sempre
+      container.classList.add('justify-center');
+    } else if (services.length === 2 || services.length === 3) {
+      // 2 ou 3 cards: rolagem no mobile, centraliza no desktop
+      container.classList.add('overflow-x-auto', 'md:justify-center', 'md:flex-wrap');
+    } else {
+      // 4 ou mais cards: rolagem horizontal sempre
+      container.classList.add('overflow-x-auto');
+    }
   }
 
   renderInitialCards() {
     // Render cards for the initial active tab
     this.renderCategoryCards(this.activeTab);
   }
+
 
   // ===== FAQ FUNCTIONALITY =====
   setupFAQ() {
@@ -772,6 +984,24 @@ if (document.readyState === 'loading') {
 } else {
   pricingManager = new PricingManager();
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  const hash = window.location.hash.replace("#", "");
+  if (hash) {
+    const targetButton = document.querySelector(`.tab-button[data-tab="${hash}"]`);
+    if (targetButton) {
+      targetButton.click();
+      if (pricingManager && typeof pricingManager.scrollTabsToActive === "function") {
+        pricingManager.scrollTabsToActive();
+      }
+    }
+  }
+  const targetSection = document.querySelector("#pricing-content");
+  if (targetSection) {
+    targetSection.scrollIntoView({ behavior: "smooth" });
+  }
+});
+
 
 // Exportar para uso global
 window.PricingManager = PricingManager;

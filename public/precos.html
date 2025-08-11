@@ -183,7 +183,8 @@
 
     <!-- Navigation Tabs -->
     <section
-      id="pricingtabs" class="pricing-navigation-tabs sticky top-0 z-40 bg-white/95 backdrop-blur-sm border-b border-gray-200 shadow-sm">
+      id="pricingtabs"
+      class="pricing-navigation-tabs sticky top-0 z-40 bg-white/95 backdrop-blur-sm border-b border-gray-200 shadow-sm">
       <div class="px-4 py-3">
         <!-- Container com scroll horizontal -->
         <div class="relative ">
@@ -195,6 +196,10 @@
               <i class="fas fa-globe mr-1 text-sm"></i>
               <span class="whitespace-nowrap">Sites</span>
             </button>
+            <button class="tab-button snap-start" data-tab="biopages">
+              <i class="fas fa-id-badge mr-1 text-sm"></i>
+              <span class="whitespace-nowrap">Bio Pages</span>
+            </button>
             <button class="tab-button snap-start" data-tab="sistemas">
               <i class="fas fa-cogs mr-1 text-sm"></i>
               <span class="whitespace-nowrap">Sistemas</span>
@@ -203,14 +208,14 @@
               <i class="fas fa-chart-bar mr-1 text-sm"></i>
               <span class="whitespace-nowrap">Dashboards</span>
             </button>
-            <button class="tab-button snap-start" data-tab="apps">
+            <!-- <button class="tab-button snap-start" data-tab="apps">
               <i class="fas fa-mobile-alt mr-1 text-sm"></i>
               <span class="whitespace-nowrap">Apps</span>
             </button>
             <button class="tab-button snap-start" data-tab="automacao">
               <i class="fas fa-robot mr-1 text-sm"></i>
               <span class="whitespace-nowrap">Automação</span>
-            </button>
+            </button> -->
             <button class="tab-button snap-start" data-tab="email">
               <i class="fas fa-envelope mr-1 text-sm"></i>
               <span class="whitespace-nowrap">Email</span>
@@ -229,7 +234,8 @@
     </section>
 
     <!-- Pricing Content -->
-    <section id="pricing-content" class="pricing-content-section py-20 lg:py-28 bg-gray-50">
+    <section id="pricing-content"
+      class="pricing-content-section py-20 lg:py-28 bg-gray-50">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8">
 
         <!-- Sites Tab -->
@@ -258,7 +264,40 @@
 
             <!-- Scroll Indicators (pontos) -->
             <div id="sites-indicators"
-              class="flex justify-center mt-4 space-x-2">
+              class="flex justify-center mt-4 space-x-2 md:hidden">
+              <!-- Indicadores serão gerados dinamicamente -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Bio Pages Tab -->
+        <div id="tab-biopages" class="tab-content active">
+          <div class="text-center mb-8">
+            <div
+              class="inline-flex items-center bg-accent-100 text-accent-700 px-3 py-1 rounded-full text-sm font-medium mb-4">
+              <i class="fas fa-id-badge mr-2"></i>
+              Bio Pages
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-bold text-primary-900 mb-4">
+              Bio <span class="gradient-text">Pages</span>
+            </h2>
+            <p class="text-lg text-gray-600 leading-relaxed px-2">
+              Presença digital rápida e elegante — páginas únicas para mostrar
+              seu perfil, contatos e links importantes.
+            </p>
+          </div>
+
+          <div class="relative">
+            <div
+              id="biopages-cards"
+              class="cards-scroll flex gap-4 overflow-x-auto pb-4 snap-x smooth-scroll"
+              style="scrollbar-width: thin;">
+              <!-- Cards serão gerados dinamicamente aqui -->
+            </div>
+
+            <!-- Scroll Indicators (pontos) -->
+            <div id="biopages-indicators"
+              class="flex justify-center mt-4 space-x-2 md:hidden">
               <!-- Indicadores serão gerados dinamicamente -->
             </div>
           </div>
@@ -290,7 +329,7 @@
 
             <!-- Scroll Indicators (pontos) -->
             <div id="sistemas-indicators"
-              class="flex justify-center mt-4 space-x-2">
+              class="flex justify-center mt-4 space-x-2 md:hidden">
               <!-- Indicadores serão gerados dinamicamente -->
             </div>
           </div>
@@ -322,7 +361,7 @@
 
             <!-- Scroll Indicators (pontos) -->
             <div id="dashboards-indicators"
-              class="flex justify-center mt-4 space-x-2">
+              class="flex justify-center mt-4 space-x-2 md:hidden">
               <!-- Indicadores serão gerados dinamicamente -->
             </div>
           </div>
@@ -354,7 +393,7 @@
 
             <!-- Scroll Indicators (pontos) -->
             <div id="apps-indicators"
-              class="flex justify-center mt-4 space-x-2">
+              class="flex justify-center mt-4 space-x-2 md:hidden">
               <!-- Indicadores serão gerados dinamicamente -->
             </div>
           </div>
@@ -386,7 +425,7 @@
 
             <!-- Scroll Indicators (pontos) -->
             <div id="automacao-indicators"
-              class="flex justify-center mt-4 space-x-2">
+              class="flex justify-center mt-4 space-x-2 md:hidden">
               <!-- Indicadores serão gerados dinamicamente -->
             </div>
           </div>
@@ -418,7 +457,7 @@
 
             <!-- Scroll Indicators (pontos) -->
             <div id="email-indicators"
-              class="flex justify-center mt-4 space-x-2">
+              class="flex justify-center mt-4 space-x-2 md:hidden">
               <!-- Indicadores serão gerados dinamicamente -->
             </div>
           </div>
@@ -450,7 +489,7 @@
 
             <!-- Scroll Indicators (pontos) -->
             <div id="consultoria-indicators"
-              class="flex justify-center mt-4 space-x-2">
+              class="flex justify-center mt-4 space-x-2 md:hidden">
               <!-- Indicadores serão gerados dinamicamente -->
             </div>
           </div>
@@ -697,7 +736,7 @@
     </section>
 
     <!-- FAQ Section -->
-    <section class="py-20 lg:py-28 bg-gray-50">
+    <section id="perguntas" class="py-20 lg:py-28 bg-gray-50">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
           <h2 class="text-4xl sm:text-5xl font-bold text-primary-900 mb-6">
@@ -904,7 +943,8 @@
         <div class="flex flex-col md:flex-row items-center justify-between">
           <div class="flex items-center space-x-3 mb-6 md:mb-0">
             <img src="./assets/images/logos/dharma-labs-main.svg"
-              alt="Dharma Labs" class="w-20 h-20 -mr-4" />
+              alt="Dharma Labs"
+              class="w-20 h-20 -mr-4" />
             <div class="flex flex-col">
               <span class="gradient-text text-2xl font-bold">DHARMA</span>
               <span class="text-primary-200 text-sm">Labs</span>
@@ -912,12 +952,24 @@
           </div>
 
           <div class="text-center md:text-right">
-            <p class="text-primary-200 mb-2">© 2025 Dharma Labs. Todos os
+            <p class="text-primary-200">© 2025 Dharma Labs. Todos os
               direitos reservados.</p>
-            <p class="text-sm text-primary-300">Tecnologia com Propósito •
+            <p class="text-[12px] lg:text-[10px] text-primary-300 mr-1 mb-2">
+              CNPJ: 54.891.649/0001-79
+            </p>
+            <p class="hidden lg:block text-sm text-primary-300">Tecnologia com
+              Propósito •
               Desenvolvido com <i
                 class="text-purple-500 fa-solid fa-heart fa-beat"
-                style="--fa-animation-duration: 2s;"></i></p>
+                style="--fa-animation-duration: 2s;"></i>
+            </p>
+            <p class="block lg:hidden text-base text-primary-300">Tecnologia com
+              Propósito</p>
+            <p class="block lg:hidden text-base text-primary-300">Desenvolvido
+              com <i
+                class="text-purple-500 fa-solid fa-heart fa-beat"
+                style="--fa-animation-duration: 2s;"></i>
+            </p>
           </div>
         </div>
       </div>
