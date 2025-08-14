@@ -66,7 +66,7 @@
               class="text-gray-700 hover:text-primary-700 font-medium transition-colors">Contato</a>
             <a href="#contato"
               class="bg-gradient-to-r from-accent-500 to-primary-600 text-white px-4 py-2 rounded-full text-sm font-semibold hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5">
-              Orçamento
+              Falar agora
             </a>
           </nav>
 
@@ -93,7 +93,7 @@
               class="block px-3 py-2 text-gray-700 hover:text-primary-700 font-medium text-center">Contato</a>
             <a href="#contato"
               class="block mx-3 mt-4 bg-gradient-to-r from-accent-500 to-primary-600 text-white px-4 py-2 rounded-full text-sm font-semibold text-center">
-              Solicitar Orçamento
+              Falar agora
             </a>
           </div>
         </div>
@@ -191,7 +191,7 @@
           <div
             id="tabs-container"
             class="tabs-scroll flex gap-2 md:justify-center overflow-x-auto scrollbar-thin smooth-scroll snap-x pb-2"
-            style="scrollbar-width: thin;">
+            style="scrollbar-width: none;">
             <button class="tab-button active snap-start" data-tab="sites">
               <i class="fas fa-globe mr-1 text-sm"></i>
               <span class="whitespace-nowrap">Sites</span>
@@ -258,7 +258,7 @@
             <div
               id="sites-cards"
               class="cards-scroll flex gap-4 overflow-x-auto pb-4 snap-x smooth-scroll"
-              style="scrollbar-width: thin;">
+              style="scrollbar-width: none;">
               <!-- Cards serão gerados dinamicamente aqui -->
             </div>
 
@@ -271,7 +271,7 @@
         </div>
 
         <!-- Bio Pages Tab -->
-        <div id="tab-biopages" class="tab-content active">
+        <div id="tab-biopages" class="tab-content hidden">
           <div class="text-center mb-8">
             <div
               class="inline-flex items-center bg-accent-100 text-accent-700 px-3 py-1 rounded-full text-sm font-medium mb-4">
@@ -291,7 +291,7 @@
             <div
               id="biopages-cards"
               class="cards-scroll flex gap-4 overflow-x-auto pb-4 snap-x smooth-scroll"
-              style="scrollbar-width: thin;">
+              style="scrollbar-width: none;">
               <!-- Cards serão gerados dinamicamente aqui -->
             </div>
 
@@ -322,8 +322,8 @@
           <div class="relative">
             <div
               id="sistemas-cards"
-              class="sistemas-scroll flex gap-4 overflow-x-auto pb-4 snap-x smooth-scroll"
-              style="scrollbar-width: thin;">
+              class="cards-scroll flex gap-4 overflow-x-auto pb-4 snap-x smooth-scroll"
+              style="scrollbar-width: none;">
               <!-- Cards serão gerados dinamicamente aqui -->
             </div>
 
@@ -354,8 +354,8 @@
           <div class="relative">
             <div
               id="dashboards-cards"
-              class="sistemas-scroll flex gap-4 overflow-x-auto pb-4 snap-x smooth-scroll"
-              style="scrollbar-width: thin;">
+              class="cards-scroll flex gap-4 overflow-x-auto pb-4 snap-x smooth-scroll"
+              style="scrollbar-width: none;">
               <!-- Cards serão gerados dinamicamente aqui -->
             </div>
 
@@ -386,8 +386,8 @@
           <div class="relative">
             <div
               id="apps-cards"
-              class="sistemas-scroll flex gap-4 overflow-x-auto pb-4 snap-x smooth-scroll"
-              style="scrollbar-width: thin;">
+              class="cards-scroll flex gap-4 overflow-x-auto pb-4 snap-x smooth-scroll"
+              style="scrollbar-width: none;">
               <!-- Cards serão gerados dinamicamente aqui -->
             </div>
 
@@ -418,8 +418,8 @@
           <div class="relative">
             <div
               id="automacao-cards"
-              class="sistemas-scroll flex gap-4 overflow-x-auto pb-4 snap-x smooth-scroll"
-              style="scrollbar-width: thin;">
+              class="cards-scroll flex gap-4 overflow-x-auto pb-4 snap-x smooth-scroll"
+              style="scrollbar-width: none;">
               <!-- Cards serão gerados dinamicamente aqui -->
             </div>
 
@@ -450,8 +450,8 @@
           <div class="relative">
             <div
               id="email-cards"
-              class="sistemas-scroll flex gap-4 overflow-x-auto pb-4 snap-x smooth-scroll"
-              style="scrollbar-width: thin;">
+              class="cards-scroll flex gap-4 overflow-x-auto pb-4 snap-x smooth-scroll"
+              style="scrollbar-width: none;">
               <!-- Cards serão gerados dinamicamente aqui -->
             </div>
 
@@ -482,8 +482,8 @@
           <div class="relative">
             <div
               id="consultoria-cards"
-              class="sistemas-scroll flex gap-4 overflow-x-auto pb-4 snap-x smooth-scroll"
-              style="scrollbar-width: thin;">
+              class="cards-scroll flex gap-4 overflow-x-auto pb-4 snap-x smooth-scroll"
+              style="scrollbar-width: none;">
               <!-- Cards serão gerados dinamicamente aqui -->
             </div>
 
@@ -494,7 +494,16 @@
             </div>
           </div>
         </div>
-
+      </div>
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 mt-16">
+        <div class="text-center">
+          <a href="#perguntas">
+            <button
+              class="w-full bg-gradient-to-r from-primary-500 to-highlight-600 text-white py-3 rounded-2xl font-semibold hover:shadow-lg group-hover:scale-105 transition-transform transform duration-300">
+              Perguntas frequentes
+            </button>
+          </a>
+        </div>
       </div>
     </section>
 
@@ -502,12 +511,18 @@
     <section class="py-20 lg:py-28 bg-white">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
+          <div
+            class="inline-flex items-center bg-primary-100 text-primary-700 px-4 py-2 rounded-full text-sm font-medium mb-4">
+            <span class="w-2 h-2 bg-primary-500 rounded-full mr-2"></span>
+            Nossa Entrega
+          </div>
           <h2 class="text-4xl sm:text-5xl font-bold text-primary-900 mb-6">
             O que está <span class="gradient-text">Incluído</span> na
             Mensalidade?
           </h2>
           <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-            Sua mensalidade não é só "hospedagem". É um pacote completo para seu
+            Sua mensalidade não é só "hospedagem". É um pacote completo para
+            seu
             negócio digital funcionar 24/7
           </p>
         </div>
@@ -538,7 +553,8 @@
             <h3 class="text-xl font-bold text-primary-900 mb-4">Suporte
               Técnico</h3>
             <p class="text-gray-600 leading-relaxed">
-              Correções, pequenos ajustes e suporte via sistema de tickets. Seu
+              Correções, pequenos ajustes e suporte via sistema de tickets.
+              Seu
               site sempre funcionando
             </p>
           </div>
@@ -553,7 +569,8 @@
             <h3
               class="text-xl font-bold text-primary-900 mb-4">Atualizações</h3>
             <p class="text-gray-600 leading-relaxed">
-              Atualizações de segurança, otimizações de performance e correções
+              Atualizações de segurança, otimizações de performance e
+              correções
               automáticas
             </p>
           </div>
@@ -578,7 +595,7 @@
             class="text-center p-8 bg-gray-50 rounded-2xl hover:bg-highlight-50 transition-all duration-300 group">
             <div
               class="w-16 h-16 bg-highlight-500 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-              <i class="fas fa-analytics text-white text-2xl"></i>
+              <i class="fas fa-chart-simple text-white text-2xl"></i>
             </div>
             <h3 class="text-xl font-bold text-primary-900 mb-4">Relatórios
               Mensais</h3>
@@ -607,128 +624,130 @@
     </section>
 
     <!-- Why Different Section -->
-    <section
-      class="py-20 lg:py-28 bg-gradient-to-br from-primary-900 via-primary-800 to-primary-900 text-white">
+    <section id="why"
+      class="py-20 lg:py-28 bg-gradient-to-b from-primary-900 via-primary-800 to-primary-900 text-white">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl sm:text-5xl font-bold mb-6">
-            Por que Somos <span class="gradient-text">Diferentes?</span>
+
+        <!-- Title -->
+        <div class="text-center mb-12">
+          <div
+            class="inline-flex items-center bg-highlight-100 text-highlight-700 px-4 py-2 rounded-full text-sm font-medium mb-4">
+            <span class="w-2 h-2 bg-highlight-500 rounded-full mr-2"></span>
+            Nosso Jeito
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-bold mb-4">
+            <span class="gradient-text">Diferente</span> dos modelos tradicionais
           </h2>
-          <p class="text-xl text-primary-200 max-w-4xl mx-auto">
-            Enquanto outros cobram alto na criação E alta mensalidade, nós
-            invertemos a lógica
+          <p class="text-lg text-primary-200 max-w-2xl mx-auto">
+            Ao invés de exigir altos custos iniciais, nós
+            pensamos no longo prazo, saúde financeira e parceria duradoura.
           </p>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <!-- Left side - Comparison -->
-          <div class="space-y-8">
-            <div
-              class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
-              <h3 class="text-2xl font-bold text-red-400 mb-4">❌ Outros Fazem
-                Assim</h3>
-              <div class="space-y-3">
-                <div class="flex justify-between items-center">
-                  <span>Site básico:</span>
-                  <span class="font-bold text-red-400">R$ 3.500 - R$
-                    8.000</span>
-                </div>
-                <div class="flex justify-between items-center">
-                  <span>Mensalidade:</span>
-                  <span class="font-bold text-red-400">R$ 200 - R$
-                    500/mês</span>
-                </div>
-                <div
-                  class="flex justify-between items-center border-t border-white/20 pt-3">
-                  <span class="font-bold">Total 1º ano:</span>
-                  <span class="font-bold text-red-400 text-xl">R$ 8.000 - R$
-                    14.000</span>
-                </div>
-              </div>
-            </div>
+        <!-- Comparison Cards -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
 
-            <div
-              class="bg-gradient-to-r from-accent-500/20 to-primary-600/20 backdrop-blur-sm rounded-2xl p-6 border border-accent-400/30">
-              <h3 class="text-2xl font-bold text-accent-400 mb-4">✅ Dharma Labs
-                Faz</h3>
-              <div class="space-y-3">
-                <div class="flex justify-between items-center">
-                  <span>Site profissional:</span>
-                  <span class="font-bold text-accent-400">R$ 1.890</span>
-                </div>
-                <div class="flex justify-between items-center">
-                  <span>Mensalidade:</span>
-                  <span class="font-bold text-accent-400">R$ 39/mês</span>
-                </div>
-                <div
-                  class="flex justify-between items-center border-t border-white/20 pt-3">
-                  <span class="font-bold">Total 1º ano:</span>
-                  <span class="font-bold text-accent-400 text-xl">R$
-                    2.358</span>
-                </div>
-              </div>
-            </div>
-
-            <div
-              class="text-center p-6 bg-accent-500/20 rounded-2xl border border-accent-400/30">
-              <h4 class="text-2xl font-bold text-accent-400 mb-2">💰 Economia de
-                até 83%</h4>
-              <p class="text-lg">No primeiro ano você economiza até R$
-                11.642!</p>
-            </div>
+          <!-- Modelo Tradicional -->
+          <div
+            class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 shadow-lg">
+            <h3 class="text-xl font-bold text-red-400 mb-4">📉 Tradicional</h3>
+            <ul class="space-y-3 text-primary-100">
+              <li class="flex justify-between border-b border-white/10 pb-2">
+                <span>Criação de site básico/institucional</span>
+                <span class="font-bold text-red-400">R$ 3.500 – R$
+                  8.000</span>
+              </li>
+              <li class="flex justify-between border-b border-white/10 pb-2">
+                <span>Mensalidade</span>
+                <span class="font-bold text-red-400">R$ 200 – R$
+                  500/mês</span>
+              </li>
+              <li class="flex justify-between pt-2 font-semibold">
+                <span>Total no 1º ano</span>
+                <span class="text-red-400 text-lg">R$ 8.000 – R$ 14.000</span>
+              </li>
+            </ul>
           </div>
 
-          <!-- Right side - Benefits -->
-          <div class="space-y-6">
-            <h3 class="text-3xl font-bold mb-8">🎯 Vantagens Exclusivas</h3>
+          <!-- Nosso Jeito -->
+          <div id="our-way"
+            class="bg-gradient-to-r from-accent-500/20 to-primary-600/20 backdrop-blur-sm rounded-2xl p-6 border border-accent-400/30 shadow-lg">
+            <h3 class="text-xl font-bold text-accent-300 mb-4">🚀 Nós</h3>
+            <ul class="space-y-3 text-primary-100">
+              <li class="flex justify-between border-b border-white/10 pb-2">
+                <span>Site institucional</span>
+                <span class="font-bold text-accent-300">R$ 1.950</span>
+              </li>
+              <li class="flex justify-between border-b border-white/10 pb-2">
+                <span>Mensalidade</span>
+                <span class="font-bold text-accent-300">R$ 55/mês</span>
+              </li>
+              <li class="flex justify-between pt-2 font-semibold">
+                <span>Total no 1º ano</span>
+                <span class="text-accent-300 text-lg">R$ 2.610</span>
+              </li>
+            </ul>
+          </div>
+        </div>
 
-            <div class="flex items-start space-x-4">
-              <div
-                class="w-12 h-12 bg-accent-500 rounded-full flex items-center justify-center flex-shrink-0">
-                <i class="fas fa-piggy-bank text-white"></i>
-              </div>
-              <div>
-                <h4 class="text-xl font-bold mb-2">Investimento Inicial
-                  Baixo</h4>
-                <p class="text-primary-200">Você não precisa desembolsar uma
-                  fortuna para ter um site profissional</p>
-              </div>
+        <!-- Savings Highlight -->
+        <div
+          class="mt-8 text-center bg-accent-500/20 rounded-2xl border border-accent-400/30 p-6">
+          <h4 class="text-2xl font-bold text-accent-400 mb-2">💰 Economia de
+            aproximadamente
+            80%</h4>
+          <p class="text-lg text-primary-100">No primeiro ano, você economiza
+            aproximadamente <span class="font-bold">R$ 11.000</span> sem abrir mão da
+            qualidade.</p>
+        </div>
+
+        <!-- Benefits List -->
+        <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-8">
+          <div class="flex items-start space-x-4">
+            <div
+              class="w-12 h-12 bg-accent-500 rounded-full flex items-center justify-center">
+              <i class="fas fa-piggy-bank text-white"></i>
             </div>
-
-            <div class="flex items-start space-x-4">
-              <div
-                class="w-12 h-12 bg-highlight-500 rounded-full flex items-center justify-center flex-shrink-0">
-                <i class="fas fa-heart text-white"></i>
-              </div>
-              <div>
-                <h4 class="text-xl font-bold mb-2">Relacionamento Duradouro</h4>
-                <p class="text-primary-200">Queremos crescer junto com seu
-                  negócio, não apenas entregar e sumir</p>
-              </div>
+            <div>
+              <h4 class="text-xl font-bold mb-1">Baixo Investimento
+                Inicial</h4>
+              <p class="text-primary-200">Comece com muito menos e tenha
+                retorno
+                mais rápido.</p>
             </div>
-
-            <div class="flex items-start space-x-4">
-              <div
-                class="w-12 h-12 bg-primary-500 rounded-full flex items-center justify-center flex-shrink-0">
-                <i class="fas fa-shield-alt text-white"></i>
-              </div>
-              <div>
-                <h4 class="text-xl font-bold mb-2">Tranquilidade Total</h4>
-                <p class="text-primary-200">Você nunca mais precisa se preocupar
-                  com aspectos técnicos do seu site</p>
-              </div>
+          </div>
+          <div class="flex items-start space-x-4">
+            <div
+              class="w-12 h-12 bg-highlight-500 rounded-full flex items-center justify-center">
+              <i class="fas fa-heart text-white"></i>
             </div>
-
-            <div class="flex items-start space-x-4">
-              <div
-                class="w-12 h-12 bg-accent-500 rounded-full flex items-center justify-center flex-shrink-0">
-                <i class="fas fa-rocket text-white"></i>
-              </div>
-              <div>
-                <h4 class="text-xl font-bold mb-2">Sempre Atualizado</h4>
-                <p class="text-primary-200">Seu site sempre com as últimas
-                  tecnologias e tendências do mercado</p>
-              </div>
+            <div>
+              <h4 class="text-xl font-bold mb-1">Parceria de Longo Prazo</h4>
+              <p class="text-primary-200">Crescemos junto com o seu negócio,
+                sem
+                contratos abusivos.</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-4">
+            <div
+              class="w-12 h-12 bg-primary-500 rounded-full flex items-center justify-center">
+              <i class="fas fa-shield-alt text-white"></i>
+            </div>
+            <div>
+              <h4 class="text-xl font-bold mb-1">Segurança & Suporte</h4>
+              <p class="text-primary-200">Tudo gerenciado por nós para sua
+                tranquilidade.</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-4">
+            <div
+              class="w-12 h-12 bg-accent-500 rounded-full flex items-center justify-center">
+              <i class="fas fa-rocket text-white"></i>
+            </div>
+            <div>
+              <h4 class="text-xl font-bold mb-1">Tecnologia Atualizada</h4>
+              <p class="text-primary-200">Seu site sempre moderno e com alta
+                performance.</p>
             </div>
           </div>
         </div>
@@ -739,132 +758,194 @@
     <section id="perguntas" class="py-20 lg:py-28 bg-gray-50">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
+          <div
+            class="inline-flex items-center bg-primary-100 text-primary-700 px-4 py-2 rounded-full text-sm font-medium mb-4">
+            <span class="w-2 h-2 bg-primary-500 rounded-full mr-2"></span>
+            Dúvidas?
+          </div>
           <h2 class="text-4xl sm:text-5xl font-bold text-primary-900 mb-6">
             Perguntas <span class="gradient-text">Frequentes</span>
           </h2>
           <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-            Esclarecemos as dúvidas mais comuns sobre nosso modelo inovador
+            Esclarecemos as dúvidas mais comuns sobre nosso modelo
           </p>
         </div>
 
         <div class="max-w-4xl mx-auto space-y-6">
-          <!-- FAQ 1 -->
+
           <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
             <button
-              class="w-full px-8 py-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors faq-button"
+              class="w-full px-8 py-6 text-left flex items-center justify-between transition-colors faq-button"
               data-faq="1">
-              <h3 class="text-xl font-bold text-primary-900">Por que o modelo de
+              <h3 class="text-xl font-bold text-primary-900">Por que o modelo
+                de
                 mensalidade é melhor?</h3>
               <i
                 class="fas fa-chevron-down text-primary-600 transition-transform duration-300"></i>
             </button>
             <div class="px-8 pb-6 hidden faq-content" id="faq-1">
               <p class="text-gray-600 leading-relaxed">
-                Nosso modelo permite que você tenha um site profissional sem um
-                grande investimento inicial. Além disso, garantimos que seu site
-                sempre funcione perfeitamente, com suporte contínuo,
-                atualizações e melhorias. É como ter uma equipe técnica dedicada
+                Nosso modelo permite que você tenha um site profissional sem
+                um
+                grande investimento inicial.
+                Além disso, garantimos que seu site sempre funcione
+                perfeitamente, com suporte contínuo,
+                atualizações e melhorias. É como ter uma equipe técnica
+                dedicada
                 por uma fração do custo.
               </p>
             </div>
           </div>
 
-          <!-- FAQ 2 -->
           <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
             <button
-              class="w-full px-8 py-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors faq-button"
+              class="w-full px-8 py-6 text-left flex items-center justify-between transition-colors faq-button"
               data-faq="2">
-              <h3 class="text-xl font-bold text-primary-900">O que acontece se
-                eu parar de pagar a mensalidade?</h3>
+              <h3 class="text-xl font-bold text-primary-900">Como funciona o
+                pagamento?</h3>
               <i
                 class="fas fa-chevron-down text-primary-600 transition-transform duration-300"></i>
             </button>
             <div class="px-8 pb-6 hidden faq-content" id="faq-2">
               <p class="text-gray-600 leading-relaxed">
-                O site sairá do ar após 30 dias de atraso. Mas não se preocupe:
-                seus dados ficam seguros conosco por 90 dias. Se decidir voltar,
-                reativamos tudo rapidamente. É como uma assinatura Netflix -
-                paga enquanto usa, para quando não precisa.
+                O pagamento único cobre o desenvolvimento do site e
+                inclui o primeiro mês de mensalidade, pode ser parcelado em
+                até
+                12x (com juros).
+                A mensalidade é cobrada todo mês, no pix, boleto ou cartão,
+                sempre na
+                mesma data.
+                Assim que o pagamento é confirmado, garantimos que todos os
+                serviços, suporte e hospedagem
+                continuem ativos. Você recebe nota fiscal e histórico de
+                pagamentos<!--no seu painel-->.
               </p>
             </div>
           </div>
 
-          <!-- FAQ 3 -->
           <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
             <button
-              class="w-full px-8 py-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors faq-button"
+              class="w-full px-8 py-6 text-left flex items-center justify-between transition-colors faq-button"
               data-faq="3">
-              <h3 class="text-xl font-bold text-primary-900">Posso fazer
-                alterações no site depois de pronto?</h3>
+              <h3 class="text-xl font-bold text-primary-900">Vou ser cobrado
+                pelo que está sendo exibido no site?</h3>
               <i
                 class="fas fa-chevron-down text-primary-600 transition-transform duration-300"></i>
             </button>
             <div class="px-8 pb-6 hidden faq-content" id="faq-3">
               <p class="text-gray-600 leading-relaxed">
-                Sim! Pequenas alterações (textos, imagens, informações) estão
-                incluídas na mensalidade via sistema de tickets. Para mudanças
-                maiores (nova página, funcionalidade), fazemos um orçamento
-                separado com preços justos.
+                Sim 😊 O valor apresentado já inclui o escopo padrão do
+                projeto
+                escolhido.
+                Só haverá alteração de preço se você solicitar algo novo que
+                não
+                esteja no plano atual —
+                e qualquer ajuste será conversado e aprovado antes.
               </p>
             </div>
           </div>
 
-          <!-- FAQ 4 -->
           <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
             <button
-              class="w-full px-8 py-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors faq-button"
+              class="w-full px-8 py-6 text-left flex items-center justify-between transition-colors faq-button"
               data-faq="4">
-              <h3 class="text-xl font-bold text-primary-900">O site é realmente
-                meu ou fica com vocês?</h3>
+              <h3 class="text-xl font-bold text-primary-900">Existe contrato
+                de
+                fidelidade?</h3>
               <i
                 class="fas fa-chevron-down text-primary-600 transition-transform duration-300"></i>
             </button>
             <div class="px-8 pb-6 hidden faq-content" id="faq-4">
               <p class="text-gray-600 leading-relaxed">
-                O site é 100% seu! Todo o conteúdo, design e funcionalidades
-                pertencem a você. Nossa mensalidade é apenas para manter tudo
-                funcionando perfeitamente. Se um dia quiser migrar, entregamos
-                todos os arquivos.
+                Não exigimos contrato de fidelidade tradicional, mas temos um
+                <strong>período mínimo de 12 meses</strong>
+                para proteger o investimento inicial no seu projeto.
+                Caso queira cancelar antes, há apenas uma <strong>taxa
+                  proporcional</strong> ao tempo restante —
+                nada abusivo, apenas para cobrir custos já realizados.
+                Depois disso, você pode cancelar quando quiser sem custo.
               </p>
             </div>
           </div>
 
-          <!-- FAQ 5 -->
           <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
             <button
-              class="w-full px-8 py-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors faq-button"
+              class="w-full px-8 py-6 text-left flex items-center justify-between transition-colors faq-button"
               data-faq="5">
-              <h3 class="text-xl font-bold text-primary-900">Quanto tempo leva
-                para ficar pronto?</h3>
+              <h3 class="text-xl font-bold text-primary-900">O que acontece se
+                eu parar de pagar?</h3>
               <i
                 class="fas fa-chevron-down text-primary-600 transition-transform duration-300"></i>
             </button>
             <div class="px-8 pb-6 hidden faq-content" id="faq-5">
               <p class="text-gray-600 leading-relaxed">
-                Landing pages: 3-7 dias. Sites vitrine: 7-15 dias. Sistemas web:
-                15-45 dias. Apps mobile: 30-60 dias. Tudo depende da
-                complexidade e da velocidade de retorno do cliente com materiais
-                e aprovações.
+                O site sairá do ar após 30 dias de atraso. Seus dados ficam
+                seguros por mais 90 dias.
+                Se decidir voltar, reativamos tudo rapidamente. É como uma
+                assinatura de streaming —
+                paga enquanto usa, pausa quando não precisa.
               </p>
             </div>
           </div>
 
-          <!-- FAQ 6 -->
           <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
             <button
-              class="w-full px-8 py-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors faq-button"
+              class="w-full px-8 py-6 text-left flex items-center justify-between transition-colors faq-button"
               data-faq="6">
-              <h3 class="text-xl font-bold text-primary-900">Existe contrato de
-                fidelidade?</h3>
+              <h3 class="text-xl font-bold text-primary-900">Posso fazer
+                alterações no site depois de pronto?</h3>
               <i
                 class="fas fa-chevron-down text-primary-600 transition-transform duration-300"></i>
             </button>
             <div class="px-8 pb-6 hidden faq-content" id="faq-6">
               <p class="text-gray-600 leading-relaxed">
-                Não! Você pode cancelar quando quiser. Acreditamos na qualidade
-                do nosso serviço para mantê-lo como cliente, não em contratos
-                que prendem. Nossa meta é que você fique satisfeito e veja valor
-                no que oferecemos.
+                Sim! Pequenas alterações (textos, imagens, informações) estão
+                incluídas na mensalidade
+                via sistema de tickets. Para mudanças maiores (nova página,
+                funcionalidade),
+                fazemos um orçamento separado com preços justos.
+              </p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+            <button
+              class="w-full px-8 py-6 text-left flex items-center justify-between transition-colors faq-button"
+              data-faq="7">
+              <h3 class="text-xl font-bold text-primary-900">O site é
+                realmente
+                meu ou fica com vocês?</h3>
+              <i
+                class="fas fa-chevron-down text-primary-600 transition-transform duration-300"></i>
+            </button>
+            <div class="px-8 pb-6 hidden faq-content" id="faq-7">
+              <p class="text-gray-600 leading-relaxed">
+                O site é 100% seu! Todo o conteúdo, design e funcionalidades
+                pertencem a você.
+                Nossa mensalidade é apenas para manter tudo funcionando
+                perfeitamente.
+                Se um dia quiser migrar, entregamos todos os arquivos.
+              </p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+            <button
+              class="w-full px-8 py-6 text-left flex items-center justify-between transition-colors faq-button"
+              data-faq="8">
+              <h3 class="text-xl font-bold text-primary-900">Quanto tempo leva
+                para ficar pronto?</h3>
+              <i
+                class="fas fa-chevron-down text-primary-600 transition-transform duration-300"></i>
+            </button>
+            <div class="px-8 pb-6 hidden faq-content" id="faq-8">
+              <p class="text-gray-600 leading-relaxed">
+                Landing pages: 3-7 dias. Sites vitrine: 7-15 dias. Sistemas
+                web:
+                15-45 dias.
+                Apps mobile: 30-60 dias. Tudo depende da complexidade e da
+                rapidez
+                no envio de materiais e aprovações.
               </p>
             </div>
           </div>
@@ -877,6 +958,11 @@
       class="py-20 lg:py-28 bg-gradient-to-br from-primary-800 via-primary-700 to-primary-800 text-white">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center max-w-5xl mx-auto">
+          <div
+              class="inline-flex items-center bg-white/10 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
+              <span class="w-2 h-2 bg-accent-400 rounded-full mr-2"></span>
+              Vamos tirar seu sonho do papel
+            </div>
           <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-8">
             Pronto para <span class="gradient-text">Começar?</span>
           </h2>
@@ -890,11 +976,11 @@
           <!-- Contact Options -->
           <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
             <!-- WhatsApp -->
-            <a href="https://wa.link/suwtio"
-              class="group bg-gradient-to-r from-green-500 to-green-600 p-8 rounded-3xl hover:from-green-400 hover:to-green-500 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl">
+            <a id="price-whatsapp" href="https://wa.link/suwtio"
+              class="group bg-gradient-to-r from-accent-500 to-highlight-600 p-8 rounded-3xl hover:from-accent-400 hover:to-highlight-500 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl">
               <div class="flex items-center justify-center mb-4">
                 <i
-                  class="fab fa-whatsapp text-5xl text-white group-hover:scale-110 transition-transform duration-300"></i>
+                  class="fab fa-whatsapp text-5xl text-gray-100 group-hover:scale-110 transition-transform duration-300"></i>
               </div>
               <h3 class="text-2xl font-bold mb-2">WhatsApp</h3>
               <p class="text-lg opacity-90 mb-4">Resposta em minutos</p>
@@ -906,7 +992,7 @@
 
             <!-- Email -->
             <a href="mailto:contato@dharmalabs.com.br"
-              class="group bg-gradient-to-r from-accent-500 to-highlight-600 p-8 rounded-3xl hover:from-accent-400 hover:to-highlight-500 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl">
+              class="group bg-gradient-to-r from-primary-500 to-highlight-600 p-8 rounded-3xl hover:from-primary-400 hover:to-highlight-500 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl">
               <div class="flex items-center justify-center mb-4">
                 <i
                   class="fas fa-envelope text-5xl text-white group-hover:scale-110 transition-transform duration-300"></i>
@@ -915,7 +1001,8 @@
               <p class="text-lg opacity-90 mb-4">Resposta em até 2h</p>
               <div
                 class="bg-white/20 backdrop-blur-sm rounded-2xl px-6 py-3 inline-block">
-                <span class="font-bold text-lg">contato@dharmalabs.com.br</span>
+                <span
+                  class="font-bold text-lg">contato@dharmalabs.com.br</span>
               </div>
             </a>
           </div>
@@ -963,7 +1050,8 @@
                 class="text-purple-500 fa-solid fa-heart fa-beat"
                 style="--fa-animation-duration: 2s;"></i>
             </p>
-            <p class="block lg:hidden text-base text-primary-300">Tecnologia com
+            <p class="block lg:hidden text-base text-primary-300">Tecnologia
+              com
               Propósito</p>
             <p class="block lg:hidden text-base text-primary-300">Desenvolvido
               com <i

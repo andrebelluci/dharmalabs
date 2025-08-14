@@ -823,7 +823,9 @@ body {
 .pricing-card-horizontal {
   flex-shrink: 0;
   width: 320px;
-  min-height: 600px;
+  /* min-height: 600px; */
+  display: flex;
+    flex-direction: column;
 }
 
 /* Responsividade */
@@ -850,6 +852,6 @@ body {
 }
 
 .scroll-indicator.active {
-  background-color: #4ade80;
+  background-color: #33a733;
   transform: scale(1.2);
 }

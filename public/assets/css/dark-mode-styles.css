@@ -404,6 +404,14 @@
   color: var(--dark-text-secondary) !important;
 }
 
+.dark-mode #navbar .text-gray-800 {
+  color: var(--dark-text-secondary) !important;
+}
+
+.dark-mode .text-gray-800 {
+  color: var(--dark-text-secondary) !important;
+}
+
 .dark-mode #navbar .text-gray-700:hover {
   color: var(--neon-green) !important;
   text-shadow: 0 0 10px rgba(222, 74, 74, 0.5);
@@ -511,6 +519,10 @@
   background: rgba(74, 222, 128, 0.1) !important;
 }
 
+.dark-mode .service-card .from-primary-50 {
+  background: rgba(74, 121, 222, 0.1) !important;
+}
+
 .dark-mode .service-card .from-highlight-50 {
   background: rgba(168, 85, 247, 0.1) !important;
 }
@@ -518,6 +530,11 @@
 .dark-mode .service-card .border-accent-500 {
   border-top-color: var(--neon-green) !important;
   box-shadow: 0 -4px 15px rgba(74, 222, 128, 0.2);
+}
+
+.dark-mode .service-card .border-primary-500 {
+  border-top-color: var(--neon-blue) !important;
+  box-shadow: 0 -4px 15px rgba(74, 126, 222, 0.2);
 }
 
 .dark-mode .service-card .border-highlight-500 {
@@ -528,6 +545,11 @@
 .dark-mode .service-card .bg-accent-100 {
   background: rgba(74, 222, 128, 0.1) !important;
   border: 1px solid rgba(74, 222, 128, 0.2);
+}
+
+.dark-mode .service-card .bg-primary-100 {
+  background: rgba(74, 109, 222, 0.1) !important;
+  border: 1px solid rgba(74, 109, 222, 0.2);
 }
 
 .dark-mode .service-card .bg-highlight-100 {
@@ -569,6 +591,13 @@
       var(--dark-bg-secondary) 100%) !important;
 }
 
+.dark-mode #why {
+  background: linear-gradient(135deg,
+      var(--dark-bg-secondary) 0%,
+      var(--dark-bg-tertiary) 50%,
+      var(--dark-bg-secondary) 100%) !important;
+}
+
 .dark-mode #contato .gradient-text {
   background: var(--neon-gradient-primary);
   -webkit-background-clip: text;
@@ -584,7 +613,13 @@
   overflow: hidden;
 }
 
-/* ADICIONE este CSS ao final do arquivo dark-mode-styles.css */
+.dark-mode #our-way {
+  background: var(--neon-gradient-secondary) !important;
+}
+
+.dark-mode #price-whatsapp {
+  background: var(--neon-gradient-accent) !important;
+}
 
 /* ===== CORREÇÃO BOTÃO VOLTAR AO TOPO ===== */
 .dark-mode #backToTop {
