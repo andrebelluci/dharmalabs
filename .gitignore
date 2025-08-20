@@ -1,6 +1,7 @@
 INSTRUCOES.md
 IDENTIDADEVISUAL.md
 *.md
+/public/assets/css/input.css
 
 # Node.js
 node_modules/
