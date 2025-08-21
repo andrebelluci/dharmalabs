@@ -135,6 +135,7 @@ class DharmaApp {
   initializeSharedComponents() {
     // Componentes que funcionam em todas as páginas
     this.setupScrollAnimations();
+    this.setupClientLogos();
     this.preloadCriticalResources();
   }
 
@@ -619,6 +620,53 @@ class DharmaApp {
       });
     }
     console.log(`📊 Event: ${category} > ${action} > ${label}`);
+  }
+
+  // ===== CLIENT LOGOS CAROUSEL =====
+  setupClientLogos() {
+    const clientLogosContainer = document.getElementById('client-logos') || document.getElementById('client-logos-page');
+    if (!clientLogosContainer) return;
+
+    // Logos de clientes reais e mocks
+    const clientLogos = [
+      { name: 'ICI', logo: './assets/images/portfolio/ici.png', url: 'https://participantesici.com.br' },
+      // Adicione mais logos reais aqui seguindo o padrão:
+      // { name: 'NomeCliente', logo: './assets/images/portfolio/nome-arquivo.png' },
+
+      // Mocks temporários (remover quando tiver logos reais)
+      { name: 'ICI', logo: './assets/images/portfolio/ici.png', url: 'https://participantesici.com.br' },
+      { name: 'ICI', logo: './assets/images/portfolio/ici.png', url: 'https://participantesici.com.br' },
+      { name: 'ICI', logo: './assets/images/portfolio/ici.png', url: 'https://participantesici.com.br' },
+      { name: 'ICI', logo: './assets/images/portfolio/ici.png', url: 'https://participantesici.com.br' },
+      { name: 'ICI', logo: './assets/images/portfolio/ici.png', url: 'https://participantesici.com.br' },
+      { name: 'ICI', logo: './assets/images/portfolio/ici.png', url: 'https://participantesici.com.br' },
+      { name: 'ICI', logo: './assets/images/portfolio/ici.png', url: 'https://participantesici.com.br' }
+    ];
+
+    // Duplicar logos para efeito infinito
+    const duplicatedLogos = [...clientLogos, ...clientLogos];
+
+    // Gerar HTML dos logos
+    const logosHTML = duplicatedLogos.map((client) => `
+      <a href="${client.url}"
+         class="client-logo"
+         data-client="${client.name}"
+         title="Ver projeto ${client.name}">
+        <img src="${client.logo}" alt="${client.name}" loading="lazy" />
+      </a>
+    `).join('');
+
+    clientLogosContainer.innerHTML = logosHTML;
+
+    // Adicionar event listeners para analytics
+    clientLogosContainer.querySelectorAll('.client-logo').forEach(logo => {
+      logo.addEventListener('click', (e) => {
+        const clientName = e.currentTarget.getAttribute('data-client');
+        this.trackEvent('portfolio', 'client_logo_click', clientName);
+      });
+    });
+
+    console.log('🏢 Client logos carousel inicializado');
   }
 
   // ===== CLEANUP =====

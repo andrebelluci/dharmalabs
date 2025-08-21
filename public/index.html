@@ -106,6 +106,8 @@
               class="bg-gradient-to-r from-highlight-500 to-primary-600 text-white px-4 py-2 rounded-full text-sm font-semibold hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5">Preços</a>
             <a href="#servicos"
               class="text-gray-700 hover:text-primary-700 font-medium transition-colors">Serviços</a>
+            <a href="#portfolio-preview"
+              class="text-gray-700 hover:text-primary-700 font-medium transition-colors">Portfólio</a>
             <a href="#tecnologias"
               class="text-gray-700 hover:text-primary-700 font-medium transition-colors">Tecnologias</a>
             <a href="#contato"
@@ -137,6 +139,8 @@
               Ver Preços</a>
             <a href="#servicos"
               class="block px-3 py-2 text-gray-700 hover:text-primary-700 font-medium text-center">Serviços</a>
+            <a href="#portfolio-preview"
+              class="block px-3 py-2 text-gray-700 hover:text-primary-700 font-medium text-center">Portfólio</a>
             <a href="#tecnologias"
               class="block px-3 py-2 text-gray-700 hover:text-primary-700 font-medium text-center">Tecnologias</a>
             <a href="#contato"
@@ -865,6 +869,82 @@
                 </div>
               </div>
 
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Portfolio Preview Section -->
+      <section id="portfolio-preview" class="py-20 lg:py-28 bg-white relative overflow-hidden">
+        <!-- Background Effects -->
+        <div class="absolute inset-0 opacity-5">
+          <div class="absolute top-20 left-10 w-32 h-32 bg-accent-500 rounded-full blur-3xl"></div>
+          <div class="absolute bottom-20 right-10 w-48 h-48 bg-primary-500 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <!-- Section Header -->
+          <div class="text-center mb-16">
+            <div class="inline-flex items-center bg-accent-100 text-accent-700 px-4 py-2 rounded-full text-sm font-medium mb-4">
+              <span class="w-2 h-2 bg-accent-500 rounded-full mr-2"></span>
+              Nossos Projetos
+            </div>
+            <h2 class="text-4xl sm:text-5xl font-bold text-primary-900 mb-6">
+              Projetos que <span class="gradient-text">Transformam</span>
+            </h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+              Conheça alguns dos projetos que desenvolvemos para nossos clientes
+            </p>
+          </div>
+
+          <!-- Construction Message -->
+          <div class="max-w-4xl mx-auto text-center" style="display: block;" id="portfolio-construction">
+            <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border-t-4 border-highlight-500 relative overflow-hidden">
+              <!-- Animated Icon -->
+              <div class="relative mb-8">
+                <div class="w-24 h-24 bg-gradient-to-r from-accent-500 to-primary-600 rounded-2xl mx-auto flex items-center justify-center animate-pulse">
+                  <i class="fas fa-code text-white text-3xl"></i>
+                </div>
+              </div>
+
+              <h3 class="text-2xl font-bold text-primary-900 mb-4">
+                🚧 Grandes Projetos em Preparação
+              </h3>
+              <p class="text-lg text-gray-700 mb-8 leading-relaxed">
+                Estamos organizando nosso portfólio com projetos incríveis que desenvolvemos.<br>
+                Em breve você poderá conhecer todas as soluções digitais que criamos para nossos clientes.
+              </p>
+
+              <!-- Client Logos Carousel -->
+              <div class="mb-8">
+                <p class="text-sm text-gray-600 mb-4 font-medium">Já confiaram em nós:</p>
+                <div class="relative overflow-hidden">
+                  <div class="client-logos-scroll flex items-center space-x-8" id="client-logos">
+                    <!-- Logos será adicionado via JavaScript -->
+                  </div>
+                </div>
+              </div>
+
+              <!-- CTA Buttons -->
+              <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="portfolio.html"
+                   class="bg-gradient-to-r from-accent-500 to-primary-600 text-white px-8 py-3 rounded-2xl font-semibold hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                  Ver Portfólio Completo
+                </a>
+                <a href="https://api.whatsapp.com/send?phone=5517991446829&text=Olá%20👋!%0AGostaria%20de%20conhecer%20alguns%20projetos%20que%20vocês%20já%20desenvolveram."
+                   target="_blank" rel="noopener noreferrer"
+                   class="bg-gradient-to-r from-highlight-500 to-accent-600 text-white px-8 py-3 rounded-2xl font-semibold hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                  Conversar sobre meu Projeto
+                  <i class="ml-2 fa-brands fa-whatsapp"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Portfolio Cards (Hidden for now) -->
+          <div class="hidden" style="display: none;" id="portfolio-cards">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <!-- Cards será adicionado quando houver projetos -->
             </div>
           </div>
         </div>

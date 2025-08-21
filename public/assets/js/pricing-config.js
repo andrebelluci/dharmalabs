@@ -1013,10 +1013,14 @@ document.addEventListener("DOMContentLoaded", function () {
         pricingManager.scrollTabsToActive();
       }
     }
-  }
-  const targetSection = document.querySelector("#pricing-content");
-  if (targetSection) {
-    targetSection.scrollIntoView({ behavior: "smooth" });
+    
+    // Only scroll to pricing-content if the hash specifically targets it
+    if (hash === "pricing-content") {
+      const targetSection = document.querySelector("#pricing-content");
+      if (targetSection) {
+        targetSection.scrollIntoView({ behavior: "smooth" });
+      }
+    }
   }
 });
 

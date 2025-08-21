@@ -855,3 +855,54 @@ body {
   background-color: #33a733;
   transform: scale(1.2);
 }
+
+/* ===== CLIENT LOGOS CAROUSEL ===== */
+@keyframes infiniteScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.client-logos-scroll {
+  animation: infiniteScroll 20s linear infinite;
+  width: max-content;
+}
+
+.client-logos-scroll:hover {
+  animation-play-state: paused;
+}
+
+.client-logo {
+  flex-shrink: 0;
+  width: 120px;
+  height: 60px;
+  background: white;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid transparent;
+}
+
+.client-logo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  border-color: #4ade80;
+}
+
+.client-logo img {
+  max-width: 80px;
+  max-height: 40px;
+  object-fit: contain;
+  filter: grayscale(1);
+  transition: filter 0.3s ease;
+}
+
+.client-logo:hover img {
+  filter: grayscale(0);
+}
