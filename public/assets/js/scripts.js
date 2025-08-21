@@ -624,23 +624,33 @@ class DharmaApp {
 
   // ===== CLIENT LOGOS CAROUSEL =====
   setupClientLogos() {
-    const clientLogosContainer = document.getElementById('client-logos') || document.getElementById('client-logos-page');
+    const clientLogosContainer = document.getElementById('client-logos-page');
     if (!clientLogosContainer) return;
 
     // Logos de clientes reais e mocks
     const clientLogos = [
-      { name: 'ICI', logo: './assets/images/portfolio/ici.png', url: 'https://participantesici.com.br' },
+      {
+        name: 'ICI',
+        logo: './assets/images/portfolio/ici.png',
+        url: '/cases/ici.html',
+        isCaseStudy: true
+      },
       // Adicione mais logos reais aqui seguindo o padrão:
-      // { name: 'NomeCliente', logo: './assets/images/portfolio/nome-arquivo.png' },
+      // {
+      //   name: 'NomeCliente',
+      //   logo: './assets/images/portfolio/nome-arquivo.png',
+      //   url: 'https://site-cliente.com', // OU '/cases/nome-cliente.html'
+      //   isCaseStudy: false // true para cases, false para sites externos
+      // },
 
       // Mocks temporários (remover quando tiver logos reais)
-      { name: 'ICI', logo: './assets/images/portfolio/ici.png', url: 'https://participantesici.com.br' },
-      { name: 'ICI', logo: './assets/images/portfolio/ici.png', url: 'https://participantesici.com.br' },
-      { name: 'ICI', logo: './assets/images/portfolio/ici.png', url: 'https://participantesici.com.br' },
-      { name: 'ICI', logo: './assets/images/portfolio/ici.png', url: 'https://participantesici.com.br' },
-      { name: 'ICI', logo: './assets/images/portfolio/ici.png', url: 'https://participantesici.com.br' },
-      { name: 'ICI', logo: './assets/images/portfolio/ici.png', url: 'https://participantesici.com.br' },
-      { name: 'ICI', logo: './assets/images/portfolio/ici.png', url: 'https://participantesici.com.br' }
+      { name: 'ICI', logo: './assets/images/portfolio/ici.png', url: '/cases/ici.html', isCaseStudy: true },
+      { name: 'ICI', logo: './assets/images/portfolio/ici.png', url: '/cases/ici.html', isCaseStudy: true },
+      { name: 'ICI', logo: './assets/images/portfolio/ici.png', url: '/cases/ici.html', isCaseStudy: true },
+      { name: 'ICI', logo: './assets/images/portfolio/ici.png', url: '/cases/ici.html', isCaseStudy: true },
+      { name: 'ICI', logo: './assets/images/portfolio/ici.png', url: '/cases/ici.html', isCaseStudy: true },
+      { name: 'ICI', logo: './assets/images/portfolio/ici.png', url: '/cases/ici.html', isCaseStudy: true },
+      { name: 'ICI', logo: './assets/images/portfolio/ici.png', url: '/cases/ici.html', isCaseStudy: true }
     ];
 
     // Duplicar logos para efeito infinito
@@ -649,10 +659,15 @@ class DharmaApp {
     // Gerar HTML dos logos
     const logosHTML = duplicatedLogos.map((client) => `
       <a href="${client.url}"
-         class="client-logo"
+         class="client-logo ${client.isCaseStudy ? 'case-study-logo' : ''}"
          data-client="${client.name}"
-         title="Ver projeto ${client.name}">
-        <img src="${client.logo}" alt="${client.name}" loading="lazy" />
+         data-is-case="${client.isCaseStudy || false}"
+         title="${client.isCaseStudy ? 'Ver case: ' : 'Ver projeto: '}${client.name}"
+         ${!client.isCaseStudy ? 'target="_blank" rel="noopener noreferrer"' : ''}>
+        <div class="logo-container">
+          <img src="${client.logo}" alt="${client.name}" loading="lazy" />
+          ${client.isCaseStudy ? '<div class="case-badge">Ver Case</div>' : ''}
+        </div>
       </a>
     `).join('');
 

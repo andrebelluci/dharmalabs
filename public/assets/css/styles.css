@@ -887,6 +887,7 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   border: 2px solid transparent;
+  text-decoration: none;
 }
 
 .client-logo:hover {
@@ -905,4 +906,66 @@ body {
 
 .client-logo:hover img {
   filter: grayscale(0);
+}
+
+/* Logo container para cases */
+.logo-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* Badge para cases */
+.case-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: linear-gradient(135deg, #4ade80, #22c55e);
+  color: white;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(74, 222, 128, 0.3);
+  opacity: 0;
+  transform: scale(0.8) translateY(2px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+  z-index: 10;
+}
+
+/* Mostrar badge no hover para cases */
+.case-study-logo:hover .case-badge {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+/* Estilo diferenciado para cases */
+.case-study-logo {
+  position: relative;
+}
+
+.case-study-logo::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #4ade80, #22c55e) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.case-study-logo:hover::after {
+  opacity: 0.6;
 }

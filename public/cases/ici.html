@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>Preços - Dharma Labs | Desenvolvimento Web com Planos Mensais</title>
+    <meta name="description"
+      content="Conheça nossos preços de desenvolvimento web com modelo recorrente. Sites, sistemas, apps e manutenção com valores acessíveis e pagamento mensal.">
+    <meta name="keywords"
+      content="preços desenvolvimento web, planos mensais, sites baratos, sistemas web, desenvolvimento recorrente, São Paulo">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml"
+      href="../assets/images/logos/dharma-labs-main.svg">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../assets/css/tailwind.css">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+
+    <!-- Dark Mode Styles -->
+    <link rel="stylesheet" href="../assets/css/dark-mode-styles.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <!-- TailwindCSS CDN -->
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+
+  </head>
+
+  <body class="font-inter text-gray-900 overflow-x-hidden">
+
+    <!-- Fixed Header -->
+    <header
+      class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200 transition-all duration-300 h-16"
+      id="navbar">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <!-- Logo -->
+          <a href="index.html"
+            class="flex items-center space-x-3 cursor-pointer">
+            <img src="../assets/images/logos/dharma-labs-main.svg"
+              alt="Dharma Labs" class="w-20 h-20 -mr-4" />
+            <div class="flex flex-col">
+              <span class="gradient-text text-xl font-bold">DHARMA</span>
+              <span class="text-primary-700 text-sm font-medium">Labs</span>
+            </div>
+          </a>
+
+          <!-- Navigation -->
+          <nav class="hidden md:flex items-center space-x-8">
+            <a href="../index.html"
+              class="text-gray-700 hover:text-primary-700 font-medium transition-colors">Home</a>
+            <a href="../precos.html"
+              class="bg-gradient-to-r from-highlight-500 to-primary-600 text-white px-4 py-2 rounded-full text-sm font-semibold hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5">Preços</a>
+            <a href="../index.html#portfolio-preview"
+              class="text-gray-700 hover:text-primary-700 font-medium transition-colors">Portfólio</a>
+            <a href="../index.html#contato"
+              class="text-gray-700 hover:text-primary-700 font-medium transition-colors">Contato</a>
+            <a href="https://api.whatsapp.com/send?phone=5517991446829&text=Ol%C3%A1%20%F0%9F%91%8B%21%0AGostaria%20de%20falar%20sobre%20os%20pre%C3%A7os%20e%20servi%C3%A7os%20da%20%F0%9F%AA%B7Dharma%20Labs." target="_blank" rel="noopener noreferrer"
+              class="bg-gradient-to-r from-accent-500 to-primary-600 text-white px-4 py-2 rounded-full text-sm font-semibold hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5">
+              Falar agora
+              <i class="ml-1 fa-brands fa-whatsapp"></i>
+            </a>
+          </nav>
+
+          <!-- Mobile Menu Button -->
+          <button class="md:hidden text-gray-700 hover:text-primary-700"
+            id="mobile-menu-btn">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor"
+              viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden" id="mobile-menu">
+          <div
+            class="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-gray-200">
+            <a href="../index.html"
+              class="block px-3 py-2 text-gray-700 hover:text-primary-700 font-medium text-center">Home</a>
+            <a href="../precos.html"
+              class="block mx-3 mt-4 bg-gradient-to-r from-highlight-500 to-primary-600 text-white px-4 py-2 rounded-full text-sm font-semibold text-center">Preços</a>
+            <a href="../index.html#portfolio-preview"
+              class="block px-3 py-2 text-gray-700 hover:text-primary-700 font-medium text-center">Portfólio</a>
+            <a href="../index.html#contato"
+              class="block px-3 py-2 text-gray-700 hover:text-primary-700 font-medium text-center">Contato</a>
+            <a href="https://api.whatsapp.com/send?phone=5517991446829&text=Ol%C3%A1%20%F0%9F%91%8B%21%0AGostaria%20de%20falar%20sobre%20os%20pre%C3%A7os%20e%20servi%C3%A7os%20da%20%F0%9F%AA%B7Dharma%20Labs."
+              class="block mx-3 mt-4 bg-gradient-to-r from-accent-500 to-primary-600 text-white px-4 py-2 rounded-full text-sm font-semibold text-center">
+              Falar agora
+              <i class="ml-1 fa-brands fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="cases"
+      class="hero-bg min-h-screen flex items-center justify-center relative overflow-hidden pt-16">
+      <!-- Animated Background -->
+      <div class="absolute inset-0 overflow-hidden pointer-events-none z-0">
+        <div class="absolute inset-0 opacity-20">
+          <svg class="w-full h-full" viewBox="0 0 100 20"
+            xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="pricing-grid" width="10" height="10"
+                patternUnits="userSpaceOnUse">
+                <path d="M 10 0 L 0 0 0 10" fill="none" stroke="currentColor"
+                  stroke-width="0.5" />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#pricing-grid)" />
+          </svg>
+        </div>
+      </div>
+
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
+        <div
+          class="text-center text-white animate-fade-in-up max-w-5xl mx-auto mb-16">
+          <!-- Header -->
+          <div
+            class="inline-flex items-center bg-white/10 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
+            <span class="w-2 h-2 bg-accent-400 rounded-full mr-2"></span>
+            Em breve!
+          </div>
+
+          <h1
+            class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-8 leading-tight">
+            Página em processo de <span class="text-accent-400">criação</span>
+          </h1>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary-900 text-white py-12">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row items-center justify-between">
+          <div class="flex items-center space-x-3 mb-6 md:mb-0">
+            <img src="../assets/images/logos/dharma-labs-main.svg"
+              alt="Dharma Labs"
+              class="w-20 h-20 -mr-4" />
+            <div class="flex flex-col">
+              <span class="gradient-text text-2xl font-bold">DHARMA</span>
+              <span class="text-primary-200 text-sm">Labs</span>
+            </div>
+          </div>
+
+          <div class="text-center md:text-right">
+            <p class="text-primary-200">© 2025 Dharma Labs. Todos os
+              direitos reservados.</p>
+            <p class="text-[12px] lg:text-[10px] text-primary-300 mr-1 mb-2">
+              CNPJ: 54.891.649/0001-79
+            </p>
+            <p class="hidden lg:block text-sm text-primary-300">Tecnologia com
+              Propósito •
+              Desenvolvido com <i
+                class="text-purple-500 fa-solid fa-heart fa-beat"
+                style="--fa-animation-duration: 2s;"></i>
+            </p>
+            <p class="block lg:hidden text-base text-primary-300">Tecnologia
+              com
+              Propósito</p>
+            <p class="block lg:hidden text-base text-primary-300">Desenvolvido
+              com <i
+                class="text-purple-500 fa-solid fa-heart fa-beat"
+                style="--fa-animation-duration: 2s;"></i>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../assets/js/scripts.js"></script>
+    <script src="../assets/js/pricing-config.js"></script>
+    <script src="../assets/js/dark-mode-three.js"></script>
+  </body>
+</html>

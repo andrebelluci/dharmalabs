@@ -17,8 +17,8 @@ class DarkModeThreeJS {
 
     // URLs das texturas LOCAIS
     this.textureUrls = {
-      sun: './assets/images/textures/sun.jpg',
-      moon: './assets/images/textures/moon.jpg'
+      sun: this.getBasePath() + 'assets/images/textures/sun.jpg',
+      moon: this.getBasePath() + 'assets/images/textures/moon.jpg'
     };
 
     // CDNs de fallback para Three.js
@@ -33,6 +33,12 @@ class DarkModeThreeJS {
     this.config = this.getResponsiveConfig();
 
     this.loadThreeJS();
+  }
+
+  getBasePath() {
+    const path = window.location.pathname;
+    const depth = (path.match(/\//g) || []).length - 1;
+    return depth > 0 ? '../'.repeat(depth) : './';
   }
 
   getResponsiveConfig() {
