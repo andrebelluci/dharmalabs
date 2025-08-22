@@ -605,7 +605,7 @@
       var(--dark-bg-secondary) 100%) !important;
 }
 
-.dark-mode #why {
+.dark-mode #why, #support-explanation {
   background: linear-gradient(135deg,
       var(--dark-bg-secondary) 0%,
       var(--dark-bg-tertiary) 50%,
@@ -627,7 +627,7 @@
   overflow: hidden;
 }
 
-.dark-mode #our-way {
+.dark-mode #our-way, #extra-demands {
   background: var(--neon-gradient-secondary) !important;
 }
 

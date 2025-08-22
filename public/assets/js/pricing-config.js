@@ -17,7 +17,7 @@ const PRICING_DATA = {
       "orcamento": false,
       "icon": "dharma-labs-main.svg",
       "idealFor": "Captação rápida de leads com investimento justo",
-      "deliveryTime": "7–15 dias úteis",
+      "deliveryTime": "7–15 dias úteis, mediante aprovação de estratégia e conteúdo",
       "features": [
         {
           "title": "Design moderno e responsivo",
@@ -28,7 +28,7 @@ const PRICING_DATA = {
           "description": "Captura de leads enviados diretamente para seu e-mail, funcionando desde o primeiro dia"
         },
         {
-          "title": "SEO básico + Google Analytics",
+          "title": "SEO + Google Analytics",
           "description": "Configuração para aparecer no Google + Analytics na conta do cliente com relatórios mensais"
         },
         {
@@ -38,6 +38,12 @@ const PRICING_DATA = {
         {
           "title": "5 contas de e-mail profissionais",
           "description": "E-mails personalizados no seu domínio (ex: contato@suaempresa.com.br)"
+        },
+      ],
+      "support": [
+        {
+          "title": "Suporte técnico mensal (3 tickets)",
+          "description": "Pequenos ajustes funcionais, correções e atualizações de conteúdo"
         }
       ],
       "marketPosition": "Até 60% mais barato que agências por entrega equivalente"
@@ -53,7 +59,7 @@ const PRICING_DATA = {
       "orcamento": false,
       "icon": "dharma-labs-main.svg",
       "idealFor": "Empresas que precisam apresentar serviços e produtos de forma profissional",
-      "deliveryTime": "15–30 dias úteis",
+      "deliveryTime": "15–30 dias úteis, mediante aprovação de estratégia e conteúdo",
       "features": [
         {
           "title": "Todas as funcionalidades da Landing Page",
@@ -74,6 +80,12 @@ const PRICING_DATA = {
         {
           "title": "Formulários de contato avançados",
           "description": "Múltiplos formulários personalizados para diferentes serviços ou departamentos"
+        },
+      ],
+      "support": [
+        {
+          "title": "Suporte técnico mensal (5 tickets)",
+          "description": "Pequenos ajustes funcionais, correções e atualizações de conteúdo"
         }
       ],
       "marketPosition": "Investimento justo para empresas que valorizam presença online profissional"
@@ -89,7 +101,7 @@ const PRICING_DATA = {
       "orcamento": true,
       "icon": "dharma-labs-main.svg",
       "idealFor": "Empresas que precisam de gestão de conteúdo, áreas restritas e alta personalização",
-      "deliveryTime": "30–60 dias úteis",
+      "deliveryTime": "30–60 dias úteis, mediante aprovação de estratégia e conteúdo",
       "features": [
         {
           "title": "Todas as funcionalidades anteriores",
@@ -110,6 +122,12 @@ const PRICING_DATA = {
         {
           "title": "Funcionalidades sob medida",
           "description": "Sistema desenvolvido especificamente para suas necessidades de negócio"
+        },
+      ],
+      "support": [
+        {
+          "title": "Suporte técnico mensal (7 tickets)",
+          "description": "Pequenos ajustes funcionais, correções e atualizações de conteúdo"
         }
       ],
       "marketPosition": "Solução premium com CMS proprietário e custo acessível comparado a agências tradicionais",
@@ -128,7 +146,7 @@ const PRICING_DATA = {
       "orcamento": false,
       "icon": "dharma-labs-main.svg",
       "idealFor": "Influenciadores e pequenos negócios que querem centralizar links com domínio próprio",
-      "deliveryTime": "1–2 dias úteis",
+      "deliveryTime": "5-10 dias úteis, mediante aprovação de estratégia e conteúdo",
       "features": [
         {
           "title": "Domínio personalizado incluso",
@@ -151,6 +169,12 @@ const PRICING_DATA = {
           "description": "Você paga apenas nossa manutenção, sem dependência de plataformas externas"
         }
       ],
+      "support": [
+        {
+          "title": "Suporte técnico mensal (2 tickets)",
+          "description": "Pequenos ajustes funcionais, correções e atualizações de conteúdo"
+        }
+      ],
       "marketPosition": "Até 75% mais barato que outras ferramentas + domínio próprio + e-mail profissional inclusos",
       "whatsapp": "https://w.app/dharmalabs_biopagebasica",
     },
@@ -164,7 +188,7 @@ const PRICING_DATA = {
       "orcamento": false,
       "icon": "dharma-labs-main.svg",
       "idealFor": "Profissionais e pequenos negócios que querem capturar leads e acompanhar resultados",
-      "deliveryTime": "2–4 dias úteis",
+      "deliveryTime": "10-20 dias úteis, mediante aprovação de estratégia e conteúdo",
       "features": [
         {
           "title": "Tudo da anterior + recursos de conversão",
@@ -187,6 +211,12 @@ const PRICING_DATA = {
           "description": "Destaque links principais com botões especiais e Call-to-Actions"
         }
       ],
+      "support": [
+        {
+          "title": "Suporte técnico mensal (3 tickets)",
+          "description": "Pequenos ajustes funcionais, correções e atualizações de conteúdo"
+        }
+      ],
       "marketPosition": "78% mais barato que ferramentas famosas, com domínio próprio e personalização total",
       "whatsapp": "https://w.app/dharmalabs_biopagepro",
     },
@@ -200,7 +230,7 @@ const PRICING_DATA = {
       "orcamento": true,
       "icon": "dharma-labs-main.svg",
       "idealFor": "Negócios que precisam de funcionalidades específicas e automações avançadas",
-      "deliveryTime": "5–10 dias úteis",
+      "deliveryTime": "15-30 dias úteis, mediante aprovação de estratégia e conteúdo",
       "features": [
         {
           "title": "Tudo da anterior + desenvolvimento customizado",
@@ -223,6 +253,12 @@ const PRICING_DATA = {
           "description": "Desenvolvemos recursos únicos conforme sua necessidade (calculadoras, catálogo com filtro, contador regressivo,etc.)"
         }
       ],
+      "support": [
+        {
+          "title": "Suporte técnico mensal (5 tickets)",
+          "description": "Pequenos ajustes funcionais, correções e atualizações de conteúdo"
+        }
+      ],
       "marketPosition": "Solução premium customizada a partir de R$750 - mais barato que desenvolver do zero",
       "whatsapp": "https://w.app/dharmalabs_biopagemax",
     }
@@ -239,13 +275,19 @@ const PRICING_DATA = {
       "orcamento": false,
       "icon": "dharma-labs-main.svg",
       "idealFor": "Pequenas empresas que precisam digitalizar processos básicos",
-      "deliveryTime": "15–20 dias úteis",
+      "deliveryTime": "15-30 dias úteis, mediante aprovação de estratégia e conteúdo",
       "features": [
         { "title": "Interface intuitiva e responsiva", "description": "Acesso por desktop, tablet e celular com design moderno" },
         { "title": "Até 5 usuários simultâneos", "description": "Controle de acesso para sua equipe" },
         { "title": "Hospedagem inclusa com SSL", "description": "Segurança e estabilidade garantidas" },
         { "title": "5 contas de e-mail profissional (5GB total)", "description": "E-mails no domínio do sistema" },
         { "title": "Backup automático semanal", "description": "Seus dados sempre protegidos" }
+      ],
+      "support": [
+        {
+          "title": "Suporte técnico mensal (4 tickets)",
+          "description": "Pequenos ajustes funcionais, correções e atualizações de conteúdo"
+        }
       ],
       "marketPosition": "Preço acessível comparado a sistemas sob medida tradicionais de R$ 15-30k",
       "whatsapp": "https://w.app/dharmalabs_appwebbasico",
@@ -260,7 +302,7 @@ const PRICING_DATA = {
       "orcamento": false,
       "icon": "dharma-labs-main.svg",
       "idealFor": "Empresas que precisam integrar e automatizar múltiplos processos",
-      "deliveryTime": "30–45 dias úteis",
+      "deliveryTime": "30–60 dias úteis, mediante aprovação de estratégia e conteúdo",
       "features": [
         { "title": "Tudo do anterior +", "description": "Mantém todos os recursos do App Web Básico" },
         { "title": "Usuários ilimitados", "description": "Sem limite de colaboradores" },
@@ -269,6 +311,12 @@ const PRICING_DATA = {
         { "title": "Integração com APIs externas", "description": "WhatsApp, sistemas bancários, ERPs" },
         { "title": "Automação de workflows", "description": "Processos automáticos por regras" },
         { "title": "Backup diário automatizado", "description": "Redundância total dos dados" }
+      ],
+      "support": [
+        {
+          "title": "Suporte técnico mensal (7 tickets)",
+          "description": "Pequenos ajustes funcionais, correções e atualizações de conteúdo"
+        }
       ],
       "marketPosition": "Solução completa com economia de 60% vs ERPs tradicionais de R$ 30-70k",
       "whatsapp": "https://w.app/dharmalabs_sistemadegestao",
@@ -283,15 +331,21 @@ const PRICING_DATA = {
       "orcamento": true,
       "icon": "dharma-labs-main.svg",
       "idealFor": "Empresas que precisam de soluções complexas e escaláveis",
-      "deliveryTime": "45–60 dias úteis + orçamento",
+      "deliveryTime": "45–90 dias úteis, mediante aprovação de estratégia e conteúdo",
       "features": [
         { "title": "Tudo do anterior +", "description": "Base do Sistema de Gestão com recursos enterprise" },
         { "title": "Módulos avançados", "description": "Vendas, Financeiro, Estoque, CRM integrados" },
         { "title": "Múltiplos usuários com permissões", "description": "Controle de acesso por função/departamento" },
         { "title": "Hospedagem Cloud inclusa", "description": "Performance superior com VPS dedicado" },
-        { "title": "E-commerce nativo incluso", "description": "Venda online integrada ao sistema" },
+        // { "title": "E-commerce nativo incluso", "description": "Venda online integrada ao sistema" },
         { "title": "Módulos especializados disponíveis", "description": "Personalização específica por setor" },
         { "title": "Treinamento e consultoria", "description": "Suporte na implementação e uso" }
+      ],
+      "support": [
+        {
+          "title": "Suporte técnico mensal (10 tickets)",
+          "description": "Pequenos ajustes funcionais, correções e atualizações de conteúdo"
+        }
       ],
       "marketPosition": "Solução enterprise com custo 70% menor que grandes fornecedores (R$ 100k+)",
       "whatsapp": "https://w.app/dharmalabs_plataformaavancada",
@@ -309,13 +363,19 @@ const PRICING_DATA = {
       "orcamento": false,
       "icon": "dharma-labs-main.svg",
       "idealFor": "Negócios que precisam acompanhar métricas essenciais",
-      "deliveryTime": "7–10 dias úteis",
+      "deliveryTime": "7-15 dias úteis, mediante aprovação de estratégia e conteúdo",
       "features": [
         { "title": "Visualizações estáticas em Python", "description": "Gráficos profissionais com Matplotlib e Plotly" },
         { "title": "Interface web simples", "description": "Dashboard responsivo acessível de qualquer dispositivo" },
         { "title": "Importação de dados", "description": "Excel, CSV e planilhas Google Sheets" },
         { "title": "Até 10 gráficos diferentes", "description": "Barras, linhas, pizza, indicadores KPI" },
         { "title": "Exportação PDF automática", "description": "Relatórios gerados automaticamente" }
+      ],
+      "support": [
+        {
+          "title": "Suporte técnico mensal (3 tickets)",
+          "description": "Pequenos ajustes funcionais, correções e atualizações de conteúdo"
+        }
       ],
       "marketPosition": "Preço justo vs Power BI com melhor customização",
       "whatsapp": "https://w.app/dharmalabs_dashboardbasico",
@@ -330,7 +390,7 @@ const PRICING_DATA = {
       "orcamento": false,
       "icon": "dharma-labs-main.svg",
       "idealFor": "Empresas que precisam de relatórios em tempo real",
-      "deliveryTime": "15–20 dias úteis",
+      "deliveryTime": "15–30 dias úteis, mediante aprovação de estratégia e conteúdo",
       "features": [
         { "title": "Tudo do anterior +", "description": "Mantém recursos do Básico com funcionalidades avançadas" },
         { "title": "Dashboard interativo com Streamlit", "description": "Filtros, seletores e navegação dinâmica" },
@@ -338,6 +398,12 @@ const PRICING_DATA = {
         { "title": "Atualizações automáticas", "description": "Dados sincronizados em tempo real" },
         { "title": "Múltiplos usuários", "description": "Controle de acesso por login" },
         { "title": "Alertas e notificações", "description": "Email automático quando KPIs críticos" }
+      ],
+      "support": [
+        {
+          "title": "Suporte técnico mensal (6 tickets)",
+          "description": "Pequenos ajustes funcionais, correções e atualizações de conteúdo"
+        }
       ],
       "marketPosition": "Funcionalidades enterprise 60% mais barato que soluções tradicionais",
       "whatsapp": "https://w.app/dharmalabs_dashboardinterativo",
@@ -352,7 +418,7 @@ const PRICING_DATA = {
       "orcamento": true,
       "icon": "dharma-labs-main.svg",
       "idealFor": "Empresas que querem prever tendências e automatizar decisões",
-      "deliveryTime": "20–30 dias úteis",
+      "deliveryTime": "30-90 dias úteis, mediante aprovação de estratégia e conteúdo",
       "features": [
         { "title": "Tudo do anterior +", "description": "Base do Dashboard Interativo com Inteligência Artificial" },
         { "title": "Modelos preditivos com Machine Learning", "description": "Previsão de vendas, demanda e comportamento" },
@@ -361,6 +427,12 @@ const PRICING_DATA = {
         { "title": "Chat com dados", "description": "Pergunte aos seus dados em linguagem natural" },
         { "title": "Dashboards adaptativos", "description": "Interface muda conforme padrões de uso" },
         { "title": "APIs de IA integradas", "description": "ChatGPT, Claude ou Gemini para análises" }
+      ],
+      "support": [
+        {
+          "title": "Suporte técnico mensal (9 tickets)",
+          "description": "Pequenos ajustes funcionais, correções e atualizações de conteúdo"
+        }
       ],
       "marketPosition": "IA empresarial por 70% menos que grandes consultorias (R$ 15-50k)",
       "whatsapp": "https://w.app/dharmalabs_dashboardcomia",
@@ -388,6 +460,11 @@ const PRICING_DATA = {
         { "title": "Até 15.000 mensagens", "description": "Limite de armazenamento de emails" },
         { "title": "100 emails por dia", "description": "Envio diário controlado" }
       ],
+      "support": [
+        {
+          "title": "Configuração assistida inclusa", "description": "Te ajudamos a configurar em qualquer cliente de email"
+        }
+      ],
       "marketPosition": "Bônus exclusivo para clientes com hospedagem ativa"
     },
     "emailStarter": {
@@ -401,7 +478,7 @@ const PRICING_DATA = {
       "isEmail": true,
       "icon": "dharma-labs-main.svg",
       "idealFor": "Profissionais e pequenas empresas que precisam de mais recursos",
-      "deliveryTime": "3 dias úteis",
+      "deliveryTime": "3 dias úteis, fora configuração assistida",
       "features": [
         { "title": "10GB de armazenamento", "description": "10x mais espaço que o plano gratuito" },
         { "title": "Até 50 aliases de email", "description": "Máxima flexibilidade de endereços" },
@@ -412,6 +489,11 @@ const PRICING_DATA = {
         { "title": "Antivírus integrado", "description": "Proteção contra anexos maliciosos" },
         { "title": "Anti-spam avançado", "description": "Filtros inteligentes de segurança" },
         { "title": "Infraestrutura em nuvem", "description": "Alta disponibilidade e performance" }
+      ],
+      "support": [
+        {
+          "title": "Configuração assistida inclusa", "description": "Te ajudamos a configurar em qualquer cliente de email"
+        }
       ],
       "marketPosition": "Economia de 71% no plano anual vs mensal - melhor custo-benefício",
       "whatsapp": "https://w.app/dharmalabs_emailstarter",
@@ -427,7 +509,7 @@ const PRICING_DATA = {
       "isEmail": true,
       "icon": "dharma-labs-main.svg",
       "idealFor": "Empresas que precisam de máximo desempenho e capacidade",
-      "deliveryTime": "3 diaa úteis",
+      "deliveryTime": "3 dias úteis, fora configuração assistida",
       "features": [
         { "title": "50GB de armazenamento", "description": "Espaço premium para uso intenso" },
         { "title": "Até 50 aliases de email", "description": "Organização profissional completa" },
@@ -439,8 +521,13 @@ const PRICING_DATA = {
         { "title": "Anti-spam avançado", "description": "Proteção inteligente de nível empresarial" },
         { "title": "Infraestrutura em nuvem", "description": "Performance e confiabilidade máximas" }
       ],
+      "support": [
+        {
+          "title": "Configuração assistida inclusa", "description": "Te ajudamos a configurar em qualquer cliente de email"
+        }
+      ],
       "marketPosition": "Economia de 60% no plano anual - solução enterprise acessível",
-      "whatsapp": "https://api.whatsapp.com/send?phone=5517991446829&text=Ol%C3%A1%2C+%F0%9F%91%8B%21%0AGostaria+de+realizar+um+upgrade+do+meu+servi%C3%A7o+de+e-mail+Dharma+Labs+Business+Starter%2C+para+o+servi%C3%A7o%3A%0A%0A%60%60%60E-mail+Business+Premium%60%60%60"
+      "whatsapp": "https://api.whatsapp.com/send?phone=5517996276236&text=Ol%C3%A1%2C+%F0%9F%91%8B%21%0AGostaria+de+realizar+um+upgrade+do+meu+servi%C3%A7o+de+e-mail+Dharma+Labs+Business+Starter%2C+para+o+servi%C3%A7o%3A%0A%0A%60%60%60E-mail+Business+Premium%60%60%60"
     }
   },
 
@@ -454,12 +541,18 @@ const PRICING_DATA = {
       "orcamento": true,
       "icon": "dharma-labs-main.svg",
       "idealFor": "Sites antigos que precisam de layout e performance atualizados",
-      "deliveryTime": "15–30 dias úteis",
+      "deliveryTime": "15–60 dias úteis, mediante aprovação de estratégia e conteúdo",
       "features": [
         { "title": "Análise de design e conteúdo", "description": "Identificação de melhorias visuais e de usabilidade" },
         { "title": "Aplicação de novas tendências visuais", "description": "Layout moderno e responsivo" },
         { "title": "Novas funcionalidades", "description": "Adição de recursos como formulários, links para redes sociais e mais" },
         { "title": "Otimização de SEO", "description": "Melhor posicionamento no Google" }
+      ],
+      "support": [
+        {
+          "title": "Suporte opcional sob consulta",
+          "description": "Pode optar por hospedagem conosco (tickets inclusos) ou atendimento por hora para ajustes pontuais"
+        }
       ],
       "marketPosition": "Mais acessível que criar um site novo"
     },
@@ -472,11 +565,17 @@ const PRICING_DATA = {
       "orcamento": true,
       "icon": "dharma-labs-main.svg",
       "idealFor": "Sistemas que precisam melhorar desempenho e segurança",
-      "deliveryTime": "20–60 dias úteis",
+      "deliveryTime": "20–60 dias úteis, mediante aprovação de estratégia e conteúdo",
       "features": [
         { "title": "Verificamos melhorias no seu sistema atual", "description": "Inclui auditoria técnica de back-end e banco de dados" },
         { "title": "Novas funcionalidades", "description": "Sugestões de recursos que podem ser adicionados" },
         { "title": "Relatório com recomendações", "description": "Sugestões práticas para evolução do sistema" }
+      ],
+      "support": [
+        {
+          "title": "Suporte mediante implementação contratada",
+          "description": "Entrega de relatório completo com recomendações. Implementação das melhorias pode ser contratada separadamente e já inclui tickets mensais"
+        }
       ],
       "marketPosition": "Mais barato que manter um sistema ineficiente"
     },
@@ -489,12 +588,18 @@ const PRICING_DATA = {
       "orcamento": true,
       "icon": "dharma-labs-main.svg",
       "idealFor": "Projetos que precisam de validação contínua",
-      "deliveryTime": "30–120 dias úteis",
+      "deliveryTime": "30–120 dias úteis, mediante aprovação de estratégia e conteúdo",
       "features": [
         { "title": "Análise completa do seu produto", "description": "Acompanhamento durante o desenvolvimento" },
         { "title": "Testes automatizados", "description": "Cobertura máxima para evitar erros" },
         { "title": "Testes web, API e mobile", "description": "Validação em todas as plataformas" },
         { "title": "Relatórios de execução", "description": "Documentação detalhada dos testes realizados" }
+      ],
+      "support": [
+        {
+          "title": "Suporte por projeto (R$ 80/hora)",
+          "description": "Consultoria contínua durante o desenvolvimento, relatórios de progresso e ajustes conforme necessário"
+        }
       ],
       "marketPosition": "Protege seu investimento garantindo qualidade total"
     }
@@ -775,7 +880,7 @@ class PricingManager {
           \`\`\`${service.name}\`\`\`
           `;
 
-    const number = "5517991446829";
+    const number = "5517996276236";
 
     const mensagemCodificada = encodeURIComponent(mensagem);
 
@@ -784,7 +889,7 @@ class PricingManager {
     ${service.popular ? `
       <div class="absolute -top-0 left-1/2 transform -translate-x-1/2">
         <div class="${bgColors[category]} text-white px-4 py-1 rounded-full text-xs font-bold">
-          🔥 MAIS POPULAR
+          <i class="fa-solid fa-fire text-orange-500"></i> MAIS POPULAR
         </div>
       </div>` : ''}
 
@@ -889,6 +994,26 @@ class PricingManager {
             ${f.description ? `<span class="ml-5 text-gray-600 text-xs">${f.description}</span>` : ''}
           </div>
         `).join('')}
+      </div>
+
+      <div class="bg-gradient-to-l from-accent-50/70 to-primary-50/70 rounded-2xl p-4 mb-6 border border-accent-100/50">
+      ${service.isEmail || category == 'consultoria' ? '' : `<a href=#support-explanation>` }
+        <div class="flex items-center mb-3">
+          <i class="fas fa-headset text-accent-600 mr-2 text-sm"></i>
+          <span class="font-bold text-accent-700 text-sm uppercase tracking-wide">${category == 'consultoria' ? 'Suporte à Combinar' : 'Suporte Incluso' }</span>
+        </div>
+        <div class="space-y-3">
+          ${service.support.map(s => `
+            <div class="flex flex-col">
+              <div class="flex items-start space-x-2">
+                <i class="fas fa-check text-accent-500 mt-1 text-sm"></i>
+                <span class="font-medium text-gray-800 text-sm">${s.title}</span>
+              </div>
+              ${s.description ? `<span class="ml-5 text-gray-600 text-xs">${s.description}</span>` : ''}
+            </div>
+          `).join('')}
+        </div>
+      ${service.isEmail || category == 'consultoria' ? '' : `</a>` }
       </div>
 
       ${service.isEmail && service.monthly == 0 ? ``: `
@@ -1013,7 +1138,7 @@ document.addEventListener("DOMContentLoaded", function () {
         pricingManager.scrollTabsToActive();
       }
     }
-    
+
     // Only scroll to pricing-content if the hash specifically targets it
     if (hash === "pricing-content") {
       const targetSection = document.querySelector("#pricing-content");

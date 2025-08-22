@@ -631,7 +631,7 @@ class DharmaApp {
     const clientLogos = [
       {
         name: 'ICI',
-        logo: './assets/images/portfolio/ici.png',
+        logo: './assets/images/logos/clientes/ici.png',
         url: '/cases/ici.html',
         isCaseStudy: true
       },
@@ -644,13 +644,13 @@ class DharmaApp {
       // },
 
       // Mocks temporários (remover quando tiver logos reais)
-      { name: 'ICI', logo: './assets/images/portfolio/ici.png', url: '/cases/ici.html', isCaseStudy: true },
-      { name: 'ICI', logo: './assets/images/portfolio/ici.png', url: '/cases/ici.html', isCaseStudy: true },
-      { name: 'ICI', logo: './assets/images/portfolio/ici.png', url: '/cases/ici.html', isCaseStudy: true },
-      { name: 'ICI', logo: './assets/images/portfolio/ici.png', url: '/cases/ici.html', isCaseStudy: true },
-      { name: 'ICI', logo: './assets/images/portfolio/ici.png', url: '/cases/ici.html', isCaseStudy: true },
-      { name: 'ICI', logo: './assets/images/portfolio/ici.png', url: '/cases/ici.html', isCaseStudy: true },
-      { name: 'ICI', logo: './assets/images/portfolio/ici.png', url: '/cases/ici.html', isCaseStudy: true }
+      { name: 'ICI', logo: './assets/images/logos/clientes/ici.png', url: '/cases/ici.html', isCaseStudy: true },
+      { name: 'ICI', logo: './assets/images/logos/clientes/ici.png', url: '/cases/ici.html', isCaseStudy: true },
+      { name: 'ICI', logo: './assets/images/logos/clientes/ici.png', url: '/cases/ici.html', isCaseStudy: true },
+      { name: 'ICI', logo: './assets/images/logos/clientes/ici.png', url: '/cases/ici.html', isCaseStudy: true },
+      { name: 'ICI', logo: './assets/images/logos/clientes/ici.png', url: '/cases/ici.html', isCaseStudy: true },
+      { name: 'ICI', logo: './assets/images/logos/clientes/ici.png', url: '/cases/ici.html', isCaseStudy: true },
+      { name: 'ICI', logo: './assets/images/logos/clientes/ici.png', url: '/cases/ici.html', isCaseStudy: true }
     ];
 
     // Duplicar logos para efeito infinito
