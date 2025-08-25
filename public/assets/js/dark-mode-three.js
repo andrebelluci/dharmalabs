@@ -36,9 +36,11 @@ class DarkModeThreeJS {
   }
 
   getBasePath() {
-    const path = window.location.pathname;
-    const depth = (path.match(/\//g) || []).length - 1;
-    return depth > 0 ? '../'.repeat(depth) : './';
+    if (window.location.hostname.includes("github.io")) {
+      return "/dharmalabs/public/";
+    } else {
+      return "./"; // ou o que você usa no ambiente local
+    }
   }
 
   getResponsiveConfig() {
