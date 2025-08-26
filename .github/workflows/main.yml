@@ -1,0 +1,22 @@
+name: 🧪 Deploy Site
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    name: 📂 Deploy
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: 🔄 Clonar repositório
+    - uses: actions/checkout@v4
+      
+    - name: 📤 Deploy pasta public_html/
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      with:
+        server: ${{ secrets.FTP_HOST }}
+        username: ${{ secrets.FTP_USER }}
+        password: ${{ secrets.FTP_PASS }}
+        local-dir: ./public/
