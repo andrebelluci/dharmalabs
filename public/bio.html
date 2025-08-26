@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO Meta Tags -->
+  <title>Dharma Labs - Tecnologia com Propósito | Links & Contatos</title>
+  <meta name="description" content="Todos os links importantes da Dharma Labs em um só lugar. Desenvolvimento web, sistemas, dashboards e consultoria especializada.">
+  <meta name="keywords" content="dharma labs, desenvolvimento web, links, bio, contatos, portfólio, São José do Rio Preto">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Dharma Labs - Bio Links">
+  <meta property="og:description" content="Acesse todos os nossos serviços, portfólio e contatos em um só lugar">
+  <meta property="og:image" content="./assets/images/logos/dharma-labs-main.svg">
+  <meta property="og:url" content="https://dharmalabs.com.br/bio.html">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="./assets/images/logos/dharma-labs-main.svg">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="./assets/css/tailwind.css">
+  <link rel="stylesheet" href="./assets/css/styles.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    /* Bio Page Mobile-First Styles */
+    body {
+      background: linear-gradient(135deg, #0c4a6e 0%, #1e293b 100%);
+      min-height: 100vh;
+    }
+
+    .bio-container {
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 20px 16px;
+    }
+
+    /* Desktop adjustments */
+    @media (min-width: 768px) {
+      .bio-container {
+        max-width: 420px;
+        padding: 40px 20px;
+      }
+    }
+
+    .profile-card {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .link-button {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      border-radius: 16px;
+      border: 2px solid transparent;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .link-button:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+      border-color: rgba(74, 222, 128, 0.3);
+    }
+
+    .link-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(74, 222, 128, 0.1), transparent);
+      transition: left 0.6s ease;
+    }
+
+    .link-button:hover::before {
+      left: 100%;
+    }
+
+    /* Special buttons */
+    .whatsapp-button {
+      background: linear-gradient(135deg, #25d366 0%, #20b858 100%);
+      color: white !important;
+    }
+
+    .whatsapp-button:hover {
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: 0 15px 40px rgba(37, 211, 102, 0.3);
+    }
+
+    .primary-button {
+      background: linear-gradient(135deg, #0369a1 0%, #4ade80 100%);
+      color: white !important;
+    }
+
+    .primary-button:hover {
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: 0 15px 40px rgba(3, 105, 161, 0.3);
+    }
+
+    /* Service grid */
+    .service-mini {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .service-mini:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      background: rgba(255, 255, 255, 0.95);
+    }
+
+    /* Contact section */
+    .contact-section {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 16px;
+      backdrop-filter: blur(20px);
+    }
+
+    /* Social icons */
+    .social-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      color: #64748b;
+    }
+
+    .social-icon:hover {
+      transform: translateY(-2px) scale(1.05);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .social-icon.instagram:hover { color: #e1306c; }
+    .social-icon.linkedin:hover { color: #0077b5; }
+    .social-icon.email:hover { color: #ea4335; }
+    .social-icon.github:hover { color: #333; }
+
+    /* Stats */
+    .stat-card {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 10px;
+      text-align: center;
+      padding: 12px 8px;
+    }
+
+    /* Typing animation */
+    .typing-cursor::after {
+      content: '|';
+      animation: blink 1s infinite;
+      color: #4ade80;
+    }
+
+    @keyframes blink {
+      0%, 50% { opacity: 1; }
+      51%, 100% { opacity: 0; }
+    }
+
+    /* Smooth entrance animations */
+    .fade-in-up {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .fade-in-up.animate {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Floating decoration */
+    .floating-dot {
+      position: fixed;
+      border-radius: 50%;
+      pointer-events: none;
+      animation: float 8s ease-in-out infinite;
+      z-index: 1;
+    }
+
+    .floating-dot:nth-child(1) {
+      top: 10%; left: 10%;
+      width: 8px; height: 8px;
+      background: rgba(74, 222, 128, 0.2);
+      animation-delay: 0s;
+    }
+    .floating-dot:nth-child(2) {
+      top: 20%; right: 15%;
+      width: 6px; height: 6px;
+      background: rgba(168, 85, 247, 0.2);
+      animation-delay: -2s;
+    }
+    .floating-dot:nth-child(3) {
+      bottom: 30%; left: 20%;
+      width: 10px; height: 10px;
+      background: rgba(56, 189, 248, 0.2);
+      animation-delay: -4s;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(180deg); }
+    }
+
+    /* Link icon styling */
+    .link-icon {
+      width: 24px;
+      height: 24px;
+      color: #64748b;
+      transition: color 0.3s ease;
+    }
+
+    .link-button:hover .link-icon {
+      color: #4ade80;
+    }
+
+    .whatsapp-button .link-icon,
+    .primary-button .link-icon {
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    /* BioPage Max Features */
+    .multimedia-section {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 16px;
+      backdrop-filter: blur(20px);
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      height: 200px;
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      border-radius: 12px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .video-container:hover {
+      transform: scale(1.02);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .video-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #0369a1 0%, #4ade80 100%);
+    }
+
+    .play-button {
+      width: 60px;
+      height: 60px;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #0369a1;
+      font-size: 24px;
+      transition: all 0.3s ease;
+    }
+
+    .video-container:hover .play-button {
+      transform: scale(1.1);
+      background: white;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+
+    .gallery-item {
+      aspect-ratio: 1;
+      background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #64748b;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .gallery-item::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(74, 222, 128, 0.1) 0%, rgba(168, 85, 247, 0.1) 100%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .gallery-item:hover::before {
+      opacity: 1;
+    }
+
+    /* Smart Forms */
+    .smart-form {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 16px;
+      backdrop-filter: blur(20px);
+    }
+
+    .form-step {
+      display: none;
+    }
+
+    .form-step.active {
+      display: block;
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 12px 16px;
+      border: 2px solid #e2e8f0;
+      border-radius: 8px;
+      font-size: 16px;
+      transition: all 0.3s ease;
+      background: white;
+    }
+
+    .form-input:focus {
+      outline: none;
+      border-color: #4ade80;
+      box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.1);
+    }
+
+    .form-select {
+      width: 100%;
+      padding: 12px 16px;
+      border: 2px solid #e2e8f0;
+      border-radius: 8px;
+      font-size: 16px;
+      background: white;
+      cursor: pointer;
+    }
+
+    .progress-bar {
+      height: 4px;
+      background: #e2e8f0;
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #4ade80 0%, #0369a1 100%);
+      width: 33.33%;
+      transition: width 0.3s ease;
+      border-radius: 2px;
+    }
+
+    /* Automation Features */
+    .countdown-timer {
+      background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+      color: white;
+      padding: 12px;
+      border-radius: 12px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .scheduled-link {
+      position: relative;
+      opacity: 0.7;
+    }
+
+    .scheduled-link::after {
+      content: '⏰';
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      font-size: 16px;
+    }
+
+    /* Product Catalog */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      border: 1px solid #e2e8f0;
+    }
+
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-image {
+      aspect-ratio: 1;
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #94a3b8;
+      font-size: 24px;
+    }
+
+    .filter-tabs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 16px;
+      overflow-x: auto;
+      padding-bottom: 8px;
+    }
+
+    .filter-tab {
+      padding: 8px 16px;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid #e2e8f0;
+      border-radius: 20px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+    }
+
+    .filter-tab.active {
+      background: #4ade80;
+      color: white;
+      border-color: #4ade80;
+    }
+
+    /* Calculator Widget */
+    .calculator-widget {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 16px;
+      backdrop-filter: blur(20px);
+    }
+
+    .calc-input {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #e2e8f0;
+      border-radius: 8px;
+      font-size: 16px;
+      text-align: center;
+    }
+
+    .calc-result {
+      background: linear-gradient(135deg, #4ade80 0%, #0369a1 100%);
+      color: white;
+      padding: 16px;
+      border-radius: 12px;
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body class="font-inter">
+
+  <!-- Floating decorations -->
+  <div class="floating-dot"></div>
+  <div class="floating-dot"></div>
+  <div class="floating-dot"></div>
+
+  <!-- Main Container -->
+  <div class="bio-container">
+
+    <!-- Profile Section -->
+    <div class="profile-card p-8 mb-6 text-center fade-in-up">
+      <!-- Profile Image -->
+      <div class="w-28 h-28 mx-auto mb-6 relative">
+        <img src="./assets/images/logos/dharma-labs-main.svg"
+             alt="Dharma Labs"
+             class="w-full h-full rounded-full shadow-lg animate-pulse-soft">
+      </div>
+
+      <!-- Company Info -->
+      <h1 class="text-2xl font-bold text-gray-900 mb-2">
+        <span class="gradient-text">DHARMA LABS</span>
+      </h1>
+
+      <div class="text-base text-gray-600 mb-1 typing-cursor" id="typing-text">
+        Tecnologia com Propósito
+      </div>
+
+      <div class="text-sm text-gray-500 mb-6">
+        📍 São José do Rio Preto, SP
+      </div>
+
+      <!-- Quick Stats -->
+      <div class="grid grid-cols-3 gap-3 mb-6">
+        <div class="stat-card">
+          <div class="text-lg font-bold text-primary-600">24/7</div>
+          <div class="text-xs text-gray-500">Suporte</div>
+        </div>
+        <div class="stat-card">
+          <div class="text-lg font-bold text-accent-500">100%</div>
+          <div class="text-xs text-gray-500">Online</div>
+        </div>
+        <div class="stat-card">
+          <div class="text-lg font-bold text-highlight-500">2h</div>
+          <div class="text-xs text-gray-500">Resposta</div>
+        </div>
+      </div>
+
+      <!-- Social Media -->
+      <div class="flex justify-center space-x-3">
+        <a href="https://instagram.com/dharmalabs_" target="_blank" rel="noopener noreferrer"
+           class="social-icon instagram">
+          <i class="fab fa-instagram text-lg"></i>
+        </a>
+        <a href="https://linkedin.com/company/dharma-labs" target="_blank" rel="noopener noreferrer"
+           class="social-icon linkedin">
+          <i class="fab fa-linkedin text-lg"></i>
+        </a>
+        <a href="mailto:contato@dharmalabs.com.br" target="_blank" rel="noopener noreferrer"
+           class="social-icon email">
+          <i class="fas fa-envelope text-lg"></i>
+        </a>
+        <a href="https://github.com/dharmalabs_" target="_blank" rel="noopener noreferrer"
+           class="social-icon github">
+          <i class="fab fa-github text-lg"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Main Action Button -->
+    <a href="https://api.whatsapp.com/send?phone=5517996276236&text=Ol%C3%A1%20%F0%9F%91%8B%21%0AVi%20sua%20bio%20page%20e%20gostaria%20de%20conversar%20sobre%20desenvolvimento%20web!"
+       target="_blank" rel="noopener noreferrer"
+       class="whatsapp-button link-button p-4 flex items-center justify-center mb-4 text-white no-underline fade-in-up">
+      <i class="fab fa-whatsapp text-2xl mr-3"></i>
+      <div>
+        <div class="font-semibold text-lg">Falar no WhatsApp</div>
+        <div class="text-sm opacity-90">Resposta em minutos</div>
+      </div>
+    </a>
+
+    <!-- Primary Links -->
+    <div class="space-y-3 mb-6">
+      <a href="index.html"
+         class="link-button p-4 flex items-center text-gray-700 no-underline fade-in-up">
+        <i class="fas fa-globe link-icon mr-4"></i>
+        <div class="flex-1">
+          <div class="font-semibold">Site Principal</div>
+          <div class="text-sm text-gray-500">Conheça todos nossos serviços</div>
+        </div>
+        <i class="fas fa-chevron-right text-gray-400 text-sm"></i>
+      </a>
+
+      <a href="precos.html"
+         class="primary-button link-button p-4 flex items-center text-white no-underline fade-in-up">
+        <i class="fas fa-tag link-icon mr-4"></i>
+        <div class="flex-1">
+          <div class="font-semibold">Preços & Planos</div>
+          <div class="text-sm opacity-90">Valores transparentes</div>
+        </div>
+        <i class="fas fa-chevron-right text-white/70 text-sm"></i>
+      </a>
+
+      <a href="index.html#portfolio-preview"
+         class="link-button p-4 flex items-center text-gray-700 no-underline fade-in-up">
+        <i class="fas fa-folder-open link-icon mr-4"></i>
+        <div class="flex-1">
+          <div class="font-semibold">Portfólio</div>
+          <div class="text-sm text-gray-500">Projetos que transformam</div>
+        </div>
+        <i class="fas fa-chevron-right text-gray-400 text-sm"></i>
+      </a>
+    </div>
+
+    <!-- Services Grid -->
+    <div class="contact-section p-4 mb-6 fade-in-up">
+      <h2 class="font-bold text-lg text-gray-800 mb-4 text-center">🚀 Nossos Serviços</h2>
+      <div class="grid grid-cols-2 gap-3">
+        <a href="precos.html#sites" class="service-mini p-3 text-center no-underline">
+          <i class="fas fa-globe text-2xl text-accent-500 mb-2"></i>
+          <div class="font-semibold text-sm text-gray-700">Sites</div>
+          <div class="text-xs text-gray-500">A partir de R$890</div>
+        </a>
+        <a href="precos.html#biopages" class="service-mini p-3 text-center no-underline">
+          <i class="fas fa-link text-2xl text-primary-500 mb-2"></i>
+          <div class="font-semibold text-sm text-gray-700">Bio Pages</div>
+          <div class="text-xs text-gray-500">Como esta página</div>
+        </a>
+        <a href="precos.html#sistemas" class="service-mini p-3 text-center no-underline">
+          <i class="fas fa-cogs text-2xl text-highlight-500 mb-2"></i>
+          <div class="font-semibold text-sm text-gray-700">Sistemas</div>
+          <div class="text-xs text-gray-500">Sob medida</div>
+        </a>
+        <a href="precos.html#dashboards" class="service-mini p-3 text-center no-underline">
+          <i class="fas fa-chart-bar text-2xl text-blue-500 mb-2"></i>
+          <div class="font-semibold text-sm text-gray-700">Dashboards</div>
+          <div class="text-xs text-gray-500">Com IA</div>
+        </a>
+      </div>
+    </div>
+
+    <!-- BIOPAGE MAX FEATURES DEMO -->
+
+    <!-- Video Section -->
+    <div class="multimedia-section p-4 mb-6 fade-in-up">
+      <h3 class="font-bold text-lg text-gray-800 mb-3 text-center">🎥 Apresentação da Empresa</h3>
+
+      <div class="video-container" onclick="playVideo()">
+        <div class="video-placeholder">
+          <div class="play-button">
+            <i class="fas fa-play"></i>
+          </div>
+        </div>
+        <div class="absolute bottom-2 left-2 bg-black/50 text-white text-xs px-2 py-1 rounded">
+          2:30
+        </div>
+      </div>
+    </div>
+
+    <!-- Gallery Section -->
+    <div class="multimedia-section p-4 mb-6 fade-in-up">
+      <h3 class="font-bold text-lg text-gray-800 mb-3 text-center">📸 Nossos Projetos</h3>
+      <div class="gallery-grid">
+        <div class="gallery-item" onclick="openGallery(1)">
+          <i class="fas fa-image text-xl"></i>
+        </div>
+        <div class="gallery-item" onclick="openGallery(2)">
+          <i class="fas fa-desktop text-xl"></i>
+        </div>
+        <div class="gallery-item" onclick="openGallery(3)">
+          <i class="fas fa-mobile-alt text-xl"></i>
+        </div>
+        <div class="gallery-item" onclick="openGallery(4)">
+          <i class="fas fa-chart-line text-xl"></i>
+        </div>
+        <div class="gallery-item" onclick="openGallery(5)">
+          <i class="fas fa-code text-xl"></i>
+        </div>
+        <div class="gallery-item" onclick="openGallery(6)">
+          <i class="fas fa-plus text-xl"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product Catalog with Filters -->
+    <div class="multimedia-section p-4 mb-6 fade-in-up">
+      <h3 class="font-bold text-lg text-gray-800 mb-3 text-center">🛍️ Nossos Planos</h3>
+
+      <div class="filter-tabs">
+        <button class="filter-tab active" onclick="filterProducts('all')">Todos</button>
+        <button class="filter-tab" onclick="filterProducts('sites')">Sites</button>
+        <button class="filter-tab" onclick="filterProducts('sistemas')">Sistemas</button>
+        <button class="filter-tab" onclick="filterProducts('bio')">Bio Pages</button>
+      </div>
+
+      <div class="product-grid">
+        <div class="product-card" data-category="sites">
+          <div class="product-image">
+            <i class="fas fa-globe"></i>
+          </div>
+          <div class="p-3">
+            <div class="font-semibold text-sm text-gray-800">Site Básico</div>
+            <div class="text-xs text-gray-600 mb-2">Landing Page</div>
+            <div class="text-accent-600 font-bold">R$ 890</div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="sites">
+          <div class="product-image">
+            <i class="fas fa-star"></i>
+          </div>
+          <div class="p-3">
+            <div class="font-semibold text-sm text-gray-800">Site Premium</div>
+            <div class="text-xs text-gray-600 mb-2">Multi-páginas</div>
+            <div class="text-accent-600 font-bold">R$ 1.890</div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="bio">
+          <div class="product-image">
+            <i class="fas fa-link"></i>
+          </div>
+          <div class="p-3">
+            <div class="font-semibold text-sm text-gray-800">Bio Page</div>
+            <div class="text-xs text-gray-600 mb-2">Como esta</div>
+            <div class="text-accent-600 font-bold">R$ 250</div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="sistemas">
+          <div class="product-image">
+            <i class="fas fa-cogs"></i>
+          </div>
+          <div class="p-3">
+            <div class="font-semibold text-sm text-gray-800">Sistema Web</div>
+            <div class="text-xs text-gray-600 mb-2">Personalizado</div>
+            <div class="text-primary-600 font-bold">Orçamento</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Smart Multi-Step Form -->
+    <div class="smart-form p-4 mb-6 fade-in-up">
+      <h3 class="font-bold text-lg text-gray-800 mb-3 text-center">📋 Orçamento Inteligente</h3>
+
+      <div class="progress-bar mb-4">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+
+      <!-- Step 1 -->
+      <div class="form-step active" id="step1">
+        <h4 class="font-semibold mb-3 text-gray-700">Qual tipo de projeto você precisa?</h4>
+        <select class="form-select mb-4" id="projectType" onchange="nextStep(1)">
+          <option value="">Selecione uma opção</option>
+          <option value="site">Site/Landing Page</option>
+          <option value="sistema">Sistema Web</option>
+          <option value="bio">Bio Page</option>
+          <option value="dashboard">Dashboard</option>
+        </select>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="form-step" id="step2">
+        <h4 class="font-semibold mb-3 text-gray-700">Qual o prazo desejado?</h4>
+        <select class="form-select mb-4" id="timeline" onchange="nextStep(2)">
+          <option value="">Selecione o prazo</option>
+          <option value="urgente">Urgente (+ 50%)</option>
+          <option value="normal">Normal (15-30 dias)</option>
+          <option value="flexivel">Flexível (desconto 10%)</option>
+        </select>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="form-step" id="step3">
+        <h4 class="font-semibold mb-3 text-gray-700">Seus dados para contato:</h4>
+        <input type="text" class="form-input mb-3" placeholder="Seu nome" id="userName">
+        <input type="email" class="form-input mb-3" placeholder="Seu e-mail" id="userEmail">
+        <input type="tel" class="form-input mb-4" placeholder="Seu WhatsApp" id="userPhone">
+
+        <button onclick="submitForm()" class="w-full bg-accent-500 hover:bg-accent-600 text-white font-semibold py-3 px-4 rounded-lg transition-colors">
+          📱 Enviar para WhatsApp
+        </button>
+      </div>
+
+      <div class="text-center mt-3">
+        <button onclick="prevStep()" id="prevBtn" class="text-gray-500 text-sm" style="display: none;">
+          ← Voltar
+        </button>
+      </div>
+    </div>
+
+    <!-- Calculator Widget -->
+    <div class="calculator-widget p-4 mb-6 fade-in-up">
+      <h3 class="font-bold text-lg text-gray-800 mb-3 text-center">🧮 Calculadora de Orçamento</h3>
+
+      <div class="space-y-3">
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Número de páginas</label>
+          <input type="number" class="calc-input" id="numPages" value="1" min="1" oninput="calculatePrice()">
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Funcionalidades extras</label>
+          <select class="form-select" id="extras" onchange="calculatePrice()">
+            <option value="0">Nenhuma</option>
+            <option value="500">Formulário avançado (+R$500)</option>
+            <option value="800">E-commerce básico (+R$800)</option>
+            <option value="1200">Sistema de login (+R$1200)</option>
+          </select>
+        </div>
+
+        <div class="calc-result" id="calcResult">
+          💰 Orçamento: R$ 890
+        </div>
+
+        <button onclick="requestQuote()" class="w-full bg-primary-600 hover:bg-primary-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors">
+          Solicitar Orçamento Oficial
+        </button>
+      </div>
+    </div>
+
+    <!-- Countdown Timer (Automation Example) -->
+    <div class="countdown-timer mb-6 fade-in-up">
+      <div class="text-sm mb-1">🔥 Oferta Especial</div>
+      <div class="text-lg">20% OFF termina em:</div>
+      <div class="text-xl font-mono" id="countdown">23:59:45</div>
+      <div class="text-xs mt-1 opacity-90">*Válido apenas hoje</div>
+    </div>
+
+    <!-- Scheduled Link Example -->
+    <a href="precos.html#promocao"
+       class="link-button scheduled-link p-4 flex items-center text-gray-700 no-underline mb-6 fade-in-up">
+      <i class="fas fa-gift link-icon mr-4 text-red-500"></i>
+      <div class="flex-1">
+        <div class="font-semibold">Promoção Black Friday</div>
+        <div class="text-sm text-gray-500">Disponível em 25/11/2025</div>
+      </div>
+      <i class="fas fa-lock text-gray-400 text-sm"></i>
+    </a>
+
+    <!-- Contact Section -->
+    <div class="contact-section p-4 mb-6 fade-in-up">
+      <h3 class="font-bold text-lg text-gray-800 mb-3 text-center">📞 Contatos</h3>
+
+      <a href="mailto:contato@dharmalabs.com.br" target="_blank" rel="noopener noreferrer"
+         class="flex items-center p-3 rounded-lg hover:bg-gray-50 transition-colors mb-2 no-underline text-gray-700">
+        <i class="fas fa-envelope text-gray-500 w-5 mr-3"></i>
+        <span class="text-sm">contato@dharmalabs.com.br</span>
+      </a>
+
+      <a href="https://goo.gl/maps/exemplo" target="_blank" rel="noopener noreferrer"
+         class="flex items-center p-3 rounded-lg hover:bg-gray-50 transition-colors no-underline text-gray-700">
+        <i class="fas fa-map-marker-alt text-red-500 w-5 mr-3"></i>
+        <span class="text-sm">São José do Rio Preto, SP</span>
+      </a>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="link-button p-6 text-center mb-6 fade-in-up">
+      <h3 class="font-bold text-lg text-gray-800 mb-2">💡 Tem um projeto em mente?</h3>
+      <p class="text-sm text-gray-600 mb-4">Vamos transformar sua ideia em realidade digital!</p>
+      <a href="https://api.whatsapp.com/send?phone=5517996276236&text=Olá!%20Tenho%20um%20projeto%20em%20mente%20e%20gostaria%20de%20conversar."
+         target="_blank" rel="noopener noreferrer"
+         class="bg-accent-500 hover:bg-accent-600 text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 inline-block no-underline">
+        Vamos começar! 🚀
+      </a>
+    </div>
+
+    <!-- Footer -->
+    <div class="text-center text-white/80 fade-in-up">
+      <p class="text-sm mb-1">© 2025 Dharma Labs</p>
+      <p class="text-xs mb-3 text-white/60">CNPJ: 54.891.649/0001-79</p>
+      <a href="precos.html#biopages"
+         class="text-accent-400 hover:text-accent-300 text-xs font-medium no-underline bg-white/10 px-4 py-2 rounded-full backdrop-blur-sm">
+        ✨ Quer uma bio page assim? Clique aqui!
+      </a>
+    </div>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="./assets/js/scripts.js"></script>
+
+  <script>
+    // Typing animation
+    const typingElement = document.getElementById('typing-text');
+    const texts = [
+      'Tecnologia com Propósito',
+      'Sites que Convertem',
+      'Sistemas Inteligentes',
+      'Dashboards com IA',
+      'Bio Pages Premium'
+    ];
+
+    let textIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+
+    function typeWriter() {
+      const currentText = texts[textIndex];
+
+      if (isDeleting) {
+        typingElement.textContent = currentText.substring(0, charIndex - 1);
+        charIndex--;
+      } else {
+        typingElement.textContent = currentText.substring(0, charIndex + 1);
+        charIndex++;
+      }
+
+      if (!isDeleting && charIndex === currentText.length) {
+        setTimeout(() => isDeleting = true, 2000);
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        textIndex = (textIndex + 1) % texts.length;
+      }
+
+      const speed = isDeleting ? 50 : 100;
+      setTimeout(typeWriter, speed);
+    }
+
+    // Start typing animation after page load
+    setTimeout(typeWriter, 1000);
+
+    // Animate elements on scroll/load
+    const animateElements = () => {
+      const elements = document.querySelectorAll('.fade-in-up');
+      elements.forEach((el, index) => {
+        setTimeout(() => {
+          el.classList.add('animate');
+        }, index * 150);
+      });
+    };
+
+    // Start animations
+    setTimeout(animateElements, 300);
+
+    // Link click analytics
+    document.querySelectorAll('a[href]').forEach(link => {
+      link.addEventListener('click', function() {
+        const linkText = this.querySelector('.font-semibold')?.textContent ||
+                        this.textContent.trim() ||
+                        'Unknown Link';
+
+        console.log('Bio Link Clicked:', linkText);
+
+        // Real analytics (if you have Google Analytics)
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'bio_link_click', {
+            event_category: 'engagement',
+            event_label: linkText
+          });
+        }
+      });
+    });
+
+    // Add smooth scroll behavior
+    document.documentElement.style.scrollBehavior = 'smooth';
+
+    // BIOPAGE MAX FEATURES JAVASCRIPT
+
+    // Multi-step form functionality
+    let currentStep = 1;
+    const totalSteps = 3;
+
+    function nextStep(step) {
+      const select = document.querySelector(`#step${step} select`);
+      if (!select.value) return;
+
+      document.getElementById(`step${step}`).classList.remove('active');
+      currentStep++;
+
+      if (currentStep <= totalSteps) {
+        document.getElementById(`step${currentStep}`).classList.add('active');
+        updateProgress();
+
+        if (currentStep > 1) {
+          document.getElementById('prevBtn').style.display = 'block';
+        }
+      }
+    }
+
+    function prevStep() {
+      if (currentStep > 1) {
+        document.getElementById(`step${currentStep}`).classList.remove('active');
+        currentStep--;
+        document.getElementById(`step${currentStep}`).classList.add('active');
+        updateProgress();
+
+        if (currentStep === 1) {
+          document.getElementById('prevBtn').style.display = 'none';
+        }
+      }
+    }
+
+    function updateProgress() {
+      const progress = (currentStep / totalSteps) * 100;
+      document.getElementById('progressFill').style.width = progress + '%';
+    }
+
+    function submitForm() {
+      const projectType = document.getElementById('projectType').value;
+      const timeline = document.getElementById('timeline').value;
+      const userName = document.getElementById('userName').value;
+      const userEmail = document.getElementById('userEmail').value;
+      const userPhone = document.getElementById('userPhone').value;
+
+      if (!userName || !userEmail || !userPhone) {
+        alert('Por favor, preencha todos os campos!');
+        return;
+      }
+
+      const message = `Olá! 👋
+
+📋 *Orçamento via Bio Page*
+
+👤 *Dados do cliente:*
+Nome: ${userName}
+Email: ${userEmail}
+WhatsApp: ${userPhone}
+
+🎯 *Detalhes do projeto:*
+Tipo: ${projectType}
+Prazo: ${timeline}
+
+Gostaria de receber um orçamento personalizado!`;
+
+      const whatsappUrl = `https://api.whatsapp.com/send?phone=5517996276236&text=${encodeURIComponent(message)}`;
+      window.open(whatsappUrl, '_blank');
+    }
+
+    // Product filter functionality
+    function filterProducts(category) {
+      // Update active tab
+      document.querySelectorAll('.filter-tab').forEach(tab => {
+        tab.classList.remove('active');
+      });
+      event.target.classList.add('active');
+
+      // Filter products
+      document.querySelectorAll('.product-card').forEach(card => {
+        if (category === 'all' || card.dataset.category === category) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // Calculator functionality
+    function calculatePrice() {
+      const numPages = parseInt(document.getElementById('numPages').value) || 1;
+      const extras = parseInt(document.getElementById('extras').value) || 0;
+
+      let basePrice = 890; // Site básico
+
+      if (numPages > 1) {
+        basePrice += (numPages - 1) * 300; // R$300 por página adicional
+      }
+
+      const totalPrice = basePrice + extras;
+
+      document.getElementById('calcResult').innerHTML = `💰 Orçamento: R$ ${totalPrice.toLocaleString()}`;
+    }
+
+    function requestQuote() {
+      const numPages = document.getElementById('numPages').value;
+      const extras = document.getElementById('extras').options[document.getElementById('extras').selectedIndex].text;
+      const total = document.getElementById('calcResult').textContent;
+
+      const message = `🧮 *Calculadora de Orçamento*
+
+${total}
+
+📄 Páginas: ${numPages}
+⭐ Extras: ${extras}
+
+Gostaria de solicitar orçamento oficial!`;
+
+      const whatsappUrl = `https://api.whatsapp.com/send?phone=5517996276236&text=${encodeURIComponent(message)}`;
+      window.open(whatsappUrl, '_blank');
+    }
+
+    // Countdown timer
+    function startCountdown() {
+      const countdownElement = document.getElementById('countdown');
+
+      // Set countdown to 24 hours from now
+      let timeLeft = 24 * 60 * 60; // 24 hours in seconds
+
+      const timer = setInterval(() => {
+        const hours = Math.floor(timeLeft / 3600);
+        const minutes = Math.floor((timeLeft % 3600) / 60);
+        const seconds = timeLeft % 60;
+
+        countdownElement.textContent =
+          `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+        if (timeLeft <= 0) {
+          clearInterval(timer);
+          countdownElement.textContent = '00:00:00';
+        }
+
+        timeLeft--;
+      }, 1000);
+    }
+
+    // Multimedia functions
+    function playVideo() {
+      alert('🎥 Aqui seria reproduzido um vídeo de apresentação da empresa.\n\nEsta é uma demonstração das funcionalidades da BioPage Max!');
+    }
+
+    function openGallery(imageIndex) {
+      const images = [
+        'Projeto Site E-commerce',
+        'Sistema de Gestão',
+        'App Mobile',
+        'Dashboard Analytics',
+        'Landing Page',
+        'Ver mais projetos...'
+      ];
+
+      alert(`📸 ${images[imageIndex - 1]}\n\nAqui seria aberta uma galeria completa de imagens dos projetos.\n\nFuncionalidade da BioPage Max!`);
+    }
+
+    // Start countdown when page loads
+    setTimeout(startCountdown, 1000);
+  </script>
+
+</body>
+</html>

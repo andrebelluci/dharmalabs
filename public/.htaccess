@@ -1,0 +1,22 @@
+# Dharma Labs - URL Rewrite Rules
+RewriteEngine On
+
+# Remover extensão .html das URLs
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
+
+# Redirecionar URLs com .html para versões sem extensão
+RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
+RewriteRule ^ /%1? [NC,L,R=301]
+
+# Definir index.html como página padrão
+DirectoryIndex index.html
+
+# Remover trailing slash (opcional)
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)/$ /$1 [R=301,L]
+
+# Headers de segurança (bonus)
+Header always set X-Frame-Options "SAMEORIGIN"
+Header always set X-Content-Type-Options "nosniff"
