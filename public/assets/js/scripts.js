@@ -718,3 +718,46 @@ console.log('⚡ JavaScript principal carregado com sucesso!');
 if (typeof tailwind !== 'undefined') {
   console.log('🎨 TailwindCSS configurado!');
 }
+
+// ===== CONTADOR DE LEADS ANIMADO =====
+function initLeadsCounter() {
+  const counters = [
+    { id: 'leads-counter', target: 847, suffix: '' },
+    { id: 'sites-counter', target: 23, suffix: '' },
+    { id: 'clients-counter', target: 18, suffix: '' }
+  ];
+
+  counters.forEach(counter => {
+    const element = document.getElementById(counter.id);
+    if (!element) return;
+
+    let current = 0;
+    const increment = counter.target / 50; // 50 passos
+    const timer = setInterval(() => {
+      current += increment;
+      if (current >= counter.target) {
+        current = counter.target;
+        clearInterval(timer);
+      }
+      element.textContent = Math.floor(current) + counter.suffix;
+    }, 40); // 2 segundos total
+  });
+}
+
+// Inicializar contador quando a hero section aparecer
+const heroObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      initLeadsCounter();
+      heroObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.5 });
+
+// Observar o contador quando carregar
+document.addEventListener('DOMContentLoaded', () => {
+  const leadsCounter = document.getElementById('leads-counter');
+  if (leadsCounter) {
+    heroObserver.observe(leadsCounter.closest('.bg-white\\/10'));
+  }
+});
