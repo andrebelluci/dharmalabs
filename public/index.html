@@ -271,6 +271,13 @@
               <div
                 class="absolute inset-0 bg-gradient-to-r from-accent-500 to-primary-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </a>
+            <a href="#indicacao"
+              class="group border-2 border-accent-400 text-accent-400 px-10 py-4 rounded-full text-xl font-semibold transition-all duration-300 hover:bg-accent-400 hover:text-primary-900 w-full sm:w-auto text-center relative overflow-hidden">
+              <i class="fa-solid fa-handshake relative z-10"></i>
+              <span class="relative z-10"> Indique</span>
+              <div
+                class="absolute inset-0 bg-accent-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+            </a>
             <!-- <a href="#produtos"
               class="group border-2 border-accent-400 text-accent-400 px-10 py-4 rounded-full text-xl font-semibold transition-all duration-300 hover:bg-accent-400 hover:text-primary-900 w-full sm:w-auto text-center relative overflow-hidden">
               <i class="fa-solid fa-rocket relative z-10"></i>
@@ -772,7 +779,206 @@
       </div>
     </section> -->
 
-    <hr class="border-t-4 border-highlight-500 my-8" />
+    <!-- ===== SEÇÃO BÔNUS DE INDICAÇÃO (VERSÃO HONESTA) ===== -->
+    <section id="indicacao"
+      class="hero-bg py-20 lg:py-28 relative overflow-hidden">
+      <!-- Background Pattern -->
+      <div class="absolute inset-0 overflow-hidden pointer-events-none z-0">
+        <div class="absolute inset-0 opacity-10">
+          <svg class="w-full h-full" viewBox="0 0 100 20"
+            xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="referral-grid" width="10" height="10"
+                patternUnits="userSpaceOnUse">
+                <path d="M 10 0 L 0 0 0 10" fill="none" stroke="currentColor"
+                  stroke-width="0.5" />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#referral-grid)" />
+          </svg>
+        </div>
+      </div>
+
+      <!-- Hero Overlay -->
+      <div class="hero-overlay absolute inset-0 opacity-40 z-10"></div>
+
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
+
+        <!-- Header da Seção -->
+        <div class="text-center text-white mb-16">
+
+           <div
+            class="inline-flex items-center bg-highlight-100 text-highlight-700 px-4 py-2 rounded-full text-sm font-medium mb-4">
+            <span class="w-2 h-2 bg-highlight-500 rounded-full mr-2"></span>
+            Indique e Ganhe
+          </div>
+
+          <h2
+            class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+            Ganhe até <span class="gradient-text">20%</span> por Indicação
+          </h2>
+
+          <p
+            class="text-xl sm:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto leading-relaxed">
+            Conhece alguém que precisa de um site? <br>
+            <span class="text-accent-400 font-bold">Indique para nós e ganhe uma
+              comissão</span>
+          </p>
+        </div>
+
+        <!-- Cards Principais -->
+        <div class="grid lg:grid-cols-2 gap-8 mb-16">
+
+          <!-- Card Como Funciona -->
+          <div
+            class="bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20">
+            <div class="text-center text-white mb-8">
+              <div
+                class="w-20 h-20 bg-gradient-to-r from-accent-500 to-accent-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i class="fas fa-handshake text-white text-2xl"></i>
+              </div>
+              <h3 class="text-2xl font-bold mb-4">É Simples Assim</h3>
+            </div>
+
+            <div class="space-y-6 text-white">
+              <div class="text-center">
+                <div class="flex items-center justify-center mx-auto text-6xl mb-2">
+                  <div
+                    class="w-8 h-8 bg-accent-500 rounded-full flex items-center justify-center">
+                    <i class="fa-solid fa-1 text-white text-sm"></i>
+                  </div>
+                </div>
+                <h4 class="font-semibold text-lg mb-2">Indique alguém</h4>
+                <p class="text-gray-300">Mande o contato da pessoa para nosso
+                  WhatsApp</p>
+              </div>
+
+              <div class="text-center">
+                <div class="flex items-center justify-center mx-auto text-6xl mb-2">
+                  <div
+                    class="w-8 h-8 bg-accent-500 rounded-full flex items-center justify-center">
+                    <i class="fa-solid fa-2 text-white text-sm"></i>
+                  </div>
+                </div>
+                <h4 class="font-semibold text-lg mb-2">Nós fazemos o resto</h4>
+                <p class="text-gray-300">Entramos em contato e fazemos a
+                  proposta</p>
+              </div>
+
+              <div class="text-center">
+                <div class="flex items-center justify-center mx-auto text-6xl mb-2">
+                  <div
+                    class="w-8 h-8 bg-accent-500 rounded-full flex items-center justify-center">
+                    <i class="fa-solid fa-3 text-white text-sm"></i>
+                  </div>
+                </div>
+                <h4 class="font-semibold text-lg mb-2">Você recebe</h4>
+                <p class="text-gray-300">Se fechar negócio, transferimos sua
+                  parte via PIX</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card Valores -->
+          <div
+            class="bg-gradient-to-br from-accent-500 to-accent-600 rounded-3xl p-8 text-white">
+            <div class="text-center mb-8">
+              <div
+                class="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i class="fas fa-money-bill-wave text-white text-2xl"></i>
+              </div>
+              <h3 class="text-2xl font-bold">Quanto Você Ganha</h3>
+            </div>
+
+            <div class="space-y-6">
+              <div
+                class="bg-white/10 rounded-2xl p-6 backdrop-blur-sm border border-white/20 text-center">
+                <div class="text-sm text-white/80 mb-1">Site Básico (R$
+                  890)</div>
+                <div class="text-3xl font-bold mb-1">R$ 89</div>
+                <div class="text-sm text-white/70">10% de comissão</div>
+              </div>
+
+              <div
+                class="bg-white/10 rounded-2xl p-6 backdrop-blur-sm border border-white/20 text-center">
+                <div class="text-sm text-white/80 mb-1">Site Completo (R$
+                  2.250)</div>
+                <div class="text-3xl font-bold mb-1">R$ 337,50</div>
+                <div class="text-sm text-white/70">15% de comissão</div>
+              </div>
+
+              <div
+                class="bg-white/20 rounded-2xl p-6 backdrop-blur-sm border-2 border-white/40 text-center">
+                <div class="text-sm text-white/80 mb-1">Sistema Web (R$
+                  3.890+)</div>
+                <div class="text-3xl font-bold mb-1">R$ 778</div>
+                <div class="text-sm text-white/70">20% de comissão</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div
+          class="bg-white/10 backdrop-blur-sm rounded-3xl p-8 lg:p-12 text-center text-white border border-white/20">
+          <div class="max-w-3xl mx-auto">
+            <h3 class="text-3xl lg:text-4xl font-bold mb-4">
+              Vamos Começar?
+            </h3>
+            <p class="text-xl mb-8 text-gray-200">
+              Mande uma mensagem com o contato da pessoa que você quer indicar
+            </p>
+
+            <a
+              href="https://api.whatsapp.com/send?phone=5517996276236&text=Ol%C3%A1%20%F0%9F%91%8B%21%0AQuero%20indicar%20alguém%20para%20voc%C3%AAs%20e%20ganhar%20minha%20comiss%C3%A3o%20de%2020%25%21%0A%0ANome%3A%20%0ATelefone%3A%20%0AO%20que%20precisa%3A%20"
+              class="bg-gradient-to-r from-accent-500 to-accent-600 text-white px-8 py-4 rounded-2xl font-semibold hover:shadow-lg transition-all duration-300 hover:-translate-y-1 inline-flex items-center justify-center text-lg">
+              <i class="fab fa-whatsapp mr-2 text-xl"></i>
+              Indicar Agora
+            </a>
+
+            <div class="mt-8 text-gray-300">
+              <p class="text-sm">
+                💡 <strong>Dica:</strong> Funciona melhor com pequenas empresas,
+                profissionais liberais e empreendedores
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Simples -->
+        <div class="mt-16 max-w-5xl mx-auto">
+          <div class="text-center text-white mb-10">
+            <h3 class="text-2xl font-bold mb-4">Dúvidas Rápidas</h3>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div
+              class="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 text-center">
+              <h4 class="font-semibold text-white mb-2 text-sm"><i class="fa-solid fa-face-frown" style="color: #eab308 !important;"></i> E se não
+                fechar?</h4>
+              <p class="text-gray-100 text-xs">Não tem problema! Você só ganha
+                se a indicação virar cliente.</p>
+            </div>
+
+            <div
+              class="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 text-center">
+              <h4 class="font-semibold text-white mb-2 text-sm"><i class="fa-solid fa-sack-dollar" style="color: #ffec3c !important;"></i> Como
+                recebo?</h4>
+              <p class="text-gray-100 text-xs">Via PIX quando o cliente pagar a
+                entrada.</p>
+            </div>
+
+            <div
+              class="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 text-center">
+              <h4 class="font-semibold text-white mb-2 text-sm"><i class="fa-solid fa-address-book" style="color: #008cff !important;"></i> Preciso fazer
+                algo?</h4>
+              <p class="text-gray-100 text-xs">Só mandar o contato! Nós cuidamos
+                do resto.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Portfolio Preview Section -->
     <section id="projetos"
