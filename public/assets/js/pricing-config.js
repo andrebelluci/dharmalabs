@@ -89,180 +89,137 @@ const PRICING_DATA = {
         }
       ],
       "marketPosition": "Investimento justo para empresas que valorizam presença online profissional"
-    },
-    "siteAvancado": {
-      "name": "Site Avançado com CMS",
-      "subtitle": "Solução completa para gestão de conteúdo e comunicação digital",
-      "originalPrice": 0,
-      "development": 2550,
-      "monthly": 150,
-      "annual": 75,
-      "popular": false,
-      "orcamento": true,
-      "icon": "dharma-labs-main.svg",
-      "idealFor": "Empresas que precisam de gestão de conteúdo, áreas restritas e alta personalização",
-      "deliveryTime": "30–60 dias úteis, mediante aprovação de estratégia e conteúdo",
-      "features": [
-        {
-          "title": "Todas as funcionalidades anteriores",
-          "description": "Mantém todos os recursos do Site Institucional e adiciona recursos avançados"
-        },
-        {
-          "title": "Sistema de gestão de conteúdo próprio",
-          "description": "Painel administrativo customizado para gerenciar textos, imagens e documentos"
-        },
-        {
-          "title": "Áreas restritas com controle de acesso",
-          "description": "Conteúdos protegidos por login para clientes, equipe ou parceiros"
-        },
-        {
-          "title": "Blog/sistema de notícias gerenciável",
-          "description": "Publique conteúdos facilmente através do painel administrativo próprio"
-        },
-        {
-          "title": "Funcionalidades sob medida",
-          "description": "Sistema desenvolvido especificamente para suas necessidades de negócio"
-        },
-      ],
-      "support": [
-        {
-          "title": "Suporte técnico mensal (7 tickets)",
-          "description": "Pequenos ajustes funcionais, correções e atualizações de conteúdo"
-        }
-      ],
-      "marketPosition": "Solução premium com CMS proprietário e custo acessível comparado a agências tradicionais",
-      "whatsapp": "https://w.app/dharmalabs_siteavancado",
     }
   },
 
-  "biopages": {
-    "bioBasic": {
-      "name": "BioPage Básica",
-      "subtitle": "Sua presença online em um só link",
-      "development": 250,
-      "monthly": 30,
-      "annual": 15,
-      "popular": true,
-      "orcamento": false,
-      "icon": "dharma-labs-main.svg",
-      "idealFor": "Influenciadores e pequenos negócios que querem centralizar links com domínio próprio",
-      "deliveryTime": "5-10 dias úteis, mediante aprovação de estratégia e conteúdo",
-      "features": [
-        {
-          "title": "Domínio personalizado incluso",
-          "description": "Seu próprio domínio (ex: seunome.com.br) - não dependa de terceiros"
-        },
-        {
-          "title": "Design responsivo 100% personalizado",
-          "description": "Layout único para sua marca, otimizado para móbil e desktop"
-        },
-        {
-          "title": "Links ilimitados + hospedagem premium",
-          "description": "Adicione quantos links precisar com carregamento ultra-rápido"
-        },
-        {
-          "title": "5 contas de e-mail profissionais",
-          "description": "E-mails no seu domínio (ex: contato@seunome.com.br)"
-        },
-        {
-          "title": "Sem taxas mensais de terceiros",
-          "description": "Você paga apenas nossa manutenção, sem dependência de plataformas externas"
-        }
-      ],
-      "support": [
-        {
-          "title": "Suporte técnico mensal (2 tickets)",
-          "description": "Pequenos ajustes funcionais, correções e atualizações de conteúdo"
-        }
-      ],
-      "marketPosition": "Até 75% mais barato que outras ferramentas + domínio próprio + e-mail profissional inclusos",
-      "whatsapp": "https://w.app/dharmalabs_biopagebasica",
-    },
-    "bioPro": {
-      "name": "BioPage Pro",
-      "subtitle": "Sua bio com recursos de conversão e analytics",
-      "development": 450,
-      "monthly": 50,
-      "annual": 25,
-      "popular": false,
-      "orcamento": false,
-      "icon": "dharma-labs-main.svg",
-      "idealFor": "Profissionais e pequenos negócios que querem capturar leads e acompanhar resultados",
-      "deliveryTime": "10-20 dias úteis, mediante aprovação de estratégia e conteúdo",
-      "features": [
-        {
-          "title": "Tudo da anterior + recursos de conversão",
-          "description": "Mantém todos os recursos do BioPage Básico e adiciona ferramentas de marketing"
-        },
-        {
-          "title": "Personalização visual avançada",
-          "description": "Cores, fontes e layout personalizados para combinar com sua marca"
-        },
-        {
-          "title": "Formulário de contato simples",
-          "description": "Receba mensagens diretas por e-mail sem divulgar seu contato pessoal"
-        },
-        {
-          "title": "Google Analytics integrado",
-          "description": "Acompanhe cliques, visitantes e origem do tráfego com relatórios básicos"
-        },
-        {
-          "title": "Botões de ação destacados",
-          "description": "Destaque links principais com botões especiais e Call-to-Actions"
-        }
-      ],
-      "support": [
-        {
-          "title": "Suporte técnico mensal (3 tickets)",
-          "description": "Pequenos ajustes funcionais, correções e atualizações de conteúdo"
-        }
-      ],
-      "marketPosition": "78% mais barato que ferramentas famosas, com domínio próprio e personalização total",
-      "whatsapp": "https://w.app/dharmalabs_biopagepro",
-    },
-    "bioMax": {
-      "name": "BioPage Max",
-      "subtitle": "Soluções premium sob medida para seu negócio",
-      "development": 750,
-      "monthly": 70,
-      "annual": 35,
-      "popular": false,
-      "orcamento": true,
-      "icon": "dharma-labs-main.svg",
-      "idealFor": "Negócios que precisam de funcionalidades específicas e automações avançadas",
-      "deliveryTime": "15-30 dias úteis, mediante aprovação de estratégia e conteúdo",
-      "features": [
-        {
-          "title": "Tudo da anterior + desenvolvimento customizado",
-          "description": "Mantém todos os recursos da BioPage Pro e adiciona soluções sob medida"
-        },
-        {
-          "title": "Formulários multi-etapas inteligentes",
-          "description": "Questionários avançados, campos condicionais, integração com WhatsApp"
-        },
-        {
-          "title": "Seção multimídia completa",
-          "description": "Galerias interativas, vídeos embedados, catálogos de produtos visuais"
-        },
-        {
-          "title": "Automações e agendamentos",
-          "description": "Links programados, campanhas temporárias, redirecionamentos inteligentes"
-        },
-        {
-          "title": "Funcionalidades específicas do seu negócio",
-          "description": "Desenvolvemos recursos únicos conforme sua necessidade (calculadoras, catálogo com filtro, contador regressivo,etc.)"
-        }
-      ],
-      "support": [
-        {
-          "title": "Suporte técnico mensal (5 tickets)",
-          "description": "Pequenos ajustes funcionais, correções e atualizações de conteúdo"
-        }
-      ],
-      "marketPosition": "Solução premium customizada a partir de R$750 - mais barato que desenvolver do zero",
-      "whatsapp": "https://w.app/dharmalabs_biopagemax",
-    }
-  },
+  // "biocards": {
+  //   "bioBasic": {
+  //     "name": "BioCard Básica",
+  //     "subtitle": "Sua presença online em um só link",
+  //     "development": 250,
+  //     "monthly": 30,
+  //     "annual": 15,
+  //     "popular": true,
+  //     "orcamento": false,
+  //     "icon": "dharma-labs-main.svg",
+  //     "idealFor": "Influenciadores e pequenos negócios que querem centralizar links com domínio próprio",
+  //     "deliveryTime": "5-10 dias úteis, mediante aprovação de estratégia e conteúdo",
+  //     "features": [
+  //       {
+  //         "title": "Domínio personalizado incluso",
+  //         "description": "Seu próprio domínio (ex: seunome.com.br) - não dependa de terceiros"
+  //       },
+  //       {
+  //         "title": "Design responsivo 100% personalizado",
+  //         "description": "Layout único para sua marca, otimizado para móbil e desktop"
+  //       },
+  //       {
+  //         "title": "Links ilimitados + hospedagem premium",
+  //         "description": "Adicione quantos links precisar com carregamento ultra-rápido"
+  //       },
+  //       {
+  //         "title": "5 contas de e-mail profissionais",
+  //         "description": "E-mails no seu domínio (ex: contato@seunome.com.br)"
+  //       },
+  //       {
+  //         "title": "Sem taxas mensais de terceiros",
+  //         "description": "Você paga apenas nossa manutenção, sem dependência de plataformas externas"
+  //       }
+  //     ],
+  //     "support": [
+  //       {
+  //         "title": "Suporte técnico mensal (2 tickets)",
+  //         "description": "Pequenos ajustes funcionais, correções e atualizações de conteúdo"
+  //       }
+  //     ],
+  //     "marketPosition": "Até 75% mais barato que outras ferramentas + domínio próprio + e-mail profissional inclusos",
+  //     "whatsapp": "https://w.app/dharmalabs_biocardbasica",
+  //   },
+  //   "bioPro": {
+  //     "name": "BioCard Pro",
+  //     "subtitle": "Sua bio com recursos de conversão e analytics",
+  //     "development": 450,
+  //     "monthly": 50,
+  //     "annual": 25,
+  //     "popular": false,
+  //     "orcamento": false,
+  //     "icon": "dharma-labs-main.svg",
+  //     "idealFor": "Profissionais e pequenos negócios que querem capturar leads e acompanhar resultados",
+  //     "deliveryTime": "10-20 dias úteis, mediante aprovação de estratégia e conteúdo",
+  //     "features": [
+  //       {
+  //         "title": "Tudo da anterior + recursos de conversão",
+  //         "description": "Mantém todos os recursos do BioCard Básico e adiciona ferramentas de marketing"
+  //       },
+  //       {
+  //         "title": "Personalização visual avançada",
+  //         "description": "Cores, fontes e layout personalizados para combinar com sua marca"
+  //       },
+  //       {
+  //         "title": "Formulário de contato simples",
+  //         "description": "Receba mensagens diretas por e-mail sem divulgar seu contato pessoal"
+  //       },
+  //       {
+  //         "title": "Google Analytics integrado",
+  //         "description": "Acompanhe cliques, visitantes e origem do tráfego com relatórios básicos"
+  //       },
+  //       {
+  //         "title": "Botões de ação destacados",
+  //         "description": "Destaque links principais com botões especiais e Call-to-Actions"
+  //       }
+  //     ],
+  //     "support": [
+  //       {
+  //         "title": "Suporte técnico mensal (3 tickets)",
+  //         "description": "Pequenos ajustes funcionais, correções e atualizações de conteúdo"
+  //       }
+  //     ],
+  //     "marketPosition": "78% mais barato que ferramentas famosas, com domínio próprio e personalização total",
+  //     "whatsapp": "https://w.app/dharmalabs_biocardpro",
+  //   },
+  //   "bioMax": {
+  //     "name": "BioCard Max",
+  //     "subtitle": "Soluções premium sob medida para seu negócio",
+  //     "development": 750,
+  //     "monthly": 70,
+  //     "annual": 35,
+  //     "popular": false,
+  //     "orcamento": true,
+  //     "icon": "dharma-labs-main.svg",
+  //     "idealFor": "Negócios que precisam de funcionalidades específicas e automações avançadas",
+  //     "deliveryTime": "15-30 dias úteis, mediante aprovação de estratégia e conteúdo",
+  //     "features": [
+  //       {
+  //         "title": "Tudo da anterior + desenvolvimento customizado",
+  //         "description": "Mantém todos os recursos da BioCard Pro e adiciona soluções sob medida"
+  //       },
+  //       {
+  //         "title": "Formulários multi-etapas inteligentes",
+  //         "description": "Questionários avançados, campos condicionais, integração com WhatsApp"
+  //       },
+  //       {
+  //         "title": "Seção multimídia completa",
+  //         "description": "Galerias interativas, vídeos embedados, catálogos de produtos visuais"
+  //       },
+  //       {
+  //         "title": "Automações e agendamentos",
+  //         "description": "Links programados, campanhas temporárias, redirecionamentos inteligentes"
+  //       },
+  //       {
+  //         "title": "Funcionalidades específicas do seu negócio",
+  //         "description": "Desenvolvemos recursos únicos conforme sua necessidade (calculadoras, catálogo com filtro, contador regressivo,etc.)"
+  //       }
+  //     ],
+  //     "support": [
+  //       {
+  //         "title": "Suporte técnico mensal (5 tickets)",
+  //         "description": "Pequenos ajustes funcionais, correções e atualizações de conteúdo"
+  //       }
+  //     ],
+  //     "marketPosition": "Solução premium customizada a partir de R$750 - mais barato que desenvolver do zero",
+  //     "whatsapp": "https://w.app/dharmalabs_biocardmax",
+  //   }
+  // },
 
   "sistemas": {
     "appWebBasico": {
@@ -442,7 +399,7 @@ const PRICING_DATA = {
   "email": {
     "emailGratis": {
       "name": "E-mail Gratuito",
-      "subtitle": "Incluso com hospedagem de Site, BioPage, Sistema ou Dashboard",
+      "subtitle": "Incluso com hospedagem de Sites, Sistemas ou Dashboards",
       "development": 0,
       "monthly": 0,
       "annual": 0,
@@ -817,7 +774,7 @@ class PricingManager {
   createPricingCard(service, category) {
     const borderColors = {
       sites: service.popular ? 'border-highlight-500' : 'border-accent-500',
-      biopages: service.popular ? 'border-accent-500' : 'border-primary-500',
+      biocards: service.popular ? 'border-accent-500' : 'border-primary-500',
       sistemas: service.popular ? 'border-primary-500' : 'border-highlight-500',
       dashboards: service.popular ? 'border-highlight-500' : 'border-accent-500',
       // apps: service.popular ? 'border-accent-500' : 'border-highlight-500',
@@ -828,7 +785,7 @@ class PricingManager {
 
     const bgColors = {
       sites: 'bg-highlight-500',
-      biopages: 'bg-accent-500',
+      biocards: 'bg-accent-500',
       sistemas: 'bg-primary-500',
       dashboards: 'bg-highlight-500',
       // apps: 'bg-accent-500',
@@ -839,7 +796,7 @@ class PricingManager {
 
     const bgColors100 = {
       sites: 'bg-highlight-100',
-      biopages: 'bg-accent-100',
+      biocards: 'bg-accent-100',
       sistemas: 'bg-primary-100',
       dashboards: 'bg-highlight-100',
       // apps: 'bg-accent-500',
@@ -850,7 +807,7 @@ class PricingManager {
 
     const ctaColors = {
       sites: service.popular ? 'from-highlight-500 to-primary-600' : 'from-accent-500 to-primary-600',
-      biopages: service.popular ? 'from-accent-500 to-highlight-600' : 'from-primary-500 to-highlight-600',
+      biocards: service.popular ? 'from-accent-500 to-highlight-600' : 'from-primary-500 to-highlight-600',
       sistemas: service.popular ? 'from-primary-500 to-accent-600' : 'from-highlight-500 to-accent-600',
       dashboards: service.popular ? 'from-highlight-500 to-primary-600' : 'from-accent-500 to-primary-600',
       // apps: service.popular ? 'from-accent-500 to-primary-600' : 'from-highlight-500 to-highlight-600',
