@@ -525,21 +525,34 @@ class PricingManager {
         </div>
 
         ${service.development > 0 ? `
-        <div class="mb-4">
-          <div class="flex flex-col sm:flex-row items-start sm:items-baseline mb-1">
-            <div class="flex flex-col sm:flex-row sm:items-baseline">
+        <div class="mb-0">
+          <div class="flex justify-center flex-row flex-wrap items-baseline mb-1">
+
+          <div class="flex flex-row items-baseline">
             ${service.originalPrice && service.originalPrice > service.development ? `
-              <span class="text-sm text-gray-500 line-through mr-2">R$ ${service.originalPrice.toLocaleString()}</span>
-              ` : ''}
-              <span class="text-base font-semibold text-primary-900">${orcamento.aPartir}
+              <span class="text-sm text-gray-500 line-through">
+                R$ ${service.originalPrice.toLocaleString()}
               </span>
-            </div>
-            <div class="flex items-baseline ml-0 sm:ml-2">
-              <span class="ml-2 text-3xl  font-bold text-primary-800 group-hover:scale-101 transition-transform transform origin-left duration-300"> R$ ${service.development.toLocaleString()}</span>
-              <span class="text-gray-600 ml-2 text-lg md:text-sm">${orcamento.tipoPagamento}</span>
-            </div>
+            ` : ''}
+            <span class="text-base font-semibold text-primary-900">
+              ${orcamento.aPartir}
+            </span>
           </div>
+
+          <div class="flex flex-row items-baseline">
+            <span class="ml-2 text-3xl font-bold text-primary-800">
+              R$ ${service.development.toLocaleString()}
+            </span>
+            <span class="text-gray-600 ml-2 text-lg md:text-sm">
+              ${orcamento.tipoPagamento}
+            </span>
+          </div>
+
         </div>
+    </div>
+      <span class="flex justify-center text-2xl font-semibold text-primary-900 mb-2">
+        +
+      </span>
         ` : (service.orcamento ? `
           <div class="mb-4">
             <span class="text-2xl font-bold text-primary-800 drop-shadow-lg group-hover:scale-101 transition-transform transform origin-left duration-300">Valor sob consulta</span>
@@ -597,10 +610,10 @@ class PricingManager {
       </div>
 
       <div class="bg-gradient-to-l from-accent-50/70 to-primary-50/70 rounded-2xl p-4 mb-6 border border-accent-500">
-      ${service.isEmail || category == 'consultoria' ? '' : `<a href=#support-explanation>` }
+      ${service.isEmail || category == 'consultoria' ? '' : `<a href=#support-explanation>`}
         <div class="flex items-center mb-3">
           <i class="fas fa-headset text-accent-600 mr-2 text-sm"></i>
-          <span class="font-bold text-accent-700 text-sm uppercase tracking-wide">${category == 'consultoria' ? 'Suporte à Combinar' : 'Suporte Incluso' }</span>
+          <span class="font-bold text-accent-700 text-sm uppercase tracking-wide">${category == 'consultoria' ? 'Suporte à Combinar' : 'Suporte Incluso'}</span>
         </div>
         <div class="space-y-3">
           ${service.support.map(s => `
@@ -613,7 +626,7 @@ class PricingManager {
             </div>
           `).join('')}
         </div>
-      ${service.isEmail || category == 'consultoria' ? '' : `</a>` }
+      ${service.isEmail || category == 'consultoria' ? '' : `</a>`}
       </div>
 
 
