@@ -1,7 +1,7 @@
-INSTRUCOES.md
-IDENTIDADEVISUAL.md
 *.md
 /public/assets/css/input.css
+marketing
+docs
 
 # Node.js
 node_modules/
