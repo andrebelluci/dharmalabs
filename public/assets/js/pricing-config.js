@@ -744,6 +744,9 @@ if (document.readyState === 'loading') {
 document.addEventListener("DOMContentLoaded", function () {
   const hash = window.location.hash.replace("#", "");
   if (hash) {
+    // Lista de hashes que correspondem às tabs de pricing
+    const pricingTabs = ["sites", "biocards", "sistemas", "dashboards", "apps", "automacao", "email", "consultoria"];
+
     const targetButton = document.querySelector(`.tab-button[data-tab="${hash}"]`);
     if (targetButton) {
       targetButton.click();
@@ -752,11 +755,30 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
 
-    // Only scroll to pricing-content if the hash specifically targets it
-    if (hash === "pricing-content") {
-      const targetSection = document.querySelector("#pricing-content");
-      if (targetSection) {
-        targetSection.scrollIntoView({ behavior: "smooth" });
+    // Fazer scroll para pricing-content se o hash for uma tab de pricing ou "pricing-content"
+    if (hash === "pricing-content" || pricingTabs.includes(hash)) {
+      // Função para tentar fazer o scroll
+      const scrollToPricing = () => {
+        const targetSection = document.querySelector("#pricing-content");
+        if (targetSection) {
+          targetSection.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
+          return true;
+        }
+        return false;
+      };
+
+      // Tentar imediatamente
+      if (!scrollToPricing()) {
+        // Se não conseguir, aguardar um pouco mais
+        setTimeout(() => {
+          if (!scrollToPricing()) {
+            // Última tentativa após mais tempo
+            setTimeout(scrollToPricing, 300);
+          }
+        }, 100);
       }
     }
   }
