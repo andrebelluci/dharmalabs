@@ -825,7 +825,7 @@ body {
   width: 320px;
   /* min-height: 600px; */
   display: flex;
-    flex-direction: column;
+  flex-direction: column;
 }
 
 /* Responsividade */
@@ -861,6 +861,7 @@ body {
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(-50%);
   }
@@ -968,4 +969,411 @@ body {
 
 .case-study-logo:hover::after {
   opacity: 0.6;
+}
+
+/* ===== DARK MODE TOGGLE HEADER STYLES ===== */
+#darkmode-toggle {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+#darkmode-toggle:hover {
+  transform: scale(1.2) rotate(15deg) !important;
+}
+
+/* Garantir que o ícone tenha boa visibilidade no header */
+#darkmode-toggle i {
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+  transition: all 0.3s ease;
+}
+
+/* Ajustes específicos para o header */
+#navbar #darkmode-toggle {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* No modo claro, ajustar cor do toggle no header */
+.dark-mode #navbar #darkmode-toggle {
+  color: #f8fafc !important;
+}
+
+/* No modo escuro, ajustar cor do toggle no header */
+body:not(.dark-mode) #navbar #darkmode-toggle {
+  color: #fbbf24 !important;
+}
+
+/* ===== NAVBAR MODO CLARO ===== */
+body:not(.dark-mode) #navbar .text-gray-200:hover {
+  color: #0ea5e9 !important;
+  /* primary-500 para hover no modo claro */
+}
+
+/* Mobile específico */
+@media (max-width: 768px) {
+  #darkmode-toggle {
+    margin-right: 16px !important;
+  }
+
+  /* Ajustar alinhamento vertical no mobile */
+  #navbar .flex {
+    align-items: center;
+  }
+}
+
+/* ===== DARK MODE TOGGLE ANIMATION FIXES ===== */
+#darkmode-toggle .toggle-content {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#darkmode-toggle i {
+  transition: color 0.2s ease-in-out;
+  display: block;
+}
+
+/* Garantir que as cores sejam consistentes */
+.dark-mode #darkmode-toggle i.fa-moon {
+  color: #f8fafc !important;
+  /* Lua sempre branca no modo escuro */
+}
+
+body:not(.dark-mode) #darkmode-toggle i.fa-sun {
+  color: #fbbf24 !important;
+  /* Sol sempre amarelo no modo claro */
+}
+
+/* Efeitos de hover apenas quando não está animando */
+#darkmode-toggle:not(.animating):hover {
+  transform: scale(1.2) rotate(15deg) !important;
+}
+
+/* ===== WHATSAPP FLOAT BUTTON ===== */
+#whatsapp-float {
+  box-shadow: 0 0 20px rgba(74, 222, 128, 0.4);
+  animation: neon-pulse 3s ease-in-out infinite;
+}
+
+@keyframes neon-pulse {
+
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(74, 222, 128, 0.4);
+  }
+
+  50% {
+    box-shadow: 0 0 30px rgba(74, 222, 128, 0.6);
+  }
+}
+
+.dark-mode #whatsapp-float {
+  box-shadow: 0 0 25px rgba(74, 222, 128, 0.6);
+}
+
+.dark-mode #whatsapp-float:hover {
+  box-shadow: 0 0 40px rgba(74, 222, 128, 0.8);
+}
+
+/* ===== TIMELINE COMO FUNCIONA ===== */
+.timeline-container {
+  position: relative;
+  padding: 2rem;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(74, 222, 128, 0.5), rgba(168, 85, 247, 0.5));
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+.step-item {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  position: relative;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.step-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.step-item:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.step-number {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4ade80, #22c55e);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  box-shadow: 0 10px 30px rgba(74, 222, 128, 0.3);
+  flex-shrink: 0;
+  z-index: 1;
+}
+
+.step-content {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.step-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.step-description {
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.step-time {
+  color: #4ade80;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .timeline-line {
+    left: 2rem;
+  }
+
+  .step-item,
+  .step-item:nth-child(even) {
+    flex-direction: column;
+    padding-left: 80px;
+  }
+
+  .step-number {
+    position: absolute;
+    left: 0;
+  }
+}
+
+/* ===== FAQ ACCORDION ===== */
+.faq-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.faq-item {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.faq-item:hover {
+  border-color: #4ade80;
+  box-shadow: 0 4px 12px rgba(74, 222, 128, 0.15);
+}
+
+.faq-question {
+  padding: 1.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #0c4a6e;
+  cursor: pointer !important;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: color 0.3s ease;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.faq-question:hover {
+  color: #4ade80;
+}
+
+.faq-question::after {
+  content: '+';
+  font-size: 1.5rem;
+  color: #4ade80;
+  transition: transform 0.3s ease;
+  font-weight: 300;
+}
+
+.faq-item.active .faq-question::after {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  padding: 0 1.5rem;
+  max-height: 0;
+  overflow: hidden;
+  color: #4b5563;
+  line-height: 1.6;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  font-size: 1rem;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 1000px;
+  padding: 0 1.5rem 1.5rem 1.5rem;
+}
+
+.faq-answer p {
+  margin-bottom: 0.75rem;
+}
+
+.faq-answer p:last-child {
+  margin-bottom: 0;
+}
+
+/* Scroll fade animations */
+.scroll-fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== FEEDBACK CARDS GRID - Centraliza quando há apenas 1 card ===== */
+.grid.grid-cols-1.md\:grid-cols-3:has(> :only-child) {
+  display: flex;
+  justify-content: center;
+}
+
+.grid.grid-cols-1.md\:grid-cols-3:has(> :only-child)>* {
+  max-width: 400px;
+}
+
+/* ===== PLANOS GRID ===== */
+.planos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.plano-card {
+  background: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.plano-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(74, 222, 128, 0.2);
+}
+
+.plano-card.plano-popular {
+  border-color: #4ade80;
+  position: relative;
+  transform: scale(1.05);
+}
+
+.plano-badge {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.5rem 1.5rem;
+  border-radius: 2rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.plano-card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #0c4a6e;
+}
+
+.plano-ideal {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.plano-preco {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+.plano-features {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+}
+
+.plano-features li {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 0.9375rem;
+}
+
+.plano-features li:last-child {
+  border-bottom: none;
+}
+
+.plano-cta {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  display: block;
+  transition: all 0.3s ease;
+  margin-top: 1.5rem;
+}
+
+.plano-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(74, 222, 128, 0.4);
+}
+
+@media (max-width: 768px) {
+  .planos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .plano-card.plano-popular {
+    transform: scale(1);
+  }
 }

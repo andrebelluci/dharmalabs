@@ -24,6 +24,7 @@
   --dark-border-secondary: #404056;
   --dark-border-accent: #4ade80;
   --dark-border-highlight: #a855f7;
+  --dark-border-red: #ef4444;
 
   /* Neon effects */
   --neon-green: #4ade80;
@@ -31,6 +32,7 @@
   --neon-blue: #38bdf8;
   --neon-pink: #f472b6;
   --neon-yellow: #fbbf24;
+  --neon-red: #ef4444;
 
   /* Gradientes neon */
   --neon-gradient-primary: linear-gradient(45deg, #4ade80, #a855f7, #38bdf8);
@@ -38,329 +40,8 @@
   --neon-gradient-accent: linear-gradient(90deg, #4ade80, #38bdf8);
 
   /* Sombras neon */
-  --neon-shadow-green: 0 0 20px rgba(74, 222, 128, 0.dark-mode .bg-gradient-to-r:hover {
-      box-shadow: var(--neon-shadow-purple);
-      transform: translateY(-2px) scale(1.05);
-    }
-
-    .dark-mode .bg-gradient-to-r::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg,
-        transparent,
-        rgba(255, 255, 255, 0.2),
-        transparent);
-      transition: left 0.6s ease;
-    }
-
-    .dark-mode .bg-gradient-to-r:hover::before {
-      left: 100%;
-    }
-
-    .dark-mode .border-accent-400 {
-      border-color: var(--neon-green) !important;
-      color: var(--neon-green) !important;
-      text-shadow: 0 0 10px rgba(74, 222, 128, 0.3);
-    }
-
-    .dark-mode .border-accent-400:hover {
-      background: var(--neon-green) !important;
-      color: var(--dark-bg-primary) !important;
-      box-shadow: var(--neon-shadow-green);
-      text-shadow: none;
-    }
-
-    /* ===== FOOTER MODO ESCURO ===== */
-    .dark-mode footer {
-      background: var(--dark-bg-primary) !important;
-      border-top: 1px solid var(--dark-border-primary);
-    }
-
-    .dark-mode footer .gradient-text {
-      background: var(--neon-gradient-primary);
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .dark-mode footer .text-primary-200 {
-      color: var(--dark-text-secondary) !important;
-    }
-
-    .dark-mode footer .text-primary-300 {
-      color: var(--dark-text-muted) !important;
-    }
-
-    /* ===== ANIMAÇÕES NEON ===== */
-    @keyframes neon-glow {
-      0% {
-        filter: drop-shadow(0 0 5px rgba(74, 222, 128, 0.3));
-      }
-
-      100% {
-        filter: drop-shadow(0 0 20px rgba(74, 222, 128, 0.6));
-      }
-    }
-
-    @keyframes neon-pulse {
-      0%, 100% {
-        filter: drop-shadow(0 0 10px rgba(74, 222, 128, 0.3));
-      }
-
-      50% {
-        filter: drop-shadow(0 0 30px rgba(168, 85, 247, 0.5));
-      }
-    }
-
-    @keyframes neon-border {
-      0% {
-        box-shadow: 0 0 5px rgba(74, 222, 128, 0.2);
-      }
-
-      50% {
-        box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
-      }
-
-      100% {
-        box-shadow: 0 0 5px rgba(74, 222, 128, 0.2);
-      }
-    }
-
-    @keyframes gradient-shift-dark {
-      0%, 100% {
-        background-position: 0% 50%;
-      }
-
-      50% {
-        background-position: 100% 50%;
-      }
-    }
-
-    /* ===== EFEITOS ESPECIAIS MODO ESCURO ===== */
-    .dark-mode .gradient-text {
-      background: var(--neon-gradient-primary);
-      background-size: 200% 200%;
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: gradient-shift-dark 3s ease infinite;
-    }
-
-    /* ===== SCROLLBAR MODO ESCURO ===== */
-    .dark-mode ::-webkit-scrollbar {
-      width: 8px;
-    }
-
-    .dark-mode ::-webkit-scrollbar-track {
-      background: var(--dark-bg-secondary);
-    }
-
-    .dark-mode ::-webkit-scrollbar-thumb {
-      background: var(--neon-gradient-primary);
-      border-radius: 4px;
-    }
-
-    .dark-mode ::-webkit-scrollbar-thumb:hover {
-      background: var(--neon-gradient-secondary);
-      box-shadow: 0 0 10px rgba(74, 222, 128, 0.5);
-    }
-
-    /* ===== MOBILE MENU MODO ESCURO ===== */
-    .dark-mode #mobile-menu {
-      background: var(--dark-bg-card) !important;
-      border-top-color: var(--dark-border-primary) !important;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-    }
-
-    .dark-mode #mobile-menu a {
-      color: var(--dark-text-secondary) !important;
-    }
-
-    .dark-mode #mobile-menu a:hover {
-      color: var(--neon-green) !important;
-      text-shadow: 0 0 10px rgba(74, 222, 128, 0.5);
-    }
-
-    /* ===== TRUST INDICATORS MODO ESCURO ===== */
-    .dark-mode .text-accent-400 {
-      color: var(--neon-green) !important;
-      text-shadow: 0 0 10px rgba(74, 222, 128, 0.3);
-    }
-
-    .dark-mode .text-highlight-400 {
-      color: var(--neon-purple) !important;
-      text-shadow: 0 0 10px rgba(168, 85, 247, 0.3);
-    }
-
-    /* ===== CONTACT GRID MODO ESCURO ===== */
-    .dark-mode #contato .bg-white\/5 {
-      background: rgba(255, 255, 255, 0.03) !important;
-      border-color: var(--dark-border-primary) !important;
-      backdrop-filter: blur(15px);
-    }
-
-    .dark-mode #contato .bg-white\/5:hover {
-      background: rgba(74, 222, 128, 0.05) !important;
-      border-color: var(--neon-green) !important;
-      box-shadow: var(--neon-shadow-green);
-    }
-
-    .dark-mode #contato .bg-accent-500\/20 {
-      background: rgba(74, 222, 128, 0.1) !important;
-    }
-
-    .dark-mode #contato .bg-highlight-500\/20 {
-      background: rgba(168, 85, 247, 0.1) !important;
-    }
-
-    /* ===== TECH BENEFITS MODO ESCURO ===== */
-    .dark-mode .bg-white\/5 {
-      background: rgba(255, 255, 255, 0.03) !important;
-      border-color: var(--dark-border-primary) !important;
-    }
-
-    .dark-mode .bg-accent-500\/20 {
-      background: rgba(74, 222, 128, 0.15) !important;
-      border: 1px solid rgba(74, 222, 128, 0.3);
-    }
-
-    .dark-mode .bg-highlight-500\/20 {
-      background: rgba(168, 85, 247, 0.15) !important;
-      border: 1px solid rgba(168, 85, 247, 0.3);
-    }
-
-    /* ===== FLOATING ELEMENTS MODO ESCURO ===== */
-    .dark-mode .bg-accent-400\/10 {
-      background: rgba(74, 222, 128, 0.1) !important;
-      filter: blur(40px);
-    }
-
-    .dark-mode .bg-highlight-500\/10 {
-      background: rgba(168, 85, 247, 0.1) !important;
-      filter: blur(40px);
-    }
-
-    /* ===== BACK TO TOP BUTTON MODO ESCURO ===== */
-    .dark-mode #backToTop {
-      background: var(--neon-gradient-primary) !important;
-      box-shadow: var(--neon-shadow-green);
-    }
-
-    .dark-mode #backToTop:hover {
-      box-shadow: var(--neon-shadow-purple);
-      transform: translateY(-4px) scale(1.1);
-    }
-
-    /* ===== SECTION HEADERS MODO ESCURO ===== */
-    .dark-mode .bg-primary-100 {
-      background: rgba(74, 222, 128, 0.1) !important;
-      border: 1px solid rgba(74, 222, 128, 0.2);
-    }
-
-    .dark-mode .text-primary-700 {
-      color: var(--neon-green) !important;
-    }
-
-    .dark-mode .bg-primary-500 {
-      background: var(--neon-green) !important;
-    }
-
-    .dark-mode .bg-white\/10 {
-      background: rgba(255, 255, 255, 0.05) !important;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    /* ===== SPECIAL EFFECTS ===== */
-    .dark-mode .service-card::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-        rgba(74, 222, 128, 0.1) 0%,
-        transparent 50%);
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      pointer-events: none;
-      border-radius: inherit;
-    }
-
-    .dark-mode .service-card:hover::after {
-      opacity: 1;
-    }
-
-    /* ===== GLOW ON HOVER ===== */
-    .dark-mode .tech-item::before {
-      content: '';
-      position: absolute;
-      top: -2px;
-      left: -2px;
-      right: -2px;
-      bottom: -2px;
-      background: var(--neon-gradient-primary);
-      border-radius: inherit;
-      opacity: 0;
-      z-index: -1;
-      transition: opacity 0.3s ease;
-    }
-
-    .dark-mode .tech-item:hover::before {
-      opacity: 0.5;
-      animation: neon-border 2s ease-in-out infinite;
-    }
-
-    /* ===== PERFORMANCE OPTIMIZATIONS ===== */
-    .dark-mode * {
-      will-change: auto;
-    }
-
-    .dark-mode .service-card,
-    .dark-mode .tech-item,
-    .dark-mode .gradient-text {
-      will-change: transform, box-shadow, filter;
-    }
-
-    /* ===== MEDIA QUERIES ===== */
-    @media (max-width: 768px) {
-      .dark-mode .service-card {
-        margin-bottom: 1rem;
-      }
-
-      .dark-mode .tech-item {
-        padding: 1rem;
-      }
-
-      .dark-mode .hero-bg .gradient-text {
-        font-size: clamp(2rem, 8vw, 4rem);
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .dark-mode * {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-      }
-    }
-
-    /* ===== HIGH CONTRAST MODE ===== */
-    @media (prefers-contrast: high) {
-      .dark-mode {
-        --neon-green: #00ff00;
-        --neon-purple: #ff00ff;
-        --neon-blue: #00ffff;
-        --dark-text-primary: #ffffff;
-        --dark-bg-primary: #000000;
-      }
-    }
-
-    4);
+  --neon-shadow-green: 0 0 20px rgba(74, 222, 128, 0.4);
+  --neon-shadow-red: 0 0 20px rgba(239, 68, 68, 0.4);
   --neon-shadow-purple: 0 0 20px rgba(168, 85, 247, 0.4);
   --neon-shadow-blue: 0 0 20px rgba(56, 189, 248, 0.4);
   --neon-shadow-pink: 0 0 20px rgba(244, 114, 182, 0.4);
@@ -393,14 +74,7 @@
 }
 
 /* ===== HEADER MODO ESCURO ===== */
-.dark-mode #navbar {
-  background: rgba(10, 10, 15, 0.95) !important;
-  backdrop-filter: blur(20px) saturate(180%);
-  border-bottom-color: var(--dark-border-primary);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-}
-
-.dark-mode #navbar .text-gray-700 {
+.dark-mode #navbar .text-gray-200 {
   color: var(--dark-text-secondary) !important;
 }
 
@@ -412,7 +86,514 @@
   color: var(--dark-text-secondary) !important;
 }
 
-.dark-mode #navbar .text-gray-700:hover {
+.dark-mode #navbar .text-gray-200:hover {
+  color: var(--neon-green) !important;
+  text-shadow: 0 0 10px rgba(222, 74, 74, 0.5);
+}
+
+.dark-mode #navbar .gradient-text {
+  background: var(--neon-gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: neon-glow 2s ease-in-out infinite alternate;
+}
+
+.dark-mode #navbar .text-primary-700 {
+  color: var(--dark-text-secondary) !important;
+}
+
+.dark-mode .border-accent-400 {
+  border-color: var(--neon-green) !important;
+  color: var(--neon-green) !important;
+  text-shadow: 0 0 10px rgba(74, 222, 128, 0.3);
+}
+
+/* Hover para botões com grupo - permite que o Tailwind funcione */
+.dark-mode .group.border-accent-400:hover {
+  background: var(--neon-green) !important;
+  box-shadow: var(--neon-shadow-green);
+  text-shadow: none;
+}
+
+/* Cor do texto no hover - permite que hover:text-primary-900 do Tailwind funcione */
+.dark-mode .group.border-accent-400:hover,
+.dark-mode .group.border-accent-400:hover span,
+.dark-mode .group.border-accent-400:hover i {
+  color: #0c4a6e !important;
+  /* primary-900 - cor escura para contraste com fundo verde */
+}
+
+/* Hover para outros elementos border-accent-400 sem grupo */
+.dark-mode .border-accent-400:not(.group):hover {
+  background: var(--neon-green) !important;
+  color: var(--dark-bg-primary) !important;
+  box-shadow: var(--neon-shadow-green);
+  text-shadow: none;
+}
+
+/* ===== BORDAS HIGHLIGHT COM EFEITO NEON ===== */
+/* Aplicar apenas aos cards da seção modelos-contratacao, não aos cards de pricing */
+.dark-mode #modelos-contratacao .border-highlight-500 {
+  border-color: var(--neon-purple) !important;
+  position: relative;
+  box-shadow:
+    0 0 10px rgba(168, 85, 247, 0.4),
+    inset -4px 0 10px rgba(168, 85, 247, 0.2);
+  animation: neon-highlight-border-pulse 2s ease-in-out infinite;
+}
+
+@keyframes neon-highlight-border-pulse {
+
+  0%,
+  100% {
+    box-shadow:
+      0 0 10px rgba(168, 85, 247, 0.4),
+      inset -4px 0 10px rgba(168, 85, 247, 0.2),
+      inset -4px 0 20px rgba(168, 85, 247, 0.1);
+  }
+
+  50% {
+    box-shadow:
+      0 0 20px rgba(168, 85, 247, 0.6),
+      inset -4px 0 20px rgba(168, 85, 247, 0.4),
+      inset -4px 0 40px rgba(168, 85, 247, 0.2);
+  }
+}
+
+.dark-mode #modelos-contratacao .border-highlight-500::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--neon-purple);
+  box-shadow:
+    -2px 0 10px rgba(168, 85, 247, 0.8),
+    -2px 0 20px rgba(168, 85, 247, 0.6),
+    -2px 0 30px rgba(168, 85, 247, 0.4);
+  border-radius: 4px 0 0 4px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.dark-mode #modelos-contratacao .border-highlight-500:hover {
+  box-shadow:
+    0 0 25px rgba(168, 85, 247, 0.8),
+    inset -4px 0 25px rgba(168, 85, 247, 0.4);
+}
+
+.dark-mode #modelos-contratacao .border-highlight-500:hover::after {
+  box-shadow:
+    -2px 0 15px rgba(168, 85, 247, 1),
+    -2px 0 30px rgba(168, 85, 247, 0.8),
+    -2px 0 45px rgba(168, 85, 247, 0.6);
+}
+
+/* ===== BORDAS VERMELHAS COM EFEITO NEON ===== */
+.dark-mode .border-red-400 {
+  border-color: var(--neon-red) !important;
+  position: relative;
+  box-shadow:
+    0 0 10px rgba(239, 68, 68, 0.4),
+    inset -4px 0 10px rgba(239, 68, 68, 0.2);
+  animation: neon-red-border-pulse 2s ease-in-out infinite;
+}
+
+@keyframes neon-red-border-pulse {
+
+  0%,
+  100% {
+    box-shadow:
+      0 0 10px rgba(239, 68, 68, 0.4),
+      inset -4px 0 10px rgba(239, 68, 68, 0.2),
+      inset -4px 0 20px rgba(239, 68, 68, 0.1);
+  }
+
+  50% {
+    box-shadow:
+      0 0 20px rgba(239, 68, 68, 0.6),
+      inset -4px 0 20px rgba(239, 68, 68, 0.4),
+      inset -4px 0 40px rgba(239, 68, 68, 0.2);
+  }
+}
+
+.dark-mode .border-red-400::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--neon-red);
+  box-shadow:
+    -2px 0 10px rgba(239, 68, 68, 0.8),
+    -2px 0 20px rgba(239, 68, 68, 0.6),
+    -2px 0 30px rgba(239, 68, 68, 0.4);
+  border-radius: 4px 0 0 4px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.dark-mode .border-red-400:hover {
+  box-shadow:
+    0 0 25px rgba(239, 68, 68, 0.8),
+    inset -4px 0 25px rgba(239, 68, 68, 0.4);
+}
+
+.dark-mode .border-red-400:hover::after {
+  box-shadow:
+    -2px 0 15px rgba(239, 68, 68, 1),
+    -2px 0 30px rgba(239, 68, 68, 0.8),
+    -2px 0 45px rgba(239, 68, 68, 0.6);
+}
+
+/* ===== FOOTER MODO ESCURO ===== */
+.dark-mode footer {
+  background: var(--dark-bg-primary) !important;
+  border-top: 1px solid var(--dark-border-primary);
+}
+
+.dark-mode footer .gradient-text {
+  background: var(--neon-gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dark-mode footer .text-primary-200 {
+  color: var(--dark-text-secondary) !important;
+}
+
+.dark-mode footer .text-primary-300 {
+  color: var(--dark-text-muted) !important;
+}
+
+/* Hover para links do footer - exclui botões com gradiente */
+.dark-mode footer a:hover:not(.bg-gradient-to-r) {
+  color: var(--neon-green) !important;
+  text-shadow: 0 0 10px rgba(74, 222, 128, 0.5);
+}
+
+.dark-mode footer a.hover\:text-accent-400:hover:not(.bg-gradient-to-r) {
+  color: var(--neon-green) !important;
+  text-shadow: 0 0 10px rgba(74, 222, 128, 0.5);
+}
+
+/* ===== ANIMAÇÕES NEON ===== */
+@keyframes neon-glow {
+  0% {
+    filter: drop-shadow(0 0 5px rgba(74, 222, 128, 0.3));
+  }
+
+  100% {
+    filter: drop-shadow(0 0 20px rgba(74, 222, 128, 0.6));
+  }
+}
+
+@keyframes neon-pulse {
+
+  0%,
+  100% {
+    filter: drop-shadow(0 0 10px rgba(74, 222, 128, 0.3));
+  }
+
+  50% {
+    filter: drop-shadow(0 0 30px rgba(168, 85, 247, 0.5));
+  }
+}
+
+@keyframes neon-border {
+  0% {
+    box-shadow: 0 0 5px rgba(74, 222, 128, 0.2);
+  }
+
+  50% {
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
+  }
+
+  100% {
+    box-shadow: 0 0 5px rgba(74, 222, 128, 0.2);
+  }
+}
+
+@keyframes gradient-shift-dark {
+
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* ===== EFEITOS ESPECIAIS MODO ESCURO ===== */
+.dark-mode .gradient-text {
+  background: var(--neon-gradient-primary);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-shift-dark 3s ease infinite;
+}
+
+/* ===== SCROLLBAR MODO ESCURO ===== */
+.dark-mode ::-webkit-scrollbar {
+  width: 8px;
+}
+
+.dark-mode ::-webkit-scrollbar-track {
+  background: var(--dark-bg-secondary);
+}
+
+.dark-mode ::-webkit-scrollbar-thumb {
+  background: var(--neon-gradient-primary);
+  border-radius: 4px;
+}
+
+.dark-mode ::-webkit-scrollbar-thumb:hover {
+  background: var(--neon-gradient-secondary);
+  box-shadow: 0 0 10px rgba(74, 222, 128, 0.5);
+}
+
+/* ===== MOBILE MENU MODO ESCURO ===== */
+.dark-mode #mobile-menu {
+  background: var(--dark-bg-card) !important;
+  border-top-color: var(--dark-border-primary) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.dark-mode #mobile-menu a {
+  color: var(--dark-text-secondary) !important;
+}
+
+.dark-mode #mobile-menu a:hover {
+  color: var(--neon-green) !important;
+  text-shadow: 0 0 10px rgba(74, 222, 128, 0.5);
+}
+
+/* ===== TRUST INDICATORS MODO ESCURO ===== */
+.dark-mode .text-accent-400,
+.text-accent-500 {
+  color: var(--neon-green) !important;
+  text-shadow: 0 0 10px rgba(74, 222, 128, 0.3);
+}
+
+.dark-mode .text-highlight-400,
+.text-highlight-500 {
+  color: var(--neon-purple) !important;
+  text-shadow: 0 0 10px rgba(168, 85, 247, 0.3);
+}
+
+.dark-mode .text-primary-400,
+.text-primary-500 {
+  color: var(--neon-blue) !important;
+  text-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
+}
+
+/* ===== CONTACT GRID MODO ESCURO ===== */
+.dark-mode #contato .bg-white\/5 {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border-color: var(--dark-border-primary) !important;
+  backdrop-filter: blur(15px);
+}
+
+.dark-mode #contato .bg-white\/5:hover {
+  background: rgba(74, 222, 128, 0.05) !important;
+  border-color: var(--neon-green) !important;
+  box-shadow: var(--neon-shadow-green);
+}
+
+.dark-mode #contato .bg-accent-500\/20 {
+  background: rgba(74, 222, 128, 0.1) !important;
+}
+
+.dark-mode #contato .bg-highlight-500\/20 {
+  background: rgba(168, 85, 247, 0.1) !important;
+}
+
+/* ===== TECH BENEFITS MODO ESCURO ===== */
+.dark-mode .bg-white\/5 {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border-color: var(--dark-border-primary) !important;
+}
+
+.dark-mode .bg-accent-500\/20 {
+  background: rgba(74, 222, 128, 0.15) !important;
+  border: 1px solid rgba(74, 222, 128, 0.3);
+}
+
+.dark-mode .bg-highlight-500\/20 {
+  background: rgba(168, 85, 247, 0.15) !important;
+  border: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+/* ===== FLOATING ELEMENTS MODO ESCURO ===== */
+.dark-mode .bg-accent-400\/10 {
+  background: rgba(74, 222, 128, 0.1) !important;
+  filter: blur(40px);
+}
+
+.dark-mode .bg-highlight-500\/10 {
+  background: rgba(168, 85, 247, 0.1) !important;
+  filter: blur(40px);
+}
+
+/* ===== BACK TO TOP BUTTON MODO ESCURO ===== */
+.dark-mode #backToTop {
+  background: var(--neon-gradient-primary) !important;
+  box-shadow: var(--neon-shadow-green);
+}
+
+.dark-mode #backToTop:hover {
+  box-shadow: var(--neon-shadow-purple);
+  transform: translateY(-4px) scale(1.1);
+}
+
+/* ===== SECTION HEADERS MODO ESCURO ===== */
+.dark-mode .bg-primary-100 {
+  background: rgba(74, 222, 128, 0.1) !important;
+  border: 1px solid rgba(74, 222, 128, 0.2);
+}
+
+.dark-mode .text-primary-700 {
+  color: var(--neon-green) !important;
+}
+
+.dark-mode .bg-primary-500 {
+  background: var(--neon-green) !important;
+}
+
+.dark-mode .bg-white\/10 {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ===== SPECIAL EFFECTS ===== */
+.dark-mode .service-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+      rgba(74, 222, 128, 0.1) 0%,
+      transparent 50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+.dark-mode .service-card:hover::after {
+  opacity: 1;
+}
+
+/* ===== GLOW ON HOVER ===== */
+.dark-mode .tech-item::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: var(--neon-gradient-primary);
+  border-radius: inherit;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.3s ease;
+}
+
+.dark-mode .tech-item:hover::before {
+  opacity: 0.5;
+  animation: neon-border 2s ease-in-out infinite;
+}
+
+/* ===== PERFORMANCE OPTIMIZATIONS ===== */
+.dark-mode * {
+  will-change: auto;
+}
+
+.dark-mode .service-card,
+.dark-mode .tech-item,
+.dark-mode .gradient-text {
+  will-change: transform, box-shadow, filter;
+}
+
+/* ===== MEDIA QUERIES ===== */
+@media (max-width: 768px) {
+  .dark-mode .service-card {
+    margin-bottom: 1rem;
+  }
+
+  .dark-mode .tech-item {
+    padding: 1rem;
+  }
+
+  .dark-mode .hero-bg .gradient-text {
+    font-size: clamp(2rem, 8vw, 4rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dark-mode * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ===== HIGH CONTRAST MODE ===== */
+@media (prefers-contrast: high) {
+  .dark-mode {
+    --neon-green: #00ff00;
+    --neon-purple: #ff00ff;
+    --neon-blue: #00ffff;
+    --dark-text-primary: #ffffff;
+    --dark-bg-primary: #000000;
+  }
+}
+
+/* ===== TRANSIÇÕES DE TEMA ===== */
+* {
+  transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===== MODO ESCURO GLOBAL ===== */
+.dark-mode {
+  color-scheme: dark;
+}
+
+.dark-mode body {
+  background: var(--dark-bg-primary);
+  color: var(--dark-text-primary);
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(74, 222, 128, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(168, 85, 247, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 40% 60%, rgba(56, 189, 248, 0.03) 0%, transparent 50%);
+}
+
+/* ===== HEADER MODO ESCURO ===== */
+.dark-mode #navbar .text-gray-200 {
+  color: var(--dark-text-secondary) !important;
+}
+
+.dark-mode #navbar .text-gray-800 {
+  color: var(--dark-text-secondary) !important;
+}
+
+.dark-mode .text-gray-800 {
+  color: var(--dark-text-secondary) !important;
+}
+
+.dark-mode #navbar .text-gray-200:hover {
   color: var(--neon-green) !important;
   text-shadow: 0 0 10px rgba(222, 74, 74, 0.5);
 }
@@ -459,10 +640,7 @@
   text-shadow: 0 0 15px rgba(74, 222, 128, 0.4);
 }
 
-.dark-mode .hero-bg .text-accent-400:hover {
-  color: rgba(0, 24, 56, 0.808) !important;
-  text-shadow: 0 0 15px rgba(74, 222, 128, 0.4);
-}
+
 
 .dark-mode .hero-bg .text-white {
   color: var(--dark-text-primary) !important;
@@ -513,6 +691,7 @@
 }
 
 .dark-mode .bg-highlight-100 {
+
   background: rgba(131, 74, 222, 0.1) !important;
   border: 1px solid rgba(168, 74, 222, 0.2);
 }
@@ -605,7 +784,8 @@
       var(--dark-bg-secondary) 100%) !important;
 }
 
-.dark-mode #why, #support-explanation {
+.dark-mode #why,
+#support-explanation {
   background: linear-gradient(135deg,
       var(--dark-bg-secondary) 0%,
       var(--dark-bg-tertiary) 50%,
@@ -627,7 +807,8 @@
   overflow: hidden;
 }
 
-.dark-mode #our-way, #extra-demands {
+.dark-mode #our-way,
+#extra-demands {
   background: var(--neon-gradient-secondary) !important;
 }
 
