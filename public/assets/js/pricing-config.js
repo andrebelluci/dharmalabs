@@ -5,10 +5,96 @@
 
 // ===== DADOS DE PREÇOS =====
 const PRICING_DATA = {
-  "sites": {
+  // Sites sem suporte (apenas desenvolvimento)
+  "sitesSemSuporte": {
     "landingPage": {
       "name": "Landing Page",
-      "subtitle": "Página única de alta conversão",
+      "subtitle": "Página única de alta conversão - Apenas desenvolvimento",
+      "originalPrice": 0,
+      "development": 1200,
+      "monthly": 0,
+      "annual": 0,
+      "popular": true,
+      "orcamento": true,
+      "icon": "dharma-labs-main.svg",
+      "idealFor": "Quem quer apenas o código e gerencia por conta própria",
+      "deliveryTime": "7–15 dias úteis, mediante aprovação de estratégia e conteúdo",
+      "features": [
+        {
+          "title": "Design moderno e responsivo",
+          "description": "Layout que se adapta perfeitamente a qualquer dispositivo, otimizado para conversão"
+        },
+        {
+          "title": "Formulário de contato integrado + Botão WhatsApp",
+          "description": "Captura de leads enviados diretamente para seu e-mail/whatsapp, funcionando desde o primeiro dia"
+        },
+        {
+          "title": "SEO + Google Analytics",
+          "description": "Configuração para aparecer no Google + Analytics na conta do cliente"
+        },
+        {
+          "title": "Código-fonte completo",
+          "description": "Todo o código entregue para você hospedar onde quiser"
+        },
+        {
+          "title": "Documentação técnica",
+          "description": "Guia completo para instalação e personalização"
+        },
+      ],
+      "support": [],
+      "marketPosition": "Desenvolvimento completo sem compromisso mensal"
+    },
+    "siteInstitucional": {
+      "name": "Site Institucional",
+      "subtitle": "Presença online sólida - Apenas desenvolvimento",
+      "originalPrice": 0,
+      "development": 2800,
+      "monthly": 0,
+      "annual": 0,
+      "popular": false,
+      "orcamento": true,
+      "icon": "dharma-labs-main.svg",
+      "idealFor": "Empresas que querem autonomia total sobre o projeto",
+      "deliveryTime": "15–30 dias úteis, mediante aprovação de estratégia e conteúdo",
+      "features": [
+        {
+          "title": "Todas as funcionalidades da Landing Page",
+          "description": "Mantém todos os recursos anteriores e adiciona novas funcionalidades"
+        },
+        {
+          "title": "Páginas otimizadas",
+          "description": "Home, Sobre, Serviços, Contato, Portfólio - páginas otimizadas para SEO"
+        },
+        {
+          "title": "Galeria de imagens/produtos",
+          "description": "Showcase visual dos seus trabalhos, produtos, colaboradores ou instalações da empresa"
+        },
+        {
+          "title": "Integração com Google Maps",
+          "description": "Localização da empresa integrada para facilitar visitas dos clientes"
+        },
+        {
+          "title": "Formulários de contato avançados + Botão WhatsApp",
+          "description": "Múltiplas formas de captar leads, com formulários personalizados para diferentes serviços ou departamentos e botão que leva diretamente para o WhatsApp"
+        },
+        {
+          "title": "Código-fonte completo",
+          "description": "Todo o código entregue para você hospedar onde quiser"
+        },
+        {
+          "title": "Documentação técnica",
+          "description": "Guia completo para instalação e personalização"
+        },
+      ],
+      "support": [],
+      "marketPosition": "Desenvolvimento completo sem compromisso mensal"
+    }
+  },
+  // Sites com suporte (desenvolvimento + hospedagem + suporte)
+  "sitesSuporte": {
+    "landingPage": {
+      "name": "Landing Page",
+      "subtitle": "Página única de alta conversão + Suporte",
       "originalPrice": 0,
       "development": 750,
       "monthly": 70,
@@ -50,7 +136,7 @@ const PRICING_DATA = {
     },
     "siteInstitucional": {
       "name": "Site Institucional",
-      "subtitle": "Presença online sólida para empresas",
+      "subtitle": "Presença online sólida para empresas + Suporte",
       "originalPrice": 0,
       "development": 1950,
       "monthly": 110,
@@ -91,10 +177,62 @@ const PRICING_DATA = {
       "marketPosition": "Investimento justo para empresas que valorizam presença online profissional"
     }
   },
-  "sistemas": {
+  // Sistemas sem suporte (apenas desenvolvimento)
+  "sistemasSemSuporte": {
     "sistemaPersonalizado": {
       "name": "Sistema Personalizado",
-      "subtitle": "Sistema web feito sob medida para seu negócio",
+      "subtitle": "Sistema web feito sob medida - Apenas desenvolvimento",
+      "development": 5500,
+      "monthly": 0,
+      "annual": 0,
+      "popular": false,
+      "orcamento": true,
+      "icon": "dharma-labs-main.svg",
+      "idealFor": "Empresas que querem autonomia total sobre o sistema",
+      "deliveryTime": "30–60 dias úteis, mediante aprovação de estratégia e conteúdo",
+      "features": [
+        {
+          "title": "Sistema desenvolvido especificamente para sua empresa",
+          "description": "Cada funcionalidade pensada para resolver seus problemas únicos"
+        },
+        {
+          "title": "Painel de controle simples e intuitivo",
+          "description": "Interface amigável que qualquer pessoa da equipe consegue usar"
+        },
+        {
+          "title": "Automatiza tarefas repetitivas do dia a dia",
+          "description": "Elimina trabalho manual e reduz erros humanos"
+        },
+        {
+          "title": "Importa dados de planilhas existentes",
+          "description": "Migração dos dados atuais sem perda de informações"
+        },
+        {
+          "title": "Exporta relatórios quando precisar",
+          "description": "Relatórios customizados em PDF ou Excel"
+        },
+        {
+          "title": "Banco de dados seguro e confiável",
+          "description": "MySQL com estrutura completa e documentada"
+        },
+        {
+          "title": "Código-fonte completo",
+          "description": "Todo o código entregue para você hospedar onde quiser"
+        },
+        {
+          "title": "Documentação técnica completa",
+          "description": "Guia completo para instalação, configuração e manutenção"
+        }
+      ],
+      "support": [],
+      "marketPosition": "Desenvolvimento completo sem compromisso mensal"
+    },
+  },
+  // Sistemas com suporte (desenvolvimento + hospedagem + suporte)
+  "sistemasSuporte": {
+    "sistemaPersonalizado": {
+      "name": "Sistema Personalizado",
+      "subtitle": "Sistema web feito sob medida para seu negócio + Suporte",
       "development": 3500,
       "monthly": 200,
       "annual": 0,
@@ -143,10 +281,62 @@ const PRICING_DATA = {
     },
   },
 
-  "dashboards": {
+  // Dashboards sem suporte (apenas desenvolvimento)
+  "dashboardsSemSuporte": {
     "dashboardWeb": {
       "name": "Dashboard Web",
-      "subtitle": "Visualização inteligente dos seus dados",
+      "subtitle": "Visualização inteligente dos seus dados - Apenas desenvolvimento",
+      "development": 3500,
+      "monthly": 0,
+      "annual": 0,
+      "popular": false,
+      "orcamento": true,
+      "icon": "dharma-labs-main.svg",
+      "idealFor": "Negócios que querem autonomia total sobre o dashboard",
+      "deliveryTime": "15–30 dias úteis, mediante aprovação de estratégia e conteúdo",
+      "features": [
+        {
+          "title": "Dashboard interativo desenvolvido em Python",
+          "description": "Gráficos profissionais e relatórios automáticos"
+        },
+        {
+          "title": "Conecta com qualquer fonte de dados",
+          "description": "Excel, Google Sheets, MySQL, PostgreSQL ou APIs"
+        },
+        {
+          "title": "Acesso web seguro com login",
+          "description": "Visualize de qualquer dispositivo com segurança"
+        },
+        {
+          "title": "Relatórios executivos automáticos",
+          "description": "PDFs gerados automaticamente e enviados por email"
+        },
+        {
+          "title": "Filtros e período personalizáveis",
+          "description": "Analise dados por dia, semana, mês ou período específico"
+        },
+        {
+          "title": "Alertas automáticos configuráveis",
+          "description": "Receba notificações quando métricas importantes mudam"
+        },
+        {
+          "title": "Código-fonte completo",
+          "description": "Todo o código entregue para você hospedar onde quiser"
+        },
+        {
+          "title": "Documentação técnica completa",
+          "description": "Guia completo para instalação, configuração e manutenção"
+        }
+      ],
+      "support": [],
+      "marketPosition": "Desenvolvimento completo sem compromisso mensal"
+    },
+  },
+  // Dashboards com suporte (desenvolvimento + hospedagem + suporte)
+  "dashboardsSuporte": {
+    "dashboardWeb": {
+      "name": "Dashboard Web",
+      "subtitle": "Visualização inteligente dos seus dados + Suporte",
       "development": 2200,
       "monthly": 200,
       "annual": 0,
@@ -229,7 +419,7 @@ const PRICING_DATA = {
 // ===== CLASSE PARA GERENCIAR PREÇOS =====
 class PricingManager {
   constructor() {
-    this.activeTab = 'sites';
+    this.activeTab = 'sitesSuporte';
     this.init();
   }
 
@@ -271,9 +461,15 @@ class PricingManager {
     });
 
     // Set initial active tab
-    const initialButton = document.querySelector('.tab-button[data-tab="sites"]');
+    const initialButton = document.querySelector('.tab-button[data-tab="sitesSuporte"]');
     if (initialButton) {
       this.setActiveTab(initialButton);
+    } else {
+      // Fallback para primeira aba disponível
+      const firstButton = document.querySelector('.tab-button');
+      if (firstButton) {
+        this.setActiveTab(firstButton);
+      }
     }
   }
 
@@ -436,10 +632,13 @@ class PricingManager {
   // ===== GERAÇÃO DE CARDS =====
   createPricingCard(service, category) {
     const borderColors = {
-      sites: service.popular ? 'border-highlight-500' : 'border-accent-500',
+      sitesSemSuporte: service.popular ? 'border-highlight-500' : 'border-accent-500',
+      sitesSuporte: service.popular ? 'border-highlight-500' : 'border-accent-500',
       biocards: service.popular ? 'border-accent-500' : 'border-primary-500',
-      sistemas: service.popular ? 'border-primary-500' : 'border-highlight-500',
-      dashboards: service.popular ? 'border-highlight-500' : 'border-accent-500',
+      sistemasSemSuporte: service.popular ? 'border-primary-500' : 'border-highlight-500',
+      sistemasSuporte: service.popular ? 'border-primary-500' : 'border-highlight-500',
+      dashboardsSemSuporte: service.popular ? 'border-highlight-500' : 'border-accent-500',
+      dashboardsSuporte: service.popular ? 'border-highlight-500' : 'border-accent-500',
       // apps: service.popular ? 'border-accent-500' : 'border-highlight-500',
       // automacao: service.popular ? 'border-accent-500' : 'border-highlight-500',
       email: service.popular ? 'border-accent-500' : 'border-primary-500',
@@ -447,10 +646,13 @@ class PricingManager {
     };
 
     const bgColors = {
-      sites: 'bg-highlight-500',
+      sitesSemSuporte: 'bg-highlight-500',
+      sitesSuporte: 'bg-highlight-500',
       biocards: 'bg-accent-500',
-      sistemas: 'bg-primary-500',
-      dashboards: 'bg-highlight-500',
+      sistemasSemSuporte: 'bg-primary-500',
+      sistemasSuporte: 'bg-primary-500',
+      dashboardsSemSuporte: 'bg-highlight-500',
+      dashboardsSuporte: 'bg-highlight-500',
       // apps: 'bg-accent-500',
       // automacao: 'bg-accent-500',
       email: 'bg-accent-500',
@@ -458,10 +660,13 @@ class PricingManager {
     }
 
     const bgColors100 = {
-      sites: 'bg-highlight-100',
+      sitesSemSuporte: 'bg-highlight-100',
+      sitesSuporte: 'bg-highlight-100',
       biocards: 'bg-accent-100',
-      sistemas: 'bg-primary-100',
-      dashboards: 'bg-highlight-100',
+      sistemasSemSuporte: 'bg-primary-100',
+      sistemasSuporte: 'bg-primary-100',
+      dashboardsSemSuporte: 'bg-highlight-100',
+      dashboardsSuporte: 'bg-highlight-100',
       // apps: 'bg-accent-500',
       // automacao: 'bg-accent-500',
       email: 'bg-accent-100',
@@ -469,10 +674,13 @@ class PricingManager {
     }
 
     const ctaColors = {
-      sites: service.popular ? 'from-highlight-500 to-primary-600' : 'from-accent-500 to-primary-600',
+      sitesSemSuporte: service.popular ? 'from-highlight-500 to-primary-600' : 'from-accent-500 to-primary-600',
+      sitesSuporte: service.popular ? 'from-highlight-500 to-primary-600' : 'from-accent-500 to-primary-600',
       biocards: service.popular ? 'from-accent-500 to-highlight-600' : 'from-primary-500 to-highlight-600',
-      sistemas: service.popular ? 'from-primary-500 to-accent-600' : 'from-highlight-500 to-accent-600',
-      dashboards: service.popular ? 'from-highlight-500 to-primary-600' : 'from-accent-500 to-primary-600',
+      sistemasSemSuporte: service.popular ? 'from-primary-500 to-accent-600' : 'from-highlight-500 to-accent-600',
+      sistemasSuporte: service.popular ? 'from-primary-500 to-accent-600' : 'from-highlight-500 to-accent-600',
+      dashboardsSemSuporte: service.popular ? 'from-highlight-500 to-primary-600' : 'from-accent-500 to-primary-600',
+      dashboardsSuporte: service.popular ? 'from-highlight-500 to-primary-600' : 'from-accent-500 to-primary-600',
       // apps: service.popular ? 'from-accent-500 to-primary-600' : 'from-highlight-500 to-highlight-600',
       // automacao: service.popular ? 'from-accent-500 to-primary-600' : 'from-highlight-500 to-highlight-600',
       email: service.popular ? 'from-accent-500 to-highlight-600' : 'from-primary-500 to-highlight-600',
@@ -550,9 +758,11 @@ class PricingManager {
 
         </div>
     </div>
+      ${service.monthly > 0 ? `
       <span class="flex justify-center text-2xl font-semibold text-primary-900 mb-2">
         +
       </span>
+      ` : ''}
         ` : (service.orcamento ? `
           <div class="mb-4">
             <span class="text-2xl font-bold text-primary-800 drop-shadow-lg group-hover:scale-101 transition-transform transform origin-left duration-300">Valor sob consulta</span>
@@ -571,15 +781,9 @@ class PricingManager {
             </div>
 
             <p class="text-xs text-gray-500 mb-0">Pagamento mensal</p>
-            <p class="text-xs text-gray-700 font-medium mb-0">Renovação do plano anual mantém preço fixo</p>
+            <p class="text-xs text-gray-700 font-medium mb-0">Renove o plano anual para manter o desconto</p>
           </div>
-          ` : `
-          <div class="mb-4">
-            <div class="flex items-center  font-semibold group-hover:scale-125 transition-transform transform origin-left duration-300">
-              <span class="text-2xl text-accent-600">R$ ${service.monthly}/mês</span>
-            </div>
-          </div>
-          `}
+          ` : ''}
 
 
         ${service.hourly ? `
@@ -609,6 +813,7 @@ class PricingManager {
         `).join('')}
       </div>
 
+      ${service.support && service.support.length > 0 ? `
       <div class="bg-gradient-to-l from-accent-50/70 to-primary-50/70 rounded-2xl p-4 mb-6 border border-accent-500">
       ${service.isEmail || category == 'consultoria' ? '' : `<a href=#support-explanation>`}
         <div class="flex items-center mb-3">
@@ -628,6 +833,7 @@ class PricingManager {
         </div>
       ${service.isEmail || category == 'consultoria' ? '' : `</a>`}
       </div>
+      ` : ''}
 
 
       <a href="https://api.whatsapp.com/send?phone=${number}&text=${mensagemCodificada}" target="_blank" class="w-full bg-gradient-to-r ${ctaColors[category]} text-white py-3 rounded-2xl font-semibold hover:shadow-lg group-hover:scale-105 transition-transform transform duration-300 text-center block">
@@ -741,9 +947,158 @@ if (document.readyState === 'loading') {
   pricingManager = new PricingManager();
 }
 
+// Função para fazer scroll suave para uma seção, desabilitando ScrollTriggers temporariamente
+// Usa a mesma lógica do animations-scroll.js para evitar problemas com #como-funciona
+function scrollToSectionWithHash(hash) {
+  if (!hash) return;
+
+  // Limpar hash de qualquer caminho de arquivo (ex: planos.html#indicacao -> #indicacao)
+  let cleanHash = hash;
+  if (hash.includes("#")) {
+    const hashIndex = hash.indexOf("#");
+    cleanHash = hash.substring(hashIndex);
+  }
+  if (!cleanHash.startsWith("#")) {
+    cleanHash = "#" + cleanHash;
+  }
+
+  const target = document.querySelector(cleanHash);
+  if (!target) return;
+
+  // Marcar como scroll programático
+  window.isProgrammaticScroll = true;
+
+  // Desabilitar ScrollTriggers temporariamente (especialmente os com scrub)
+  const allTriggers = typeof ScrollTrigger !== 'undefined' ? ScrollTrigger.getAll() : [];
+  const triggerStates = [];
+
+  allTriggers.forEach(trigger => {
+    triggerStates.push({
+      trigger: trigger,
+      enabled: trigger.enabled,
+      kill: false,
+      vars: trigger.vars
+    });
+
+    // Para triggers com scrub, apenas desabilitar (não matar)
+    if (trigger.vars && trigger.vars.scrub) {
+      trigger.disable();
+      if (trigger.animation) {
+        trigger.animation.pause();
+      }
+    } else {
+      trigger.disable();
+    }
+  });
+
+  // Calcular offset dinâmico
+  let offsetY = 20;
+  const pricingTabs = document.getElementById('pricingtabs');
+  if (pricingTabs) {
+    const rect = pricingTabs.getBoundingClientRect();
+    const computedStyle = window.getComputedStyle(pricingTabs);
+    if (computedStyle.position === 'sticky') {
+      offsetY = rect.height + 20;
+    }
+  }
+
+  // Calcular posição final
+  const targetTop = target.offsetTop;
+  const finalPosition = Math.max(0, targetTop - offsetY);
+
+  // Verificar se há seção #como-funciona que pode interferir
+  const comoFunciona = document.querySelector('#como-funciona');
+  const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+  // Desabilitar ScrollTrigger globalmente durante o scroll
+  if (typeof ScrollTrigger !== 'undefined') {
+    ScrollTrigger.config({ autoRefreshEvents: "none" });
+  }
+
+  // Se a seção como-funciona está entre a posição atual e o destino,
+  // fazer scroll para além dela primeiro
+  if (comoFunciona &&
+      comoFunciona.offsetTop < targetTop &&
+      comoFunciona.offsetTop + comoFunciona.offsetHeight > currentScroll) {
+
+    // Primeiro: passar completamente pela seção problemática
+    const passPosition = comoFunciona.offsetTop + comoFunciona.offsetHeight + 100;
+    window.scrollTo(0, passPosition);
+
+    // Aguardar dois frames para garantir que passou
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        // Agora fazer scroll suave até o destino final
+        window.scrollTo({
+          top: finalPosition,
+          behavior: 'smooth'
+        });
+
+        // Reativar tudo após o scroll completar
+        setTimeout(() => {
+          window.isProgrammaticScroll = false;
+
+          // Reabilitar ScrollTriggers
+          triggerStates.forEach(state => {
+            if (state.enabled) {
+              state.trigger.enable();
+              if (state.trigger.animation) {
+                state.trigger.animation.resume();
+              }
+            }
+          });
+
+          if (typeof ScrollTrigger !== 'undefined') {
+            ScrollTrigger.config({ autoRefreshEvents: "visibilitychange,DOMContentLoaded,load" });
+            ScrollTrigger.refresh();
+          }
+        }, 1000);
+      });
+    });
+  } else {
+    // Fazer scroll normal se não há interferência
+    window.scrollTo({
+      top: finalPosition,
+      behavior: 'smooth'
+    });
+
+    // Reativar tudo após o scroll completar
+    setTimeout(() => {
+      window.isProgrammaticScroll = false;
+
+      // Reabilitar ScrollTriggers
+      triggerStates.forEach(state => {
+        if (state.enabled) {
+          state.trigger.enable();
+          if (state.trigger.animation) {
+            state.trigger.animation.resume();
+          }
+        }
+      });
+
+      if (typeof ScrollTrigger !== 'undefined') {
+        ScrollTrigger.config({ autoRefreshEvents: "visibilitychange,DOMContentLoaded,load" });
+        ScrollTrigger.refresh();
+      }
+    }, 1000);
+  }
+}
+
 document.addEventListener("DOMContentLoaded", function () {
-  const hash = window.location.hash.replace("#", "");
+  // Extrair apenas o hash, removendo qualquer caminho de arquivo (ex: planos.html#indicacao -> indicacao)
+  let hash = window.location.hash.replace("#", "");
+  // Se o hash contém um ponto (.), provavelmente tem caminho de arquivo, extrair apenas a parte após #
+  if (hash.includes(".")) {
+    const hashParts = hash.split("#");
+    hash = hashParts.length > 1 ? hashParts[hashParts.length - 1] : hash.split(".").pop();
+  }
+  // Remover qualquer caractere inválido
+  hash = hash.replace(/[^a-zA-Z0-9-]/g, "");
+
   if (hash) {
+    // Lista de hashes que correspondem às tabs de pricing
+    const pricingTabs = ["sitesSemSuporte", "sitesSuporte", "biocards", "sistemasSemSuporte", "sistemasSuporte", "dashboardsSemSuporte", "dashboardsSuporte", "apps", "automacao", "email", "consultoria"];
+
     const targetButton = document.querySelector(`.tab-button[data-tab="${hash}"]`);
     if (targetButton) {
       targetButton.click();
@@ -752,13 +1107,50 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
 
-    // Only scroll to pricing-content if the hash specifically targets it
-    if (hash === "pricing-content") {
-      const targetSection = document.querySelector("#pricing-content");
-      if (targetSection) {
-        targetSection.scrollIntoView({ behavior: "smooth" });
+    // Fazer scroll para pricing-content se o hash for uma tab de pricing ou "pricing-content"
+    if (hash === "pricing-content" || pricingTabs.includes(hash)) {
+      // Função para tentar fazer o scroll
+      const scrollToPricing = () => {
+        const targetSection = document.querySelector("#pricing-content");
+        if (targetSection) {
+          scrollToSectionWithHash("#pricing-content");
+          return true;
+        }
+        return false;
+      };
+
+      // Tentar imediatamente
+      if (!scrollToPricing()) {
+        // Se não conseguir, aguardar um pouco mais
+        setTimeout(() => {
+          if (!scrollToPricing()) {
+            // Última tentativa após mais tempo
+            setTimeout(scrollToPricing, 300);
+          }
+        }, 100);
       }
+    } else {
+      // Para outros hashes (como #indicacao, #faq, #como-funciona, etc), usar a função de scroll suave
+      // Aguardar um pouco para garantir que a página carregou completamente
+      setTimeout(() => {
+        scrollToSectionWithHash("#" + hash);
+      }, 100);
+
+      // Tentar novamente após mais tempo caso a primeira tentativa falhe
+      setTimeout(() => {
+        scrollToSectionWithHash("#" + hash);
+      }, 500);
     }
+  }
+});
+
+// Tratar mudanças de hash (quando o usuário navega dentro da página)
+window.addEventListener("hashchange", function() {
+  const hash = window.location.hash;
+  if (hash) {
+    setTimeout(() => {
+      scrollToSectionWithHash(hash);
+    }, 100);
   }
 });
 
