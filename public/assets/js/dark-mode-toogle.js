@@ -5,7 +5,9 @@
 
 class DarkModeToggle {
   constructor() {
-    this.isDarkMode = true; // Padrão é modo escuro
+    // Verificar localStorage primeiro, padrão é modo escuro
+    const savedMode = localStorage.getItem('dharma-dark-mode');
+    this.isDarkMode = savedMode === null ? true : savedMode === 'true';
     this.toggleElement = null;
     this.isAnimating = false;
     this.init();
@@ -14,8 +16,12 @@ class DarkModeToggle {
   init() {
     console.log('🌙 Inicializando toggle modo escuro...');
 
-    // Aplicar modo escuro imediatamente
-    this.applyDarkMode();
+    // Aplicar o modo salvo (ou padrão)
+    if (this.isDarkMode) {
+      this.applyDarkMode();
+    } else {
+      this.applyLightMode();
+    }
 
     // Criar o botão toggle
     this.createToggle();
@@ -217,8 +223,18 @@ class DarkModeToggle {
 console.log('🌙 Carregando toggle modo escuro...');
 
 function initDarkMode() {
-  document.documentElement.classList.add('dark-mode');
-  document.body.classList.add('dark-mode');
+  // Verificar localStorage antes de aplicar qualquer modo
+  const savedMode = localStorage.getItem('dharma-dark-mode');
+  const isDarkMode = savedMode === null ? true : savedMode === 'true';
+
+  // Aplicar o modo salvo (ou padrão) imediatamente para evitar flash
+  if (isDarkMode) {
+    document.documentElement.classList.add('dark-mode');
+    document.body.classList.add('dark-mode');
+  } else {
+    document.documentElement.classList.remove('dark-mode');
+    document.body.classList.remove('dark-mode');
+  }
 
   setTimeout(() => {
     window.darkModeToggle = new DarkModeToggle();

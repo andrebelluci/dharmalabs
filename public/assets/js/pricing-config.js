@@ -14,7 +14,7 @@ const PRICING_DATA = {
       "development": 1200,
       "monthly": 0,
       "annual": 0,
-      "popular": true,
+      "popular": false,
       "orcamento": true,
       "icon": "dharma-labs-main.svg",
       "idealFor": "Quem quer apenas o código e gerencia por conta própria",
@@ -141,7 +141,7 @@ const PRICING_DATA = {
       "development": 1950,
       "monthly": 110,
       "annual": 0,
-      "popular": false,
+      "popular": true,
       "orcamento": true,
       "icon": "dharma-labs-main.svg",
       "idealFor": "Empresas que precisam apresentar serviços e produtos de forma profissional",
@@ -236,7 +236,7 @@ const PRICING_DATA = {
       "development": 3500,
       "monthly": 200,
       "annual": 0,
-      "popular": false,
+      "popular": true,
       "orcamento": true,
       "icon": "dharma-labs-main.svg",
       "idealFor": "Empresas que precisam eliminar planilhas e automatizar processos",
@@ -340,7 +340,7 @@ const PRICING_DATA = {
       "development": 2200,
       "monthly": 200,
       "annual": 0,
-      "popular": false,
+      "popular": true,
       "orcamento": true,
       "icon": "dharma-labs-main.svg",
       "idealFor": "Negócios que precisam transformar dados em decisões inteligentes",
@@ -1018,8 +1018,8 @@ function scrollToSectionWithHash(hash) {
   // Se a seção como-funciona está entre a posição atual e o destino,
   // fazer scroll para além dela primeiro
   if (comoFunciona &&
-      comoFunciona.offsetTop < targetTop &&
-      comoFunciona.offsetTop + comoFunciona.offsetHeight > currentScroll) {
+    comoFunciona.offsetTop < targetTop &&
+    comoFunciona.offsetTop + comoFunciona.offsetHeight > currentScroll) {
 
     // Primeiro: passar completamente pela seção problemática
     const passPosition = comoFunciona.offsetTop + comoFunciona.offsetHeight + 100;
@@ -1145,7 +1145,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // Tratar mudanças de hash (quando o usuário navega dentro da página)
-window.addEventListener("hashchange", function() {
+window.addEventListener("hashchange", function () {
   const hash = window.location.hash;
   if (hash) {
     setTimeout(() => {
