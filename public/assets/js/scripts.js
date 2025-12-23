@@ -1157,14 +1157,14 @@ function fecharModal(modalId) {
 }
 
 // Fechar modal ao clicar fora
-document.addEventListener('click', function(e) {
+document.addEventListener('click', function (e) {
   if (e.target.classList.contains('fixed') && e.target.id.startsWith('modal-')) {
     fecharModal(e.target.id);
   }
 });
 
 // Fechar modal com ESC
-document.addEventListener('keydown', function(e) {
+document.addEventListener('keydown', function (e) {
   if (e.key === 'Escape') {
     const modais = document.querySelectorAll('[id^="modal-"]');
     modais.forEach(modal => {
@@ -1261,21 +1261,30 @@ function loadGoogleAnalytics() {
     // Verificar se gtag já existe (pode estar carregado de outra forma)
     if (typeof gtag !== 'undefined') {
       console.log('✅ Google Analytics já está disponível');
-    } else {
-      // INSTRUÇÕES: Se você usar Google Analytics, descomente e configure abaixo:
-      //
-      // const script = document.createElement('script');
-      // script.async = true;
-      // script.src = 'https://www.googletagmanager.com/gtag/js?id=SEU_ID_AQUI';
-      // document.head.appendChild(script);
-      //
-      // window.dataLayer = window.dataLayer || [];
-      // function gtag(){dataLayer.push(arguments);}
-      // gtag('js', new Date());
-      // gtag('config', 'SEU_ID_AQUI');
-
-      console.log('✅ Consentimento para Analytics dado - configure o Google Analytics acima se necessário');
+      return;
     }
+
+    // Verificar se o script já foi adicionado
+    if (document.querySelector('script[src*="googletagmanager.com/gtag/js"]')) {
+      console.log('✅ Google Analytics script já foi carregado');
+      return;
+    }
+
+    // Carregar Google Analytics (gtag.js)
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-C4GGT6T7MX';
+    document.head.appendChild(script);
+
+    // Configurar dataLayer e gtag
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    window.gtag = gtag;
+
+    gtag('js', new Date());
+    gtag('config', 'G-C4GGT6T7MX');
+
+    console.log('✅ Google Analytics carregado com sucesso');
   }
 }
 
