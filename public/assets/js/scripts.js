@@ -1273,7 +1273,7 @@ function loadGoogleAnalytics() {
     // Carregar Google Analytics (gtag.js)
     const script = document.createElement('script');
     script.async = true;
-    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-C4GGT6T7MX';
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-QEFX84MB5E';
     document.head.appendChild(script);
 
     // Configurar dataLayer e gtag
@@ -1282,7 +1282,7 @@ function loadGoogleAnalytics() {
     window.gtag = gtag;
 
     gtag('js', new Date());
-    gtag('config', 'G-C4GGT6T7MX');
+    gtag('config', 'G-QEFX84MB5E');
 
     console.log('✅ Google Analytics carregado com sucesso');
   }
